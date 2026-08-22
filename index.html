@@ -17,6 +17,20 @@ nav{position:sticky;top:0;z-index:20;background:rgba(255,250,242,.96);backdrop-f
 .navin{min-height:68px;display:flex;align-items:center;justify-content:space-between;gap:20px}
 .brand{font-weight:900;color:var(--deep);font-size:18px;letter-spacing:.2px}.brand span{color:var(--pink)}
 .navlinks{display:flex;gap:19px;font-weight:800;flex-wrap:wrap}.navlinks a{color:var(--deep);font-size:14px}
+.top-youtube{padding:18px 0 20px;background:linear-gradient(105deg,#fff7ed 0%,#fdf2f8 38%,#eef2ff 72%,#ecfeff 100%);border-bottom:1px solid #eadff7}
+.top-youtube-inner{display:grid;grid-template-columns:1.45fr .55fr;gap:24px;align-items:center;background:linear-gradient(135deg,#ffffff 0%,#fff8fc 52%,#f5f3ff 100%);border:2px solid #eadff7;border-radius:24px;padding:22px 26px;box-shadow:0 12px 32px #3b1d6812;position:relative;overflow:hidden}
+.top-youtube-inner:before{content:"";position:absolute;left:0;top:0;bottom:0;width:7px;background:linear-gradient(180deg,#ec4899,#5b21b6,#2563eb,#facc15)}
+.top-brand{text-align:left;margin:0 0 6px 0}
+.yt-kicker{display:inline-block;background:#fee2e2;color:#b91c1c;border-radius:999px;padding:6px 10px;font-size:11px;font-weight:900;letter-spacing:.5px;margin-bottom:8px}
+.top-youtube-copy h2{margin:0 0 7px;color:var(--deep);font-size:clamp(24px,3.2vw,38px);line-height:1.08}
+.top-youtube-copy p{margin:0;max-width:760px;color:#526071;line-height:1.5;font-size:15px}
+.top-youtube-copy p strong{color:var(--purple)}
+.top-ytbtn{margin-top:12px;box-shadow:0 8px 20px #dc262633}
+.top-youtube-visual{min-height:128px;border-radius:20px;background:linear-gradient(145deg,#5b21b6,#ec4899);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;overflow:hidden;box-shadow:inset 0 0 0 2px #ffffff33}
+.top-youtube-visual:before,.top-youtube-visual:after{content:"";position:absolute;border-radius:50%;background:#ffffff18}
+.top-youtube-visual:before{width:130px;height:130px;right:-45px;top:-45px}.top-youtube-visual:after{width:100px;height:100px;left:-40px;bottom:-40px}
+.yt-play{width:62px;height:44px;border-radius:13px;background:#fff;color:#dc2626;display:flex;align-items:center;justify-content:center;font-size:25px;padding-left:4px;box-shadow:0 8px 20px #0003;z-index:1}
+.yt-stars{font-size:11px;letter-spacing:10px;margin-top:7px;color:#facc15;z-index:1}.yt-curiosity{font-size:12px;font-weight:900;text-align:center;margin-top:5px;max-width:220px;line-height:1.3;z-index:1}
 .hero{padding:48px 0 45px;background:radial-gradient(circle at 8% 14%,#fde68a 0 42px,transparent 43px),radial-gradient(circle at 92% 12%,#bfdbfe 0 52px,transparent 53px),linear-gradient(135deg,#fff7ed,#f5f3ff 55%,#ecfeff)}
 .hero-grid{display:grid;grid-template-columns:1fr .9fr;gap:42px;align-items:center}
 .badge{display:inline-block;background:#ede9fe;color:var(--purple);font-weight:900;padding:9px 15px;border-radius:999px}
@@ -27,21 +41,22 @@ h1 span{color:var(--pink)}
 .ctas{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}.btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 20px;border-radius:14px;font-weight:900;cursor:pointer}
 .primary{background:var(--purple);color:white;box-shadow:0 8px 20px #5b21b633}.secondary{background:white;color:var(--purple);border:2px solid #ddd0f7}
 .hero-video-wrap{background:#14092d;padding:10px;border-radius:32px;box-shadow:0 25px 55px #3b1d6822;position:relative;overflow:hidden}
-.hero-video{width:100%;display:block;aspect-ratio:2/3;object-fit:cover;border-radius:24px;background:#14092d}
+.hero-video{width:100%;display:block;aspect-ratio:2/3;object-fit:cover;border-radius:24px;background:#14092d}.sound-btn{position:absolute;right:20px;bottom:20px;border:0;background:rgba(255,255,255,.96);color:var(--deep);padding:11px 15px;border-radius:999px;font-weight:900;font-size:13px;box-shadow:0 8px 22px #0003;cursor:pointer;z-index:3}.sound-btn:hover{transform:translateY(-1px)}
 .video-badge{position:absolute;left:22px;bottom:22px;background:rgba(250,204,21,.96);color:var(--deep);padding:10px 15px;border-radius:999px;font-weight:900;font-size:13px}
 section{padding:68px 0}.section-title{text-align:center;font-size:clamp(30px,4vw,40px);color:var(--deep);margin:0 0 12px}.section-sub{text-align:center;max-width:760px;margin:0 auto 34px;line-height:1.65;color:#4b5563}
 .mini-brand{text-align:center;font-weight:900;color:var(--purple);font-size:13px;letter-spacing:.6px;margin-bottom:10px}.mini-brand span{color:var(--pink)}
 .cards{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.card{background:white;border-radius:22px;padding:24px;box-shadow:0 10px 30px #3b1d6810;border:1px solid #eee5fa}.card .icon{font-size:34px}.card h3{margin:12px 0 8px;color:var(--deep)}.card p{line-height:1.55;color:var(--muted);margin-bottom:0}
 .value{background:linear-gradient(135deg,#fff7ed,#f5f3ff)}.value-box{background:white;border:1px solid var(--line);border-radius:28px;padding:34px;box-shadow:0 12px 32px #3b1d6810}.value-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:26px}.value-item{padding:22px;border-radius:20px;background:#fbf9ff;border:1px solid #eee5fa}.value-item b{display:block;font-size:18px;color:var(--deep);margin-bottom:8px}.value-item p{margin:0;line-height:1.55;color:var(--muted)}
 .quote{font-size:25px;line-height:1.45;font-weight:900;color:var(--deep);text-align:center;max-width:850px;margin:0 auto}.quote span{color:var(--pink)}
-.faq-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.faq{background:white;border-radius:22px;padding:24px;border:1px solid var(--line);box-shadow:0 10px 30px #3b1d6810}.faq .q{font-size:19px;font-weight:900;color:var(--deep);margin-bottom:12px}.faq p{line-height:1.6;color:var(--muted);margin:0}.faq strong{color:var(--purple)}
+.faq-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.faq{background:linear-gradient(145deg,#fff 0%,#fff9fe 100%);border-radius:24px;padding:24px;border:2px solid #eadff7;box-shadow:0 12px 30px #3b1d6812;position:relative;overflow:hidden}.faq:nth-child(1){border-color:#bfdbfe;background:linear-gradient(145deg,#ffffff,#eff6ff)}.faq:nth-child(2){border-color:#fde68a;background:linear-gradient(145deg,#ffffff,#fffbeb)}.faq:nth-child(3){border-color:#fbcfe8;background:linear-gradient(145deg,#ffffff,#fdf2f8)}.faq:nth-child(4){border-color:#bbf7d0;background:linear-gradient(145deg,#ffffff,#f0fdf4)}.faq:nth-child(5){border-color:#c7d2fe;background:linear-gradient(145deg,#ffffff,#eef2ff)}.faq:nth-child(6){border-color:#fed7aa;background:linear-gradient(145deg,#ffffff,#fff7ed)}.faq .q{font-size:19px;font-weight:900;color:var(--deep);margin-bottom:12px;line-height:1.35}.faq p{line-height:1.65;color:#526071;margin:0}.faq strong{color:var(--purple)}.faq:before{content:"";position:absolute;top:0;left:0;right:0;height:6px;background:linear-gradient(90deg,var(--purple),var(--pink),#facc15)}
+.faq .q{position:relative;padding-right:4px}.faq:hover{transform:translateY(-2px);box-shadow:0 16px 34px #3b1d6818;transition:.2s ease}
 .challenge{background:linear-gradient(135deg,#2b135b,#5b21b6);color:white}.challenge-box{background:#ffffff12;border:1px solid #ffffff2d;border-radius:28px;padding:34px}.challenge-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:28px}.challenge-step{background:white;color:var(--ink);border-radius:20px;padding:22px}.challenge-step b{color:var(--purple);font-size:18px}.challenge-step p{line-height:1.55;color:var(--muted)}.challenge-note{text-align:center;font-size:19px;font-weight:900;margin-top:28px}
 .youtube{background:#fff;border-radius:28px;padding:36px;text-align:center;border:1px solid var(--line);box-shadow:0 10px 30px #3b1d6810}.ytbtn{background:#dc2626;color:white;padding:14px 22px;border-radius:14px;font-weight:900;display:inline-block;margin-top:15px}.yt-note{font-size:17px;line-height:1.6;color:var(--muted);max-width:720px;margin:0 auto}.why-line{font-size:21px;font-weight:900;color:var(--purple);margin-top:22px}
 .product{background:linear-gradient(135deg,#2b135b,#5b21b6);color:white}.product-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}.product h2{font-size:42px;margin:0 0 14px}.product p{line-height:1.65}.product ul{padding-left:20px;line-height:2}.price{display:inline-block;background:#facc15;color:var(--deep);font-size:30px;font-weight:900;padding:10px 18px;border-radius:15px;margin:12px 0}.qrbox{background:white;color:var(--ink);padding:28px;border-radius:28px;text-align:center}.qrbox img{width:min(290px,85%);display:block;margin:12px auto 18px}.upi{font-weight:900;color:var(--purple);word-break:break-all}.note{font-size:13px;color:#667085;margin-top:14px;line-height:1.5}
 .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:25px}.step{background:#fff;border:1px solid var(--line);border-radius:18px;padding:20px}.step b{font-size:20px;color:var(--purple)}.step p{line-height:1.5;color:var(--muted)}
 footer{background:var(--deep);color:#fff;padding:35px 0}.footerin{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center}footer a{color:#facc15}
-@media(max-width:900px){.hero-grid,.product-grid{grid-template-columns:1fr}.cards{grid-template-columns:repeat(2,1fr)}.faq-grid{grid-template-columns:1fr 1fr}.navlinks{display:none}.hero{padding-top:35px}}
-@media(max-width:620px){section{padding:52px 0}.cards,.faq-grid,.value-grid,.challenge-steps,.steps{grid-template-columns:1fr}.product h2{font-size:32px}.hero-video-wrap{max-width:520px;margin:auto}.quote{font-size:21px}.value-box,.challenge-box,.youtube{padding:24px}}
+@media(max-width:900px){.top-youtube-inner{grid-template-columns:1fr}.top-youtube-visual{min-height:105px}.hero-grid,.product-grid{grid-template-columns:1fr}.cards{grid-template-columns:repeat(2,1fr)}.faq-grid{grid-template-columns:1fr 1fr}.navlinks{display:none}.hero{padding-top:35px}}
+@media(max-width:620px){.top-youtube{padding:10px 0 12px}.top-youtube-inner{padding:18px 18px 18px 22px;border-radius:20px}.top-youtube-copy h2{font-size:25px}.top-youtube-copy p{font-size:14px}.top-youtube-visual{min-height:96px}.top-ytbtn{width:100%;font-size:13px;padding:12px 14px}section{padding:52px 0}.cards,.faq-grid,.value-grid,.challenge-steps,.steps{grid-template-columns:1fr}.product h2{font-size:32px}.hero-video-wrap{max-width:520px;margin:auto}.quote{font-size:21px}.value-box,.challenge-box,.youtube{padding:24px}}
 </style>
 </head>
 <body>
@@ -60,6 +75,26 @@ footer{background:var(--deep);color:#fff;padding:35px 0}.footerin{display:flex;j
   </div>
 </nav>
 
+<!-- YouTube visibility banner: placed immediately below navigation so mobile visitors see the channel early. -->
+<section class="top-youtube" id="top-youtube">
+  <div class="container">
+    <div class="top-youtube-inner">
+      <div class="top-youtube-copy">
+        <div class="mini-brand top-brand">🧠 SMART BRAIN <span>MISSION</span></div>
+        <div class="yt-kicker">▶ WATCH • LEARN • ASK WHY</div>
+        <h2>Learning Doesn't Stop at the Website</h2>
+        <p>Hamare YouTube channel par children-friendly AI, computer aur smart-technology videos milenge — taaki bachcha sirf <strong>“WOW!”</strong> na bole, balki pooche <strong>“BUT WHY?”</strong></p>
+        <a class="ytbtn top-ytbtn" href="https://youtube.com/@smartbrainmission" target="_blank" rel="noopener">▶ Visit Smart Brain Mission on YouTube</a>
+      </div>
+      <div class="top-youtube-visual" aria-hidden="true">
+        <div class="yt-play">▶</div>
+        <div class="yt-stars">✦ ✦ ✦</div>
+        <div class="yt-curiosity">Because curiosity is where learning begins. 💡</div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <header class="hero" id="home">
   <div class="container hero-grid">
     <div>
@@ -73,10 +108,11 @@ footer{background:var(--deep);color:#fff;padding:35px 0}.footerin{display:flex;j
       </div>
     </div>
     <div class="hero-video-wrap">
-      <video class="hero-video" autoplay muted loop playsinline preload="auto" poster="assets/video-poster.jpg">
+      <video id="missionVideo" class="hero-video" autoplay muted loop playsinline preload="auto" poster="assets/video-poster.jpg">
         <source src="assets/smart-brain-mission-video.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
+      <button id="soundBtn" class="sound-btn" type="button" aria-label="Turn video sound on">🔊 Tap to Turn Sound On</button>
       <div class="video-badge">LEARN • THINK • CREATE • EXPLORE</div>
     </div>
   </div>
@@ -226,5 +262,25 @@ footer{background:var(--deep);color:#fff;padding:35px 0}.footerin{display:flex;j
   </div>
 </footer>
 
+<script>
+(function(){
+  const video=document.getElementById('missionVideo');
+  const btn=document.getElementById('soundBtn');
+  if(!video||!btn) return;
+  // Mobile browsers generally block autoplay with sound. Start muted, then let the visitor enable audio with one tap.
+  video.muted=true;
+  const update=()=>{
+    btn.textContent=video.muted ? '🔊 Tap to Turn Sound On' : '🔇 Tap to Mute';
+    btn.setAttribute('aria-label', video.muted ? 'Turn video sound on' : 'Mute video sound');
+  };
+  btn.addEventListener('click', async()=>{
+    video.muted=!video.muted;
+    if(!video.paused){ try{ await video.play(); }catch(e){} }
+    update();
+  });
+  video.addEventListener('volumechange',update);
+  update();
+})();
+</script>
 </body>
 </html>

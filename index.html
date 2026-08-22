@@ -3,557 +3,300 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Smart Brain Mission — fun, activity-based learning for curious minds 5+. Explore AI, computer skills, critical thinking and safe technology use.">
+<meta name="description" content="Smart Brain Mission — fun, activity-based AI, computer skills, critical thinking and safe technology learning for curious minds 5+.">
 <title>Smart Brain Mission | Learn AI. Think Smart. Create More.</title>
-
 <style>
 :root{
-  --purple:#35166f;
-  --purple2:#6b2fc2;
-  --pink:#e94b9b;
-  --yellow:#ffd84d;
-  --cream:#fffaf0;
-  --lav:#f7f2ff;
-  --blue:#eef8ff;
-  --mint:#effcf6;
-  --text:#403b52;
-  --muted:#6d6878;
-  --white:#fff;
-  --shadow:0 14px 40px rgba(53,22,111,.10);
-  --radius:24px;
+  --purple:#35145f; --purple2:#6d28d9; --pink:#e83e9f; --yellow:#ffd84d;
+  --cream:#fffaf0; --lav:#f7f2ff; --ink:#2c174d; --muted:#667085;
+  --white:#fff; --border:#eadff7; --shadow:0 14px 35px rgba(52,20,95,.10);
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{
-  margin:0;
-  font-family:Arial,Helvetica,sans-serif;
-  color:var(--text);
-  background:linear-gradient(180deg,#fffdf8 0%,#faf7ff 48%,#fffdf9 100%);
-}
+body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Arial,sans-serif;color:var(--ink);background:#fff}
 a{text-decoration:none;color:inherit}
-.container{width:min(1180px,92%);margin:auto}
-
-/* NAV */
-nav{
-  position:sticky;top:0;z-index:1000;
-  background:rgba(255,255,255,.94);
-  backdrop-filter:blur(12px);
-  border-bottom:1px solid #eee6f8;
+.nav{
+  position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);
+  backdrop-filter:blur(10px);border-bottom:1px solid #eee7f5;
 }
-.nav-inner{
-  min-height:68px;display:flex;align-items:center;
-  justify-content:space-between;gap:18px;
-}
-.brand{
-  font-weight:900;font-size:18px;line-height:1.05;
-  color:var(--purple);display:flex;align-items:center;gap:7px;
-}
+.navin{max-width:1200px;margin:auto;display:flex;align-items:center;justify-content:space-between;padding:12px 22px}
+.brand{font-weight:900;color:var(--purple);font-size:17px;letter-spacing:-.3px}
 .brand span{color:var(--pink)}
-.nav-links{display:flex;gap:22px;align-items:center}
-.nav-links a{font-size:13px;font-weight:800;color:#302743}
-.nav-youtube{
-  background:#e53935;color:white!important;padding:10px 15px;
-  border-radius:12px;box-shadow:0 8px 18px rgba(229,57,53,.20)
+.links{display:flex;gap:22px;font-size:13px;font-weight:750;color:#3d2a52}
+.links a:hover{color:var(--pink)}
+.hero{
+  background:linear-gradient(135deg,#fffaf7 0%,#f8f1ff 52%,#edfaff 100%);
+  padding:54px 22px 58px;
 }
-
-/* TOP YOUTUBE STRIP */
-.youtube-strip{
-  margin:18px auto 0;
-  background:linear-gradient(100deg,#fff,#fff7fb,#eefaff);
-  border:1px solid #eadff5;border-radius:22px;
-  padding:20px 24px;box-shadow:var(--shadow);
-  display:flex;align-items:center;justify-content:space-between;gap:18px;
-}
-.strip-kicker{font-size:11px;font-weight:900;color:var(--pink);letter-spacing:.4px}
-.strip-title{font-size:25px;font-weight:900;color:var(--purple);margin:5px 0}
-.strip-text{font-size:14px;color:var(--muted);line-height:1.5}
-.youtube-btn{
-  flex:none;background:#e53935;color:#fff;font-weight:900;
-  padding:14px 20px;border-radius:14px;box-shadow:0 10px 22px rgba(229,57,53,.22)
-}
-
-/* HERO */
-.hero{padding:58px 0 70px;background:
- radial-gradient(circle at 8% 20%,#fff0a9 0,transparent 18%),
- radial-gradient(circle at 95% 25%,#ccefff 0,transparent 22%),
- linear-gradient(135deg,#fffaff,#eef9ff);
-}
-.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:46px;align-items:center}
-.badge{
- display:inline-block;background:#f0e6ff;color:#6330a7;font-size:12px;
- font-weight:900;padding:8px 13px;border-radius:999px;
-}
-h1{font-size:58px;line-height:1.02;margin:17px 0;color:var(--purple);letter-spacing:-1.8px}
+.hero-grid{max-width:1200px;margin:auto;display:grid;grid-template-columns:1fr 1fr;gap:42px;align-items:center}
+.badge{display:inline-block;padding:8px 13px;border-radius:999px;background:#eee4ff;color:#5b22a0;font-weight:850;font-size:12px}
+h1{font-size:clamp(42px,5vw,72px);line-height:.96;margin:18px 0 22px;letter-spacing:-2.8px}
 h1 .pink{color:var(--pink)}
-.hero p{font-size:16px;line-height:1.65;color:#5f596a;max-width:650px}
-.hero strong{color:var(--purple)}
-.ctas{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
-.btn{
- display:inline-flex;align-items:center;justify-content:center;
- padding:13px 18px;border-radius:13px;font-weight:900;font-size:14px;
- border:1px solid #e5dced;background:white;color:var(--purple)
+.lead{font-size:17px;line-height:1.65;color:#5e6170;max-width:600px}
+.hero-note{font-weight:800;color:#5b248f;line-height:1.55;margin:20px 0}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 18px;border-radius:12px;font-weight:850;font-size:14px;box-shadow:0 8px 18px rgba(55,20,100,.12)}
+.btn.primary{background:linear-gradient(135deg,#5620bd,#7a2fe3);color:#fff}
+.btn.youtube{background:#ef3f3f;color:#fff}
+.btn.yellow{background:var(--yellow);color:#30165a}
+.media-card{
+  background:#160c2e;border:7px solid #2f1756;border-radius:30px;padding:0;
+  overflow:hidden;box-shadow:0 20px 45px rgba(40,13,74,.25);position:relative;
 }
-.btn-primary{background:linear-gradient(135deg,#6023ba,#8c43d4);color:white;border:none;box-shadow:0 10px 24px rgba(96,35,186,.22)}
-.btn-yellow{background:var(--yellow);border:none}
-
-/* HERO VIDEO */
-.video-card{
-  background:#171029;border:7px solid #29194f;border-radius:28px;
-  padding:0;box-shadow:0 20px 45px rgba(41,25,79,.25);
-  overflow:hidden;position:relative;
+.media-card video{display:block;width:100%;aspect-ratio:16/10;object-fit:cover;background:#120922}
+.media-label{
+  position:absolute;left:18px;bottom:16px;background:var(--yellow);color:#29104c;
+  border-radius:999px;padding:8px 13px;font-size:11px;font-weight:900;z-index:2
 }
-.video-wrap{position:relative;background:#0e0a1b;min-height:420px;display:flex;align-items:center;justify-content:center}
-.video-wrap video{width:100%;height:100%;max-height:540px;object-fit:contain;display:block;background:#0e0a1b}
-.sound-btn{
- position:absolute;bottom:16px;left:50%;transform:translateX(-50%);
- background:var(--yellow);border:0;border-radius:999px;padding:11px 17px;
- font-weight:900;color:#2b174d;cursor:pointer;box-shadow:0 7px 18px rgba(0,0,0,.22)
-}
-.video-note{text-align:center;background:#171029;color:#c9c2d6;font-size:12px;padding:9px}
-
-/* SECTION */
-section{padding:76px 0}
-.section-head{text-align:center;max-width:850px;margin:0 auto 34px}
-.kicker{font-size:11px;font-weight:900;color:var(--pink);letter-spacing:.5px}
-.section-head h2{font-size:38px;color:var(--purple);margin:9px 0}
-.section-head p{color:var(--muted);line-height:1.6}
-
-/* EXPLORE */
-.explore{background:var(--cream)}
+.sound-tip{font-size:12px;text-align:center;color:#777;margin-top:9px}
+.section{padding:72px 22px}
+.section.alt{background:var(--cream)}
+.section.lav{background:var(--lav)}
+.wrap{max-width:1200px;margin:auto}
+.kicker{text-align:center;font-size:12px;font-weight:900;color:#c83c91;letter-spacing:.4px}
+.title{text-align:center;font-size:clamp(30px,4vw,45px);margin:8px 0 12px;letter-spacing:-1px}
+.subtitle{text-align:center;max-width:850px;margin:0 auto 34px;color:#697080;line-height:1.65}
 .explore-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
 .explore-card{
- border:1px solid rgba(100,70,150,.12);border-radius:22px;padding:25px;
- min-height:230px;box-shadow:0 10px 28px rgba(90,60,120,.08);
- transition:.2s;
+  border:1px solid var(--border);border-radius:22px;padding:25px;min-height:240px;
+  box-shadow:var(--shadow);transition:.2s;position:relative;overflow:hidden
 }
-.explore-card:hover{transform:translateY(-5px);box-shadow:0 18px 35px rgba(90,60,120,.13)}
-.c1{background:linear-gradient(145deg,#edf8ff,#fff)}
-.c2{background:linear-gradient(145deg,#effcf6,#fff)}
-.c3{background:linear-gradient(145deg,#fff0fa,#fff)}
-.c4{background:linear-gradient(145deg,#fff8d9,#fff)}
+.explore-card:hover{transform:translateY(-4px)}
+.explore-card:before{content:"";position:absolute;inset:0 auto auto 0;width:100%;height:6px;background:var(--accent)}
+.explore-card:nth-child(1){background:linear-gradient(145deg,#f1f8ff,#fff);--accent:#61aaf5}
+.explore-card:nth-child(2){background:linear-gradient(145deg,#effff8,#fff);--accent:#49c997}
+.explore-card:nth-child(3){background:linear-gradient(145deg,#fff2fb,#fff);--accent:#ed66b4}
+.explore-card:nth-child(4){background:linear-gradient(145deg,#fffbea,#fff);--accent:#f1c933}
 .icon{font-size:34px}
-.explore-card h3{color:var(--purple);margin:17px 0 10px;font-size:20px}
-.explore-card p{font-size:14px;line-height:1.6;color:#686272}
-
-/* WHY */
-.why{background:linear-gradient(135deg,#f8f3ff,#fff)}
-.why-box{
- background:white;border:1px solid #e8def4;border-radius:28px;
- padding:40px;box-shadow:var(--shadow);text-align:center;
+.card h3{font-size:20px;margin:14px 0 10px}
+.card p{color:#616776;line-height:1.65;margin:0}
+.pill{display:inline-block;margin-top:18px;padding:7px 10px;border-radius:999px;background:#fff;font-size:11px;font-weight:850;color:#5c2b91}
+.why{
+  background:#fff;border:1px solid var(--border);border-radius:28px;padding:38px;
+  box-shadow:var(--shadow);max-width:1120px;margin:auto
 }
-.quote{
- font-size:25px;line-height:1.45;font-weight:900;color:var(--purple);
- max-width:850px;margin:auto;
+.quote{text-align:center;font-size:22px;font-weight:900;line-height:1.45;margin:0 auto 30px;max-width:900px}
+.quote .pink{color:var(--pink)}
+.why-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.why-card{border-radius:19px;padding:20px;border:1px solid #e8dff3;background:linear-gradient(135deg,#fbf8ff,#fff)}
+.why-card:nth-child(2){background:linear-gradient(135deg,#f2fbff,#fff)}
+.why-card:nth-child(3){background:linear-gradient(135deg,#effff8,#fff)}
+.why-card:nth-child(4){background:linear-gradient(135deg,#fffbea,#fff)}
+.why-card strong{font-size:17px}.why-card p{color:#666b78;line-height:1.55;margin:8px 0 0}
+.parents{
+  background:linear-gradient(135deg,#fff,#fbf5ff);border-top:1px solid #eee5f7;border-bottom:1px solid #eee5f7
 }
-.quote span{color:var(--pink)}
-.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:28px}
-.mini{
- background:#fff;border:1px solid #eee4f7;border-radius:18px;padding:22px;text-align:left
+.parent-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.qcard{border:1px solid #e5dbf1;border-radius:22px;padding:22px;background:#fff;box-shadow:0 10px 26px rgba(52,20,95,.07)}
+.qcard:nth-child(3n+1){background:linear-gradient(145deg,#fff3fa,#fff)}
+.qcard:nth-child(3n+2){background:linear-gradient(145deg,#f0f8ff,#fff)}
+.qcard:nth-child(3n){background:linear-gradient(145deg,#fffbea,#fff)}
+.q{font-weight:900;font-size:17px;line-height:1.35}.q span{color:#ef3d83}
+.ans{color:#626875;line-height:1.6;margin-top:10px;font-size:14px}
+.youtube-cta{
+  max-width:1120px;margin:auto;border-radius:28px;padding:42px 28px;
+  background:linear-gradient(120deg,#35145f,#6d28d9 58%,#8e37d8);color:#fff;text-align:center;
+  box-shadow:0 22px 45px rgba(57,20,104,.22)
 }
-.mini b{color:var(--purple);font-size:17px}
-.mini p{font-size:13px;line-height:1.6;color:var(--muted)}
-
-/* FAQ */
-.faq{background:#fff}
-.faq-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
-.faq-card{
- border:1px solid #eadff4;border-radius:20px;padding:23px;
- box-shadow:0 8px 24px rgba(70,35,110,.06);
+.youtube-cta .emoji{font-size:34px}.youtube-cta h2{font-size:34px;margin:10px 0}
+.youtube-cta p{opacity:.9;max-width:760px;margin:0 auto 22px;line-height:1.6}
+.pack{
+  background:linear-gradient(110deg,#371463,#6320bd);color:#fff
 }
-.faq-card:nth-child(3n+1){background:#fff5fb}
-.faq-card:nth-child(3n+2){background:#f3faff}
-.faq-card:nth-child(3n){background:#fffbea}
-.question{font-size:17px;font-weight:900;color:var(--purple);margin-bottom:10px}
-.answer{font-size:14px;line-height:1.65;color:#66616f}
-.qmark{color:#ef4c83;font-size:22px;margin-right:5px}
-
-/* CTA */
-.cta{
- background:linear-gradient(135deg,#35166f,#6c2bc1);color:#fff;
- border-radius:30px;padding:48px;text-align:center;
- box-shadow:0 20px 50px rgba(53,22,111,.22)
-}
-.cta h2{font-size:38px;margin:0 0 12px}
-.cta p{color:#eee6ff;line-height:1.6}
-.cta .youtube-btn{display:inline-block;margin-top:12px}
-
-/* CONTACT */
-.contact{background:#faf7ff}
-.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-.contact-card{
- background:white;border:1px solid #e8def4;border-radius:22px;padding:28px;
- box-shadow:0 10px 28px rgba(60,30,100,.07)
-}
-.contact-card h3{color:var(--purple);margin-top:0}
-.contact-link{display:block;padding:12px 0;border-bottom:1px solid #eee7f4;font-weight:800;color:#4b4160}
-.contact-link:last-child{border-bottom:0}
-
-/* FOOTER */
-footer{background:#1d1038;color:#ddd3ef;padding:28px 0;text-align:center;font-size:13px}
-
-/* MOBILE */
+.pack-grid{max-width:1200px;margin:auto;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.pack h2{font-size:42px;line-height:1.05;margin:8px 0 18px}
+.pack h2 .yellow{color:var(--yellow)}
+.pack p{line-height:1.7;color:#f0eafa}
+.features{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:22px 0}
+.feature{background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.18);padding:12px;border-radius:13px;font-weight:750;font-size:13px}
+.pay-card{background:#fff;color:var(--ink);border-radius:28px;padding:27px;text-align:center;box-shadow:0 20px 50px rgba(0,0,0,.18)}
+.pay-card h3{font-size:27px;margin:0 0 8px}.price{font-size:24px;font-weight:950;color:#5c22a3}
+.qr{width:min(270px,78vw);height:auto;display:block;margin:15px auto;border-radius:10px}
+.upi{font-size:12px;font-weight:800;color:#63308f}
+.paybtn{display:block;margin:12px auto 0;background:#6325c6;color:#fff;padding:12px;border-radius:11px;font-weight:900}
+.whatsapp{display:block;margin-top:10px;background:#29c86f;color:#fff;padding:12px;border-radius:11px;font-weight:900}
+.how-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.how{background:#fff;border:1px solid var(--border);border-radius:20px;padding:22px;box-shadow:0 8px 22px rgba(52,20,95,.06)}
+.how b{color:#6b2ab8}.how p{color:#667085;line-height:1.6}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:900px;margin:auto}
+.contact-card{background:#fff;border:1px solid var(--border);border-radius:22px;padding:25px;box-shadow:var(--shadow)}
+.contact-card h3{margin-top:0}.contact-card a{color:#5d22a2;font-weight:800}
+footer{background:#1c0b35;color:#eee;padding:24px;text-align:center;font-size:12px}
 @media(max-width:850px){
- .nav-inner{min-height:62px}
- .nav-links{gap:10px;overflow-x:auto;white-space:nowrap}
- .nav-links a{font-size:10px}
- .brand{font-size:14px;min-width:120px}
- .youtube-strip{margin-top:10px;padding:16px;flex-direction:column;align-items:flex-start}
- .strip-title{font-size:21px}
- .youtube-btn{width:100%;text-align:center}
- .hero{padding:38px 0 45px}
- .hero-grid{grid-template-columns:1fr;gap:28px}
- h1{font-size:43px}
- .hero p{font-size:14px}
- .video-wrap{min-height:380px}
- .explore-grid{grid-template-columns:1fr 1fr}
- .why-grid{grid-template-columns:1fr}
- .faq-grid{grid-template-columns:1fr}
- .contact-grid{grid-template-columns:1fr}
- section{padding:55px 0}
- .section-head h2{font-size:31px}
- .cta{padding:35px 22px}
- .cta h2{font-size:30px}
+  .links{gap:10px;font-size:10px}.navin{padding:10px 14px}.brand{font-size:13px}
+  .hero-grid,.pack-grid{grid-template-columns:1fr}.hero{padding-top:34px}
+  .hero-copy{order:1}.media-wrap{order:2}
+  .explore-grid{grid-template-columns:1fr 1fr}.parent-grid{grid-template-columns:1fr}
+  .why-grid{grid-template-columns:1fr}.how-grid{grid-template-columns:1fr}
+  .contact-grid{grid-template-columns:1fr}.pack h2{font-size:34px}
 }
 @media(max-width:520px){
- .container{width:91%}
- .explore-grid{grid-template-columns:1fr}
- .explore-card{min-height:auto}
- .nav-inner{gap:7px}
- .nav-links{max-width:70vw}
- .video-wrap{min-height:350px}
+  .links{gap:7px;font-size:8.5px}.explore-grid{grid-template-columns:1fr}
+  .section{padding:52px 15px}.hero{padding:32px 15px 42px}
+  h1{font-size:43px}.lead{font-size:15px}.why{padding:24px 16px}
+  .quote{font-size:19px}.features{grid-template-columns:1fr}
 }
-
-/* COMPLETE ACTIVITY PACK */
-.pack-section{
-  background:linear-gradient(135deg,#3b167a 0%,#6324bd 52%,#4c1c91 100%);
-  color:#fff;padding:78px 0;
-}
-.pack-grid{
-  display:grid;grid-template-columns:1fr 430px;gap:42px;align-items:center
-}
-.pack-copy .kicker{color:#ffd84d}
-.pack-copy h2{font-size:42px;line-height:1.1;margin:10px 0 16px;color:#fff}
-.pack-copy h2 span{color:#ffd84d}
-.pack-copy>p{color:#eee6ff;line-height:1.65;font-size:16px;max-width:650px}
-.pack-points{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:24px 0}
-.pack-point{
-  background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.18);
-  border-radius:15px;padding:14px;font-weight:800;font-size:13px
-}
-.pack-price{
-  display:inline-block;background:#ffd84d;color:#35166f;
-  font-size:22px;font-weight:900;padding:12px 18px;border-radius:13px;margin-top:8px
-}
-.pack-card{
-  background:#fff;color:var(--text);border-radius:28px;padding:27px;
-  text-align:center;box-shadow:0 22px 55px rgba(20,5,50,.30)
-}
-.pack-card h3{font-size:27px;color:var(--purple);margin:4px 0 8px}
-.pack-card p{font-size:13px;color:var(--muted);line-height:1.5}
-.qr-box{display:flex;justify-content:center;margin:15px 0 10px}
-.qr-box img{width:220px;height:220px;object-fit:contain;border-radius:8px}
-.upi-id{font-size:12px;font-weight:900;color:#6842a4;margin-bottom:13px}
-.pay-btn{
-  display:block;background:#5b20b4;color:#fff;padding:13px;border-radius:12px;
-  font-weight:900;margin:9px 0
-}
-.whatsapp-btn{background:#22c96b}
-.payment-note{font-size:11px!important;color:#777!important;margin-top:12px!important}
-@media(max-width:850px){
- .pack-grid{grid-template-columns:1fr}
- .pack-copy h2{font-size:34px}
-}
-@media(max-width:520px){
- .pack-points{grid-template-columns:1fr}
- .pack-card{padding:20px}
- .qr-box img{width:205px;height:205px}
-}
-
-
-/* PREMIUM WHAT KIDS EXPLORE */
-.explore-premium{
-  padding:78px 0 70px;
-  background:radial-gradient(circle at 8% 20%,rgba(255,218,92,.22),transparent 22%),
-             radial-gradient(circle at 92% 30%,rgba(240,82,165,.14),transparent 24%),
-             linear-gradient(180deg,#fffaf1 0%,#f8f5ff 100%);
-}
-.explore-heading{text-align:center;max-width:850px;margin:0 auto 42px}
-.explore-heading .brand-mini{font-size:12px;font-weight:900;letter-spacing:.5px;color:#6a35b5;margin-bottom:13px}
-.explore-badge{display:inline-block;background:#efe5ff;color:#6331a9;border-radius:999px;padding:7px 14px;font-size:11px;font-weight:900;letter-spacing:.4px;margin-bottom:12px}
-.explore-heading h2{font-size:40px;line-height:1.12;margin:0 0 14px;color:#291353}
-.explore-heading h2 span{color:#e0449b}
-.explore-heading p{font-size:16px;line-height:1.65;color:#625c70;margin:0}
-.explore-journey{display:grid;grid-template-columns:1fr auto 1fr auto 1fr auto 1fr;gap:12px;align-items:stretch}
-.explore-card{position:relative;min-height:285px;border-radius:24px;padding:25px 22px;border:1px solid rgba(80,42,130,.12);box-shadow:0 16px 38px rgba(52,28,91,.10);overflow:hidden;transition:transform .2s ease,box-shadow .2s ease}
-.explore-card:before{content:"";position:absolute;width:130px;height:130px;border-radius:50%;right:-48px;top:-48px;background:rgba(255,255,255,.55)}
-.explore-card:hover{transform:translateY(-5px);box-shadow:0 22px 45px rgba(52,28,91,.15)}
-.ai-card{background:linear-gradient(145deg,#eef8ff,#f9fdff)}
-.computer-card{background:linear-gradient(145deg,#edfff6,#fbfffd)}
-.thinking-card{background:linear-gradient(145deg,#fff0fb,#fffaff)}
-.safe-card{background:linear-gradient(145deg,#fff9df,#fffdf2)}
-.explore-icon{font-size:39px;margin-bottom:7px}.step{position:absolute;right:19px;top:18px;font-size:11px;font-weight:900;color:#8a70a9;letter-spacing:1px}
-.explore-card h3{font-size:21px;color:#2d1858;margin:5px 0 12px}
-.explore-card p{font-size:13.5px;line-height:1.62;color:#5f5a68;margin:0 0 18px}
-.card-tag{display:inline-block;padding:7px 10px;border-radius:999px;background:rgba(255,255,255,.75);color:#6331a9;font-size:9px;font-weight:900;letter-spacing:.7px}
-.explore-arrow{display:flex;align-items:center;justify-content:center;font-size:25px;font-weight:900;color:#cf4a9a}
-.explore-bottom{max-width:900px;margin:32px auto 0;padding:18px 22px;border-radius:18px;background:#fff;border:1px solid rgba(93,50,148,.12);box-shadow:0 10px 28px rgba(52,28,91,.07);text-align:center;color:#5d5867;font-size:14px;line-height:1.6}
-.explore-bottom strong{color:#4c2291;margin-right:5px}
-@media(max-width:950px){.explore-journey{grid-template-columns:1fr 1fr}.explore-arrow{display:none}}
-@media(max-width:560px){.explore-premium{padding:55px 0}.explore-heading h2{font-size:31px}.explore-heading p{font-size:14px}.explore-journey{grid-template-columns:1fr}.explore-card{min-height:auto;padding:22px}}
-
 </style>
 </head>
-
 <body>
 
-<nav>
-  <div class="container nav-inner">
-    <a class="brand" href="#home">🧠 <span>SMART BRAIN</span> MISSION</a>
-    <div class="nav-links">
+<nav class="nav">
+  <div class="navin">
+    <a class="brand" href="#top">🧠 SMART <span>BRAIN MISSION</span></a>
+    <div class="links">
       <a href="#explore">What Kids Explore</a>
       <a href="#why">Why Us?</a>
-      <a href="#questions">Parents' Questions</a>
+      <a href="#parents">Parents' Questions</a>
       <a href="#youtube">YouTube</a>
-      <a href="#activity-pack">Activity Pack</a>
+      <a href="#pack">Activity Pack</a>
       <a href="#contact">Contact Us</a>
     </div>
   </div>
 </nav>
 
-<main id="home">
+<main id="top">
 
-  <!-- YOUTUBE STAYS HIGH ON THE PAGE -->
-  <div class="container">
-    <div class="youtube-strip">
-      <div>
-        <div class="strip-kicker">🧠 SMART BRAIN MISSION</div>
-        <div class="strip-title">For Learning AI in a Fun Way 🚀</div>
-        <div class="strip-text">
-          Fun, child-friendly videos that turn AI and technology into curiosity, questions and creativity.
-        </div>
-      </div>
-      <a class="youtube-btn" href="https://www.youtube.com/@SmartBrainMission" target="_blank" rel="noopener">
-        ▶ Subscribe to Our YouTube Channel
-      </a>
-    </div>
-  </div>
-
-  <!-- HERO: VIDEO REPLACES GIRL/COMPUTER BOX -->
-  
-<section class="explore-premium" id="explore">
-  <div class="container">
-    <div class="explore-heading">
-      <div class="brand-mini">🧠 SMART BRAIN MISSION</div>
-      <div class="explore-badge">FOR CURIOUS MINDS • 5+</div>
-      <h2>What Will Your Child <span>Explore?</span></h2>
-      <p>Not just screen time. A guided journey from <b>curiosity → thinking → creating → responsible technology use.</b></p>
-    </div>
-    <div class="explore-journey">
-      <div class="explore-card ai-card">
-        <div class="explore-icon">🤖</div><div class="step">01</div>
-        <h3>AI Made Simple</h3>
-        <p>AI ko real-life examples, stories aur fun activities ke through samjhana — bina complicated jargon ke.</p>
-        <div class="card-tag">UNDERSTAND AI</div>
-      </div>
-      <div class="explore-arrow">→</div>
-      <div class="explore-card computer-card">
-        <div class="explore-icon">💻</div><div class="step">02</div>
-        <h3>Computer Skills</h3>
-        <p>Technology ko sirf entertainment nahi — practical learning, digital confidence aur useful skills ke liye use karna.</p>
-        <div class="card-tag">BUILD SKILLS</div>
-      </div>
-      <div class="explore-arrow">→</div>
-      <div class="explore-card thinking-card">
-        <div class="explore-icon">🔎</div><div class="step">03</div>
-        <h3>Critical Thinking</h3>
-        <p>Question karo, compare karo, clues dekho aur reason karo — har answer ko blindly accept mat karo.</p>
-        <div class="card-tag">THINK DEEPER</div>
-      </div>
-      <div class="explore-arrow">→</div>
-      <div class="explore-card safe-card">
-        <div class="explore-icon">🛡️</div><div class="step">04</div>
-        <h3>Create Smart & Safe</h3>
-        <p>Ideas ko create karna aur AI & technology ko thoughtful, safe aur responsible tareeke se use karna.</p>
-        <div class="card-tag">CREATE RESPONSIBLY</div>
+<section class="hero">
+  <div class="hero-grid">
+    <div class="hero-copy">
+      <span class="badge">FOR CURIOUS MINDS • 5+</span>
+      <h1>Learn AI.<br><span class="pink">Think Smart.</span><br>Create More.</h1>
+      <p class="lead">Smart Brain Mission makes AI, computer skills and critical thinking simple, colourful and fun through activity-based learning.</p>
+      <p class="hero-note">We don't want children to only use technology — we want them to understand it, question it and create with it.</p>
+      <div class="btns">
+        <a class="btn primary" href="#why">🧠 Why Smart Brain Mission?</a>
+        <a class="btn youtube" href="#youtube">▶ Watch & Learn</a>
       </div>
     </div>
-    <div class="explore-bottom">
-      <strong>Our goal?</strong>
-      <span>Children who don't just ask “How does this work?” — but also ask “Why?” and “What can I create with it?”</span>
+    <div class="media-wrap">
+      <div class="media-card">
+        <video controls playsinline preload="metadata" poster="assets/video-poster.jpg">
+          <source src="assets/smart-brain-mission-video.mp4" type="video/mp4">
+          Your browser does not support the video.
+        </video>
+        <div class="media-label">▶ SOUND ON • LEARN • THINK • CREATE</div>
+      </div>
+      <div class="sound-tip">🎧 Tap ▶ to hear the video with sound. Mobile browsers may block automatic sound.</div>
     </div>
   </div>
 </section>
 
+<section class="section alt" id="explore">
+  <div class="wrap">
+    <div class="kicker">🧠 SMART BRAIN MISSION • OUR LEARNING WORLD</div>
+    <h2 class="title">What Kids Explore</h2>
+    <p class="subtitle">Not just screen use. We turn technology into questions, experiments, creativity and real-world thinking.</p>
+    <div class="explore-grid">
+      <div class="explore-card card"><div class="icon">🤖</div><h3>AI for Kids</h3><p>AI ko stories, simple examples aur fun activities ke through samajhna — bina boring theory ke.</p><span class="pill">Understand • Explore • Ask</span></div>
+      <div class="explore-card card"><div class="icon">💻</div><h3>Computer Skills</h3><p>Computer ko sirf entertainment ke liye nahi — practical learning, digital confidence aur useful skills ke liye use karna.</p><span class="pill">Learn • Practice • Build</span></div>
+      <div class="explore-card card"><div class="icon">🔎</div><h3>Critical Thinking</h3><p>Observe karo, compare karo, questions poochho aur reason karo — answer ko blindly accept mat karo.</p><span class="pill">Question • Verify • Reason</span></div>
+      <div class="explore-card card"><div class="icon">🔐</div><h3>Smart & Safe</h3><p>Technology aur AI ko responsible, thoughtful aur safe way mein use karna bhi learning ka part hai.</p><span class="pill">Safe • Responsible • Smart</span></div>
+    </div>
+  </div>
+</section>
 
-  <!-- WHY -->
-  <section class="why" id="why">
-    <div class="container">
-      <div class="why-box">
-        <div class="kicker">WHY SMART BRAIN MISSION?</div>
-        <h2 style="color:var(--purple);font-size:38px;margin:8px 0 16px">We Don't Just Teach AI.</h2>
-        <div class="quote">
-          “AI ko bachchon ke brain ka replacement banana nahi hai.
-          <span>AI ki duniya mein bachchon ka brain aur SMART banana hai.</span>”
-        </div>
-
-        <div class="why-grid">
-          <div class="mini"><b>🧠 Understand</b><p>Technology kaise kaam karti hai, uski basic understanding develop karna.</p></div>
-          <div class="mini"><b>❓ Question</b><p>Har answer ko blindly accept karne ke bajay questions poochna seekhna.</p></div>
-          <div class="mini"><b>✨ Create</b><p>AI ko shortcut nahi, ideas ko create karne ke ek useful tool ki tarah dekhna.</p></div>
-        </div>
+<section class="section" id="why">
+  <div class="wrap">
+    <div class="kicker">💡 OUR CORE APPROACH</div>
+    <h2 class="title">Why Smart Brain Mission?</h2>
+    <div class="why">
+      <p class="quote">“AI ko bachchon ke brain ka replacement banana nahi hai. <span class="pink">AI ki duniya mein bachchon ka brain aur bhi SMART banana hai.</span>”</p>
+      <div class="why-grid">
+        <div class="why-card"><strong>❓ Question Karo</strong><p>Sawaal poochho, curious raho aur har cheez ko samajhne ki koshish karo.</p></div>
+        <div class="why-card"><strong>🧠 Think Karo</strong><p>AI ko shortcut ki tarah nahi — apne dimaag ke saath use karo. Logic lagao aur khud socho.</p></div>
+        <div class="why-card"><strong>🔎 Verify Karo</strong><p>AI ka answer milna aur answer ka correct hona alag baat hai. Check, compare aur verify karna seekho.</p></div>
+        <div class="why-card"><strong>🎨 Create Karo</strong><p>Naye ideas banao, experiment karo aur technology ko creation ke tool ki tarah use karo.</p></div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- PARENTS QUESTIONS -->
-  <section class="faq" id="questions">
-    <div class="container">
-      <div class="section-head">
-        <div class="kicker">FOR PARENTS ❤️</div>
-        <h2>Questions Parents Ask. Answers We Believe In.</h2>
-        <p>
-          Aapke genuine concerns important hain. Hum hype ke bajay simple,
-          honest aur practical approach ko prefer karte hain.
-        </p>
+<section class="section parents" id="parents">
+  <div class="wrap">
+    <div class="kicker">💬 FOR PARENTS & TEACHERS</div>
+    <h2 class="title">Parents' Top Questions — Our Honest Answers</h2>
+    <p class="subtitle">Genuine concerns ko ignore nahi karna chahiye. Isliye hum simple aur honest answers ke saath apni approach samjhate hain.</p>
+    <div class="parent-grid">
+      <div class="qcard"><div class="q"><span>❓</span> Itni chhoti age mein AI ki kya zarurat hai?</div><div class="ans">AI expert banne ki zarurat nahi hai. Lekin curiosity, digital awareness aur critical thinking jitni early develop hogi, utna bachcha technology ko responsibly samajh paayega.</div></div>
+      <div class="qcard"><div class="q"><span>❓</span> AI se bachcha lazy nahi ho jayega?</div><div class="ans">Ho sakta hai agar AI ko homework shortcut ki tarah use kiya jaye. Isi liye hum AI + Critical Thinking approach rakhte hain — question, verification aur creation.</div></div>
+      <div class="qcard"><div class="q"><span>❓</span> Kya ye sirf ChatGPT sikhana hai?</div><div class="ans">Sirf ChatGPT nahi. AI kya hai, real life mein kahan use hota hai, information ko kaise question karein aur technology safely kaise use karein — ye broader learning hai.</div></div>
+      <div class="qcard"><div class="q"><span>❓</span> Mera bachcha computer properly nahi jaanta.</div><div class="ans">Koi problem nahi. Learning age-appropriate aur activity-based rakhi ja sakti hai. Basic computer understanding se gradually AI concepts ki taraf badha ja sakta hai.</div></div>
+      <div class="qcard"><div class="q"><span>❓</span> Iska benefit school mein kya hoga?</div><div class="ans">Observation, questioning, problem solving, creativity aur technology confidence jaise skills develop karne mein help mil sakti hai.</div></div>
+      <div class="qcard"><div class="q"><span>❓</span> AI ko blindly trust kyun nahi karna?</div><div class="ans">AI useful hai, lekin iska answer hamesha automatically correct nahi hota. Bachchon ko verify, compare aur reason karna sikhana important hai.</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section lav" id="youtube">
+  <div class="youtube-cta">
+    <div class="emoji">🤖 ✨ 🧠</div>
+    <h2>For Learning AI in a Fun Way</h2>
+    <p>Website par explore karo — aur videos ke through AI ko stories, examples aur fun activities ke saath seekho.</p>
+    <a class="btn youtube" href="https://www.youtube.com/@smartbrainmission" target="_blank" rel="noopener">▶ Subscribe to Our YouTube Channel</a>
+  </div>
+</section>
+
+<section class="section pack" id="pack">
+  <div class="pack-grid">
+    <div>
+      <div style="font-weight:850;color:#ffe36a;font-size:12px">📚 SMART BRAIN MISSION ACTIVITY PACK</div>
+      <h2>Explore the <span class="yellow">Complete Activity Pack</span> 🚀</h2>
+      <p>A fun, learning-focused pack designed for curious minds 5+. Children don't just read — they question, solve, observe, create and explore.</p>
+      <div class="features">
+        <div class="feature">🤖 AI & Technology Learning Activities</div>
+        <div class="feature">👩‍🏫 Parent / Teacher Guide</div>
+        <div class="feature">✅ Verified Answer Key</div>
+        <div class="feature">💡 AI Explorer Certificate</div>
       </div>
+      <a class="btn yellow" href="assets/free-sample.pdf" target="_blank">🎁 Try the Free Sample First</a>
+    </div>
+    <div class="pay-card">
+      <div style="font-size:30px">📱</div>
+      <h3>Get the Complete Pack</h3>
+      <p>Scan the QR code and pay <b>₹99</b> for the Complete Activity Pack.</p>
+      <img class="qr" src="assets/upi-qr.png" alt="UPI payment QR code for Smart Brain Mission"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+      <div style="display:none;color:#b42318;font-weight:800;padding:25px">QR image could not be loaded.<br>Check that <b>assets/upi-qr.png</b> is uploaded.</div>
+      <div class="upi">UPI ID: sirohi1919941@ybl</div>
+      <a class="paybtn" href="upi://pay?pa=sirohi1919941@ybl&pn=Smart%20Brain%20Mission&am=99&cu=INR">💳 Pay ₹99</a>
+      <div style="font-size:11px;color:#777;margin-top:10px">After payment, send your payment screenshot + WhatsApp number to receive the Complete Activity Pack.</div>
+      <a class="whatsapp" href="https://wa.me/916006485629?text=Hello%20Smart%20Brain%20Mission%2C%20I%20have%20paid%20%E2%82%B999%20for%20the%20Complete%20Activity%20Pack.%20Please%20send%20me%20the%20pack.">💬 Send Payment on WhatsApp</a>
+    </div>
+  </div>
+</section>
 
-      <div class="faq-grid">
-        <div class="faq-card">
-          <div class="question"><span class="qmark">?</span>Itni chhoti age mein AI ki kya zarurat hai?</div>
-          <div class="answer">AI expert banna zaroori nahi. Curiosity, digital awareness aur critical thinking early develop hone se bachcha technology ko more responsibly samajh sakta hai.</div>
-        </div>
-        <div class="faq-card">
-          <div class="question"><span class="qmark">?</span>AI se bachcha lazy nahi ho jayega?</div>
-          <div class="answer">Ho sakta hai agar AI ko homework shortcut ki tarah use kiya jaye. Isi liye hamara focus question, verification aur creation par hai.</div>
-        </div>
-        <div class="faq-card">
-          <div class="question"><span class="qmark">?</span>Kya ye sirf ChatGPT sikhana hai?</div>
-          <div class="answer">Nahi. AI kya hai, real life mein kahan use hota hai, information ko question kaise karein aur technology ko safely kaise use karein — ye broader learning hai.</div>
-        </div>
-        <div class="faq-card">
-          <div class="question"><span class="qmark">?</span>Mera bachcha computer properly nahi jaanta.</div>
-          <div class="answer">Koi problem nahi. Learning age-appropriate aur activity-based rakhi ja sakti hai. Basic computer understanding se gradually AI concepts ki taraf badha ja sakta hai.</div>
-        </div>
-        <div class="faq-card">
-          <div class="question"><span class="qmark">?</span>Iska benefit school mein kya hoga?</div>
-          <div class="answer">Observation, questioning, problem solving, creativity aur technology confidence jaise skills develop karne mein help mil sakti hai.</div>
-        </div>
-        <div class="faq-card">
-          <div class="question"><span class="qmark">?</span>AI ko blindly trust kyun nahi karna?</div>
-          <div class="answer">AI useful hai, lekin iska answer hamesha automatically correct nahi hota. Bachchon ko verify, compare aur reason karna sikhana important hai.</div>
-        </div>
+<section class="section alt">
+  <div class="wrap">
+    <div class="kicker">🪜 SIMPLE LEARNING JOURNEY</div>
+    <h2 class="title">How It Works</h2>
+    <div class="how-grid">
+      <div class="how"><b>1️⃣ Explore</b><p>Website, videos aur free sample se Smart Brain Mission ki approach samjhiye.</p></div>
+      <div class="how"><b>2️⃣ Try</b><p>Child ko activities explore karne dijiye aur questions poochne dijiye.</p></div>
+      <div class="how"><b>3️⃣ Go Further</b><p>Agar approach useful lage, complete activity pack ke saath learning ko continue kijiye.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section lav" id="contact">
+  <div class="wrap">
+    <div class="kicker">WE'RE HERE TO HELP</div>
+    <h2 class="title">Contact Smart Brain Mission 💬</h2>
+    <p class="subtitle">Parents, teachers ya anyone interested in the mission — feel free to reach out.</p>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <h3>📱 WhatsApp & Call Support</h3>
+        <p>📞 <a href="tel:+916006485629">+91 60064 85629</a></p>
+        <p>💬 <a href="https://wa.me/916006485629">WhatsApp Us</a></p>
+      </div>
+      <div class="contact-card">
+        <h3>📧 Email Support</h3>
+        <p><a href="mailto:smartbrainmission@gmail.com">smartbrainmission@gmail.com</a></p>
       </div>
     </div>
-  </section>
-
-  <!-- YOUTUBE CTA -->
-  <section style="padding-top:25px">
-    <div class="container">
-      <div class="cta">
-        <div style="font-size:38px">🤖 ✨ 🧠</div>
-        <h2>For Learning AI in a Fun Way</h2>
-        <p>Website par explore karo — aur videos ke through AI ko stories, examples aur fun activities ke saath seekho.</p>
-        <a class="youtube-btn" href="https://www.youtube.com/@SmartBrainMission" target="_blank" rel="noopener">
-          ▶ Subscribe to Our YouTube Channel
-        </a>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- COMPLETE ACTIVITY PACK / PAYMENT -->
-  <section class="pack-section" id="activity-pack">
-    <div class="container pack-grid">
-      <div class="pack-copy">
-        <div class="kicker">📚 SMART BRAIN MISSION ACTIVITY PACK</div>
-        <h2>Explore the <span>Complete Activity Pack</span> 🚀</h2>
-        <p>
-          A fun, learning-focused pack designed for curious minds 5+.
-          Children don't just read — they question, solve, observe, create and explore.
-        </p>
-
-        <div class="pack-points">
-          <div class="pack-point">🤖 AI & Technology Learning Activities</div>
-          <div class="pack-point">👨‍👩‍👧 Parent / Teacher Guide</div>
-          <div class="pack-point">✅ Verified Answer Key</div>
-          <div class="pack-point">🏅 AI Explorer Certificate</div>
-        </div>
-
-        <a class="btn btn-yellow" href="#activity-pack">🎁 Try the Free Sample First</a>
-        <div class="pack-price">Complete Pack • ₹99</div>
-      </div>
-
-      <div class="pack-card">
-        <div style="font-size:30px">📱</div>
-        <h3>Get the Complete Pack</h3>
-        <p>Scan the QR code and pay ₹99 for the Complete Activity Pack.</p>
-
-        <div class="qr-box">
-          <img src="assets/payment-qr.png" alt="UPI payment QR code for Smart Brain Mission">
-        </div>
-
-        <div class="upi-id">UPI ID: sirohi1919941@ybl</div>
-
-        <a class="pay-btn" href="upi://pay?pa=sirohi1919941@ybl&pn=Smart%20Brain%20Mission&am=99&cu=INR">
-          💳 Pay ₹99
-        </a>
-
-        <p class="payment-note">
-          After payment, send your payment screenshot + your WhatsApp number
-          to receive the Complete Activity Pack.
-        </p>
-
-        <a class="pay-btn whatsapp-btn" href="https://wa.me/916006485629?text=Hi%20Smart%20Brain%20Mission,%20I%20have%20paid%20%E2%82%B999%20for%20the%20Complete%20Activity%20Pack.%20I%20am%20sharing%20my%20payment%20screenshot.%20My%20WhatsApp%20number%20is%3A" target="_blank" rel="noopener">
-          💬 Send Payment on WhatsApp
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section class="contact" id="contact">
-    <div class="container">
-      <div class="section-head">
-        <div class="kicker">WE'RE HERE TO HELP</div>
-        <h2>Contact Smart Brain Mission 💬</h2>
-        <p>Parents, teachers ya anyone interested in the mission — feel free to reach out.</p>
-      </div>
-
-      <div class="contact-grid">
-        <div class="contact-card">
-          <h3>📱 WhatsApp & Call Support</h3>
-          <a class="contact-link" href="tel:+916006485629">📞 +91 60064 85629</a>
-          <a class="contact-link" href="https://wa.me/916006485629" target="_blank" rel="noopener">💬 WhatsApp Us</a>
-        </div>
-        <div class="contact-card">
-          <h3>📧 Email Support</h3>
-          <a class="contact-link" href="mailto:smartbrainmission@gmail.com">smartbrainmission@gmail.com</a>
-        </div>
-      </div>
-    </div>
-  </section>
+  </div>
+</section>
 
 </main>
-
-<footer>
-  © 2026 Smart Brain Mission • Learn AI. Think Smart. Create More.
-</footer>
-
-<script>
-const video = document.getElementById('learningVideo');
-const soundBtn = document.getElementById('soundBtn');
-
-soundBtn.addEventListener('click', () => {
-  video.muted = false;
-  video.volume = 1;
-  video.play().catch(()=>{});
-  soundBtn.textContent = '🔊 SOUND ON';
-});
-
-video.addEventListener('volumechange', () => {
-  soundBtn.textContent = video.muted ? '🔊 TAP FOR SOUND' : '🔊 SOUND ON';
-});
-</script>
-
+<footer>© 2026 Smart Brain Mission • Learn AI. Think Smart. Create More.</footer>
 </body>
 </html>

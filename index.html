@@ -137,6 +137,42 @@ footer{background:#1c0b35;color:#eee;padding:24px;text-align:center;font-size:12
   .quote{font-size:19px}.features{grid-template-columns:1fr}
 }
 </style>
+
+<style>
+.top-video-hero{
+  background:linear-gradient(135deg,#fffaf7 0%,#f8f1ff 52%,#edfaff 100%);
+  padding:46px 22px 54px;
+}
+.top-video-inner{
+  max-width:1200px;margin:auto;display:grid;grid-template-columns:1fr 1fr;
+  gap:42px;align-items:center;
+}
+.top-video-inner h1{
+  font-size:clamp(42px,5vw,72px);line-height:.96;margin:18px 0 22px;
+  letter-spacing:-2.8px;
+}
+.top-video-inner h1 .pink{color:var(--pink)}
+.top-video-copy .lead{font-size:17px;line-height:1.65;color:#5e6170;max-width:600px}
+.top-video-copy .hero-note{font-weight:800;color:#5b248f;line-height:1.55;margin:20px 0}
+.top-video-box{
+  background:#120922;border:7px solid #2f1756;border-radius:30px;
+  overflow:hidden;box-shadow:0 20px 45px rgba(40,13,74,.25);position:relative;
+}
+.top-video-box video{
+  display:block;width:100%;aspect-ratio:16/10;object-fit:cover;
+  background:#120922;
+}
+.video-badge{
+  position:absolute;left:18px;bottom:16px;background:#ffd84d;color:#29104c;
+  border-radius:999px;padding:8px 13px;font-size:11px;font-weight:900;
+  pointer-events:none;
+}
+@media(max-width:850px){
+  .top-video-inner{grid-template-columns:1fr;gap:26px}
+  .top-video-hero{padding:32px 15px 42px}
+}
+</style>
+
 </head>
 <body>
 
@@ -155,6 +191,32 @@ footer{background:#1c0b35;color:#eee;padding:24px;text-align:center;font-size:12
 </nav>
 
 <main id="top">
+
+<section class="top-video-hero" id="top-video">
+  <div class="top-video-inner">
+    <div class="top-video-copy">
+      <span class="badge">FOR CURIOUS MINDS • 5+</span>
+      <h1>Learn AI.<br><span class="pink">Think Smart.</span><br>Create More.</h1>
+      <p class="lead">Smart Brain Mission makes AI, computer skills and critical thinking simple, colourful and fun through activity-based learning.</p>
+      <p class="hero-note">We don't want children to only use technology — we want them to understand it, question it and create with it.</p>
+      <div class="btns">
+        <a class="btn primary" href="#why">🧠 Why Smart Brain Mission?</a>
+        <a class="btn youtube" href="#youtube">▶ Watch &amp; Learn</a>
+      </div>
+    </div>
+    <div>
+      <div class="top-video-box">
+        <video controls playsinline preload="metadata" poster="assets/video-poster.jpg">
+          <source src="assets/smart-brain-mission-video.mp4" type="video/mp4">
+          Your browser does not support the video.
+        </video>
+        <div class="video-badge">🔊 TAP ▶ FOR SOUND</div>
+      </div>
+      <div class="sound-tip">🎧 Tap the video to play with sound. Mobile browsers require a tap before audio can play.</div>
+    </div>
+  </div>
+</section>
+
 
 <section class="hero">
   <div class="hero-grid">

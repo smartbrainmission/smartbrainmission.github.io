@@ -175,51 +175,167 @@ footer{background:#1c0b35;color:#eee;padding:24px;text-align:center;font-size:12
 
 
 <style>
-/* PREMIUM REFRESH — ONLY: Kids Explore / Why / Parents */
-#explore{position:relative;overflow:hidden;background:radial-gradient(circle at 8% 15%,rgba(97,170,245,.16),transparent 25%),radial-gradient(circle at 92% 70%,rgba(232,62,159,.12),transparent 28%),linear-gradient(135deg,#fffdf8,#f8f4ff 52%,#f2fbff)}
-#explore:before{content:"✦  LEARN  •  THINK  •  CREATE  •  EXPLORE  ✦";position:absolute;top:18px;left:50%;transform:translateX(-50%);font-size:10px;font-weight:900;letter-spacing:2px;color:#9a64c9;opacity:.55;white-space:nowrap}
-#explore .wrap,#why .wrap,#parents .wrap{position:relative;z-index:1}
-#explore .title{font-size:clamp(32px,4.5vw,50px);background:linear-gradient(90deg,#35145f,#8a2fcb,#e83e9f);-webkit-background-clip:text;background-clip:text;color:transparent}
-#explore .subtitle{font-size:15px;max-width:900px}
-.explore-card{min-height:290px;padding:0 20px 22px;border:1px solid rgba(110,74,160,.14);box-shadow:0 18px 40px rgba(52,20,95,.10);background:#fff!important}
-.explore-card:after{content:"";position:absolute;width:110px;height:110px;border-radius:50%;right:-45px;bottom:-45px;background:var(--accent);opacity:.08}
-.explore-card .icon{height:108px;margin:0 -20px 17px;padding:16px 20px;display:flex;align-items:center;background:linear-gradient(135deg,rgba(255,255,255,.8),rgba(255,255,255,.2));border-radius:20px 20px 50% 50% / 20px 20px 24px 24px;font-size:36px}
-.explore-card .explore-art{width:100%;height:82px;object-fit:cover;border-radius:15px;margin-top:-104px;margin-bottom:18px;position:relative;z-index:2;opacity:.96;box-shadow:0 8px 18px rgba(40,20,70,.12)}
-.explore-card h3{font-size:20px;margin:10px 0 9px;position:relative;z-index:2}
-.explore-card p{font-size:13.5px;position:relative;z-index:2}
-.explore-card .pill{position:relative;z-index:2}
-#why{background:linear-gradient(180deg,#fff 0%,#fbf7ff 55%,#f4fbff 100%);position:relative;overflow:hidden}
-#why:after{content:"🧠";position:absolute;font-size:170px;right:-25px;top:25px;opacity:.045;transform:rotate(12deg)}
-#why .title{font-size:clamp(32px,4.5vw,50px)}
-#why .why{max-width:1180px;border-radius:34px;padding:34px;background:linear-gradient(135deg,rgba(255,255,255,.96),rgba(250,246,255,.96));border:1px solid rgba(110,74,160,.15);box-shadow:0 25px 60px rgba(52,20,95,.12);position:relative;overflow:hidden}
-#why .why:before{content:"SMART THINKING";position:absolute;right:28px;top:20px;font-size:10px;letter-spacing:2px;font-weight:900;color:#d78abc}
-#why .quote{font-size:clamp(20px,2.5vw,28px);max-width:1000px;padding:20px 26px;border-radius:22px;background:linear-gradient(100deg,#f5efff,#fff2fa);border:1px solid #eadcf7;box-shadow:0 10px 25px rgba(52,20,95,.06)}
-#why .why-grid{gap:18px}
-#why .why-card{min-height:135px;border:0;border-radius:22px;padding:22px;box-shadow:0 10px 26px rgba(52,20,95,.07);position:relative;overflow:hidden}
-#why .why-card:after{content:"";position:absolute;right:-22px;bottom:-28px;width:85px;height:85px;border-radius:50%;background:#8b5cf6;opacity:.06}
-#why .why-card strong{font-size:18px}
-#why .why-card p{font-size:14px}
-#parents{background:radial-gradient(circle at 15% 20%,rgba(232,62,159,.09),transparent 23%),radial-gradient(circle at 90% 75%,rgba(97,170,245,.10),transparent 25%),linear-gradient(135deg,#fff,#faf5ff)}
-#parents .title{font-size:clamp(30px,4.2vw,48px);background:linear-gradient(90deg,#35145f,#e83e9f);-webkit-background-clip:text;background-clip:text;color:transparent}
-#parents .subtitle{max-width:820px}
-#parents .parent-grid{gap:20px}
-#parents .qcard{min-height:205px;border:1px solid rgba(110,74,160,.13);border-radius:24px;padding:24px 22px;box-shadow:0 15px 34px rgba(52,20,95,.08);position:relative;overflow:hidden;transition:transform .2s,box-shadow .2s}
-#parents .qcard:hover{transform:translateY(-5px);box-shadow:0 20px 42px rgba(52,20,95,.13)}
-#parents .qcard:before{content:"";position:absolute;left:0;top:0;bottom:0;width:5px;background:linear-gradient(180deg,#e83e9f,#6d28d9)}
-#parents .qcard:after{content:"?";position:absolute;right:12px;top:4px;font-size:58px;font-weight:950;color:#7c3aed;opacity:.045}
-#parents .q{font-size:17px;padding-right:25px}
-#parents .q span{display:inline-flex;align-items:center;justify-content:center;width:27px;height:27px;border-radius:50%;background:#ffe4f3;margin-right:5px}
-#parents .ans{font-size:13.5px;line-height:1.65}
-@media(max-width:850px){
-  #explore:before{display:none}
-  .explore-card{min-height:270px}
-  #why .why{padding:24px 16px}
-  #why .quote{padding:18px}
+/* FINAL PREMIUM DESIGN — ONLY: What Kids Explore / Why Smart Brain Mission / Parents' Questions */
+#explore{
+  position:relative;overflow:hidden;
+  background:
+    radial-gradient(circle at 7% 18%,rgba(122,91,255,.16),transparent 22%),
+    radial-gradient(circle at 92% 78%,rgba(255,94,190,.14),transparent 24%),
+    linear-gradient(135deg,#fffaff 0%,#f7f4ff 48%,#f0fbff 100%);
+  padding-top:64px;padding-bottom:62px;
 }
-@media(max-width:520px){
-  .explore-card{min-height:255px}
-  .explore-card .explore-art{height:78px}
-  #parents .qcard{min-height:0}
+#explore:before{
+  content:"✦  LEARN  •  THINK  •  CREATE  •  EXPLORE  ✦";
+  position:absolute;top:22px;left:50%;transform:translateX(-50%);
+  color:#8d63c7;font-size:10px;font-weight:950;letter-spacing:2px;
+  white-space:nowrap;opacity:.7;
+}
+#explore .kicker,#why .kicker,#parents .kicker{font-size:11px;letter-spacing:.7px}
+#explore .title{
+  font-size:clamp(34px,4.5vw,52px);
+  background:linear-gradient(90deg,#171b62,#8b2fc9,#ef3d9f);
+  -webkit-background-clip:text;background-clip:text;color:transparent;margin-bottom:10px;
+}
+#explore .title:after{
+  content:"";display:block;width:78px;height:5px;border-radius:99px;margin:14px auto 0;
+  background:linear-gradient(90deg,#496cff,#ec42a7,#ffad35);
+}
+#explore .subtitle{font-size:15px;max-width:900px;margin-bottom:30px}
+.explore-grid{gap:16px;align-items:stretch}
+.explore-card{
+  min-height:365px!important;padding:0 18px 20px!important;
+  border:1px solid rgba(111,77,170,.14)!important;border-radius:25px!important;
+  background:rgba(255,255,255,.94)!important;box-shadow:0 18px 42px rgba(49,30,99,.12)!important;
+  overflow:hidden;position:relative;transition:transform .25s ease,box-shadow .25s ease;
+}
+.explore-card:hover{transform:translateY(-7px);box-shadow:0 26px 55px rgba(49,30,99,.17)!important}
+.explore-card:before{
+  height:7px!important;background:linear-gradient(90deg,var(--accent),#fff,var(--accent))!important;
+}
+.explore-card:after{
+  content:"";position:absolute;width:150px;height:150px;border-radius:50%;
+  right:-65px;bottom:-75px;background:var(--accent);opacity:.10;
+}
+.explore-card .icon{
+  height:145px!important;margin:0 -18px 10px!important;padding:12px!important;
+  display:flex;align-items:center;justify-content:center;border-radius:20px 20px 48% 48% / 20px 20px 28px 28px!important;
+  font-size:72px!important;position:relative;z-index:1;
+}
+.explore-card:nth-child(1) .icon{background:linear-gradient(145deg,#edf6ff,#dceeff)}
+.explore-card:nth-child(2) .icon{background:linear-gradient(145deg,#effff8,#dcf9eb)}
+.explore-card:nth-child(3) .icon{background:linear-gradient(145deg,#fff0fb,#f6ddff)}
+.explore-card:nth-child(4) .icon{background:linear-gradient(145deg,#fffbea,#fff0c5)}
+.explore-card h3{font-size:20px!important;text-align:center;margin:10px 0!important;position:relative;z-index:2}
+.explore-card:nth-child(1) h3{color:#2864d7}.explore-card:nth-child(2) h3{color:#13955f}
+.explore-card:nth-child(3) h3{color:#8634d4}.explore-card:nth-child(4) h3{color:#e97b00}
+.explore-card p{font-size:13.5px!important;line-height:1.7!important;text-align:center;color:#555d6d!important;position:relative;z-index:2}
+.explore-card .pill{
+  display:block!important;width:max-content;max-width:100%;margin:18px auto 0!important;
+  color:#fff!important;padding:8px 15px!important;border-radius:999px!important;
+  font-size:11px!important;font-weight:950!important;position:relative;z-index:2;
+}
+.explore-card:nth-child(1) .pill{background:#3477ee}.explore-card:nth-child(2) .pill{background:#16a86b}
+.explore-card:nth-child(3) .pill{background:#8b43db}.explore-card:nth-child(4) .pill{background:#f28b08}
+
+#why{
+  position:relative;overflow:hidden;background:linear-gradient(180deg,#faf8ff 0%,#fff 42%,#f7f2ff 100%);
+  padding-top:70px;padding-bottom:72px;
+}
+#why:before{
+  content:"";position:absolute;inset:0;
+  background:radial-gradient(circle at 4% 40%,rgba(76,77,255,.12),transparent 18%),
+             radial-gradient(circle at 96% 35%,rgba(236,66,167,.12),transparent 18%);
+}
+#why .title{font-size:clamp(34px,4.5vw,52px);margin-bottom:24px}
+#why .why{
+  max-width:1180px!important;padding:28px!important;border-radius:30px!important;
+  background:linear-gradient(135deg,#21145d,#3e1b87 54%,#5b26ba)!important;
+  border:0!important;color:#fff;box-shadow:0 26px 65px rgba(42,22,107,.28)!important;
+  position:relative;overflow:hidden;
+}
+#why .why:before{content:"🧠";position:absolute;left:-10px;top:0;font-size:145px;opacity:.08;transform:rotate(-15deg)}
+#why .why:after{content:"🎯";position:absolute;right:-5px;top:4px;font-size:135px;opacity:.09;transform:rotate(12deg)}
+#why .quote{
+  position:relative;z-index:2;max-width:850px!important;padding:18px 24px!important;margin:0 auto 34px!important;
+  border-radius:20px!important;background:#fff!important;color:#281450!important;font-size:clamp(18px,2.3vw,25px)!important;
+  box-shadow:0 12px 30px rgba(0,0,0,.12)!important;
+}
+#why .quote .pink{color:#e83e9f}
+#why .why-grid{position:relative;z-index:2;grid-template-columns:repeat(4,1fr)!important;gap:0!important}
+#why .why-card{
+  min-height:185px!important;padding:24px 18px!important;border:0!important;border-radius:0!important;
+  background:rgba(255,255,255,.97)!important;color:#29164e;box-shadow:none!important;text-align:center;
+  position:relative;overflow:visible;
+}
+#why .why-card:first-child{border-radius:20px 0 0 20px!important}
+#why .why-card:last-child{border-radius:0 20px 20px 0!important}
+#why .why-card:not(:last-child):after{
+  content:"→";position:absolute;right:-14px;top:42%;width:29px;height:29px;
+  display:flex;align-items:center;justify-content:center;border-radius:50%;background:#fff;color:#8b43db;
+  font-weight:950;z-index:5;box-shadow:0 5px 12px rgba(30,10,70,.12);
+}
+#why .why-card strong{display:block;font-size:17px;margin-bottom:8px}
+#why .why-card p{font-size:13px!important;line-height:1.6!important;color:#626875!important;margin:0}
+#why .why-card:nth-child(1) strong{color:#e33b86}#why .why-card:nth-child(2) strong{color:#3276d9}
+#why .why-card:nth-child(3) strong{color:#159b6c}#why .why-card:nth-child(4) strong{color:#e67b08}
+
+#parents{
+  position:relative;overflow:hidden;background:linear-gradient(135deg,#fffaff,#f7f4ff 52%,#f0fbff);
+  padding-top:70px;padding-bottom:68px;
+}
+#parents:before{
+  content:"FOR PARENTS & TEACHERS";position:absolute;top:20px;left:50%;transform:translateX(-50%);
+  color:#b25b9b;font-size:10px;font-weight:950;letter-spacing:1.5px;opacity:.7;
+}
+#parents .title{
+  font-size:clamp(30px,4vw,49px);background:linear-gradient(90deg,#21145d,#8b43db,#e83e9f);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+#parents .subtitle{max-width:860px;margin-bottom:30px}
+#parents .parent-grid{grid-template-columns:repeat(3,1fr)!important;gap:15px!important}
+#parents .qcard{
+  min-height:205px!important;border:1px solid rgba(105,75,155,.13)!important;border-radius:22px!important;
+  padding:20px!important;box-shadow:0 13px 30px rgba(52,20,95,.09)!important;position:relative;overflow:hidden;
+}
+#parents .qcard:before{
+  content:attr(data-num);position:absolute;left:12px;top:12px;width:32px;height:32px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;font-weight:950;font-size:12px;color:#fff;
+  background:linear-gradient(135deg,#e83e9f,#7c3aed);
+}
+#parents .qcard:after{
+  content:"";position:absolute;right:-35px;bottom:-45px;width:115px;height:115px;border-radius:50%;
+  background:#8b43db;opacity:.055;
+}
+#parents .q{font-size:16px!important;line-height:1.35!important;padding-left:43px!important;min-height:42px}
+#parents .q span{display:none!important}
+#parents .ans{font-size:13px!important;line-height:1.6!important;margin-top:12px!important;color:#626875}
+#parents .qcard:nth-child(1){background:linear-gradient(145deg,#fff0f8,#fff)}
+#parents .qcard:nth-child(2){background:linear-gradient(145deg,#eef8ff,#fff)}
+#parents .qcard:nth-child(3){background:linear-gradient(145deg,#f2fff9,#fff)}
+#parents .qcard:nth-child(4){background:linear-gradient(145deg,#fff8e9,#fff)}
+#parents .qcard:nth-child(5){background:linear-gradient(145deg,#fff0fb,#fff)}
+#parents .qcard:nth-child(6){background:linear-gradient(145deg,#fffbea,#fff)}
+
+@media(max-width:900px){
+  #why .why-grid{grid-template-columns:repeat(2,1fr)!important}
+  #why .why-card:first-child{border-radius:18px 0 0 0!important}
+  #why .why-card:nth-child(2){border-radius:0 18px 0 0!important}
+  #why .why-card:nth-child(3){border-radius:0 0 0 18px!important}
+  #why .why-card:last-child{border-radius:0 0 18px 0!important}
+  #why .why-card:not(:last-child):after{display:none}
+}
+@media(max-width:850px){
+  #explore:before,#parents:before{display:none}
+  #explore .explore-grid{grid-template-columns:1fr 1fr!important}
+  #parents .parent-grid{grid-template-columns:1fr 1fr!important}
+}
+@media(max-width:600px){
+  #explore{padding-top:48px}.explore-card{min-height:330px!important}
+  #explore .explore-grid{grid-template-columns:1fr!important}
+  #why .why{padding:18px!important}.why-grid{grid-template-columns:1fr!important}
+  #why .why-card,#why .why-card:first-child,#why .why-card:last-child{border-radius:16px!important}
+  #parents .parent-grid{grid-template-columns:1fr!important}
+  #parents .qcard{min-height:0!important}
 }
 </style>
 </head>
@@ -305,12 +421,12 @@ footer{background:#1c0b35;color:#eee;padding:24px;text-align:center;font-size:12
     <h2 class="title">Parents' Top Questions — Our Honest Answers</h2>
     <p class="subtitle">Genuine concerns ko ignore nahi karna chahiye. Isliye hum simple aur honest answers ke saath apni approach samjhate hain.</p>
     <div class="parent-grid">
-      <div class="qcard"><div class="q"><span>❓</span> Itni chhoti age mein AI ki kya zarurat hai?</div><div class="ans">AI expert banne ki zarurat nahi hai. Lekin curiosity, digital awareness aur critical thinking jitni early develop hogi, utna bachcha technology ko responsibly samajh paayega.</div></div>
-      <div class="qcard"><div class="q"><span>❓</span> AI se bachcha lazy nahi ho jayega?</div><div class="ans">Ho sakta hai agar AI ko homework shortcut ki tarah use kiya jaye. Isi liye hum AI + Critical Thinking approach rakhte hain — question, verification aur creation.</div></div>
-      <div class="qcard"><div class="q"><span>❓</span> Kya ye sirf ChatGPT sikhana hai?</div><div class="ans">Sirf ChatGPT nahi. AI kya hai, real life mein kahan use hota hai, information ko kaise question karein aur technology safely kaise use karein — ye broader learning hai.</div></div>
-      <div class="qcard"><div class="q"><span>❓</span> Mera bachcha computer properly nahi jaanta.</div><div class="ans">Koi problem nahi. Learning age-appropriate aur activity-based rakhi ja sakti hai. Basic computer understanding se gradually AI concepts ki taraf badha ja sakta hai.</div></div>
-      <div class="qcard"><div class="q"><span>❓</span> Iska benefit school mein kya hoga?</div><div class="ans">Observation, questioning, problem solving, creativity aur technology confidence jaise skills develop karne mein help mil sakti hai.</div></div>
-      <div class="qcard"><div class="q"><span>❓</span> AI ko blindly trust kyun nahi karna?</div><div class="ans">AI useful hai, lekin iska answer hamesha automatically correct nahi hota. Bachchon ko verify, compare aur reason karna sikhana important hai.</div></div>
+      <div class="qcard" data-num="01"><div class="q"><span>❓</span> Itni chhoti age mein AI ki kya zarurat hai?</div><div class="ans">AI expert banne ki zarurat nahi hai. Lekin curiosity, digital awareness aur critical thinking jitni early develop hogi, utna bachcha technology ko responsibly samajh paayega.</div></div>
+      <div class="qcard" data-num="02"><div class="q"><span>❓</span> AI se bachcha lazy nahi ho jayega?</div><div class="ans">Ho sakta hai agar AI ko homework shortcut ki tarah use kiya jaye. Isi liye hum AI + Critical Thinking approach rakhte hain — question, verification aur creation.</div></div>
+      <div class="qcard" data-num="03"><div class="q"><span>❓</span> Kya ye sirf ChatGPT sikhana hai?</div><div class="ans">Sirf ChatGPT nahi. AI kya hai, real life mein kahan use hota hai, information ko kaise question karein aur technology safely kaise use karein — ye broader learning hai.</div></div>
+      <div class="qcard" data-num="04"><div class="q"><span>❓</span> Mera bachcha computer properly nahi jaanta.</div><div class="ans">Koi problem nahi. Learning age-appropriate aur activity-based rakhi ja sakti hai. Basic computer understanding se gradually AI concepts ki taraf badha ja sakta hai.</div></div>
+      <div class="qcard" data-num="05"><div class="q"><span>❓</span> Iska benefit school mein kya hoga?</div><div class="ans">Observation, questioning, problem solving, creativity aur technology confidence jaise skills develop karne mein help mil sakti hai.</div></div>
+      <div class="qcard" data-num="06"><div class="q"><span>❓</span> AI ko blindly trust kyun nahi karna?</div><div class="ans">AI useful hai, lekin iska answer hamesha automatically correct nahi hota. Bachchon ko verify, compare aur reason karna sikhana important hai.</div></div>
     </div>
   </div>
 </section>

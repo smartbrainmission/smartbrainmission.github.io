@@ -247,17 +247,60 @@ footer{background:#1c0b35;color:#eee;padding:24px;text-align:center;font-size:12
 }
 </style>
 
-<style>
-.do-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:25px}
-.do-card{background:#fff;border-radius:20px;padding:20px 12px;text-align:center;box-shadow:0 8px 25px rgba(30,20,70,.08);border:1px solid rgba(80,50,120,.08)}
-.do-card b{display:block;font-size:18px;margin-bottom:7px}.do-card span{font-size:13px;color:#667085}
-.varnika-wrap{display:grid;grid-template-columns:1fr .6fr;gap:35px;align-items:center}
-.varnika-pills{display:flex;gap:9px;flex-wrap:wrap;margin:20px 0}.varnika-pills span{background:#fff;border:1px solid #eee;padding:9px 13px;border-radius:999px;font-weight:800}
-.varnika-badge{background:linear-gradient(135deg,#fff1fb,#eeeaff);border-radius:32px;min-height:240px;display:grid;place-items:center;text-align:center;padding:25px;box-shadow:0 15px 40px rgba(60,30,100,.12);font-size:70px}
-.varnika-badge strong{display:block;font-size:18px;color:#5b3b8a}
-@media(max-width:850px){.do-grid{grid-template-columns:repeat(2,1fr)}.varnika-wrap{grid-template-columns:1fr;text-align:center}}
-@media(max-width:520px){.do-grid{grid-template-columns:1fr 1fr}.do-card{padding:16px 8px}.varnika-badge{min-height:190px}}
+<style id="sbm-premium-v2">
+/* Smart Brain Mission content refresh — deliberately scoped to new/updated sections.
+   Existing video, YouTube and payment/QR rules are not overridden here. */
+.hero-mini{font-size:18px;line-height:1.5;font-weight:750;max-width:540px;margin:14px 0 22px;color:#5d6470}
+.mini-rule{margin:28px auto 0;text-align:center;font-weight:900;letter-spacing:.08em;font-size:12px;color:#7652a8}
+.mini-rule b{margin:0 7px;color:#e84f93}
+.premium-grid{margin-top:26px}
+.explore-card span{display:inline-block;margin-top:12px;padding:7px 10px;border-radius:999px;background:#faf6ff;color:#7652a8;font-size:11px;font-weight:900}
+.do-section{background:linear-gradient(135deg,#fbf8ff,#f2fbff)}
+.big-sub{font-size:19px}.do-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:28px}
+.do-card{background:#fff;border:1px solid rgba(80,50,120,.09);border-radius:24px;padding:24px 13px;text-align:center;box-shadow:0 10px 28px rgba(60,30,100,.08);transition:transform .2s,box-shadow .2s}
+.do-card:hover{transform:translateY(-5px);box-shadow:0 16px 34px rgba(60,30,100,.13)}
+.big-icon{font-size:36px;margin-bottom:8px}.do-card h3{margin:5px 0;font-size:18px}.do-card p{margin:0;color:#667085;font-size:13px;line-height:1.4}
+.why-new{background:#fff}
+.mission-quote{max-width:850px;margin:22px auto 28px;text-align:center;padding:24px 28px;border-radius:24px;background:linear-gradient(135deg,#fff7fb,#f5f1ff);font-size:21px;line-height:1.55;color:#4d4658;box-shadow:0 10px 28px rgba(60,30,100,.06)}
+.mission-quote strong{color:#7b42ad}
+.premium-grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}
+.why-card{position:relative;background:#fff;border:1px solid rgba(80,50,120,.1);border-radius:22px;padding:25px 18px;text-align:center;box-shadow:0 8px 24px rgba(60,30,100,.07)}
+.why-card .step{position:absolute;top:10px;right:12px;font-size:10px;font-weight:900;color:#a18ab9}
+.why-card strong{display:block;font-size:18px}.why-card p{margin:8px 0 0;color:#667085;font-size:13px}
+.varnika-new{background:linear-gradient(135deg,#fff8fc,#f4efff 55%,#eefaff)}
+.varnika-layout{display:grid;grid-template-columns:1fr .8fr;gap:45px;align-items:center}
+.left{text-align:left}.varnika-tags{display:flex;gap:9px;flex-wrap:wrap;margin:18px 0 24px}
+.varnika-tags span{background:#fff;border:1px solid #eee;padding:9px 13px;border-radius:999px;font-weight:850;font-size:13px;box-shadow:0 5px 15px rgba(60,30,100,.05)}
+.varnika-visual{min-height:320px;position:relative;display:grid;place-items:center}
+.varnika-center{width:220px;height:220px;border-radius:50%;background:radial-gradient(circle at 35% 25%,#fff,#f1dcff);border:8px solid #fff;box-shadow:0 20px 55px rgba(75,35,120,.16);display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:105px;line-height:1}
+.varnika-center small{font-size:15px;line-height:1.2;font-weight:900;color:#67438e;text-align:center;margin-top:8px}
+.varnika-orbit{position:absolute;width:55px;height:55px;border-radius:50%;background:#fff;display:grid;place-items:center;font-size:25px;box-shadow:0 9px 22px rgba(60,30,100,.12)}
+.orbit-a{top:32px;left:13%}.orbit-b{right:7%;top:88px}.orbit-c{bottom:32px;left:19%}
+.parents-new{background:#fff}
+.compact-parent{margin-top:24px}
+.compact-parent .qcard{min-height:0}
+.compact-parent .ans{font-size:13px;line-height:1.45}
+.pack-short{font-size:17px!important;max-width:560px}
+.journey-new{background:linear-gradient(135deg,#f8f4ff,#eefaff)}
+.journey-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:900px;margin:28px auto 0}
+.journey-card{background:#fff;border-radius:24px;padding:25px;text-align:center;box-shadow:0 10px 28px rgba(60,30,100,.08);border:1px solid rgba(80,50,120,.08)}
+.journey-card span{display:inline-grid;place-items:center;width:42px;height:42px;border-radius:50%;background:#f3e8ff;color:#70429a;font-weight:900;font-size:18px}
+.journey-card h3{margin:12px 0 5px}.journey-card p{margin:0;color:#667085;font-size:13px}
+@media(max-width:900px){
+  .do-grid{grid-template-columns:repeat(2,1fr)}
+  .premium-grid-4{grid-template-columns:repeat(2,1fr)}
+  .varnika-layout{grid-template-columns:1fr}
+  .varnika-copy{text-align:center}.left{text-align:center!important}.varnika-tags{justify-content:center}
+}
+@media(max-width:560px){
+  .hero-mini{font-size:15px}
+  .do-grid,.premium-grid-4,.journey-grid{grid-template-columns:1fr 1fr}
+  .do-card{padding:20px 10px}
+  .mission-quote{font-size:17px;padding:20px 16px}
+  .varnika-center{width:190px;height:190px;font-size:88px}
+}
 </style>
+
 </head>
 <body>
 
@@ -266,8 +309,10 @@ footer{background:#1c0b35;color:#eee;padding:24px;text-align:center;font-size:12
     <a class="brand" href="#top">🧠 SMART <span>BRAIN MISSION</span></a>
     <div class="links">
       <a href="#explore">What Kids Explore</a>
+      <a href="#kids-do">What Kids Do</a>
       <a href="#why">Why Us?</a>
       <a href="#parents">Parents' Questions</a>
+      <a href="#varnika">Varnika</a>
       <a href="#youtube">YouTube</a>
       <a href="#pack">Activity Pack</a>
       <a href="#contact">Contact Us</a>
@@ -280,14 +325,14 @@ footer{background:#1c0b35;color:#eee;padding:24px;text-align:center;font-size:12
 <section class="top-video-hero" id="top-video">
   <div class="top-video-inner">
     <div class="top-video-copy">
-      <span class="badge">FOR CURIOUS MINDS • 5+</span>
-      <h1>Learn AI.<br><span class="pink">Think Smart.</span><br>Create More.</h1>
-      <p class="lead">Smart Brain Mission makes AI, computer skills and critical thinking simple, colourful and fun through activity-based learning.</p>
-      <p class="hero-note">We don't want children to only use technology — we want them to understand it, question it and create with it.</p>
-      <div class="btns">
-        <a class="btn primary" href="#why">🧠 Why Smart Brain Mission?</a>
-        <a class="btn youtube" href="#youtube">▶ Watch &amp; Learn</a>
-      </div>
+  <span class="badge">FOR CURIOUS MINDS • 5+</span>
+  <h1>Learn AI.<br><span class="pink">Think Smart.</span><br>Create More.</h1>
+  <p class="hero-mini">AI • Computer Skills • Critical Thinking — made fun for curious minds 5+.</p>
+  <div class="btns">
+    <a class="btn primary" href="#explore">🧠 Explore Learning</a>
+    <a class="btn youtube" href="#youtube">▶ Watch &amp; Learn</a>
+  </div>
+</div>
     </div>
     <div>
       <div class="top-video-box">
@@ -307,77 +352,79 @@ footer{background:#1c0b35;color:#eee;padding:24px;text-align:center;font-size:12
 
 <section class="section alt" id="explore">
   <div class="wrap">
-    <div class="kicker">🧠 SMART BRAIN MISSION</div>
-    <h2 class="title">What Kids Explore</h2>
-    <p class="subtitle">AI • Computer Skills • Critical Thinking • Smart & Safe Technology</p>
-    <div class="explore-grid">
-      <div class="explore-card card"><div class="icon">🤖</div><h3>AI for Kids</h3><p>Understand AI through stories, examples & fun activities.</p></div>
-      <div class="explore-card card"><div class="icon">💻</div><h3>Computer Skills</h3><p>Learn practical computer skills through fun challenges.</p></div>
-      <div class="explore-card card"><div class="icon">🔎</div><h3>Critical Thinking</h3><p>Question, compare, verify and reason.</p></div>
-      <div class="explore-card card"><div class="icon">🛡️</div><h3>Smart & Safe</h3><p>Use technology safely, responsibly and creatively.</p></div>
+    <div class="kicker">🧠 WHAT KIDS EXPLORE</div>
+    <h2 class="title">Learn. Think. Create.</h2>
+    <p class="subtitle">Four skills. One smart learning journey.</p>
+    <div class="explore-grid premium-grid">
+      <div class="explore-card card"><div class="icon">🤖</div><h3>AI for Kids</h3><p>Understand AI through stories, examples &amp; fun activities.</p><span>Understand • Explore • Ask</span></div>
+      <div class="explore-card card"><div class="icon">💻</div><h3>Computer Skills</h3><p>Learn practical computer skills through fun challenges.</p><span>Learn • Practice • Build</span></div>
+      <div class="explore-card card"><div class="icon">🔎</div><h3>Critical Thinking</h3><p>Question, compare, verify and reason.</p><span>Question • Verify • Reason</span></div>
+      <div class="explore-card card"><div class="icon">🛡️</div><h3>Smart &amp; Safe</h3><p>Use technology safely, responsibly and creatively.</p><span>Safe • Responsible • Smart</span></div>
     </div>
+    <div class="mini-rule">UNDERSTAND <b>•</b> EXPLORE <b>•</b> CREATE</div>
   </div>
-</section>
-<section class="section" id="kids-do">
+</section><section class="section do-section" id="kids-do">
   <div class="wrap">
     <div class="kicker">🚀 LEARN BY DOING</div>
     <h2 class="title">What Will Your Child Actually Do?</h2>
-    <p class="subtitle">Yahan bachcha sirf screen nahi dekhta — kuch karta hai.</p>
-    <div class="do-grid">
-      <div class="do-card"><b>🧩 Solve</b><span>AI puzzles & challenges</span></div>
-      <div class="do-card"><b>🔍 Investigate</b><span>Answers ko check & compare</span></div>
-      <div class="do-card"><b>🎨 Create</b><span>Stories, ideas & projects</span></div>
-      <div class="do-card"><b>💻 Build</b><span>Simple digital creations</span></div>
-      <div class="do-card"><b>🛡️ Stay Safe</b><span>Smart & responsible tech use</span></div>
+    <p class="subtitle big-sub">Yahan bachcha sirf screen nahi dekhta — <b>kuch karta hai.</b></p>
+    <div class="do-grid premium-grid-5">
+      <div class="do-card"><div class="big-icon">🧩</div><h3>Solve</h3><p>AI puzzles &amp; challenges</p></div>
+      <div class="do-card"><div class="big-icon">🔍</div><h3>Investigate</h3><p>Answers ko check &amp; compare</p></div>
+      <div class="do-card"><div class="big-icon">🎨</div><h3>Create</h3><p>Stories, ideas &amp; projects</p></div>
+      <div class="do-card"><div class="big-icon">💻</div><h3>Build</h3><p>Simple digital creations</p></div>
+      <div class="do-card"><div class="big-icon">🛡️</div><h3>Stay Safe</h3><p>Smart &amp; responsible tech use</p></div>
     </div>
   </div>
 </section>
 
-
-<section class="section" id="why">
+<section class="section why-new" id="why">
   <div class="wrap">
-    <div class="kicker">💡 OUR APPROACH</div>
+    <div class="kicker">💡 OUR PHILOSOPHY</div>
     <h2 class="title">Why Smart Brain Mission?</h2>
-    <p class="quote">“AI ko bachchon ke brain ka replacement nahi banana hai. <span class="pink">AI ki duniya mein bachchon ka brain aur bhi SMART banana hai.</span>”</p>
-    <div class="why-grid">
-      <div class="why-card"><strong>❓ Question</strong><p>Curious questions poochho.</p></div>
-      <div class="why-card"><strong>🧠 Think</strong><p>Khud sochna seekho.</p></div>
-      <div class="why-card"><strong>🔎 Verify</strong><p>Answers ko check karo.</p></div>
-      <div class="why-card"><strong>🚀 Create</strong><p>Ideas ko reality banao.</p></div>
+    <div class="mission-quote">AI ko bachchon ke brain ka replacement nahi banana hai.<br><strong>AI ki duniya mein bachchon ka brain aur bhi SMART banana hai.</strong></div>
+    <div class="why-grid premium-grid-4">
+      <div class="why-card"><div class="step">01</div><strong>❓ Question</strong><p>Curious questions poochho.</p></div>
+      <div class="why-card"><div class="step">02</div><strong>🧠 Think</strong><p>Khud sochna seekho.</p></div>
+      <div class="why-card"><div class="step">03</div><strong>🔎 Verify</strong><p>Har answer check karo.</p></div>
+      <div class="why-card"><div class="step">04</div><strong>🚀 Create</strong><p>Ideas ko reality banao.</p></div>
     </div>
   </div>
 </section>
 
-<section class="section parents" id="parents">
+<section class="section parents-new" id="parents">
   <div class="wrap">
     <div class="kicker">💬 FOR PARENTS</div>
     <h2 class="title">Parents' Top Questions</h2>
-    <p class="subtitle">Simple answers. No long explanations.</p>
-    <div class="parent-grid">
-      <div class="qcard"><div class="q">❓ Itni chhoti age mein AI ki kya zarurat hai?</div><div class="ans">Curiosity, digital awareness aur critical thinking develop karne ke liye.</div></div>
-      <div class="qcard"><div class="q">❓ AI se bachcha lazy nahi ho jayega?</div><div class="ans">AI shortcut nahi — question, verify aur create karna focus hai.</div></div>
-      <div class="qcard"><div class="q">❓ Kya ye sirf ChatGPT sikhana hai?</div><div class="ans">Nahi. AI ko samajhna, question karna, verify karna aur responsibly use karna.</div></div>
-      <div class="qcard"><div class="q">❓ Mera bachcha computer nahi jaanta.</div><div class="ans">Koi problem nahi. Learning age-appropriate aur activity-based hai.</div></div>
-      <div class="qcard"><div class="q">❓ School mein kya benefit hoga?</div><div class="ans">Problem solving, creativity, observation aur technology confidence.</div></div>
-      <div class="qcard"><div class="q">❓ AI ke answers par blindly trust kyun nahi?</div><div class="ans">AI useful hai, lekin important answers ko verify karna zaroori hai.</div></div>
+    <p class="subtitle">Quick answers. Clear thinking.</p>
+    <div class="parent-grid compact-parent">
+      <div class="qcard"><div class="q">❓ AI se bachcha lazy nahi ho jayega?</div><div class="ans">AI shortcut nahi — smart learning tool hai. <b>Question + Verify.</b></div></div>
+      <div class="qcard"><div class="q">❓ Itni chhoti age mein AI kyun?</div><div class="ans">Curiosity, digital awareness &amp; critical thinking.</div></div>
+      <div class="qcard"><div class="q">❓ Kya ye sirf ChatGPT sikhana hai?</div><div class="ans">Nahi. <b>Understand • Question • Verify • Create.</b></div></div>
+      <div class="qcard"><div class="q">❓ Mera bachcha computer nahi jaanta.</div><div class="ans">No problem. Learning is <b>age-appropriate &amp; activity-based.</b></div></div>
+      <div class="qcard"><div class="q">❓ School mein kya benefit hoga?</div><div class="ans">Problem solving, creativity &amp; technology confidence.</div></div>
+      <div class="qcard"><div class="q">❓ AI ke answers par blindly trust kyun nahi?</div><div class="ans">AI useful hai — important answers ko <b>verify</b> karna zaroori hai.</div></div>
     </div>
   </div>
 </section>
 
-<section class="section" id="varnika">
-  <div class="wrap varnika-wrap">
-    <div>
+<section class="section varnika-new" id="varnika">
+  <div class="wrap varnika-layout">
+    <div class="varnika-copy">
       <div class="kicker">👧 MEET VARNIKA</div>
-      <h2 class="title">AI Learning, <span class="pink">In Real Life.</span></h2>
-      <p class="subtitle">Varnika ke saath dekhiye — ek child AI ko real life mein kaise use kar sakta hai.</p>
-      <div class="varnika-pills"><span>🤖 Learn</span><span>❓ Ask</span><span>🔎 Verify</span><span>🎨 Create</span></div>
+      <h2 class="title">AI Learning,<br><span class="pink">In Real Life.</span></h2>
+      <p class="subtitle left">Varnika ke saath dekho — ek child AI ko real life mein kaise use kar sakta hai.</p>
+      <div class="varnika-tags"><span>🤖 Learn</span><span>❓ Ask</span><span>🔎 Verify</span><span>🎨 Create</span></div>
       <a class="btn primary" href="#youtube">▶ Watch Varnika Learn AI</a>
     </div>
-    <div class="varnika-badge"><div>👧🏻</div><strong>Learn • Think • Create</strong></div>
+    <div class="varnika-visual">
+      <div class="varnika-orbit orbit-a">🤖</div>
+      <div class="varnika-orbit orbit-b">💡</div>
+      <div class="varnika-center">👧🏻<small>Varnika's<br>AI Journey</small></div>
+      <div class="varnika-orbit orbit-c">🧠</div>
+    </div>
   </div>
-</section>
-
-<section class="section lav" id="youtube">
+</section><section class="section lav" id="youtube">
   <div class="youtube-cta">
     <div class="emoji">🤖 ✨ 🧠</div>
     <h2>For Learning AI in a Fun Way</h2>
@@ -390,17 +437,16 @@ footer{background:#1c0b35;color:#eee;padding:24px;text-align:center;font-size:12
   <div class="pack-grid">
     <div>
       <div style="font-weight:850;color:#ffe36a;font-size:12px">📚 SMART BRAIN MISSION ACTIVITY PACK</div>
-      <h2>Explore the <span class="yellow">Complete Activity Pack</span> 🚀</h2>
-      <p>A fun, learning-focused pack designed for curious minds 5+. Children don't just read — they question, solve, observe, create and explore.</p>
+      <h2>Learn AI. <span class="yellow">Think Smart.</span> Create More. 🚀</h2>
+      <p class="pack-short">A hands-on activity pack for curious minds 5+.</p>
       <div class="features">
-        <div class="feature">🤖 AI & Technology Learning Activities</div>
+        <div class="feature">🤖 AI Activities</div>
         <div class="feature">👩‍🏫 Parent / Teacher Guide</div>
-        <div class="feature">✅ Verified Answer Key</div>
+        <div class="feature">✅ Answer Key</div>
         <div class="feature">💡 AI Explorer Certificate</div>
       </div>
-      <a class="btn yellow" href="assets/free-sample.pdf" target="_blank">🎁 Try the Free Sample First</a>
-    </div>
-    <div class="pay-card">
+      <a class="btn yellow" href="assets/free-sample.pdf" target="_blank">🎁 Try Free Sample</a>
+    </div><div class="pay-card">
       <div style="font-size:30px">📱</div>
       <h3>Get the Complete Pack</h3>
       <p>Scan the QR code and pay <b>₹99</b> for the Complete Activity Pack.</p>
@@ -427,7 +473,17 @@ footer{background:#1c0b35;color:#eee;padding:24px;text-align:center;font-size:12
   </div>
 </section>
 
-<section class="section lav" id="contact">
+<section class="section alt journey-new" id="journey">
+  <div class="wrap">
+    <div class="kicker">🪜 YOUR LEARNING JOURNEY</div>
+    <h2 class="title">Start Simple. Go Further.</h2>
+    <div class="journey-grid">
+      <div class="journey-card"><span>1</span><h3>Explore</h3><p>Videos, website &amp; free sample.</p></div>
+      <div class="journey-card"><span>2</span><h3>Try</h3><p>Activities, questions &amp; challenges.</p></div>
+      <div class="journey-card"><span>3</span><h3>Create</h3><p>Keep learning with Smart Brain Mission.</p></div>
+    </div>
+  </div>
+</section><section class="section lav" id="contact">
   <div class="wrap">
     <div class="kicker">WE'RE HERE TO HELP</div>
     <h2 class="title">Contact Smart Brain Mission 💬</h2>

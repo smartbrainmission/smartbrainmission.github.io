@@ -483,13 +483,13 @@ footer{background:#1c0b35;color:#eee;padding:24px;text-align:center;font-size:12
     </div>
     <div>
       <div class="top-video-box">
-        <video id="smartBrainVideo" controls autoplay muted playsinline preload="auto" poster="assets/video-poster.jpg">
+        <video id="smartBrainVideo" controls autoplay muted playsinline webkit-playsinline preload="auto" poster="assets/video-poster.jpg">
           <source src="assets/smart-brain-mission-video.mp4" type="video/mp4">
           Your browser does not support the video.
         </video>
-        <div class="video-badge" id="soundBadge">🔊 TAP ANYWHERE FOR SOUND</div>
+        <div class="video-badge" id="soundBadge">🔊 AUTO-PLAY • TAP PAGE FOR SOUND</div>
       </div>
-      <div class="sound-tip">🎧 Tap the video to play with sound. Mobile browsers require a tap before audio can play.</div>
+      <div class="sound-tip">▶ Video starts automatically. Your first tap/click anywhere turns the sound on.</div>
     </div>
   </div>
 </section>
@@ -707,43 +707,57 @@ footer{background:#1c0b35;color:#eee;padding:24px;text-align:center;font-size:12
   const badge = document.getElementById('soundBadge');
   if (!video) return;
 
-  // Start automatically, muted — this is allowed by modern browsers.
-  video.muted = true;
-  video.autoplay = true;
-  video.play().catch(() => {});
-
   let soundEnabled = false;
 
-  function enableSound() {
+  // Muted BEFORE autoplay attempt: this is the browser-approved autoplay mode.
+  video.muted = true;
+  video.defaultMuted = true;
+  video.setAttribute('muted', '');
+
+  function startMuted() {
+    if (soundEnabled) return;
+    video.muted = true;
+    const p = video.play();
+    if (p && p.catch) p.catch(function(){});
+  }
+
+  startMuted();
+  video.addEventListener('loadeddata', startMuted, {once:true});
+  video.addEventListener('canplay', startMuted, {once:true});
+
+  function turnSoundOn() {
     if (soundEnabled) return;
     soundEnabled = true;
 
     video.muted = false;
+    video.defaultMuted = false;
+    video.removeAttribute('muted');
     video.volume = 1;
 
-    const playPromise = video.play();
-    if (playPromise && typeof playPromise.catch === 'function') {
-      playPromise.catch(() => {});
-    }
+    const p = video.play();
+    if (p && p.catch) p.catch(function(){});
 
     if (badge) {
       badge.textContent = '🔊 SOUND ON';
       badge.classList.add('sound-on');
     }
 
-    document.removeEventListener('pointerdown', enableSound);
-    document.removeEventListener('keydown', enableSound);
-    document.removeEventListener('touchstart', enableSound);
+    document.removeEventListener('pointerdown', turnSoundOn, true);
+    document.removeEventListener('touchstart', turnSoundOn, true);
+    document.removeEventListener('keydown', turnSoundOn, true);
   }
 
-  // The first genuine user interaction anywhere on the page enables sound.
-  document.addEventListener('pointerdown', enableSound, { passive: true });
-  document.addEventListener('keydown', enableSound, { passive: true });
-  document.addEventListener('touchstart', enableSound, { passive: true });
+  // First user interaction ANYWHERE on the page enables sound.
+  document.addEventListener('pointerdown', turnSoundOn, true);
+  document.addEventListener('touchstart', turnSoundOn, true);
+  document.addEventListener('keydown', turnSoundOn, true);
 
-  // If the user clicks the badge/video specifically, also enable sound.
-  if (badge) badge.addEventListener('click', enableSound);
-  video.addEventListener('click', enableSound);
+  if (badge) badge.addEventListener('click', turnSoundOn);
+  video.addEventListener('click', turnSoundOn);
+
+  document.addEventListener('visibilitychange', function () {
+    if (!document.hidden && !soundEnabled) startMuted();
+  });
 })();
 </script>
 

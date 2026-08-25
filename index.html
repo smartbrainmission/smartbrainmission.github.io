@@ -443,6 +443,14 @@ footer{background:#1c0b35;color:#eee;padding:24px;text-align:center;font-size:12
  .explore-title-row{gap:7px;flex-wrap:wrap;justify-content:center}.explore-title-main,.explore-title-accent{font-size:34px}.explore-title-accent:after{bottom:-5px;height:3px}.explore-kicker{font-size:8px;padding:7px 11px}.explore-divider{font-size:7px;gap:7px}.explore-divider i{width:24px}.explore-signature-sub{font-size:13px}.explore-signature-head:before{width:300px;height:130px;top:60px}}
 </style>
 
+
+<style>
+  #soundBadge.sound-on {
+    opacity: 0.92;
+    transform: translateY(-1px);
+  }
+</style>
+
 </head>
 <body>
 
@@ -475,11 +483,11 @@ footer{background:#1c0b35;color:#eee;padding:24px;text-align:center;font-size:12
     </div>
     <div>
       <div class="top-video-box">
-        <video controls playsinline preload="metadata" poster="assets/video-poster.jpg">
+        <video id="smartBrainVideo" controls autoplay muted playsinline preload="auto" poster="assets/video-poster.jpg">
           <source src="assets/smart-brain-mission-video.mp4" type="video/mp4">
           Your browser does not support the video.
         </video>
-        <div class="video-badge">🔊 TAP ▶ FOR SOUND</div>
+        <div class="video-badge" id="soundBadge">🔊 TAP ANYWHERE FOR SOUND</div>
       </div>
       <div class="sound-tip">🎧 Tap the video to play with sound. Mobile browsers require a tap before audio can play.</div>
     </div>
@@ -691,6 +699,53 @@ footer{background:#1c0b35;color:#eee;padding:24px;text-align:center;font-size:12
     </div>
   </div>
 </section>
+
+
+<script>
+(function () {
+  const video = document.getElementById('smartBrainVideo');
+  const badge = document.getElementById('soundBadge');
+  if (!video) return;
+
+  // Start automatically, muted — this is allowed by modern browsers.
+  video.muted = true;
+  video.autoplay = true;
+  video.play().catch(() => {});
+
+  let soundEnabled = false;
+
+  function enableSound() {
+    if (soundEnabled) return;
+    soundEnabled = true;
+
+    video.muted = false;
+    video.volume = 1;
+
+    const playPromise = video.play();
+    if (playPromise && typeof playPromise.catch === 'function') {
+      playPromise.catch(() => {});
+    }
+
+    if (badge) {
+      badge.textContent = '🔊 SOUND ON';
+      badge.classList.add('sound-on');
+    }
+
+    document.removeEventListener('pointerdown', enableSound);
+    document.removeEventListener('keydown', enableSound);
+    document.removeEventListener('touchstart', enableSound);
+  }
+
+  // The first genuine user interaction anywhere on the page enables sound.
+  document.addEventListener('pointerdown', enableSound, { passive: true });
+  document.addEventListener('keydown', enableSound, { passive: true });
+  document.addEventListener('touchstart', enableSound, { passive: true });
+
+  // If the user clicks the badge/video specifically, also enable sound.
+  if (badge) badge.addEventListener('click', enableSound);
+  video.addEventListener('click', enableSound);
+})();
+</script>
 
 </main>
 <footer>© 2026 Smart Brain Mission • Learn AI. Think Smart. Create More.</footer>

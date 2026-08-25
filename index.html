@@ -754,8 +754,8 @@ footer{background:#1c0b35;color:#eee;padding:24px;text-align:center;font-size:12
           </div>
         </label>
         <label>Your Review<textarea id="reviewText" rows="4" placeholder="What did you like? What could we improve?" required></textarea></label>
-        <button class="review-submit" type="submit">💬 Send My Review on WhatsApp <span>→</span></button>
-        <div class="review-note">🔒 Your review is sent directly to Smart Brain Mission via WhatsApp.</div>
+        <button class="review-submit" type="submit">⭐ Submit Review &amp; Share on WhatsApp <span>→</span></button>
+        <div class="review-note">✨ Your review will appear on the website and a copy will be sent to Smart Brain Mission via WhatsApp.</div>
       </form>
     </div>
 
@@ -1156,32 +1156,147 @@ footer{background:#1c0b35;color:#eee;padding:24px;text-align:center;font-size:12
 <footer>© 2026 Smart Brain Mission • Learn AI. Think Smart. Create More.</footer>
 
 <script>
+/* =========================================================
+   SMART BRAIN MISSION — PUBLIC REVIEWS
+   1) Create a Google Sheet + Apps Script using the companion
+      reviews_backend.gs file.
+   2) Deploy it as a Web App.
+   3) Paste the /exec URL below.
+   ========================================================= */
+const SBM_REVIEWS_ENDPOINT = "PASTE_YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL_HERE";
+
 (function(){
   const form=document.getElementById('reviewForm');
   if(!form) return;
+
   const stars=[...form.querySelectorAll('.star-picker button')];
   let rating=5;
+  const grid=document.getElementById('reviewGrid');
+
+  const escapeHTML = (v) => String(v ?? '').replace(/[&<>"']/g, c => ({
+    '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'
+  }[c]));
+
   const paint=()=>stars.forEach((s,i)=>s.classList.toggle('active',i<rating));
   stars.forEach(s=>s.addEventListener('click',()=>{rating=Number(s.dataset.rating);paint()}));
   paint();
-  // Approved public reviews are intentionally kept in the HTML so they are visible to everyone.
-  // Do not publish a review until you have permission from the reviewer.
-  const approvedReviews = [];
-  const grid=document.getElementById('reviewGrid');
-  function renderApprovedReviews(){
+
+  function renderReviews(reviews){
     if(!grid) return;
-    if(!approvedReviews.length) return;
-    grid.innerHTML=approvedReviews.map(r=>`<article class="public-review"><div class="public-stars">${'★'.repeat(r.rating)}${'☆'.repeat(5-r.rating)}</div><blockquote>“${r.text.replace(/</g,'&lt;').replace(/>/g,'&gt;')}”</blockquote><div class="review-person"><div class="review-avatar">👤</div><div><strong>${r.name.replace(/</g,'&lt;').replace(/>/g,'&gt;')}</strong><small>${r.type.replace(/</g,'&lt;').replace(/>/g,'&gt;')}</small></div></div></article>`).join('');
+    if(!reviews || !reviews.length){
+      grid.innerHTML = `<div class="review-empty">
+        <strong>Be one of our first voices. 💜</strong>
+        <span>Share your honest experience and help other parents understand what Smart Brain Mission offers.</span>
+      </div>`;
+      return;
+    }
+    grid.innerHTML = reviews.slice(0,12).map(r => {
+      const n = Math.max(1, Math.min(5, Number(r.rating)||5));
+      return `<article class="public-review">
+        <div class="public-stars">${'★'.repeat(n)}${'☆'.repeat(5-n)}</div>
+        <blockquote>“${escapeHTML(r.text)}”</blockquote>
+        <div class="review-person">
+          <div class="review-avatar">👤</div>
+          <div><strong>${escapeHTML(r.name)}</strong><small>${escapeHTML(r.type)}</small></div>
+        </div>
+      </article>`;
+    }).join('');
   }
-  renderApprovedReviews();
+
+  // Load public reviews through JSONP so GitHub Pages does not need CORS.
+  function loadPublicReviews(){
+    if(SBM_REVIEWS_ENDPOINT.includes('PASTE_YOUR_')) return;
+    const callback = 'SBMReviews_' + Date.now();
+    window[callback] = function(data){
+      try { renderReviews(typeof data === 'string' ? JSON.parse(data) : data); }
+      catch(e) {}
+      delete window[callback];
+      script.remove();
+    };
+    const script=document.createElement('script');
+    script.src=SBM_REVIEWS_ENDPOINT + '?action=list&callback=' + callback + '&_=' + Date.now();
+    script.onerror=()=>{ script.remove(); };
+    document.body.appendChild(script);
+  }
+
+  function sendToWhatsApp(name,type,text){
+    const msg=`Hello Smart Brain Mission!%0A%0A⭐ Rating: ${rating}/5%0A👤 Name: ${encodeURIComponent(name)}%0A📚 About: ${encodeURIComponent(type)}%0A💬 Review: ${encodeURIComponent(text)}`;
+    window.open('https://wa.me/916006485629?text='+msg,'_blank','noopener');
+  }
+
+  function showStatus(message, good=true){
+    let box=document.getElementById('reviewStatus');
+    if(!box){
+      box=document.createElement('div');
+      box.id='reviewStatus';
+      box.style.cssText='margin-top:12px;padding:12px 15px;border-radius:14px;font-size:13px;font-weight:800;text-align:center;background:#f3eaff;color:#4d198c;';
+      form.appendChild(box);
+    }
+    box.textContent=message;
+    box.style.background=good?'#e9fff3':'#fff0f0';
+    box.style.color=good?'#087a45':'#a11b1b';
+  }
+
   form.addEventListener('submit',function(e){
     e.preventDefault();
+
     const name=document.getElementById('reviewName').value.trim();
     const type=document.getElementById('reviewType').value;
     const text=document.getElementById('reviewText').value.trim();
-    const msg=`Hello Smart Brain Mission!%0A%0A⭐ Rating: ${rating}/5%0A👤 Name: ${encodeURIComponent(name)}%0A📚 About: ${encodeURIComponent(type)}%0A💬 Review: ${encodeURIComponent(text)}`;
-    window.open('https://wa.me/916006485629?text='+msg,'_blank','noopener');
+
+    if(!name || !text){ showStatus('Please enter your name and review.',false); return; }
+    if(SBM_REVIEWS_ENDPOINT.includes('PASTE_YOUR_')){
+      showStatus('Review system is not connected yet. Please use WhatsApp for now.',false);
+      sendToWhatsApp(name,type,text);
+      return;
+    }
+
+    // Google Apps Script receives this through a normal HTML form POST.
+    // This avoids CORS issues on GitHub Pages.
+    const iframeName='sbmReviewFrame';
+    let iframe=document.getElementById(iframeName);
+    if(!iframe){
+      iframe=document.createElement('iframe');
+      iframe.name=iframeName;
+      iframe.id=iframeName;
+      iframe.style.display='none';
+      document.body.appendChild(iframe);
+    }
+
+    const post=document.createElement('form');
+    post.method='POST';
+    post.action=SBM_REVIEWS_ENDPOINT;
+    post.target=iframeName;
+    post.style.display='none';
+
+    [['name',name],['type',type],['rating',rating],['review',text],['website','']].forEach(([k,v])=>{
+      const input=document.createElement('input');
+      input.name=k; input.value=v;
+      post.appendChild(input);
+    });
+
+    document.body.appendChild(post);
+    post.submit();
+    post.remove();
+
+    // Optimistic public display: the review appears immediately for the visitor.
+    const existing = grid && grid.querySelector('.review-empty');
+    if(existing) grid.innerHTML='';
+    const card=document.createElement('article');
+    card.className='public-review';
+    card.innerHTML=`<div class="public-stars">${'★'.repeat(rating)}${'☆'.repeat(5-rating)}</div>
+      <blockquote>“${escapeHTML(text)}”</blockquote>
+      <div class="review-person"><div class="review-avatar">👤</div>
+      <div><strong>${escapeHTML(name)}</strong><small>${escapeHTML(type)}</small></div></div>`;
+    if(grid) grid.prepend(card);
+
+    showStatus('Thank you! Your review has been shared with the Smart Brain Mission community. 💜');
+    sendToWhatsApp(name,type,text);
+    form.reset();
+    rating=5; paint();
   });
+
+  loadPublicReviews();
 })();
 </script>
 

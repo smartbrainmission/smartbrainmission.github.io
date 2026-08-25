@@ -1355,6 +1355,65 @@ footer{background:#1c0b35;color:#eee;padding:24px;text-align:center;font-size:12
 }
 </style>
 
+
+<style id="sbm-final-polish">
+/* Final: Why section heading contrast */
+.why-section .title,#why .title,section[id="why"] h2{
+  color:#35145f!important;
+  -webkit-text-fill-color:#35145f!important;
+  background:none!important;
+  text-shadow:none!important;
+}
+.why-section .kicker,#why .kicker,section[id="why"] .kicker{
+  color:#7a3e9f!important;opacity:1!important;
+}
+
+/* Final: YouTube showcase */
+.youtube-showcase{
+  position:relative;overflow:hidden;
+  background:
+    radial-gradient(circle at 12% 25%,rgba(255,74,160,.16),transparent 25%),
+    radial-gradient(circle at 88% 70%,rgba(105,72,220,.14),transparent 27%),
+    linear-gradient(135deg,#fff7fb,#f7f2ff 55%,#f2f9ff)!important;
+}
+.youtube-showcase .yt-showcase-inner{
+  max-width:980px;margin:0 auto;display:grid;
+  grid-template-columns:1.05fr .95fr;gap:28px;align-items:center;
+}
+.youtube-showcase .yt-copy h2{color:#35145f!important;margin:0 0 10px}
+.youtube-showcase .yt-copy p{color:#5d6270;line-height:1.6;font-size:13px}
+.yt-video-card{
+  position:relative;min-height:230px;border-radius:28px;overflow:hidden;
+  background:linear-gradient(145deg,#35145f,#7b35bd);
+  box-shadow:0 20px 45px rgba(55,25,100,.18);
+  border:7px solid rgba(255,255,255,.9);
+}
+.yt-video-card:before{
+  content:"";position:absolute;inset:0;
+  background:radial-gradient(circle at 25% 20%,rgba(255,255,255,.18),transparent 25%),radial-gradient(circle at 80% 80%,rgba(255,218,91,.16),transparent 25%);
+}
+.yt-play{
+  position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+  width:74px;height:74px;border-radius:50%;display:grid;place-items:center;
+  background:#fff;color:#d9338e;font-size:27px;padding-left:4px;
+  box-shadow:0 12px 30px rgba(0,0,0,.18);
+}
+.yt-label{
+  position:absolute;left:18px;top:18px;padding:7px 10px;border-radius:999px;
+  background:rgba(255,255,255,.16);color:#fff;font-size:9px;font-weight:950;
+  letter-spacing:.06em;backdrop-filter:blur(6px);
+}
+.yt-caption{position:absolute;left:20px;right:20px;bottom:18px;color:#fff}
+.yt-caption strong{display:block;font-size:17px}.yt-caption span{font-size:10px;opacity:.82}
+.yt-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.yt-actions a{display:inline-flex;align-items:center;gap:8px;padding:11px 15px;border-radius:14px;text-decoration:none!important;font-size:11px;font-weight:950}
+.yt-primary{background:#d9348e;color:#fff!important;box-shadow:0 8px 18px rgba(217,52,142,.18)}
+.yt-secondary{background:#fff;color:#5a2b83!important;border:1px solid #e2d4ef}
+.yt-points{display:flex;flex-wrap:wrap;gap:7px;margin-top:15px}
+.yt-points span{padding:7px 9px;border-radius:999px;background:#fff;border:1px solid #e8dcef;color:#674181;font-size:9px;font-weight:900}
+@media(max-width:760px){.youtube-showcase .yt-showcase-inner{grid-template-columns:1fr}.yt-video-card{min-height:205px}}
+</style>
+
 </head>
 <body>
 
@@ -1535,12 +1594,25 @@ footer{background:#1c0b35;color:#eee;padding:24px;text-align:center;font-size:12
   </div>
 </section>
 
-<section class="section lav" id="youtube">
-  <div class="youtube-cta">
-    <div class="emoji">🤖 ✨ 🧠</div>
-    <h2>For Learning AI in a Fun Way</h2>
-    <p>Website par explore karo — aur videos ke through AI ko stories, examples aur fun activities ke saath seekho.</p>
-    <a class="btn youtube" href="https://www.youtube.com/@smartbrainmission" target="_blank" rel="noopener">▶ Subscribe to Our YouTube Channel</a>
+<section class="section youtube-showcase" id="youtube">
+  <div class="wrap">
+    <div class="yt-showcase-inner">
+      <div class="yt-copy">
+        <div class="kicker">🎥 SEE IT IN ACTION</div>
+        <h2 class="title">See Smart Brain Mission <span class="pink">in Action</span></h2>
+        <p>Short, simple videos that help children discover AI, computers and smart thinking — through stories, questions and activities.</p>
+        <div class="yt-points"><span>🤖 AI for Kids</span><span>🧠 Think Better</span><span>🎨 Create More</span></div>
+        <div class="yt-actions">
+          <a class="yt-primary" href="https://www.youtube.com/@smartbrainmission" target="_blank" rel="noopener">▶ Watch a Lesson</a>
+          <a class="yt-secondary" href="#explore">✨ See What Kids Explore</a>
+        </div>
+      </div>
+      <div class="yt-video-card" aria-label="Smart Brain Mission video showcase">
+        <div class="yt-label">SMART BRAIN MISSION • 5+</div>
+        <div class="yt-play">▶</div>
+        <div class="yt-caption"><strong>Learn AI. Think Smart. Create More.</strong><span>Curiosity-led learning for young minds.</span></div>
+      </div>
+    </div>
   </div>
 </section>
 

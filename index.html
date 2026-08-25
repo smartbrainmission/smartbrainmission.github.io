@@ -100,6 +100,8 @@ h1 .pink{color:var(--pink)}
 }
 .youtube-cta .emoji{font-size:34px}.youtube-cta h2{font-size:34px;margin:10px 0}
 .youtube-cta p{opacity:.9;max-width:760px;margin:0 auto 22px;line-height:1.6}
+.youtube-link-note{margin-top:14px;font-size:13px;line-height:1.5;color:rgba(255,255,255,.88)}
+.youtube-link-note span{margin-right:6px}.youtube-link-note a{color:#ffe36a;font-weight:850;text-decoration:underline;text-underline-offset:3px}.youtube-link-note a:hover{color:#fff}
 .pack{
   background:linear-gradient(110deg,#371463,#6320bd);color:#fff
 }
@@ -136,6 +138,29 @@ footer{background:#1c0b35;color:#eee;padding:24px;text-align:center;font-size:12
   h1{font-size:43px}.lead{font-size:15px}.why{padding:24px 16px}
   .quote{font-size:19px}.features{grid-template-columns:1fr}
 }
+
+/* ===== PUBLIC REVIEW WALL ===== */
+.reviews-section{background:linear-gradient(135deg,#fff8fd 0%,#f7f2ff 48%,#f0f8ff 100%);position:relative;overflow:hidden}
+.reviews-section:before,.reviews-section:after{content:"";position:absolute;border-radius:50%;pointer-events:none;filter:blur(1px)}
+.reviews-section:before{width:330px;height:330px;background:rgba(232,62,159,.10);left:-150px;top:80px}
+.reviews-section:after{width:300px;height:300px;background:rgba(97,170,245,.10);right:-120px;bottom:40px}
+.reviews-wrap{position:relative;z-index:1}
+.review-pink{color:var(--pink)}
+.review-layout{display:grid;grid-template-columns:.9fr 1.1fr;gap:28px;align-items:stretch;margin-top:32px}
+.review-intro,.review-form{background:rgba(255,255,255,.88);border:1px solid var(--border);border-radius:28px;box-shadow:0 18px 45px rgba(52,20,95,.10);padding:30px}
+.review-intro{text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.review-orbit{width:150px;height:150px;border-radius:50%;position:relative;margin:0 auto 12px;background:radial-gradient(circle,#fff 48%,#f2e8ff 50%,#fff 66%);border:1px solid #eadcf8;box-shadow:0 12px 30px rgba(74,31,126,.12)}
+.review-core{position:absolute;inset:38px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,#5b20c2,#e83e9f);color:#fff;font-size:38px;box-shadow:0 10px 25px rgba(91,32,194,.25)}
+.orbit-dot{position:absolute;width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:#fff;box-shadow:0 5px 15px rgba(52,20,95,.12);font-size:18px}
+.dot1{top:4px;left:58px}.dot2{right:4px;top:58px}.dot3{bottom:4px;left:58px}
+.review-intro h3{margin:8px 0 8px;font-size:25px}.review-intro p{max-width:460px;color:#626b7b;line-height:1.65;margin:0}
+.review-tags{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-top:18px}.review-tags span{background:#f2e9ff;color:#5c2b91;border-radius:999px;padding:7px 11px;font-size:11px;font-weight:850}
+.review-form-head{display:flex;align-items:center;justify-content:space-between;gap:15px;margin-bottom:20px}.review-form-head strong{display:block;font-size:21px}.review-form-head small{display:block;color:#7b8190;margin-top:3px}.review-stars-static{color:#f3b91f;font-size:22px;letter-spacing:2px}
+.review-field-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}.review-form label{display:block;font-size:12px;font-weight:850;color:#4c286e;margin-bottom:14px}.review-form input,.review-form select,.review-form textarea{width:100%;margin-top:7px;border:1px solid #e4d9f1;border-radius:12px;padding:12px 13px;font:inherit;color:var(--ink);background:#fff;outline:none}.review-form input:focus,.review-form select:focus,.review-form textarea:focus{border-color:#a66be4;box-shadow:0 0 0 3px rgba(166,107,228,.12)}
+.star-picker{display:flex;gap:4px;margin-top:7px}.star-picker button{border:0;background:#f3ebff;color:#cbb9e4;width:38px;height:38px;border-radius:10px;font-size:22px;cursor:pointer}.star-picker button.active{background:#fff4c7;color:#f2b900}.review-submit{width:100%;border:0;border-radius:13px;padding:14px 16px;background:linear-gradient(135deg,#5620bd,#e13b9d);color:#fff;font-weight:900;font-size:14px;cursor:pointer;box-shadow:0 10px 22px rgba(86,32,189,.22)}.review-submit span{float:right}.review-note{text-align:center;color:#7a8190;font-size:11px;margin-top:10px}
+.review-wall{margin-top:46px}.review-wall-head{display:flex;align-items:end;justify-content:space-between;gap:20px;margin-bottom:18px}.review-wall-head h3{font-size:30px;margin:0}.review-wall-head p{margin:0;color:#6d7483;max-width:600px;line-height:1.55;text-align:right}.review-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.public-review{background:#fff;border:1px solid var(--border);border-radius:22px;padding:22px;box-shadow:0 12px 30px rgba(52,20,95,.08);position:relative;overflow:hidden}.public-review:before{content:"";position:absolute;left:0;top:0;width:100%;height:5px;background:linear-gradient(90deg,#6d28d9,#e83e9f,#ffd84d)}.public-stars{color:#f1b600;letter-spacing:2px;font-size:15px}.public-review blockquote{margin:12px 0 16px;font-size:15px;line-height:1.65;color:#4f5665}.review-person{display:flex;align-items:center;gap:10px}.review-avatar{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,#eee3ff,#ffe2f3);font-size:17px}.review-person strong{display:block;font-size:12px}.review-person small{display:block;color:#8a8f9a;font-size:10px;margin-top:2px}.review-empty{grid-column:1/-1;text-align:center;background:rgba(255,255,255,.72);border:1px dashed #d8c7ee;border-radius:22px;padding:28px;color:#656d7c}.review-empty strong{display:block;color:#4a2470;font-size:17px;margin-bottom:5px}.review-empty span{font-size:12px}
+@media(max-width:850px){.review-layout,.review-grid{grid-template-columns:1fr}.review-wall-head{display:block}.review-wall-head p{text-align:left;margin-top:7px}.review-field-row{grid-template-columns:1fr}}
+
 </style>
 
 <style>
@@ -637,6 +662,10 @@ footer{background:#1c0b35;color:#eee;padding:24px;text-align:center;font-size:12
     <h2>For Learning AI in a Fun Way</h2>
     <p>Website par explore karo — aur videos ke through AI ko stories, examples aur fun activities ke saath seekho.</p>
     <a class="btn youtube" href="https://www.youtube.com/@smartbrainmission" target="_blank" rel="noopener">▶ Subscribe to Our YouTube Channel</a>
+    <div class="youtube-link-note">
+      <span>🎬 Visit our channel:</span>
+      <a href="https://www.youtube.com/@smartbrainmission" target="_blank" rel="noopener">youtube.com/@smartbrainmission ↗</a>
+    </div>
   </div>
 </section>
 
@@ -657,9 +686,7 @@ footer{background:#1c0b35;color:#eee;padding:24px;text-align:center;font-size:12
       <div style="font-size:30px">📱</div>
       <h3>Get the Complete Pack</h3>
       <p>Scan the QR code and pay <b>₹99</b> for the Complete Activity Pack.</p>
-      <img class="qr" src="assets/upi-qr.png" alt="UPI payment QR code for Smart Brain Mission"
-           onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
-      <div style="display:none;color:#b42318;font-weight:800;padding:25px">QR image could not be loaded.<br>Check that <b>assets/upi-qr.png</b> is uploaded.</div>
+      <img class="qr" src="data:image/png;base64,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mPDudW9Oxb/72alP8sbUZ7Vza+Ps3TuasnOVZup1pz6N4n3l6QqAALkCIECuAAiQKwAC5AqAALkCIECuAAiQKwAC5AqAgK+dJ8yLSw07T4lPbUCc7fzN7+6cnXsZN6bu2BvvvoWf9mlYtQCAvyVXAATIFQABcgVAgFwBECBXAATIFQABcgVAgFwBEPA9fQElN2e5P29P4d0KQPE3n+1cWjk7X/PODYjiUsPOT3InT1cABMgVAAFyBUCAXAEQIFcABMgVAAFyBUCAXAEQIFcABHztPBc9df68eMK8+Fmd7fwkb7xbW5jayzgrrpa883nXPMXTFQABcgVAgFwBECBXAATIFQABcgVAgFwBECBXAATIFQAByVWLG8WVh3ferS2cTe047NwX2Pl+p67qbGrDZaedf6HveLoCIECuAAiQKwAC5AqAALkCIECuAAiQKwAC5AqAALkCIOB76oU/b7diakHg5mc/b8ehaOe6xM5vwafxp+zcrTjzdAVAgFwBECBXAATIFQABcgVAgFwBECBXAATIFQABcgVAwNiqxc5T02dT1/xu8+LsZhGj+P2eTa2lnL37fneutNyYWsS4MbV4svOv29MVAAFyBUCAXAEQIFcABMgVAAFyBUCAXAEQIFcABMgVAAFjqxY3J653mtoXePe6N969o53n7Xde1Ts372jnHVtciJjavJji6QqAALkCIECuAAiQKwAC5AqAALkCIECuAAiQKwAC5AqAgLFVi7OdKwA358B3nuQv2nlvvLuqnXdd8f1O/R39tDv2HU9XAATIFQABcgVAgFwBECBXAATIFQABcgVAgFwBECBXAAQsXbU4e3c6vXjS+6cpri1MmbrmnX+h7zYvinsZU2spNzxdARAgVwAEyBUAAXIFQIBcARAgVwAEyBUAAXIFQIBcARCQXLUoeneGfOp0+ruT/O/2BaY2Ed59g2dTr3t2c1VTd/u7b//s5tM4v+7Oe+PM0xUAAXIFQIBcARAgVwAEyBUAAXIFQIBcARAgVwAEyBUAAVYtAqZOmE8tNUytAOy0c31ganlk5/u9uWNvvNvamHpHZ56uAAiQKwAC5AqAALkCIECuAAiQKwAC5AqAALkCIECuAAhIrlrsPHF99m6p4cbOs/pT7Cn8vs9bHpn6JIsbH1M8XQEQIFcABMgVAAFyBUCAXAEQIFcABMgVAAFyBUCAXAEQsHTV4qed1r5xc+793c/euPn2360A7NwlKSp+kp9350y9oxuergAIkCsAAuQKgAC5AiBArgAIkCsAAuQKgAC5AiBArgAI+Jo6nwwAv8/TFQABcgVAgFwBECBXAATIFQABcgVAgFwBECBXAATIFQABcgVAgFwBECBXAATIFQABcgVAgFwBECBXAATIFQABcgVAgFwBECBXAATIFQABcgVAgFwBECBXAATIFQABcgVAgFwBECBXAATIFQABcgVAgFwBECBXAATIFQABcgVAgFwBECBXAATIFQABcgVAgFwBEPAfQM2shNNQNdUAAAAASUVORK5CYII=" alt="UPI payment QR code for Smart Brain Mission">
       <div class="upi">UPI ID: sirohi1919941@ybl</div>
       <a class="paybtn" href="upi://pay?pa=sirohi1919941@ybl&pn=Smart%20Brain%20Mission&am=99&cu=INR">💳 Pay ₹99</a>
       <div style="font-size:11px;color:#777;margin-top:10px">After payment, send your payment screenshot + WhatsApp number to receive the Complete Activity Pack.</div>
@@ -681,6 +708,74 @@ footer{background:#1c0b35;color:#eee;padding:24px;text-align:center;font-size:12
 </section>
 
 
+
+
+<section class="section reviews-section" id="reviews">
+  <div class="wrap reviews-wrap">
+    <div class="kicker">💬 YOUR VOICE MATTERS</div>
+    <h2 class="title">What Did You Think? <span class="review-pink">We'd Love to Know.</span></h2>
+    <p class="subtitle">Smart Brain Mission ko aapke child ne kaisa experience kiya? Activity Pack ya YouTube learning ke baare mein apna honest feedback share kijiye.</p>
+
+    <div class="review-layout">
+      <div class="review-intro">
+        <div class="review-orbit">
+          <div class="review-core">⭐</div>
+          <span class="orbit-dot dot1">💡</span>
+          <span class="orbit-dot dot2">🧠</span>
+          <span class="orbit-dot dot3">🎨</span>
+        </div>
+        <h3>Help Us Build Better Learning</h3>
+        <p>Aapka feedback parents ke liye useful hai aur humein Smart Brain Mission ko aur better banane mein help karta hai.</p>
+        <div class="review-tags"><span>Activity Pack</span><span>YouTube</span><span>Learning Experience</span></div>
+      </div>
+
+      <form class="review-form" id="reviewForm">
+        <div class="review-form-head">
+          <div><strong>Share your experience</strong><small>It takes less than a minute.</small></div>
+          <span class="review-stars-static">★★★★★</span>
+        </div>
+        <div class="review-field-row">
+          <label>Your Name<input id="reviewName" type="text" placeholder="e.g. Priya Sharma" required></label>
+          <label>What are you reviewing?
+            <select id="reviewType" required>
+              <option value="Activity Pack">Activity Pack</option>
+              <option value="YouTube Channel">YouTube Channel</option>
+              <option value="Both">Both</option>
+            </select>
+          </label>
+        </div>
+        <label>Your Rating
+          <div class="star-picker" role="radiogroup" aria-label="Rating">
+            <button type="button" data-rating="1" aria-label="1 star">★</button>
+            <button type="button" data-rating="2" aria-label="2 stars">★</button>
+            <button type="button" data-rating="3" aria-label="3 stars">★</button>
+            <button type="button" data-rating="4" aria-label="4 stars">★</button>
+            <button type="button" data-rating="5" aria-label="5 stars">★</button>
+          </div>
+        </label>
+        <label>Your Review<textarea id="reviewText" rows="4" placeholder="What did you like? What could we improve?" required></textarea></label>
+        <button class="review-submit" type="submit">💬 Send My Review on WhatsApp <span>→</span></button>
+        <div class="review-note">🔒 Your review is sent directly to Smart Brain Mission via WhatsApp.</div>
+      </form>
+    </div>
+
+    <div class="review-wall" id="public-reviews">
+      <div class="review-wall-head">
+        <div>
+          <div class="kicker" style="text-align:left">⭐ PARENT VOICES</div>
+          <h3>What Families Are Saying</h3>
+        </div>
+        <p>Real experiences will be featured here after review approval — so new parents can see what others think about the learning experience.</p>
+      </div>
+      <div class="review-grid" id="reviewGrid">
+        <div class="review-empty">
+          <strong>Be one of our first voices. 💜</strong>
+          <span>Send your honest review above. Approved reviews will be added to this public wall.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <section class="section lav" id="contact">
   <div class="wrap premium-contact">
@@ -1059,5 +1154,36 @@ footer{background:#1c0b35;color:#eee;padding:24px;text-align:center;font-size:12
 
 </main>
 <footer>© 2026 Smart Brain Mission • Learn AI. Think Smart. Create More.</footer>
+
+<script>
+(function(){
+  const form=document.getElementById('reviewForm');
+  if(!form) return;
+  const stars=[...form.querySelectorAll('.star-picker button')];
+  let rating=5;
+  const paint=()=>stars.forEach((s,i)=>s.classList.toggle('active',i<rating));
+  stars.forEach(s=>s.addEventListener('click',()=>{rating=Number(s.dataset.rating);paint()}));
+  paint();
+  // Approved public reviews are intentionally kept in the HTML so they are visible to everyone.
+  // Do not publish a review until you have permission from the reviewer.
+  const approvedReviews = [];
+  const grid=document.getElementById('reviewGrid');
+  function renderApprovedReviews(){
+    if(!grid) return;
+    if(!approvedReviews.length) return;
+    grid.innerHTML=approvedReviews.map(r=>`<article class="public-review"><div class="public-stars">${'★'.repeat(r.rating)}${'☆'.repeat(5-r.rating)}</div><blockquote>“${r.text.replace(/</g,'&lt;').replace(/>/g,'&gt;')}”</blockquote><div class="review-person"><div class="review-avatar">👤</div><div><strong>${r.name.replace(/</g,'&lt;').replace(/>/g,'&gt;')}</strong><small>${r.type.replace(/</g,'&lt;').replace(/>/g,'&gt;')}</small></div></div></article>`).join('');
+  }
+  renderApprovedReviews();
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    const name=document.getElementById('reviewName').value.trim();
+    const type=document.getElementById('reviewType').value;
+    const text=document.getElementById('reviewText').value.trim();
+    const msg=`Hello Smart Brain Mission!%0A%0A⭐ Rating: ${rating}/5%0A👤 Name: ${encodeURIComponent(name)}%0A📚 About: ${encodeURIComponent(type)}%0A💬 Review: ${encodeURIComponent(text)}`;
+    window.open('https://wa.me/916006485629?text='+msg,'_blank','noopener');
+  });
+})();
+</script>
+
 </body>
 </html>

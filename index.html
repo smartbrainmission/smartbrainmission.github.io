@@ -669,6 +669,167 @@ body{
 }
 </style>
 
+
+<style id="sbm-brand-identity-refresh">
+/* =========================================================
+   SMART BRAIN MISSION — CONSISTENT VISUAL IDENTITY
+   Bright + soft, friendly + premium, consistent across sections
+   ========================================================= */
+:root{
+  --sbm-purple:#35145f;
+  --sbm-purple-2:#6d28d9;
+  --sbm-pink:#e83e9f;
+  --sbm-blue:#3b82f6;
+  --sbm-green:#20a36a;
+  --sbm-yellow:#f4b82a;
+  --sbm-sky:#eaf7ff;
+  --sbm-lilac:#f5efff;
+  --sbm-mint:#edfff7;
+  --sbm-peach:#fff6ea;
+  --sbm-radius:22px;
+  --sbm-shadow:0 16px 38px rgba(53,20,95,.10);
+}
+
+/* Brand promise in the hero */
+.hero-promise{
+  display:flex;align-items:flex-start;gap:9px;max-width:650px;
+  margin:18px 0 24px;padding:13px 15px;border:1px solid #e7d8f5;
+  border-radius:16px;background:rgba(255,255,255,.72);
+  color:#5b3476;font-size:14px;line-height:1.55;
+  box-shadow:0 8px 22px rgba(53,20,95,.06);
+}
+.hero-promise span{font-size:19px;line-height:1.2}
+.hero-promise strong{color:var(--sbm-purple)}
+
+/* One recognizable card language */
+.explore-tile,.thinking-step,.journey-node,.parent-card,.how,.contact-card,.product-card,.public-review{
+  border-radius:var(--sbm-radius)!important;
+}
+.explore-tile,.thinking-step,.journey-node,.parent-card,.how,.contact-card,.product-card{
+  box-shadow:var(--sbm-shadow);
+}
+
+/* Consistent icon system — emojis remain friendly, but now live inside the same visual treatment */
+.tile-art,.thinking-step>div:not(.step-number),.node-icon,.parent-icon,.product-icon{
+  display:grid!important;place-items:center!important;
+  width:68px!important;height:68px!important;min-width:68px!important;
+  border-radius:20px!important;
+  background:linear-gradient(145deg,#fff,#f3ecff)!important;
+  border:1px solid rgba(109,40,217,.10)!important;
+  box-shadow:0 10px 24px rgba(53,20,95,.09)!important;
+}
+.tile-blue .tile-art,.blue-step>div:not(.step-number),.pc-blue .parent-icon{background:linear-gradient(145deg,#eef8ff,#e4f1ff)!important}
+.tile-green .tile-art,.green-step>div:not(.step-number),.pc-green .parent-icon{background:linear-gradient(145deg,#edfff7,#e4f9ef)!important}
+.tile-pink .tile-art,.pink-step>div:not(.step-number),.pc-pink .parent-icon{background:linear-gradient(145deg,#fff0f8,#f8e8ff)!important}
+.tile-yellow .tile-art,.yellow-step>div:not(.step-number),.pc-yellow .parent-icon{background:linear-gradient(145deg,#fff9df,#fff0cf)!important}
+.pc-purple .parent-icon{background:linear-gradient(145deg,#f3edff,#e9e1ff)!important}
+.pc-orange .parent-icon{background:linear-gradient(145deg,#fff2e8,#ffe8dd)!important}
+
+.tile-art{font-size:38px!important}
+.node-icon,.parent-icon,.product-icon{font-size:30px!important}
+.thinking-step>div:not(.step-number){font-size:30px!important}
+
+/* Keep the learning tiles visually related while retaining their four colors */
+.explore-tile{overflow:hidden;position:relative}
+.explore-tile:after{opacity:.07!important}
+.explore-tile .tile-top{align-items:center!important}
+
+/* Character treatment: Varnika should feel like a recurring brand character */
+.varnika-showcase{isolation:isolate}
+.varnika-photo{
+  border:9px solid #fff!important;
+  box-shadow:0 22px 55px rgba(53,20,95,.18),0 0 0 6px rgba(232,62,159,.07)!important;
+}
+.real-face-badge{
+  box-shadow:0 8px 20px rgba(53,20,95,.12)!important;
+  border:2px solid #fff!important;
+}
+.floating-chip{
+  border:1px solid rgba(255,255,255,.9)!important;
+  box-shadow:0 10px 22px rgba(53,20,95,.12)!important;
+  font-weight:900!important;
+}
+
+/* Clear section rhythm: colorful, but never noisy */
+.premium-section,.section{position:relative}
+.premium-section .premium-wrap,.section .wrap{position:relative;z-index:1}
+.premium-title,.title{font-weight:900!important;letter-spacing:-.035em!important}
+.premium-sub,.subtitle{max-width:820px!important}
+
+/* Consistent pills */
+.badge,.section-kicker,.explore-kicker,.tile-tag,.review-tags span,.varnika-pills span,.pill{
+  letter-spacing:.02em;
+}
+
+/* Navigation: desktop stays spacious; mobile becomes a clean horizontal rail instead of tiny text */
+@media(max-width:850px){
+  .navin{display:block!important;padding:9px 12px!important}
+  .brand{display:block;text-align:center;font-size:15px!important;margin-bottom:8px}
+  .links{
+    display:flex!important;overflow-x:auto!important;white-space:nowrap!important;
+    justify-content:flex-start!important;gap:8px!important;padding:2px 2px 5px;
+    scrollbar-width:none;
+  }
+  .links::-webkit-scrollbar{display:none}
+  .links a{
+    flex:0 0 auto;font-size:11px!important;font-weight:850!important;
+    padding:7px 10px;border-radius:999px;background:#f6efff;
+    color:#51306f!important;border:1px solid #eadcf7;
+  }
+  .links a:hover{background:#fff0f8;color:var(--sbm-pink)!important}
+  .hero-promise{font-size:13px;margin-top:14px}
+}
+
+@media(max-width:520px){
+  .hero-promise{font-size:12.5px;padding:11px 12px}
+  .btns .btn{width:100%;min-height:46px}
+  .tile-art,.thinking-step>div:not(.step-number),.node-icon,.parent-icon,.product-icon{
+    width:60px!important;height:60px!important;min-width:60px!important;
+  }
+}
+</style>
+
+
+<style id="sbm-learning-platform-v3">
+.hero-brand{font-size:15px;font-weight:950;letter-spacing:.08em;color:#32145f;margin-bottom:10px}
+.hero-topics{font-size:14px;font-weight:900;color:#70419b;letter-spacing:.02em;margin:0 0 10px}
+.hero-promise{font-size:20px;line-height:1.45;color:#32145f;margin:14px 0 24px;max-width:620px}
+.hero-promise strong{color:#e83e9f}
+.hero-actions .btn{min-height:48px}
+.sbm-platform-section{padding:72px 16px;position:relative;overflow:hidden}
+.sbm-platform-wrap{max-width:1120px;margin:auto}
+.learning-library{background:linear-gradient(135deg,#fff9fd,#f3f8ff 55%,#fffaf0)}
+.path-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:32px}
+.path-card{position:relative;background:#fff;border:1px solid rgba(70,40,110,.11);border-radius:28px;padding:24px;min-height:330px;box-shadow:0 16px 38px rgba(55,30,95,.09);overflow:hidden}
+.path-card:after{content:"";position:absolute;width:130px;height:130px;border-radius:50%;right:-55px;bottom:-55px;opacity:.45}
+.path-ai{border-top:5px solid #4d91ed}.path-ai:after{background:#dceeff}
+.path-computer{border-top:5px solid #35b987}.path-computer:after{background:#ddf8ed}
+.path-think{border-top:5px solid #e85aa8}.path-think:after{background:#ffe1f0}
+.path-icon{font-size:48px}.path-level{font-size:10px;font-weight:950;letter-spacing:.08em;color:#8b5aa9;margin-top:10px}
+.path-card h3{font-size:25px;color:#32145f;margin:8px 0}.path-card p{font-size:13px;line-height:1.6;color:#686e7b;max-width:310px}
+.path-meta{display:flex;gap:7px;flex-wrap:wrap;margin:17px 0}.path-meta span{background:#f5efff;border-radius:999px;padding:7px 9px;font-size:10px;font-weight:850;color:#5d2a94}
+.path-btn{position:absolute;left:24px;bottom:20px;border-radius:12px;padding:10px 14px;background:#32145f;color:#fff;font-size:12px;font-weight:900}
+.path-computer .path-btn{background:#159b65}.path-think .path-btn{background:#d92b89}
+.lesson-section{background:#fff}
+.lesson-head{display:flex;justify-content:space-between;gap:20px;align-items:end}
+.left-title{text-align:left}
+.lesson-sub{color:#6d7280;line-height:1.6;margin:8px 0 0}.lesson-chip{background:#f0e4ff;color:#6330a4;border-radius:999px;padding:9px 13px;font-size:10px;font-weight:950}
+.lesson-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:22px;margin-top:30px}
+.lesson-video-card{background:#21113f;border-radius:28px;padding:12px;box-shadow:0 18px 40px rgba(55,20,100,.18)}
+.lesson-video-placeholder{min-height:400px;border-radius:20px;background:linear-gradient(145deg,#38205f,#6d28d9);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:7px}
+.lesson-video-placeholder>div{font-size:56px}.lesson-video-placeholder strong{font-size:22px}.lesson-video-placeholder span{font-size:13px;opacity:.85;margin-bottom:15px}
+.learn-box,.think-box,.challenge-box{border-radius:20px;padding:20px;margin-bottom:13px;border:1px solid rgba(70,40,110,.1)}
+.learn-box{background:linear-gradient(145deg,#f4f8ff,#fff)}.think-box{background:linear-gradient(145deg,#fff1fa,#fff)}.challenge-box{background:linear-gradient(145deg,#fff9e8,#fff)}
+.lesson-content h3{margin:0 0 9px;font-size:17px;color:#32145f}.lesson-content p{margin:0;color:#666d7b;line-height:1.55;font-size:13px}.learn-box ul{margin:0;padding-left:20px;color:#626a78;line-height:1.75;font-size:13px}
+.challenge-options{display:flex;gap:8px;flex-wrap:wrap;margin-top:13px}.challenge-options button{border:1px solid #eadcf7;background:#fff;border-radius:10px;padding:9px 11px;color:#5b2a91;font-weight:850;font-size:11px;cursor:pointer}
+.lesson-flow{margin:24px auto 0;display:flex;justify-content:center;align-items:center;gap:10px;flex-wrap:wrap;color:#6330a4;font-size:12px;font-weight:900}.lesson-flow span{background:#f6f0ff;border-radius:999px;padding:9px 12px}.lesson-flow b{color:#e83e9f}
+.activities-section{background:linear-gradient(135deg,#fffdf8,#f8f2ff,#eefaff)}
+.activity-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:15px;margin-top:30px}.activity-card{background:#fff;border-radius:22px;padding:22px;border:1px solid rgba(70,40,110,.1);box-shadow:0 12px 28px rgba(55,30,95,.08);min-height:220px}.activity-card>div{font-size:35px}.activity-card h3{font-size:18px;color:#32145f;margin:12px 0 7px}.activity-card p{font-size:12.5px;line-height:1.55;color:#6b707b;margin:0 0 16px}.activity-card a{color:#6d28d9;font-size:11px;font-weight:950}
+.trust-section{background:#21113f;color:#fff}.trust-section .premium-title{color:#fff}.trust-section .premium-title span{color:#ff62bd}.trust-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:30px}.trust-grid>div{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.13);border-radius:20px;padding:19px;font-size:14px;color:#fff}.trust-grid strong{display:block;margin:0 0 6px}.trust-grid span{display:block;color:#ddd4ea;font-size:12px;line-height:1.5}
+@media(max-width:850px){.path-grid,.trust-grid{grid-template-columns:1fr 1fr}.lesson-grid{grid-template-columns:1fr}.activity-grid{grid-template-columns:1fr 1fr}.lesson-head{display:block}.lesson-chip{display:inline-block;margin-top:15px}}
+@media(max-width:560px){.hero-brand{font-size:12px}.hero-topics{font-size:11px}.hero-promise{font-size:17px}.hero-actions .btn{width:100%}.sbm-platform-section{padding:54px 12px}.path-grid,.activity-grid,.trust-grid{grid-template-columns:1fr}.path-card{min-height:300px}.lesson-video-placeholder{min-height:330px}.lesson-flow{gap:6px}.lesson-flow b{display:none}.lesson-flow span{font-size:10px}}
+</style>
+
 </head>
 <body>
 
@@ -676,12 +837,13 @@ body{
   <div class="navin">
     <a class="brand" href="#top">🧠 SMART <span>BRAIN MISSION</span></a>
     <div class="links">
-      <a href="#explore">What Kids Explore</a>
-      <a href="#why">Why Us?</a>
-      <a href="#parents">Parents' Questions</a>
+      <a href="#learning">Start Learning</a>
+      <a href="#explore">Explore</a>
+      <a href="#activities">Activities</a>
       <a href="#youtube">YouTube</a>
-      <a href="#pack">Activity Pack</a>
-      <a href="#contact">Contact Us</a>
+      <a href="#parents">Parents</a>
+      <a href="#pack">Activity Packs</a>
+      <a href="#contact">Contact</a>
     </div>
   </div>
 </nav>
@@ -693,10 +855,12 @@ body{
     <div class="top-video-copy">
       <span class="badge">FOR CURIOUS MINDS • 5+</span>
       <h1>Learn AI.<br><span class="pink">Think Smart.</span><br>Create More.</h1>
-      <p class="hero-mini">AI • Computer Skills • Critical Thinking — made fun for curious minds 5+.</p>
+      <p class="hero-mini">AI • Computer Skills • Critical Thinking • Creativity — made fun for curious minds 5+.</p>
+      <p class="hero-promise"><span>💡</span> Bachchon Ko Sirf Answers Nahi — <strong>Sochna, Samajhna Aur Create Karna</strong> Sikhayein.</p>
       <div class="btns">
-        <a class="btn primary" href="#explore">🧠 Explore Learning</a>
-        <a class="btn youtube" href="#youtube">▶ Watch &amp; Learn</a>
+        <a class="btn primary" href="#explore">🧠 Start Learning</a>
+        <a class="btn youtube" href="#youtube">▶ Watch Videos</a>
+        <a class="btn yellow" href="#pack">🎨 Try Activities</a>
       </div>
     </div>
     <div>
@@ -805,7 +969,130 @@ body{
       <div class="journey-node"><div class="node-icon">🛡️</div><div class="node-num">05</div><h3>Stay Safe</h3><p>Smart &amp; responsible tech use</p></div>
     </div>
   </div>
-</section><section class="premium-section varnika-premium" id="varnika">
+</section>
+<!-- ===== SMART BRAIN MISSION LEARNING PLATFORM ===== -->
+<section class="sbm-platform-section learning-library" id="learning">
+  <div class="sbm-platform-wrap">
+    <div class="section-kicker">🧭 START YOUR LEARNING JOURNEY</div>
+    <h2 class="premium-title">Choose a <span>Learning Path</span></h2>
+    <p class="premium-sub">YouTube se discovery, website par structured learning — har topic mein video, thinking, activity aur challenge.</p>
+
+    <div class="path-grid">
+      <article class="path-card path-ai">
+        <div class="path-icon">🤖</div>
+        <div class="path-level">🌱 EXPLORER</div>
+        <h3>AI Explorer</h3>
+        <p>AI ko samjho, questions poochho aur technology ko blindly trust karne ke bajay verify karna seekho.</p>
+        <div class="path-meta"><span>🎬 Videos</span><span>🧩 Activities</span><span>🧠 Challenges</span></div>
+        <a href="#lesson-ai" class="path-btn">Start AI Mission →</a>
+      </article>
+
+      <article class="path-card path-computer">
+        <div class="path-icon">💻</div>
+        <div class="path-level">🚀 BUILDER</div>
+        <h3>Computer Detective</h3>
+        <p>Practical computer skills ko simple tasks, experiments aur digital challenges ke through practice karo.</p>
+        <div class="path-meta"><span>🎬 Videos</span><span>🧪 Practice</span><span>🎯 Challenges</span></div>
+        <a href="#activities" class="path-btn">Explore Computer →</a>
+      </article>
+
+      <article class="path-card path-think">
+        <div class="path-icon">🧠</div>
+        <div class="path-level">🧠 THINKER</div>
+        <h3>Critical Thinking</h3>
+        <p>Question karo, compare karo, evidence dekho aur apna answer khud build karo.</p>
+        <div class="path-meta"><span>🤔 Think</span><span>🔎 Verify</span><span>💡 Discover</span></div>
+        <a href="#activities" class="path-btn">Start Thinking →</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="sbm-platform-section lesson-section" id="lesson-ai">
+  <div class="sbm-platform-wrap">
+    <div class="lesson-head">
+      <div>
+        <div class="section-kicker">🎬 LESSON + THINKING + PRACTICE</div>
+        <h2 class="premium-title left-title">🤖 AI Kya <span>Hota Hai?</span></h2>
+        <p class="lesson-sub">Ek Smart Brain Mission lesson sirf video dekhne par khatam nahi hota.</p>
+      </div>
+      <span class="lesson-chip">MISSION 01</span>
+    </div>
+
+    <div class="lesson-grid">
+      <div class="lesson-video-card">
+        <div class="lesson-video-placeholder">
+          <div>🎬</div>
+          <strong>Watch Video</strong>
+          <span>AI Kya Hota Hai?</span>
+          <a href="#youtube" class="btn youtube">▶ Watch on YouTube</a>
+        </div>
+      </div>
+
+      <div class="lesson-content">
+        <div class="learn-box">
+          <h3>💡 What Your Child Will Learn</h3>
+          <ul>
+            <li>AI kya hota hai</li>
+            <li>AI ke real-life examples</li>
+            <li>AI simple level par kaise kaam karta hai</li>
+          </ul>
+        </div>
+
+        <div class="think-box">
+          <h3>🤔 Think About It</h3>
+          <p>“Kya calculator AI hai? <strong>Why?</strong>”</p>
+        </div>
+
+        <div class="challenge-box">
+          <h3>🧠 Mini Challenge</h3>
+          <p>3 situations dekho aur identify karo — <strong>AI use ho raha hai ya nahi?</strong></p>
+          <div class="challenge-options">
+            <button type="button">📱 Situation 1</button>
+            <button type="button">🚗 Situation 2</button>
+            <button type="button">🎵 Situation 3</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="lesson-flow">
+      <span>🎬 Watch</span><b>→</b><span>🤔 Think</span><b>→</b><span>🧩 Try</span><b>→</b><span>🔎 Verify</span><b>→</b><span>💡 Create</span>
+    </div>
+  </div>
+</section>
+
+<section class="sbm-platform-section activities-section" id="activities">
+  <div class="sbm-platform-wrap">
+    <div class="section-kicker">🧩 LEARN BY DOING</div>
+    <h2 class="premium-title">Every Topic Needs a <span>Challenge</span></h2>
+    <p class="premium-sub">Video ke baad bachcha kuch kare — solve kare, experiment kare, create kare.</p>
+
+    <div class="activity-grid">
+      <article class="activity-card"><div>🧩</div><h3>AI Activity</h3><p>AI examples ko real-life situations se match karo.</p><a href="#pack">Try Activity →</a></article>
+      <article class="activity-card"><div>📝</div><h3>AI Quiz</h3><p>Jo seekha usko short questions ke through check karo.</p><a href="#lesson-ai">Take Quiz →</a></article>
+      <article class="activity-card"><div>🎯</div><h3>AI Challenge</h3><p>Answer dene se pehle reason karo aur apna logic explain karo.</p><a href="#why">Accept Challenge →</a></article>
+      <article class="activity-card"><div>📄</div><h3>Printable Activity</h3><p>Screen se bahar learning ko paper-based practice mein badlo.</p><a href="#pack">See Activity Packs →</a></article>
+    </div>
+  </div>
+</section>
+
+<section class="sbm-platform-section trust-section" id="trust">
+  <div class="sbm-platform-wrap">
+    <div class="section-kicker">⭐ FOR PARENTS</div>
+    <h2 class="premium-title">Why Parents Choose <span>Smart Brain Mission</span></h2>
+    <div class="trust-grid">
+      <div>✅ <strong>Age-appropriate learning</strong><span>5+ positioning ke saath simple, understandable content.</span></div>
+      <div>✅ <strong>Hindi-friendly</strong><span>Complex technology ko familiar language aur examples mein explain karna.</span></div>
+      <div>✅ <strong>Learning through activities</strong><span>Video ke saath practice, puzzles aur challenges.</span></div>
+      <div>✅ <strong>AI + computer literacy</strong><span>Technology ko samajhne aur responsibly use karne ki foundation.</span></div>
+      <div>✅ <strong>Critical thinking focused</strong><span>Question, think, verify aur create ka approach.</span></div>
+      <div>✅ <strong>Clean learning experience</strong><span>Unnecessary complexity aur distracting ads ke bina focused environment.</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="premium-section varnika-premium" id="varnika">
   <div class="premium-wrap varnika-wrap">
     <div class="varnika-copy">
       <div class="section-kicker">👧 MEET VARNIKA</div>

@@ -1025,7 +1025,7 @@ body{
           <div>🎬</div>
           <strong>Watch Video</strong>
           <span>AI Kya Hota Hai?</span>
-          <a href="#youtube" class="btn youtube">▶ Watch on YouTube</a>
+          <a id="firstVideoLink" href="https://www.youtube.com/results?search_query=Smart+Brain+Mission+AI+Kya+Hota+Hai" target="_blank" rel="noopener" class="btn youtube">▶ Watch on YouTube</a>
         </div>
       </div>
 
@@ -1048,10 +1048,18 @@ body{
           <h3>🧠 Mini Challenge</h3>
           <p>3 situations dekho aur identify karo — <strong>AI use ho raha hai ya nahi?</strong></p>
           <div class="challenge-options">
-            <button type="button">📱 Situation 1</button>
-            <button type="button">🚗 Situation 2</button>
-            <button type="button">🎵 Situation 3</button>
+            <button type="button" class="scenario-btn" data-answer="yes">📱 Situation 1</button>
+            <button type="button" class="scenario-btn" data-answer="no">🚗 Situation 2</button>
+            <button type="button" class="scenario-btn" data-answer="yes">🎵 Situation 3</button>
           </div>
+          <div class="scenario-question" id="scenarioQuestion">
+            <strong>Situation 1:</strong> A phone camera recognizes a person’s face and automatically groups their photos. Is AI being used?
+          </div>
+          <div class="scenario-answer-row">
+            <button type="button" id="scenarioYes">✅ Haan, AI use ho raha hai</button>
+            <button type="button" id="scenarioNo">❌ Nahi, AI use nahi ho raha</button>
+          </div>
+          <div class="scenario-feedback" id="scenarioFeedback" aria-live="polite">Pehle Situation 1, 2 ya 3 choose karo.</div>
         </div>
       </div>
     </div>
@@ -1069,10 +1077,61 @@ body{
     <p class="premium-sub">Video ke baad bachcha kuch kare — solve kare, experiment kare, create kare.</p>
 
     <div class="activity-grid">
-      <article class="activity-card"><div>🧩</div><h3>AI Activity</h3><p>AI examples ko real-life situations se match karo.</p><a href="#pack">Try Activity →</a></article>
-      <article class="activity-card"><div>📝</div><h3>AI Quiz</h3><p>Jo seekha usko short questions ke through check karo.</p><a href="#lesson-ai">Take Quiz →</a></article>
-      <article class="activity-card"><div>🎯</div><h3>AI Challenge</h3><p>Answer dene se pehle reason karo aur apna logic explain karo.</p><a href="#why">Accept Challenge →</a></article>
+      <article class="activity-card"><div>🧩</div><h3>AI Activity</h3><p>AI examples ko real-life situations se match karo aur reason batao.</p><button type="button" class="activity-open" data-target="aiActivityPanel">Try Activity →</button></article>
+      <article class="activity-card"><div>📝</div><h3>AI Quiz</h3><p>3 short questions se check karo ki AI ke baare mein kya samjha.</p><button type="button" class="activity-open" data-target="aiQuizPanel">Take Quiz →</button></article>
+      <article class="activity-card"><div>🎯</div><h3>AI Challenge</h3><p>AI ke answer ko blindly accept nahi — reason, check aur decide karo.</p><button type="button" class="activity-open" data-target="aiChallengePanel">Accept Challenge →</button></article>
       <article class="activity-card"><div>📄</div><h3>Printable Activity</h3><p>Screen se bahar learning ko paper-based practice mein badlo.</p><a href="#pack">See Activity Packs →</a></article>
+    </div>
+
+    <div class="interactive-learning-panels">
+      <div class="interactive-panel" id="aiActivityPanel">
+        <div class="panel-title">🧩 AI Activity — AI Hai Ya Nahi?</div>
+        <p>Har example ko padho aur socho: kya isme AI decision ya pattern recognition use kar raha hai?</p>
+        <div class="match-grid">
+          <button type="button" class="match-item" data-correct="yes">📸 Phone face recognition</button>
+          <button type="button" class="match-item" data-correct="no">🧮 Simple calculator: 7 + 5</button>
+          <button type="button" class="match-item" data-correct="yes">🎵 Music app recommends songs</button>
+          <button type="button" class="match-item" data-correct="no">💡 Normal light switch ON/OFF</button>
+        </div>
+        <div class="panel-feedback" id="activityFeedback" aria-live="polite">Ek option choose karo.</div>
+      </div>
+
+      <div class="interactive-panel" id="aiQuizPanel">
+        <div class="panel-title">📝 AI Quiz — 3 Quick Questions</div>
+        <div class="quiz-question">
+          <strong>1. AI ka ek important feature kya ho sakta hai?</strong>
+          <div class="quiz-options">
+            <button type="button" data-q="1" data-correct="yes">Examples se patterns seekhna</button>
+            <button type="button" data-q="1" data-correct="no">Har baar sirf fixed answer dena</button>
+          </div>
+        </div>
+        <div class="quiz-question">
+          <strong>2. AI ka answer milne par smart habit kya hai?</strong>
+          <div class="quiz-options">
+            <button type="button" data-q="2" data-correct="yes">Important information ko verify karna</button>
+            <button type="button" data-q="2" data-correct="no">Har answer ko bina check kiye maan lena</button>
+          </div>
+        </div>
+        <div class="quiz-question">
+          <strong>3. Inmein se AI ka common example kaunsa hai?</strong>
+          <div class="quiz-options">
+            <button type="button" data-q="3" data-correct="no">Simple ON/OFF switch</button>
+            <button type="button" data-q="3" data-correct="yes">Face recognition</button>
+          </div>
+        </div>
+        <div class="panel-feedback" id="quizFeedback" aria-live="polite">Answers choose karo — feedback yahin milega.</div>
+      </div>
+
+      <div class="interactive-panel" id="aiChallengePanel">
+        <div class="panel-title">🎯 AI Challenge — Think Before You Trust</div>
+        <p><strong>Challenge:</strong> AI ne kaha: “Ye information 100% correct hai.” Tum kya karoge?</p>
+        <div class="challenge-choice-grid">
+          <button type="button" data-challenge="good">🔎 Source check karunga aur important fact verify karunga.</button>
+          <button type="button" data-challenge="bad">🤖 AI ne kaha hai, isliye bina check kiye maan lunga.</button>
+          <button type="button" data-challenge="good">🧠 Do reliable sources se compare karunga.</button>
+        </div>
+        <div class="panel-feedback" id="challengeFeedback" aria-live="polite">Ek choice select karo.</div>
+      </div>
     </div>
   </div>
 </section>
@@ -1838,6 +1897,94 @@ const SBM_REVIEWS_ENDPOINT = "https://script.google.com/macros/s/AKfycbzXUzbKCDD
 
   renderReviews(featuredReviews);
   loadPublicReviews();
+})();
+</script>
+
+
+<script>
+(function(){
+  // Mini challenge: choose a situation, then choose Haan/Nahi.
+  const scenarioData = [
+    {
+      q:'Situation 1: A phone camera recognizes a person’s face and automatically groups their photos. Is AI being used?',
+      a:'yes',
+      good:'✅ Correct! Face recognition can use AI to identify patterns in faces.',
+      bad:'💡 Think again. The phone is recognizing a pattern in faces, which can involve AI.'
+    },
+    {
+      q:'Situation 2: You press a normal wall switch and the light turns ON. Is AI needed for this action?',
+      a:'no',
+      good:'✅ Correct! A simple switch can turn a light on without AI.',
+      bad:'💡 Think again. A simple switch can work without learning or recognizing patterns.'
+    },
+    {
+      q:'Situation 3: A music app studies what you listen to and recommends songs you may like. Is AI being used?',
+      a:'yes',
+      good:'✅ Correct! Recommendations can use patterns in your listening behaviour.',
+      bad:'💡 Think again. The app is using your listening patterns to make recommendations.'
+    }
+  ];
+  let currentScenario=0;
+  const sq=document.getElementById('scenarioQuestion');
+  const sf=document.getElementById('scenarioFeedback');
+  const yesBtn=document.getElementById('scenarioYes');
+  const noBtn=document.getElementById('scenarioNo');
+
+  document.querySelectorAll('.scenario-btn').forEach((btn,i)=>{
+    btn.addEventListener('click',()=>{
+      currentScenario=i;
+      sq.innerHTML='<strong>'+scenarioData[i].q.split(':')[0]+':</strong>'+scenarioData[i].q.split(':').slice(1).join(':');
+      sf.textContent='Ab Haan ya Nahi choose karo 👇';
+      document.querySelectorAll('.scenario-btn').forEach(b=>b.classList.remove('selected'));
+      btn.classList.add('selected');
+    });
+  });
+
+  function checkScenario(answer){
+    const d=scenarioData[currentScenario];
+    sf.textContent=answer===d.a?d.good:d.bad;
+  }
+  yesBtn.addEventListener('click',()=>checkScenario('yes'));
+  noBtn.addEventListener('click',()=>checkScenario('no'));
+
+  // Open activity panels.
+  document.querySelectorAll('.activity-open').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      document.querySelectorAll('.interactive-panel').forEach(p=>p.classList.remove('active'));
+      const target=document.getElementById(btn.dataset.target);
+      if(target){target.classList.add('active');target.scrollIntoView({behavior:'smooth',block:'center'});}
+    });
+  });
+
+  // Activity matching.
+  document.querySelectorAll('.match-item').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      const f=document.getElementById('activityFeedback');
+      f.textContent=btn.dataset.correct==='yes'
+        ? '✅ Good thinking! Is example mein pattern/recognition ya recommendation jaisi AI capability ho sakti hai.'
+        : '💡 Good check! Ye example simple fixed action se ho sakta hai, isliye AI zaroori nahi hai.';
+    });
+  });
+
+  // Quiz feedback.
+  document.querySelectorAll('.quiz-options button').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      const f=document.getElementById('quizFeedback');
+      f.textContent=btn.dataset.correct==='yes'
+        ? '✅ Great thinking! Ye option question ki condition ko satisfy karta hai.'
+        : '💡 Think again. Question mein AI ke learning/verification behaviour ko dekho.';
+    });
+  });
+
+  // Challenge feedback.
+  document.querySelectorAll('[data-challenge]').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      const f=document.getElementById('challengeFeedback');
+      f.textContent=btn.dataset.challenge==='good'
+        ? '✅ Exactly! Smart learners important information ko verify karte hain.'
+        : '💡 AI useful ho sakta hai, lekin important information ko blindly trust nahi karna chahiye.';
+    });
+  });
 })();
 </script>
 

@@ -819,13 +819,30 @@ body{
 .lesson-video-placeholder{min-height:400px;border-radius:20px;background:linear-gradient(145deg,#38205f,#6d28d9);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:7px}
 .lesson-video-placeholder>div{font-size:56px}.lesson-video-placeholder strong{font-size:22px}.lesson-video-placeholder span{font-size:13px;opacity:.85;margin-bottom:15px}
 .learn-box,.think-box,.challenge-box{border-radius:20px;padding:20px;margin-bottom:13px;border:1px solid rgba(70,40,110,.1)}
-.learn-box{background:linear-gradient(145deg,#f4f8ff,#fff)}.think-box{background:linear-gradient(145deg,#fff1fa,#fff)}.challenge-box{background:linear-gradient(145deg,#fff9e8,#fff)}
+.learn-box{background:linear-gradient(145deg,#f4f8ff,#fff)}.think-box{background:linear-gradient(145deg,#fff1fa,#fff)}.challenge-box{background:linear-gradient(145deg,#fff7dc,#fff0f8 52%,#f2edff)}
 .lesson-content h3{margin:0 0 9px;font-size:17px;color:#32145f}.lesson-content p{margin:0;color:#666d7b;line-height:1.55;font-size:13px}.learn-box ul{margin:0;padding-left:20px;color:#626a78;line-height:1.75;font-size:13px}
-.challenge-options{display:flex;gap:8px;flex-wrap:wrap;margin-top:13px}.challenge-options button{border:1px solid #eadcf7;background:#fff;border-radius:10px;padding:9px 11px;color:#5b2a91;font-weight:850;font-size:11px;cursor:pointer}
-.lesson-flow{margin:24px auto 0;display:flex;justify-content:center;align-items:center;gap:10px;flex-wrap:wrap;color:#6330a4;font-size:12px;font-weight:900}.lesson-flow span{background:#f6f0ff;border-radius:999px;padding:9px 12px}.lesson-flow b{color:#e83e9f}
-.activities-section{background:linear-gradient(135deg,#fffdf8,#f8f2ff,#eefaff)}
-.activity-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:15px;margin-top:30px}.activity-card{background:#fff;border-radius:22px;padding:22px;border:1px solid rgba(70,40,110,.1);box-shadow:0 12px 28px rgba(55,30,95,.08);min-height:220px}.activity-card>div{font-size:35px}.activity-card h3{font-size:18px;color:#32145f;margin:12px 0 7px}.activity-card p{font-size:12.5px;line-height:1.55;color:#6b707b;margin:0 0 16px}.activity-card a{color:#6d28d9;font-size:11px;font-weight:950}
-.trust-section{background:#21113f;color:#fff}.trust-section .premium-title{color:#fff}.trust-section .premium-title span{color:#ff62bd}.trust-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:30px}.trust-grid>div{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.13);border-radius:20px;padding:19px;font-size:14px;color:#fff}.trust-grid strong{display:block;margin:0 0 6px}.trust-grid span{display:block;color:#ddd4ea;font-size:12px;line-height:1.5}
+.mission-scenarios{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:18px}
+.mission-scenario{position:relative;border:0;border-radius:22px;padding:13px 12px 14px;text-align:left;cursor:pointer;color:#32145f;transition:transform .2s,box-shadow .2s;overflow:hidden;min-height:118px;box-shadow:0 7px 0 rgba(61,32,101,.08)}
+.mission-scenario:after{content:"";position:absolute;width:72px;height:72px;border-radius:50%;right:-22px;bottom:-24px;background:rgba(255,255,255,.48)}
+.mission-scenario>*{position:relative;z-index:1}
+.mission-scenario:hover{transform:translateY(-4px);box-shadow:0 11px 0 rgba(61,32,101,.08)}
+.mission-scenario.selected{transform:translateY(-4px) scale(1.015);box-shadow:0 12px 0 rgba(61,32,101,.1),0 0 0 3px #fff,0 0 0 5px #e83e9f}
+.scenario-one{background:linear-gradient(135deg,#dff2ff,#bce7ff)}
+.scenario-two{background:linear-gradient(135deg,#fff4b8,#ffe47b)}
+.scenario-three{background:linear-gradient(135deg,#ffd9ef,#ffb9dc)}
+.scenario-art{display:flex;width:48px;height:48px;align-items:center;justify-content:center;border-radius:16px;background:rgba(255,255,255,.72);font-size:27px;margin-bottom:9px;box-shadow:0 5px 12px rgba(60,35,90,.08)}
+.scenario-number{display:block;font-size:8px;letter-spacing:.09em;font-weight:950;color:#714099;margin-bottom:3px}
+.mission-scenario strong{display:block;font-size:14px;line-height:1.1}.mission-scenario small{display:block;font-size:9px;color:#665d72;margin-top:4px}
+.scenario-stage{margin-top:14px;border:0;border-radius:24px;padding:16px;background:linear-gradient(135deg,#ffffff 0%,#fff5fb 48%,#f0f7ff 100%);box-shadow:0 10px 25px rgba(76,43,118,.08)}
+.scenario-stage-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:13px}.stage-label{font-size:9px;font-weight:950;letter-spacing:.09em;color:#fff;background:linear-gradient(90deg,#7b3fd0,#e83e9f);border-radius:999px;padding:7px 10px}.stage-dots{font-size:9px;letter-spacing:4px;color:#d7b4ed}
+.scenario-scene{display:flex;gap:14px;align-items:center}.scene-icon{width:72px;height:72px;display:flex;align-items:center;justify-content:center;border-radius:21px;background:linear-gradient(145deg,#fff,#e9ddff);font-size:39px;flex:none;box-shadow:0 8px 18px rgba(72,42,120,.1)}
+.scene-copy{min-width:0}.scene-tag{font-size:8px;font-weight:950;color:#e33a97;letter-spacing:.08em}.scene-copy h4{margin:3px 0 5px;font-size:19px;color:#32145f}.scene-copy p{margin:0;font-size:12px;line-height:1.5;color:#5f6674}
+.scenario-question-line{margin-top:15px;padding:12px 14px;border-radius:15px;background:linear-gradient(90deg,#fff0f8,#f4ecff);color:#5e267f;font-size:13px;border:2px dashed #dfb9ef}
+.scenario-answer-row{display:grid;grid-template-columns:1fr 1fr;gap:11px;margin-top:12px}
+.answer-choice{border:0;border-radius:17px;padding:12px 14px;display:flex;align-items:center;gap:10px;text-align:left;cursor:pointer;transition:.2s;font-family:inherit;box-shadow:0 6px 0 rgba(50,25,80,.07)}
+.answer-choice>span:first-child{font-size:25px}.answer-choice b{display:block;font-size:12px}.answer-choice small{display:block;font-size:9px;margin-top:2px;opacity:.72}
+.answer-yes{background:linear-gradient(135deg,#dff9ec,#b9efd7);color:#126d4d;border:1px solid #9ce3c3}.answer-no{background:linear-gradient(135deg,#ffe8ee,#ffcbd7);color:#a62c51;border:1px solid #efacbd}.answer-choice:hover{transform:translateY(-3px);box-shadow:0 9px 0 rgba(50,25,80,.07)}
+.scenario-feedback{margin-top:11px;padding:10px 12px;border-radius:14px;background:#fff;border:2px solid #eadcf7;color:#6330a4;font-size:11px;line-height:1.5;box-shadow:0 5px 14px rgba(70,40,110,.06)}
 @media(max-width:850px){.path-grid,.trust-grid{grid-template-columns:1fr 1fr}.lesson-grid{grid-template-columns:1fr}.activity-grid{grid-template-columns:1fr 1fr}.lesson-head{display:block}.lesson-chip{display:inline-block;margin-top:15px}}
 @media(max-width:560px){.hero-brand{font-size:12px}.hero-topics{font-size:11px}.hero-promise{font-size:17px}.hero-actions .btn{width:100%}.sbm-platform-section{padding:54px 12px}.path-grid,.activity-grid,.trust-grid{grid-template-columns:1fr}.path-card{min-height:300px}.lesson-video-placeholder{min-height:330px}.lesson-flow{gap:6px}.lesson-flow b{display:none}.lesson-flow span{font-size:10px}}
 </style>
@@ -1047,19 +1064,45 @@ body{
         <div class="challenge-box">
           <h3>🧠 Mini Challenge</h3>
           <p>3 situations dekho aur identify karo — <strong>AI use ho raha hai ya nahi?</strong></p>
-          <div class="challenge-options">
-            <button type="button" class="scenario-btn" data-answer="yes">📱 Situation 1</button>
-            <button type="button" class="scenario-btn" data-answer="no">🚗 Situation 2</button>
-            <button type="button" class="scenario-btn" data-answer="yes">🎵 Situation 3</button>
+          <div class="mission-scenarios" role="tablist" aria-label="Choose a situation">
+            <button type="button" class="mission-scenario scenario-one scenario-btn selected" data-index="0">
+              <span class="scenario-art">📱</span>
+              <span class="scenario-number">MISSION 01</span>
+              <strong>Who’s That?</strong>
+              <small>Face Recognition</small>
+            </button>
+            <button type="button" class="mission-scenario scenario-two scenario-btn" data-index="1">
+              <span class="scenario-art">💡</span>
+              <span class="scenario-number">MISSION 02</span>
+              <strong>Switch It!</strong>
+              <small>Simple Action</small>
+            </button>
+            <button type="button" class="mission-scenario scenario-three scenario-btn" data-index="2">
+              <span class="scenario-art">🎧</span>
+              <span class="scenario-number">MISSION 03</span>
+              <strong>Your Next Song</strong>
+              <small>Smart Recommendation</small>
+            </button>
           </div>
-          <div class="scenario-question" id="scenarioQuestion">
-            <strong>Situation 1:</strong> A phone camera recognizes a person’s face and automatically groups their photos. Is AI being used?
+
+          <div class="scenario-stage" id="scenarioQuestion" aria-live="polite">
+            <div class="scenario-stage-top"><span class="stage-label">🔍 DETECTIVE MODE</span><span class="stage-dots">● ● ●</span></div>
+            <div class="scenario-scene">
+              <div class="scene-icon" id="sceneIcon">📱</div>
+              <div class="scene-copy">
+                <span class="scene-tag" id="sceneTag">REAL-LIFE SCENE</span>
+                <h4 id="sceneTitle">Who’s That?</h4>
+                <p id="sceneText">A phone camera recognizes a person’s face and automatically groups their photos.</p>
+              </div>
+            </div>
+            <div class="scenario-question-line">🤔 <strong>AI use ho raha hai ya nahi?</strong></div>
           </div>
+
           <div class="scenario-answer-row">
-            <button type="button" id="scenarioYes">✅ Haan, AI use ho raha hai</button>
-            <button type="button" id="scenarioNo">❌ Nahi, AI use nahi ho raha</button>
+            <button type="button" class="answer-choice answer-yes" id="scenarioYes"><span>🧠</span><span><b>Haan!</b><small>AI is being used</small></span></button>
+            <button type="button" class="answer-choice answer-no" id="scenarioNo"><span>🔧</span><span><b>Nahi!</b><small>AI is not needed</small></span></button>
           </div>
-          <div class="scenario-feedback" id="scenarioFeedback" aria-live="polite">Pehle Situation 1, 2 ya 3 choose karo.</div>
+          <div class="scenario-feedback" id="scenarioFeedback" aria-live="polite">Ek situation choose karo, phir apna answer detective ki tarah socho. 👇</div>
         </div>
       </div>
     </div>
@@ -1903,25 +1946,28 @@ const SBM_REVIEWS_ENDPOINT = "https://script.google.com/macros/s/AKfycbzXUzbKCDD
 
 <script>
 (function(){
-  // Mini challenge: choose a situation, then choose Haan/Nahi.
+  // Mini challenge: choose a situation, then solve it.
   const scenarioData = [
     {
-      q:'Situation 1: A phone camera recognizes a person’s face and automatically groups their photos. Is AI being used?',
+      icon:'📱', tag:'REAL-LIFE SCENE', title:'Who’s That?',
+      text:'A phone camera recognizes a person’s face and automatically groups their photos.',
       a:'yes',
-      good:'✅ Correct! Face recognition can use AI to identify patterns in faces.',
-      bad:'💡 Think again. The phone is recognizing a pattern in faces, which can involve AI.'
+      good:'🎉 Smart thinking! Face recognition can use AI to recognize patterns in faces.',
+      bad:'💡 Look closely: the phone is recognizing a pattern in a face. That can involve AI.'
     },
     {
-      q:'Situation 2: You press a normal wall switch and the light turns ON. Is AI needed for this action?',
+      icon:'💡', tag:'EVERYDAY SCENE', title:'Switch It!',
+      text:'You press a normal wall switch and the light turns ON.',
       a:'no',
-      good:'✅ Correct! A simple switch can turn a light on without AI.',
-      bad:'💡 Think again. A simple switch can work without learning or recognizing patterns.'
+      good:'🎯 You got it! A simple switch can turn a light on without AI.',
+      bad:'🔎 Think about the job: a normal switch can turn the light on without learning or recognizing patterns.'
     },
     {
-      q:'Situation 3: A music app studies what you listen to and recommends songs you may like. Is AI being used?',
+      icon:'🎧', tag:'SMART MUSIC SCENE', title:'Your Next Song',
+      text:'A music app studies what you listen to and recommends songs you may like.',
       a:'yes',
-      good:'✅ Correct! Recommendations can use patterns in your listening behaviour.',
-      bad:'💡 Think again. The app is using your listening patterns to make recommendations.'
+      good:'🚀 Great detective work! Recommendation systems can use patterns in what you listen to.',
+      bad:'💡 Notice what the app is doing: it studies your listening patterns to make recommendations.'
     }
   ];
   let currentScenario=0;
@@ -1929,15 +1975,26 @@ const SBM_REVIEWS_ENDPOINT = "https://script.google.com/macros/s/AKfycbzXUzbKCDD
   const sf=document.getElementById('scenarioFeedback');
   const yesBtn=document.getElementById('scenarioYes');
   const noBtn=document.getElementById('scenarioNo');
+  const sceneIcon=document.getElementById('sceneIcon');
+  const sceneTag=document.getElementById('sceneTag');
+  const sceneTitle=document.getElementById('sceneTitle');
+  const sceneText=document.getElementById('sceneText');
 
-  document.querySelectorAll('.scenario-btn').forEach((btn,i)=>{
-    btn.addEventListener('click',()=>{
-      currentScenario=i;
-      sq.innerHTML='<strong>'+scenarioData[i].q.split(':')[0]+':</strong>'+scenarioData[i].q.split(':').slice(1).join(':');
-      sf.textContent='Ab Haan ya Nahi choose karo 👇';
-      document.querySelectorAll('.scenario-btn').forEach(b=>b.classList.remove('selected'));
-      btn.classList.add('selected');
-    });
+  function showScenario(i){
+    currentScenario=i;
+    const d=scenarioData[i];
+    sceneIcon.textContent=d.icon;
+    sceneTag.textContent=d.tag;
+    sceneTitle.textContent=d.title;
+    sceneText.textContent=d.text;
+    sf.textContent='Ab apna answer detective ki tarah choose karo 👇';
+    document.querySelectorAll('.scenario-btn').forEach(b=>b.classList.remove('selected'));
+    const active=document.querySelector('.scenario-btn[data-index="'+i+'"]');
+    if(active) active.classList.add('selected');
+  }
+
+  document.querySelectorAll('.scenario-btn').forEach((btn)=>{
+    btn.addEventListener('click',()=>showScenario(Number(btn.dataset.index)));
   });
 
   function checkScenario(answer){

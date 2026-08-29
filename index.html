@@ -847,6 +847,78 @@ body{
 @media(max-width:560px){.hero-brand{font-size:12px}.hero-topics{font-size:11px}.hero-promise{font-size:17px}.hero-actions .btn{width:100%}.sbm-platform-section{padding:54px 12px}.path-grid,.activity-grid,.trust-grid{grid-template-columns:1fr}.path-card{min-height:300px}.lesson-video-placeholder{min-height:330px}.lesson-flow{gap:6px}.lesson-flow b{display:none}.lesson-flow span{font-size:10px}}
 </style>
 
+
+<style id="sbm-premium-detective-v4">
+.lesson-section{background:linear-gradient(135deg,#fffaff 0%,#f7f0ff 48%,#eef8ff 100%)}
+.detective-hero{display:grid;grid-template-columns:.72fr 1.28fr;gap:26px;align-items:center;margin-bottom:22px}
+.detective-intro{padding:8px 4px 8px 8px}.detective-ribbon{display:inline-block;background:linear-gradient(90deg,#ee3f9f,#7d43df);color:#fff;font-weight:950;font-size:12px;letter-spacing:.04em;padding:9px 15px;border-radius:9px 20px 9px 20px;box-shadow:0 6px 0 rgba(99,43,145,.12)}
+.detective-intro h2{font-size:42px;line-height:1.04;color:#32145f;margin:16px 0 9px}.detective-intro h2 span{color:#e83e9f}.detective-intro>p{font-size:14px;line-height:1.6;color:#666c79;max-width:400px}
+.detective-tip{display:flex;align-items:center;gap:11px;background:#fff;border:2px dashed #e8b7dc;border-radius:18px;padding:12px 15px;max-width:370px;margin-top:18px;box-shadow:0 8px 22px rgba(71,36,112,.07)}
+.tip-bubble{width:46px;height:46px;border-radius:15px;background:linear-gradient(145deg,#ffe4f1,#e8dcff);display:flex;align-items:center;justify-content:center;font-size:25px;flex:none}.detective-tip strong{display:block;color:#df3292;font-size:13px}.detective-tip span{display:block;color:#6b7180;font-size:10px;margin-top:3px}
+.mission-picker{background:rgba(255,255,255,.68);border:1px solid #e8dcf5;border-radius:28px;padding:20px;box-shadow:0 14px 35px rgba(67,35,105,.08)}
+.picker-title{text-align:center;color:#32145f;font-weight:950;font-size:17px;margin-bottom:15px}
+.mission-scenarios{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:0}
+.mission-scenario{position:relative;border:0;border-radius:22px;padding:14px 12px 15px;text-align:left;cursor:pointer;color:#32145f;transition:.2s;overflow:hidden;min-height:170px;box-shadow:0 8px 0 rgba(61,32,101,.08)}
+.mission-scenario:after{content:"";position:absolute;width:95px;height:95px;border-radius:50%;right:-32px;bottom:-32px;background:rgba(255,255,255,.48)}
+.mission-scenario>*{position:relative;z-index:1}.mission-scenario:hover{transform:translateY(-4px)}.mission-scenario.selected{transform:translateY(-4px);box-shadow:0 10px 0 rgba(61,32,101,.08),0 0 0 3px #fff,0 0 0 5px #e83e9f}
+.scenario-one{background:linear-gradient(145deg,#dff3ff,#bfe8ff)}.scenario-two{background:linear-gradient(145deg,#fff5bc,#ffe47c)}.scenario-three{background:linear-gradient(145deg,#ffd9ee,#ffb9dc)}
+.mission-badge{position:absolute;right:10px;top:10px;width:30px;height:30px;border-radius:50%;background:#fff;color:#6330a4;display:flex;align-items:center;justify-content:center;font-weight:950;font-size:11px;box-shadow:0 4px 9px rgba(60,35,90,.08)}
+.scenario-art{display:flex;width:66px;height:66px;align-items:center;justify-content:center;border-radius:20px;background:rgba(255,255,255,.72);font-size:38px;margin-bottom:12px;box-shadow:0 6px 13px rgba(60,35,90,.08)}
+.scenario-number{display:block;font-size:8px;letter-spacing:.1em;font-weight:950;color:#714099;margin-bottom:4px}.mission-scenario strong{display:block;font-size:15px}.mission-scenario small{display:block;font-size:9px;color:#665d72;margin-top:4px}
+.detective-question-card{display:grid;grid-template-columns:1fr 1.08fr;gap:20px;background:linear-gradient(110deg,#fff 0%,#fff7fb 50%,#f3f8ff 100%);border:1px solid #e8ddf4;border-radius:28px;padding:20px;box-shadow:0 15px 34px rgba(67,35,105,.09)}
+.detective-scene{display:flex;align-items:center;gap:17px;padding:15px 18px;background:linear-gradient(145deg,#f2f9ff,#f8efff);border-radius:21px;min-height:145px}
+.scene-character{width:92px;height:92px;border-radius:27px;background:#fff;display:flex;align-items:center;justify-content:center;font-size:51px;flex:none;box-shadow:0 9px 20px rgba(70,40,110,.1)}
+.scene-copy{min-width:0}.scene-tag{font-size:8px;font-weight:950;letter-spacing:.1em;color:#e33a97}.scene-copy h3{margin:5px 0 6px;font-size:23px;color:#32145f}.scene-copy p{margin:0;color:#5e6675;font-size:12px;line-height:1.55}
+.detective-decision{padding:5px 2px}.decision-question{font-size:16px;color:#32145f}.detective-decision>p{font-size:12px;color:#747986;margin:5px 0 12px}
+.scenario-answer-row{display:grid;grid-template-columns:1fr 1fr;gap:11px;margin-top:0}
+.answer-choice{border:0;border-radius:18px;padding:13px 12px;display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:9px;text-align:left;cursor:pointer;transition:.2s;font-family:inherit;box-shadow:0 6px 0 rgba(50,25,80,.06)}
+.answer-icon{font-size:24px}.answer-choice b{display:block;font-size:12px}.answer-choice small{display:block;font-size:9px;margin-top:2px;opacity:.72}.answer-mark{width:25px;height:25px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.72);font-weight:950}
+.answer-yes{background:linear-gradient(135deg,#dff9ec,#b9efd7);color:#126d4d;border:1px solid #9ce3c3}.answer-no{background:linear-gradient(135deg,#ffe8ee,#ffcbd7);color:#a62c51;border:1px solid #efacbd}.answer-choice:hover{transform:translateY(-3px)}
+.scenario-feedback{margin-top:10px;padding:10px 12px;border-radius:14px;background:#fff;border:2px solid #eadcf7;color:#6330a4;font-size:10.5px;line-height:1.45}
+.think-strip{display:grid;grid-template-columns:1fr auto 1fr auto 1fr auto 1fr auto 1fr;align-items:center;gap:8px;margin-top:20px;background:rgba(255,255,255,.78);border:1px solid #eadff5;border-radius:20px;padding:11px 15px;box-shadow:0 8px 22px rgba(70,40,110,.06)}
+.think-strip div{display:grid;grid-template-columns:auto 1fr;column-gap:7px;align-items:center}.think-strip div span{grid-row:1/3;font-size:21px}.think-strip strong{font-size:10px;color:#32145f}.think-strip small{font-size:8px;color:#777c87}.think-strip i{font-style:normal;color:#e83e9f;font-weight:950}
+.activities-section{background:linear-gradient(135deg,#fffdf7,#f9f1ff,#eef9ff)}.activity-heading{text-align:center}
+.activity-showcase{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:30px}
+.activity-card{position:relative;min-height:265px;border-radius:26px;padding:22px 20px 19px;overflow:hidden;border:1px solid rgba(60,40,100,.09);box-shadow:0 13px 30px rgba(60,35,100,.09)}
+.activity-card:after{content:"";position:absolute;width:110px;height:110px;border-radius:50%;right:-36px;top:-36px;background:rgba(255,255,255,.5)}
+.activity-green{background:linear-gradient(145deg,#eaffea,#d8f8dc)}.activity-blue{background:linear-gradient(145deg,#eaf7ff,#d7edff)}.activity-yellow{background:linear-gradient(145deg,#fff8d9,#ffedab)}.activity-purple{background:linear-gradient(145deg,#f5eaff,#e9dcff)}
+.activity-orb{position:relative;z-index:1;width:62px;height:62px;border-radius:20px;background:rgba(255,255,255,.78);display:flex;align-items:center;justify-content:center;font-size:34px;box-shadow:0 7px 15px rgba(60,35,90,.08)}
+.activity-label{position:relative;z-index:1;display:inline-block;font-size:8px;font-weight:950;letter-spacing:.1em;color:#6f3aa0;margin-top:14px}.activity-card h3{position:relative;z-index:1;font-size:20px;color:#32145f;margin:4px 0 8px}.activity-card p{position:relative;z-index:1;font-size:11.5px;line-height:1.55;color:#5f6674;margin:0 0 17px}.activity-card a,.activity-action{position:absolute;z-index:2;left:20px;bottom:18px;border:0;background:transparent;color:#6330a4;font-size:11px;font-weight:950;cursor:pointer;font-family:inherit;padding:0}.activity-card b{margin-left:4px}.activity-blue .activity-action{color:#147fbc}.activity-yellow .activity-action{color:#b77800}.activity-purple a{color:#7835c8}
+.activity-modal{display:none;position:fixed;inset:0;z-index:9999;background:rgba(33,17,63,.55);align-items:center;justify-content:center;padding:20px}.activity-modal.open{display:flex}.activity-modal-card{position:relative;width:min(560px,100%);background:#fff;border-radius:26px;padding:28px;box-shadow:0 25px 70px rgba(20,10,40,.28)}.modal-close{position:absolute;right:15px;top:12px;border:0;background:#f5efff;color:#6330a4;width:34px;height:34px;border-radius:50%;font-size:22px;cursor:pointer}.modal-kicker{font-size:10px;font-weight:950;letter-spacing:.09em;color:#df3292}.activity-modal-card h3{font-size:24px;color:#32145f;margin:7px 0 16px}.quiz-question{background:#f8f3ff;border-radius:19px;padding:18px}.quiz-question>span{display:inline-block;background:#e7dcff;color:#6330a4;border-radius:999px;padding:5px 9px;font-size:9px;font-weight:950}.quiz-question>strong{display:block;color:#32145f;font-size:14px;line-height:1.45;margin:11px 0}.quiz-option,.challenge-modal-option{display:block;width:100%;text-align:left;border:1px solid #e7d9f4;background:#fff;border-radius:13px;padding:11px 12px;margin-top:8px;color:#4f3a68;font-size:11px;cursor:pointer}.quiz-option:hover,.challenge-modal-option:hover{background:#f8f0ff}.quiz-feedback{margin-top:11px;color:#6330a4;font-size:11px;font-weight:800;min-height:18px}.challenge-modal>p{color:#6a707d;font-size:12px}
+@media(max-width:850px){.detective-hero,.detective-question-card{grid-template-columns:1fr}.activity-showcase{grid-template-columns:1fr 1fr}.think-strip{grid-template-columns:1fr 1fr 1fr;gap:12px}.think-strip i{display:none}}
+@media(max-width:560px){.detective-intro h2{font-size:32px}.mission-scenarios{grid-template-columns:1fr}.mission-scenario{min-height:125px}.scenario-art{width:52px;height:52px;font-size:29px}.detective-question-card{padding:13px}.detective-scene{padding:13px;gap:11px}.scene-character{width:65px;height:65px;border-radius:19px;font-size:34px}.scene-copy h3{font-size:18px}.scene-copy p{font-size:10.5px}.scenario-answer-row{grid-template-columns:1fr}.think-strip{grid-template-columns:1fr 1fr}.activity-showcase{grid-template-columns:1fr}.activity-card{min-height:235px}}
+</style>
+
+
+<style id="sbm-video-learning-panel-v5">
+.detective-question-card{grid-template-columns:.92fr 1.08fr;align-items:stretch;padding:16px}
+.video-learning-panel{border-radius:24px;padding:13px;background:linear-gradient(145deg,#241044,#3b1c70 58%,#5d28b0);color:#fff;box-shadow:0 16px 35px rgba(42,18,77,.18);display:flex;flex-direction:column}
+.video-panel-head{display:flex;align-items:center;justify-content:space-between;padding:2px 4px 11px;font-size:10px;letter-spacing:.05em}.video-panel-head span{font-weight:950}.video-panel-head b{background:rgba(255,255,255,.15);padding:6px 9px;border-radius:999px;font-size:8px}
+.video-frame{position:relative;width:100%;aspect-ratio:16/9;border-radius:17px;overflow:hidden;background:#160b2b;box-shadow:0 9px 22px rgba(0,0,0,.2)}.video-frame iframe{width:100%;height:100%;border:0;display:block}
+.video-panel-title{display:flex;align-items:center;gap:10px;padding:13px 4px 10px}.video-play-badge{width:34px;height:34px;border-radius:12px;background:#fff;color:#e83e9f;display:flex;align-items:center;justify-content:center;font-size:14px;box-shadow:0 5px 12px rgba(0,0,0,.15)}.video-panel-title strong{display:block;font-size:15px}.video-panel-title small{display:block;color:#ddd1f0;font-size:9px;margin-top:3px}
+.lesson-kit{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin-top:2px}.lesson-kit div{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.12);border-radius:13px;padding:9px 6px;text-align:center}.lesson-kit span{display:block;font-size:19px}.lesson-kit b{display:block;font-size:9px;margin-top:4px}.lesson-kit small{display:block;color:#d8c9e9;font-size:7px;margin-top:2px}
+.video-youtube-link{display:block;margin-top:10px;background:#ff4a4f;color:#fff;text-align:center;border-radius:12px;padding:10px;font-size:10px;font-weight:950;box-shadow:0 5px 0 rgba(110,20,35,.25)}
+.challenge-side-panel{border-radius:23px;padding:5px 3px 3px 5px;background:linear-gradient(145deg,#fff 0%,#fff7fb 55%,#f2f8ff 100%);display:flex;flex-direction:column;justify-content:center}.side-panel-kicker{display:inline-block;align-self:flex-start;margin:0 0 11px 2px;padding:7px 10px;border-radius:999px;background:#f0e3ff;color:#7339a6;font-size:8px;font-weight:950;letter-spacing:.08em}
+.challenge-side-panel .detective-scene{min-height:145px}.challenge-side-panel .detective-decision{padding-top:13px}.challenge-side-panel .scenario-answer-row{margin-top:8px}
+@media(max-width:850px){.detective-question-card{grid-template-columns:1fr}.video-learning-panel{order:0}.challenge-side-panel{order:1}.video-frame{max-height:none}}
+@media(max-width:560px){.detective-question-card{padding:11px}.video-panel-title strong{font-size:13px}.lesson-kit div{padding:8px 4px}}
+</style>
+
+
+<style id="sbm-trust-redesign-v6">
+.trust-section{background:linear-gradient(135deg,#fff8fd 0%,#f5f0ff 48%,#eef9ff 100%);color:#32145f}
+.trust-head{text-align:center;max-width:850px;margin:0 auto}.trust-head .section-kicker{color:#8a4bad}.trust-head .premium-title{color:#32145f;margin-bottom:8px}.trust-head .premium-title span{color:#e83e9f}.trust-intro{max-width:650px;margin:0 auto;color:#69707e;font-size:13px;line-height:1.6}
+.trust-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:30px}
+.trust-card{position:relative;display:flex;align-items:flex-start;gap:13px;min-height:125px;padding:19px;border-radius:22px;border:1px solid rgba(65,40,105,.1);box-shadow:0 11px 25px rgba(65,40,105,.08);overflow:hidden}
+.trust-card:after{content:"";position:absolute;width:95px;height:95px;border-radius:50%;right:-32px;bottom:-42px;background:rgba(255,255,255,.55)}
+.trust-card-pink{background:linear-gradient(145deg,#fff0f8,#ffdff0)}.trust-card-blue{background:linear-gradient(145deg,#edf8ff,#dcefff)}.trust-card-green{background:linear-gradient(145deg,#effdf4,#daf7e4)}.trust-card-yellow{background:linear-gradient(145deg,#fffbed,#ffefb6)}.trust-card-purple{background:linear-gradient(145deg,#f6efff,#e9dcff)}.trust-card-orange{background:linear-gradient(145deg,#fff4e8,#ffe0c5)}
+.trust-icon{position:relative;z-index:1;width:48px;height:48px;flex:none;border-radius:16px;background:rgba(255,255,255,.78);display:flex;align-items:center;justify-content:center;font-size:25px;box-shadow:0 6px 13px rgba(65,40,105,.08)}
+.trust-card h3{position:relative;z-index:1;margin:2px 0 6px;color:#32145f;font-size:14px}.trust-card p{position:relative;z-index:1;margin:0;color:#656c79;font-size:10.5px;line-height:1.55;max-width:220px}
+.trust-bottom{display:flex;align-items:center;justify-content:center;gap:9px;flex-wrap:wrap;margin:25px auto 0;padding:13px 17px;max-width:760px;background:#fff;border:1px solid #eadff5;border-radius:999px;box-shadow:0 8px 20px rgba(65,40,105,.07);font-size:10px}.trust-bottom span{background:#f5efff;color:#6330a4;border-radius:999px;padding:7px 10px;font-weight:900}.trust-bottom b{color:#e83e9f}.trust-bottom strong{color:#32145f;margin-left:3px}
+@media(max-width:850px){.trust-cards{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.trust-cards{grid-template-columns:1fr}.trust-card{min-height:105px}.trust-bottom{border-radius:20px;gap:6px}.trust-bottom strong{width:100%;text-align:center;margin-top:3px}}
+</style>
+
 </head>
 <body>
 
@@ -1025,155 +1097,216 @@ body{
   </div>
 </section>
 
+
 <section class="sbm-platform-section lesson-section" id="lesson-ai">
   <div class="sbm-platform-wrap">
-    <div class="lesson-head">
-      <div>
-        <div class="section-kicker">🎬 LESSON + THINKING + PRACTICE</div>
-        <h2 class="premium-title left-title">🤖 AI Kya <span>Hota Hai?</span></h2>
-        <p class="lesson-sub">Ek Smart Brain Mission lesson sirf video dekhne par khatam nahi hota.</p>
+
+    <div class="detective-hero">
+      <div class="detective-intro">
+        <div class="detective-ribbon">🏆 MINI CHALLENGE</div>
+        <h2>AI Use Ho Raha Hai<br><span>Ya Nahi?</span></h2>
+        <p>3 alag real-life situations dekho aur detective ki tarah decide karo.</p>
+
+        <div class="detective-tip">
+          <div class="tip-bubble">🔍</div>
+          <div>
+            <strong>Bano AI Detective!</strong>
+            <span>Observe karo, socho aur sahi answer do.</span>
+          </div>
+        </div>
       </div>
-      <span class="lesson-chip">MISSION 01</span>
+
+      <div class="mission-picker">
+        <div class="picker-title">⭐ Mission Select Karo ⭐</div>
+
+        <div class="mission-scenarios" role="tablist" aria-label="Choose an AI situation">
+          <button type="button" class="mission-scenario scenario-one scenario-btn selected" data-index="0">
+            <span class="mission-badge">01</span>
+            <span class="scenario-art">📱</span>
+            <span class="scenario-number">MISSION 01</span>
+            <strong>Who’s That?</strong>
+            <small>Face Recognition</small>
+          </button>
+
+          <button type="button" class="mission-scenario scenario-two scenario-btn" data-index="1">
+            <span class="mission-badge">02</span>
+            <span class="scenario-art">💡</span>
+            <span class="scenario-number">MISSION 02</span>
+            <strong>Switch It!</strong>
+            <small>Simple Action</small>
+          </button>
+
+          <button type="button" class="mission-scenario scenario-three scenario-btn" data-index="2">
+            <span class="mission-badge">03</span>
+            <span class="scenario-art">🎧</span>
+            <span class="scenario-number">MISSION 03</span>
+            <strong>Your Next Song</strong>
+            <small>Smart Recommendation</small>
+          </button>
+        </div>
+      </div>
     </div>
 
-    <div class="lesson-grid">
-      <div class="lesson-video-card">
-        <div class="lesson-video-placeholder">
-          <div>🎬</div>
-          <strong>Watch Video</strong>
-          <span>AI Kya Hota Hai?</span>
-          <a id="firstVideoLink" href="https://www.youtube.com/results?search_query=Smart+Brain+Mission+AI+Kya+Hota+Hai" target="_blank" rel="noopener" class="btn youtube">▶ Watch on YouTube</a>
+    <div class="detective-question-card">
+
+      <div class="video-learning-panel">
+        <div class="video-panel-head">
+          <span>🎬 LESSON VIDEO</span>
+          <b>MISSION 01</b>
         </div>
+
+        <div class="video-frame">
+          <iframe
+            src="https://www.youtube.com/embed/y5s7H9KmbeQ"
+            title="Smart Brain Mission — AI Kya Hota Hai?"
+            loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen></iframe>
+        </div>
+
+        <div class="video-panel-title">
+          <span class="video-play-badge">▶</span>
+          <div>
+            <strong>AI Kya Hota Hai?</strong>
+            <small>Watch → Think → Try → Create</small>
+          </div>
+        </div>
+
+        <div class="lesson-kit">
+          <div><span>🎬</span><b>Watch</b><small>Video</small></div>
+          <div><span>🤔</span><b>Think</b><small>Question</small></div>
+          <div><span>🧩</span><b>Try</b><small>Activity</small></div>
+        </div>
+
+        <a class="video-youtube-link" href="https://www.youtube.com/watch?v=y5s7H9KmbeQ" target="_blank" rel="noopener noreferrer">
+          ▶ Watch Full Video on YouTube
+        </a>
       </div>
 
-      <div class="lesson-content">
-        <div class="learn-box">
-          <h3>💡 What Your Child Will Learn</h3>
-          <ul>
-            <li>AI kya hota hai</li>
-            <li>AI ke real-life examples</li>
-            <li>AI simple level par kaise kaam karta hai</li>
-          </ul>
+      <div class="challenge-side-panel">
+        <div class="side-panel-kicker">🕵️ AI DETECTIVE MISSION</div>
+
+        <div class="detective-scene">
+          <div class="scene-character" id="sceneIcon">📱</div>
+          <div class="scene-copy">
+            <span class="scene-tag" id="sceneTag">REAL-LIFE SCENE</span>
+            <h3 id="sceneTitle">Who’s That?</h3>
+            <p id="sceneText">A phone camera recognizes a person’s face and automatically groups their photos.</p>
+          </div>
         </div>
 
-        <div class="think-box">
-          <h3>🤔 Think About It</h3>
-          <p>“Kya calculator AI hai? <strong>Why?</strong>”</p>
-        </div>
-
-        <div class="challenge-box">
-          <h3>🧠 Mini Challenge</h3>
-          <p>3 situations dekho aur identify karo — <strong>AI use ho raha hai ya nahi?</strong></p>
-          <div class="mission-scenarios" role="tablist" aria-label="Choose a situation">
-            <button type="button" class="mission-scenario scenario-one scenario-btn selected" data-index="0">
-              <span class="scenario-art">📱</span>
-              <span class="scenario-number">MISSION 01</span>
-              <strong>Who’s That?</strong>
-              <small>Face Recognition</small>
-            </button>
-            <button type="button" class="mission-scenario scenario-two scenario-btn" data-index="1">
-              <span class="scenario-art">💡</span>
-              <span class="scenario-number">MISSION 02</span>
-              <strong>Switch It!</strong>
-              <small>Simple Action</small>
-            </button>
-            <button type="button" class="mission-scenario scenario-three scenario-btn" data-index="2">
-              <span class="scenario-art">🎧</span>
-              <span class="scenario-number">MISSION 03</span>
-              <strong>Your Next Song</strong>
-              <small>Smart Recommendation</small>
-            </button>
-          </div>
-
-          <div class="scenario-stage" id="scenarioQuestion" aria-live="polite">
-            <div class="scenario-stage-top"><span class="stage-label">🔍 DETECTIVE MODE</span><span class="stage-dots">● ● ●</span></div>
-            <div class="scenario-scene">
-              <div class="scene-icon" id="sceneIcon">📱</div>
-              <div class="scene-copy">
-                <span class="scene-tag" id="sceneTag">REAL-LIFE SCENE</span>
-                <h4 id="sceneTitle">Who’s That?</h4>
-                <p id="sceneText">A phone camera recognizes a person’s face and automatically groups their photos.</p>
-              </div>
-            </div>
-            <div class="scenario-question-line">🤔 <strong>AI use ho raha hai ya nahi?</strong></div>
-          </div>
+        <div class="detective-decision">
+          <div class="decision-question">💭 <strong>Detective, Tumhara Decision?</strong></div>
+          <p>AI use ho raha hai ya nahi?</p>
 
           <div class="scenario-answer-row">
-            <button type="button" class="answer-choice answer-yes" id="scenarioYes"><span>🧠</span><span><b>Haan!</b><small>AI is being used</small></span></button>
-            <button type="button" class="answer-choice answer-no" id="scenarioNo"><span>🔧</span><span><b>Nahi!</b><small>AI is not needed</small></span></button>
+            <button type="button" class="answer-choice answer-yes" id="scenarioYes">
+              <span class="answer-icon">🧠</span>
+              <span><b>Haan!</b><small>AI use ho raha hai</small></span>
+              <span class="answer-mark">✓</span>
+            </button>
+
+            <button type="button" class="answer-choice answer-no" id="scenarioNo">
+              <span class="answer-icon">🔧</span>
+              <span><b>Nahi!</b><small>AI use nahi ho raha</small></span>
+              <span class="answer-mark">×</span>
+            </button>
           </div>
-          <div class="scenario-feedback" id="scenarioFeedback" aria-live="polite">Ek situation choose karo, phir apna answer detective ki tarah socho. 👇</div>
+
+          <div class="scenario-feedback" id="scenarioFeedback" aria-live="polite">
+            Ek situation choose karo, phir detective ki tarah socho. 👇
+          </div>
         </div>
       </div>
+
+    </div></div>
+
+    <div class="think-strip">
+      <div><span>💡</span><strong>Think Karo</strong><small>Answer mat rote, reason karo.</small></div>
+      <i>→</i>
+      <div><span>🔎</span><strong>Observe Karo</strong><small>Dhyan se dekho.</small></div>
+      <i>→</i>
+      <div><span>🎯</span><strong>Decide Karo</strong><small>Sahi ya galat choose karo.</small></div>
+      <i>→</i>
+      <div><span>🛡️</span><strong>Verify Karo</strong><small>Check karo, confirm karo.</small></div>
+      <i>→</i>
+      <div><span>🎨</span><strong>Create Karo</strong><small>Apni creativity use karo.</small></div>
     </div>
 
-    <div class="lesson-flow">
-      <span>🎬 Watch</span><b>→</b><span>🤔 Think</span><b>→</b><span>🧩 Try</span><b>→</b><span>🔎 Verify</span><b>→</b><span>💡 Create</span>
-    </div>
   </div>
 </section>
 
+
 <section class="sbm-platform-section activities-section" id="activities">
   <div class="sbm-platform-wrap">
-    <div class="section-kicker">🧩 LEARN BY DOING</div>
-    <h2 class="premium-title">Every Topic Needs a <span>Challenge</span></h2>
-    <p class="premium-sub">Video ke baad bachcha kuch kare — solve kare, experiment kare, create kare.</p>
-
-    <div class="activity-grid">
-      <article class="activity-card"><div>🧩</div><h3>AI Activity</h3><p>AI examples ko real-life situations se match karo aur reason batao.</p><button type="button" class="activity-open" data-target="aiActivityPanel">Try Activity →</button></article>
-      <article class="activity-card"><div>📝</div><h3>AI Quiz</h3><p>3 short questions se check karo ki AI ke baare mein kya samjha.</p><button type="button" class="activity-open" data-target="aiQuizPanel">Take Quiz →</button></article>
-      <article class="activity-card"><div>🎯</div><h3>AI Challenge</h3><p>AI ke answer ko blindly accept nahi — reason, check aur decide karo.</p><button type="button" class="activity-open" data-target="aiChallengePanel">Accept Challenge →</button></article>
-      <article class="activity-card"><div>📄</div><h3>Printable Activity</h3><p>Screen se bahar learning ko paper-based practice mein badlo.</p><a href="#pack">See Activity Packs →</a></article>
+    <div class="activity-heading">
+      <div class="section-kicker">✨ LEARN BY DOING</div>
+      <h2 class="premium-title">Every Topic Needs a <span>Challenge</span></h2>
+      <p class="premium-sub">Video dekho, phir kuch karo — solve karo, experiment karo aur apni thinking use karo.</p>
     </div>
 
-    <div class="interactive-learning-panels">
-      <div class="interactive-panel" id="aiActivityPanel">
-        <div class="panel-title">🧩 AI Activity — AI Hai Ya Nahi?</div>
-        <p>Har example ko padho aur socho: kya isme AI decision ya pattern recognition use kar raha hai?</p>
-        <div class="match-grid">
-          <button type="button" class="match-item" data-correct="yes">📸 Phone face recognition</button>
-          <button type="button" class="match-item" data-correct="no">🧮 Simple calculator: 7 + 5</button>
-          <button type="button" class="match-item" data-correct="yes">🎵 Music app recommends songs</button>
-          <button type="button" class="match-item" data-correct="no">💡 Normal light switch ON/OFF</button>
-        </div>
-        <div class="panel-feedback" id="activityFeedback" aria-live="polite">Ek option choose karo.</div>
-      </div>
+    <div class="activity-showcase">
+      <article class="activity-card activity-green">
+        <div class="activity-orb">🧩</div>
+        <span class="activity-label">TRY IT</span>
+        <h3>AI Activity</h3>
+        <p>Real-life examples ko dekho aur reason karo ki AI kahan use ho raha hai.</p>
+        <a href="#lesson-ai">Try Activity <b>→</b></a>
+      </article>
 
-      <div class="interactive-panel" id="aiQuizPanel">
-        <div class="panel-title">📝 AI Quiz — 3 Quick Questions</div>
-        <div class="quiz-question">
-          <strong>1. AI ka ek important feature kya ho sakta hai?</strong>
-          <div class="quiz-options">
-            <button type="button" data-q="1" data-correct="yes">Examples se patterns seekhna</button>
-            <button type="button" data-q="1" data-correct="no">Har baar sirf fixed answer dena</button>
-          </div>
-        </div>
-        <div class="quiz-question">
-          <strong>2. AI ka answer milne par smart habit kya hai?</strong>
-          <div class="quiz-options">
-            <button type="button" data-q="2" data-correct="yes">Important information ko verify karna</button>
-            <button type="button" data-q="2" data-correct="no">Har answer ko bina check kiye maan lena</button>
-          </div>
-        </div>
-        <div class="quiz-question">
-          <strong>3. Inmein se AI ka common example kaunsa hai?</strong>
-          <div class="quiz-options">
-            <button type="button" data-q="3" data-correct="no">Simple ON/OFF switch</button>
-            <button type="button" data-q="3" data-correct="yes">Face recognition</button>
-          </div>
-        </div>
-        <div class="panel-feedback" id="quizFeedback" aria-live="polite">Answers choose karo — feedback yahin milega.</div>
-      </div>
+      <article class="activity-card activity-blue">
+        <div class="activity-orb">🧠</div>
+        <span class="activity-label">TEST IT</span>
+        <h3>AI Quiz</h3>
+        <p>3 quick questions se check karo ki AI ke baare mein tumne kya samjha.</p>
+        <button type="button" class="activity-action" id="openQuizBtn">Take Quiz <b>→</b></button>
+      </article>
 
-      <div class="interactive-panel" id="aiChallengePanel">
-        <div class="panel-title">🎯 AI Challenge — Think Before You Trust</div>
-        <p><strong>Challenge:</strong> AI ne kaha: “Ye information 100% correct hai.” Tum kya karoge?</p>
-        <div class="challenge-choice-grid">
-          <button type="button" data-challenge="good">🔎 Source check karunga aur important fact verify karunga.</button>
-          <button type="button" data-challenge="bad">🤖 AI ne kaha hai, isliye bina check kiye maan lunga.</button>
-          <button type="button" data-challenge="good">🧠 Do reliable sources se compare karunga.</button>
+      <article class="activity-card activity-yellow">
+        <div class="activity-orb">🏆</div>
+        <span class="activity-label">THINK IT</span>
+        <h3>AI Challenge</h3>
+        <p>AI ke answer ko blindly accept nahi — reason, check aur decide karo.</p>
+        <button type="button" class="activity-action" id="openChallengeBtn">Accept Challenge <b>→</b></button>
+      </article>
+
+      <article class="activity-card activity-purple">
+        <div class="activity-orb">📄</div>
+        <span class="activity-label">MAKE IT</span>
+        <h3>Printable Activity</h3>
+        <p>Screen se bahar learning ko paper-based practice mein badlo.</p>
+        <a href="#pack">See Activity Packs <b>→</b></a>
+      </article>
+    </div>
+
+    <div class="activity-modal" id="activityQuizModal" aria-hidden="true">
+      <div class="activity-modal-card">
+        <button class="modal-close" type="button" data-close="activityQuizModal">×</button>
+        <div class="modal-kicker">🧠 QUICK AI QUIZ</div>
+        <h3>Socho, Phir Choose Karo!</h3>
+        <div class="quiz-question">
+          <span>Q1</span>
+          <strong>AI kis tarah ke patterns se useful answer bana sakta hai?</strong>
+          <button type="button" class="quiz-option" data-correct="true">🔎 Examples aur patterns se seekhkar</button>
+          <button type="button" class="quiz-option">🎲 Bina kisi information ke</button>
+          <button type="button" class="quiz-option">🪄 Sirf magic se</button>
+          <div class="quiz-feedback" aria-live="polite"></div>
         </div>
-        <div class="panel-feedback" id="challengeFeedback" aria-live="polite">Ek choice select karo.</div>
+      </div>
+    </div>
+
+    <div class="activity-modal" id="activityChallengeModal" aria-hidden="true">
+      <div class="activity-modal-card challenge-modal">
+        <button class="modal-close" type="button" data-close="activityChallengeModal">×</button>
+        <div class="modal-kicker">🏆 THINK BEFORE YOU TRUST</div>
+        <h3>AI Ne Kaha: “Ye 100% Correct Hai.”</h3>
+        <p>Smart learner sabse pehle kya karega?</p>
+        <div class="challenge-modal-options">
+          <button type="button" class="challenge-modal-option" data-correct="true">🔎 Important fact ko reliable source se verify karunga.</button>
+          <button type="button" class="challenge-modal-option">🤖 AI ne kaha hai, bina check kiye maan lunga.</button>
+          <button type="button" class="challenge-modal-option">🧠 Do reliable sources se compare karunga.</button>
+        </div>
+        <div class="quiz-feedback" aria-live="polite"></div>
       </div>
     </div>
   </div>
@@ -1181,15 +1314,71 @@ body{
 
 <section class="sbm-platform-section trust-section" id="trust">
   <div class="sbm-platform-wrap">
-    <div class="section-kicker">⭐ FOR PARENTS</div>
-    <h2 class="premium-title">Why Parents Choose <span>Smart Brain Mission</span></h2>
-    <div class="trust-grid">
-      <div>✅ <strong>Age-appropriate learning</strong><span>5+ positioning ke saath simple, understandable content.</span></div>
-      <div>✅ <strong>Hindi-friendly</strong><span>Complex technology ko familiar language aur examples mein explain karna.</span></div>
-      <div>✅ <strong>Learning through activities</strong><span>Video ke saath practice, puzzles aur challenges.</span></div>
-      <div>✅ <strong>AI + computer literacy</strong><span>Technology ko samajhne aur responsibly use karne ki foundation.</span></div>
-      <div>✅ <strong>Critical thinking focused</strong><span>Question, think, verify aur create ka approach.</span></div>
-      <div>✅ <strong>Clean learning experience</strong><span>Unnecessary complexity aur distracting ads ke bina focused environment.</span></div>
+    <div class="trust-head">
+      <div class="section-kicker">⭐ FOR PARENTS</div>
+      <h2 class="premium-title">Why Parents Choose <span>Smart Brain Mission</span></h2>
+      <p class="trust-intro">A simple learning experience designed to help curious minds explore technology, think independently and learn by doing.</p>
+    </div>
+
+    <div class="trust-cards">
+      <article class="trust-card trust-card-pink">
+        <div class="trust-icon">🌱</div>
+        <div>
+          <h3>Age-Appropriate Learning</h3>
+          <p>5+ positioning ke saath simple aur understandable learning.</p>
+        </div>
+      </article>
+
+      <article class="trust-card trust-card-blue">
+        <div class="trust-icon">💬</div>
+        <div>
+          <h3>Hindi-Friendly</h3>
+          <p>Complex technology ko familiar language aur examples mein samjhana.</p>
+        </div>
+      </article>
+
+      <article class="trust-card trust-card-green">
+        <div class="trust-icon">🧩</div>
+        <div>
+          <h3>Learning Through Activities</h3>
+          <p>Video ke saath practice, puzzles, activities aur challenges.</p>
+        </div>
+      </article>
+
+      <article class="trust-card trust-card-yellow">
+        <div class="trust-icon">🤖</div>
+        <div>
+          <h3>AI + Computer Literacy</h3>
+          <p>Technology ko samajhne aur responsibly use karne ki foundation.</p>
+        </div>
+      </article>
+
+      <article class="trust-card trust-card-purple">
+        <div class="trust-icon">🧠</div>
+        <div>
+          <h3>Critical Thinking Focused</h3>
+          <p>Question, think, verify aur create ka approach.</p>
+        </div>
+      </article>
+
+      <article class="trust-card trust-card-orange">
+        <div class="trust-icon">✨</div>
+        <div>
+          <h3>Clean Learning Experience</h3>
+          <p>Focused environment, bina unnecessary complexity ke.</p>
+        </div>
+      </article>
+    </div>
+
+    <div class="trust-bottom">
+      <span>🤔 Think</span>
+      <b>+</b>
+      <span>🧩 Try</span>
+      <b>+</b>
+      <span>🔎 Verify</span>
+      <b>+</b>
+      <span>🎨 Create</span>
+      <strong>= Smart Learning</strong>
     </div>
   </div>
 </section>
@@ -2043,6 +2232,36 @@ const SBM_REVIEWS_ENDPOINT = "https://script.google.com/macros/s/AKfycbzXUzbKCDD
     });
   });
 })();
+
+  // Premium activity cards: real mini quiz + challenge.
+  function openActivityModal(id){
+    const el=document.getElementById(id);
+    if(el){el.classList.add('open');el.setAttribute('aria-hidden','false');}
+  }
+  function closeActivityModal(id){
+    const el=document.getElementById(id);
+    if(el){el.classList.remove('open');el.setAttribute('aria-hidden','true');}
+  }
+  const quizOpen=document.getElementById('openQuizBtn');
+  const challengeOpen=document.getElementById('openChallengeBtn');
+  if(quizOpen) quizOpen.addEventListener('click',()=>openActivityModal('activityQuizModal'));
+  if(challengeOpen) challengeOpen.addEventListener('click',()=>openActivityModal('activityChallengeModal'));
+  document.querySelectorAll('[data-close]').forEach(btn=>{
+    btn.addEventListener('click',()=>closeActivityModal(btn.dataset.close));
+  });
+  document.querySelectorAll('.activity-modal').forEach(modal=>{
+    modal.addEventListener('click',e=>{if(e.target===modal) closeActivityModal(modal.id);});
+  });
+  document.querySelectorAll('.quiz-option,.challenge-modal-option').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      const feedback=btn.parentElement.querySelector('.quiz-feedback');
+      const correct=btn.dataset.correct==='true';
+      feedback.textContent=correct
+        ? '🎉 Great thinking! Smart learners reason aur verify karte hain.'
+        : '💡 Good try! Thoda aur socho — clue ko dhyan se dekho.';
+    });
+  });
+
 </script>
 
 </body>

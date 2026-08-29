@@ -919,6 +919,56 @@ body{
 @media(max-width:560px){.trust-cards{grid-template-columns:1fr}.trust-card{min-height:105px}.trust-bottom{border-radius:20px;gap:6px}.trust-bottom strong{width:100%;text-align:center;margin-top:3px}}
 </style>
 
+
+<style id="sbm-compact-activities-v7">
+.compact-heading{margin-bottom:0}
+.compact-heading .premium-title{margin-bottom:4px}
+.compact-heading .premium-sub{margin-top:0}
+.compact-activity-showcase{grid-template-columns:repeat(4,1fr);gap:14px;margin-top:22px}
+.compact-activity-card{min-height:205px;height:205px;padding:17px 17px 16px;border-radius:22px}
+.compact-activity-card:after{width:85px;height:85px;right:-28px;top:-28px}
+.activity-topline{position:relative;z-index:1;display:flex;justify-content:space-between;align-items:center}
+.activity-topline>span{font-size:9px;font-weight:950;color:rgba(50,20,90,.42)}
+.compact-activity-card .activity-orb{width:48px;height:48px;border-radius:15px;font-size:27px}
+.compact-activity-card .activity-label{margin-top:10px;font-size:7px}
+.compact-activity-card h3{font-size:17px;margin:3px 0 5px}
+.compact-activity-card p{font-size:10px;line-height:1.4;max-width:210px;margin:0}
+.compact-activity-card a,.compact-activity-card .activity-action{left:17px;bottom:15px;font-size:10px}
+.activity-mini-footer{display:flex;justify-content:center;align-items:center;gap:8px;margin:14px auto 0;padding:9px 14px;background:rgba(255,255,255,.72);border:1px solid #e8def4;border-radius:999px;width:max-content;max-width:100%;font-size:9px;font-weight:900;color:#6330a4}
+.activity-mini-footer span{background:#f3edff;padding:5px 8px;border-radius:999px}.activity-mini-footer i{font-style:normal;color:#e83e9f}
+@media(max-width:850px){.compact-activity-showcase{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.compact-activity-showcase{grid-template-columns:1fr 1fr;gap:9px}.compact-activity-card{height:190px;min-height:190px;padding:13px}.compact-activity-card h3{font-size:14px}.compact-activity-card p{font-size:9px}.compact-activity-card a,.compact-activity-card .activity-action{left:13px;bottom:13px;font-size:9px}.compact-activity-card .activity-orb{width:42px;height:42px;font-size:23px}.activity-mini-footer{font-size:8px;gap:4px}.activity-mini-footer span{padding:5px 6px}}
+</style>
+
+
+<style id="sbm-parent-trust-v8">
+/* Parent section: compact visual cards, not a text list */
+section#trust.trust-section{padding:58px 0 54px!important;background:linear-gradient(135deg,#fff8fd 0%,#f6f0ff 52%,#eef9ff 100%)!important}
+#trust .parent-trust-wrap{max-width:1120px!important}
+#trust .parent-trust-head{text-align:center!important;margin:0 auto 25px!important}
+#trust .parent-trust-kicker{display:inline-block!important;background:#fff!important;color:#8b4ba9!important;font-size:9px!important;font-weight:950!important;letter-spacing:.08em!important;padding:7px 11px!important;border-radius:999px!important;box-shadow:0 5px 14px rgba(80,40,110,.07)!important}
+#trust .parent-trust-head h2{margin:10px 0 5px!important;font-size:34px!important;line-height:1.08!important;font-weight:950!important;color:#32145f!important}
+#trust .parent-trust-head h2 span{color:#e83e9f!important}
+#trust .parent-trust-head p{margin:0!important;color:#747b87!important;font-size:12px!important}
+#trust .parent-trust-grid{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:13px!important}
+#trust .parent-trust-card{position:relative!important;display:flex!important;align-items:center!important;gap:12px!important;min-height:92px!important;padding:14px 16px!important;border-radius:20px!important;border:1px solid rgba(65,40,105,.1)!important;box-shadow:0 9px 22px rgba(65,40,105,.08)!important;overflow:hidden!important}
+#trust .parent-trust-card:after{content:""!important;position:absolute!important;width:75px!important;height:75px!important;border-radius:50%!important;right:-27px!important;bottom:-35px!important;background:rgba(255,255,255,.52)!important}
+#trust .parent-trust-card.pink{background:linear-gradient(135deg,#fff0f8,#ffdceb)!important}
+#trust .parent-trust-card.blue{background:linear-gradient(135deg,#edf8ff,#d9edff)!important}
+#trust .parent-trust-card.green{background:linear-gradient(135deg,#effdf4,#d9f6e3)!important}
+#trust .parent-trust-card.yellow{background:linear-gradient(135deg,#fffbed,#ffedb1)!important}
+#trust .parent-trust-card.purple{background:linear-gradient(135deg,#f6efff,#e9dcff)!important}
+#trust .parent-trust-card.orange{background:linear-gradient(135deg,#fff5ea,#ffe1c8)!important}
+#trust .pt-icon{position:relative!important;z-index:1!important;flex:none!important;width:50px!important;height:50px!important;border-radius:16px!important;background:rgba(255,255,255,.8)!important;display:flex!important;align-items:center!important;justify-content:center!important;font-size:25px!important;box-shadow:0 5px 12px rgba(65,40,105,.08)!important}
+#trust .parent-trust-card b{position:relative!important;z-index:1!important;display:block!important;color:#32145f!important;font-size:13px!important;line-height:1.2!important}
+#trust .parent-trust-card small{position:relative!important;z-index:1!important;display:block!important;color:#69707d!important;font-size:9px!important;line-height:1.35!important;margin-top:4px!important}
+#trust .parent-trust-bottom{display:flex!important;justify-content:center!important;align-items:center!important;gap:7px!important;margin:18px auto 0!important;width:max-content!important;max-width:100%!important;padding:8px 12px!important;border-radius:999px!important;background:#fff!important;border:1px solid #eadff5!important;box-shadow:0 7px 17px rgba(65,40,105,.06)!important}
+#trust .parent-trust-bottom span{font-size:9px!important;font-weight:950!important;color:#6330a4!important;background:#f5efff!important;border-radius:999px!important;padding:5px 8px!important}
+#trust .parent-trust-bottom i{font-style:normal!important;color:#e83e9f!important;font-size:10px!important;font-weight:950!important}
+@media(max-width:850px){#trust .parent-trust-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
+@media(max-width:560px){section#trust.trust-section{padding:42px 0!important}#trust .parent-trust-head h2{font-size:27px!important}#trust .parent-trust-grid{grid-template-columns:1fr 1fr!important;gap:9px!important}#trust .parent-trust-card{min-height:86px!important;padding:11px!important;gap:8px!important;border-radius:16px!important}#trust .pt-icon{width:40px!important;height:40px!important;border-radius:13px!important;font-size:20px!important}#trust .parent-trust-card b{font-size:10px!important}#trust .parent-trust-card small{font-size:7.5px!important}#trust .parent-trust-bottom{border-radius:17px!important}}
+</style>
+
 </head>
 <body>
 
@@ -1239,44 +1289,48 @@ body{
 
 <section class="sbm-platform-section activities-section" id="activities">
   <div class="sbm-platform-wrap">
-    <div class="activity-heading">
+    <div class="activity-heading compact-heading">
       <div class="section-kicker">✨ LEARN BY DOING</div>
-      <h2 class="premium-title">Every Topic Needs a <span>Challenge</span></h2>
-      <p class="premium-sub">Video dekho, phir kuch karo — solve karo, experiment karo aur apni thinking use karo.</p>
+      <h2 class="premium-title">Watch. <span>Think.</span> Do.</h2>
+      <p class="premium-sub">Har lesson ke baad ek chhota action — taaki learning screen se bahar bhi chale.</p>
     </div>
 
-    <div class="activity-showcase">
-      <article class="activity-card activity-green">
-        <div class="activity-orb">🧩</div>
+    <div class="activity-showcase compact-activity-showcase">
+      <article class="activity-card activity-green compact-activity-card">
+        <div class="activity-topline"><div class="activity-orb">🧩</div><span>01</span></div>
         <span class="activity-label">TRY IT</span>
         <h3>AI Activity</h3>
-        <p>Real-life examples ko dekho aur reason karo ki AI kahan use ho raha hai.</p>
-        <a href="#lesson-ai">Try Activity <b>→</b></a>
+        <p>AI ko real-life examples mein spot karo.</p>
+        <a href="#lesson-ai">Try Now <b>→</b></a>
       </article>
 
-      <article class="activity-card activity-blue">
-        <div class="activity-orb">🧠</div>
+      <article class="activity-card activity-blue compact-activity-card">
+        <div class="activity-topline"><div class="activity-orb">🧠</div><span>02</span></div>
         <span class="activity-label">TEST IT</span>
         <h3>AI Quiz</h3>
-        <p>3 quick questions se check karo ki AI ke baare mein tumne kya samjha.</p>
+        <p>3 quick questions. Think before you choose.</p>
         <button type="button" class="activity-action" id="openQuizBtn">Take Quiz <b>→</b></button>
       </article>
 
-      <article class="activity-card activity-yellow">
-        <div class="activity-orb">🏆</div>
+      <article class="activity-card activity-yellow compact-activity-card">
+        <div class="activity-topline"><div class="activity-orb">🏆</div><span>03</span></div>
         <span class="activity-label">THINK IT</span>
         <h3>AI Challenge</h3>
-        <p>AI ke answer ko blindly accept nahi — reason, check aur decide karo.</p>
-        <button type="button" class="activity-action" id="openChallengeBtn">Accept Challenge <b>→</b></button>
+        <p>AI ke answer ko check karke decide karo.</p>
+        <button type="button" class="activity-action" id="openChallengeBtn">Play Challenge <b>→</b></button>
       </article>
 
-      <article class="activity-card activity-purple">
-        <div class="activity-orb">📄</div>
+      <article class="activity-card activity-purple compact-activity-card">
+        <div class="activity-topline"><div class="activity-orb">📄</div><span>04</span></div>
         <span class="activity-label">MAKE IT</span>
         <h3>Printable Activity</h3>
-        <p>Screen se bahar learning ko paper-based practice mein badlo.</p>
-        <a href="#pack">See Activity Packs <b>→</b></a>
+        <p>Learning ko paper par practice karo.</p>
+        <a href="#pack">View Packs <b>→</b></a>
       </article>
+    </div>
+
+    <div class="activity-mini-footer">
+      <span>🎬 Watch</span><i>→</i><span>🤔 Think</span><i>→</i><span>🧩 Try</span><i>→</i><span>💡 Discover</span>
     </div>
 
     <div class="activity-modal" id="activityQuizModal" aria-hidden="true">
@@ -1313,72 +1367,42 @@ body{
 </section>
 
 <section class="sbm-platform-section trust-section" id="trust">
-  <div class="sbm-platform-wrap">
-    <div class="trust-head">
-      <div class="section-kicker">⭐ FOR PARENTS</div>
-      <h2 class="premium-title">Why Parents Choose <span>Smart Brain Mission</span></h2>
-      <p class="trust-intro">A simple learning experience designed to help curious minds explore technology, think independently and learn by doing.</p>
+  <div class="sbm-platform-wrap parent-trust-wrap">
+    <div class="parent-trust-head">
+      <span class="parent-trust-kicker">⭐ FOR PARENTS</span>
+      <h2>Why Parents Choose <span>Smart Brain Mission</span></h2>
+      <p>Simple, practical learning for curious minds 5+.</p>
     </div>
 
-    <div class="trust-cards">
-      <article class="trust-card trust-card-pink">
-        <div class="trust-icon">🌱</div>
-        <div>
-          <h3>Age-Appropriate Learning</h3>
-          <p>5+ positioning ke saath simple aur understandable learning.</p>
-        </div>
-      </article>
-
-      <article class="trust-card trust-card-blue">
-        <div class="trust-icon">💬</div>
-        <div>
-          <h3>Hindi-Friendly</h3>
-          <p>Complex technology ko familiar language aur examples mein samjhana.</p>
-        </div>
-      </article>
-
-      <article class="trust-card trust-card-green">
-        <div class="trust-icon">🧩</div>
-        <div>
-          <h3>Learning Through Activities</h3>
-          <p>Video ke saath practice, puzzles, activities aur challenges.</p>
-        </div>
-      </article>
-
-      <article class="trust-card trust-card-yellow">
-        <div class="trust-icon">🤖</div>
-        <div>
-          <h3>AI + Computer Literacy</h3>
-          <p>Technology ko samajhne aur responsibly use karne ki foundation.</p>
-        </div>
-      </article>
-
-      <article class="trust-card trust-card-purple">
-        <div class="trust-icon">🧠</div>
-        <div>
-          <h3>Critical Thinking Focused</h3>
-          <p>Question, think, verify aur create ka approach.</p>
-        </div>
-      </article>
-
-      <article class="trust-card trust-card-orange">
-        <div class="trust-icon">✨</div>
-        <div>
-          <h3>Clean Learning Experience</h3>
-          <p>Focused environment, bina unnecessary complexity ke.</p>
-        </div>
-      </article>
+    <div class="parent-trust-grid">
+      <div class="parent-trust-card pink">
+        <div class="pt-icon">🌱</div>
+        <div><b>Age-Appropriate</b><small>Simple &amp; understandable</small></div>
+      </div>
+      <div class="parent-trust-card blue">
+        <div class="pt-icon">💬</div>
+        <div><b>Hindi-Friendly</b><small>Familiar language &amp; examples</small></div>
+      </div>
+      <div class="parent-trust-card green">
+        <div class="pt-icon">🧩</div>
+        <div><b>Learn By Doing</b><small>Activities, puzzles &amp; challenges</small></div>
+      </div>
+      <div class="parent-trust-card yellow">
+        <div class="pt-icon">🤖</div>
+        <div><b>AI + Computer Skills</b><small>Understand today's technology</small></div>
+      </div>
+      <div class="parent-trust-card purple">
+        <div class="pt-icon">🧠</div>
+        <div><b>Think, Don't Memorize</b><small>Question, reason &amp; verify</small></div>
+      </div>
+      <div class="parent-trust-card orange">
+        <div class="pt-icon">✨</div>
+        <div><b>Clean Learning</b><small>Focused, distraction-free experience</small></div>
+      </div>
     </div>
 
-    <div class="trust-bottom">
-      <span>🤔 Think</span>
-      <b>+</b>
-      <span>🧩 Try</span>
-      <b>+</b>
-      <span>🔎 Verify</span>
-      <b>+</b>
-      <span>🎨 Create</span>
-      <strong>= Smart Learning</strong>
+    <div class="parent-trust-bottom">
+      <span>🤔 Think</span><i>→</i><span>🧩 Try</span><i>→</i><span>🔎 Verify</span><i>→</i><span>🎨 Create</span>
     </div>
   </div>
 </section>

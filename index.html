@@ -2526,7 +2526,7 @@ const SBM_REVIEWS_ENDPOINT = "https://script.google.com/macros/s/AKfycbzXUzbKCDD
       correct:2,
       why:'Smart AI use mein answer ko samajhna, questions poochna aur important information verify karna shamil hai.'
     }
-
+  ];
 
   let quizIndex=0,quizScore=0,quizLocked=false,quizAutoTimer=null;
   const quizQuestion=document.getElementById('quizQuestion');
@@ -2599,7 +2599,7 @@ const SBM_REVIEWS_ENDPOINT = "https://script.google.com/macros/s/AKfycbzXUzbKCDD
     if(quizAutoTimer) clearTimeout(quizAutoTimer);
     quizQuestion.textContent='Quiz Complete! 🎉';
     quizNumber.textContent='DONE';
-    quizProgress.textContent='3 QUESTIONS COMPLETE';
+    quizProgress.textContent=quizData.length+' QUESTIONS COMPLETE';
     quizProgressBar.style.width='100%';
     quizOptions.innerHTML='';
     quizFeedback.textContent='⭐ Tumhara score: '+quizScore+' / '+quizData.length+'. Keep thinking, checking and creating!';
@@ -2616,7 +2616,23 @@ const SBM_REVIEWS_ENDPOINT = "https://script.google.com/macros/s/AKfycbzXUzbKCDD
     else finishQuiz();
   });
 
-  // Challenge modal buttons use their own feedback handlers above.
+  // Challenge modal buttons: one correct verification choice + clear feedback.
+  document.querySelectorAll('.challenge-modal-option').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      const modal=btn.closest('.challenge-modal');
+      const f=modal ? modal.querySelector('.quiz-feedback') : null;
+      if(!f) return;
+      document.querySelectorAll('.challenge-modal-option').forEach(b=>{
+        b.disabled=true;
+        b.classList.remove('quiz-correct','quiz-wrong');
+      });
+      const isCorrect=btn.dataset.correct==='true';
+      btn.classList.add(isCorrect?'quiz-correct':'quiz-wrong');
+      f.textContent=isCorrect
+        ? '✅ Bilkul! Important information ko reliable source se verify karna smart habit hai.'
+        : '💡 AI ki baat ko blindly trust nahi karna chahiye. Important information ko verify karo.';
+    });
+  });
 
 </script>
 

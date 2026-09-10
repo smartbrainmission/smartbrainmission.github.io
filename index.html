@@ -1156,6 +1156,33 @@ section#trust.trust-section{padding:58px 0 54px!important;background:linear-grad
   }
 </style>
 
+
+<style id="sbm-ai-book-v2">
+  .book-preview{display:grid;grid-template-columns:190px 1fr;gap:20px;align-items:center;text-align:left}
+  .book-cover-frame{background:#fff;border-radius:14px;padding:6px;box-shadow:0 15px 30px rgba(38,16,79,.20);transform:rotate(-1deg)}
+  .book-cover-frame img{display:block;width:100%;height:auto;border-radius:9px}
+  .book-preview-copy{min-width:0}
+  .book-preview-label{font-size:10px;font-weight:950;letter-spacing:.08em;color:#7a46a7;margin-bottom:8px}
+  .book-preview-copy h3{font-size:24px!important;line-height:1.15!important;margin:0 0 8px!important;color:#32145f!important}
+  .book-preview-copy .book-for{font-size:11px;color:#e83e9f;font-weight:950;margin-bottom:10px}
+  .book-preview-copy .book-desc{font-size:12px;line-height:1.5;color:#69707e;margin:0 0 13px}
+  .book-preview-copy .ai-book-sample{padding:10px 13px;font-size:12px}
+  .payment-row{display:grid;grid-template-columns:125px 1fr;gap:17px;align-items:center;text-align:left}
+  .qr-wrap{background:#fff;border:1px solid #e8def3;border-radius:14px;padding:8px;text-align:center}
+  .ai-book-qr{display:block;width:100%;height:auto;border-radius:5px}
+  .qr-caption{font-size:9px;font-weight:950;color:#5d269c;margin-top:5px}
+  .payment-details .ai-book-upi{text-align:left;margin:0 0 9px;font-size:11px}
+  .payment-details .ai-book-pay,.payment-details .ai-book-wa{max-width:none;width:100%;margin-top:8px;text-align:center;font-size:12px;padding:11px}
+  @media(max-width:850px){
+    .book-preview{grid-template-columns:160px 1fr}
+  }
+  @media(max-width:560px){
+    .book-preview{grid-template-columns:1fr;text-align:center}
+    .book-cover-frame{width:190px;margin:auto}
+    .payment-row{grid-template-columns:120px 1fr;gap:12px}
+  }
+</style>
+
 </head>
 <body>
 
@@ -1693,32 +1720,48 @@ section#trust.trust-section{padding:58px 0 54px!important;background:linear-grad
       </div>
 
       <div class="ai-book-card">
-        <div class="book-icon">📚🤖🧠</div>
-        <h3>AI: Kal Se Aaj Tak… Aur Aane Wala Kal</h3>
-        <div class="book-for">FOR PARENTS &amp; KIDS • AGES 5–16 YEARS</div>
-        <p class="book-desc">
-          A family-friendly AI journey that helps children and parents
-          <b>understand, question and use AI thoughtfully</b>.
-        </p>
-
-        <a class="ai-book-sample" href="assets/AI%20SAMPLE%20BOOK.pdf" target="_blank" rel="noopener">
-          🎁 View Free Sample
-        </a>
+        <div class="book-preview">
+          <div class="book-cover-frame">
+            <img src="assets/ai-book-cover.png"
+                 alt="AI: Kal Se Aaj Tak… Aur Aane Wala Kal — Smart Brain Mission book cover">
+          </div>
+          <div class="book-preview-copy">
+            <div class="book-preview-label">📘 SMART BRAIN MISSION BOOK</div>
+            <h3>AI: Kal Se Aaj Tak…<br>Aur Aane Wala Kal</h3>
+            <div class="book-for">FOR PARENTS &amp; KIDS • AGES 5–16 YEARS</div>
+            <p class="book-desc">
+              <b>The Story of Artificial Intelligence for Curious Minds &amp; Families</b><br>
+              AI ki journey — past, present aur future — ek hi family-friendly book mein.
+            </p>
+            <a class="ai-book-sample" href="assets/AI%20SAMPLE%20BOOK.pdf" target="_blank" rel="noopener">
+              🎁 View Free Sample
+            </a>
+          </div>
+        </div>
 
         <div class="ai-book-divider"></div>
         <div class="ai-book-pay-title">💳 Get the Complete Book — ₹199</div>
-        <div class="ai-book-upi">UPI ID: sirohi1919941@ybl</div>
 
-        <a class="ai-book-pay"
-           href="upi://pay?pa=sirohi1919941@ybl&amp;pn=Smart%20Brain%20Mission&amp;am=199&amp;cu=INR">
-          Pay ₹199 by UPI
-        </a>
+        <div class="payment-row">
+          <div class="qr-wrap">
+            <img class="ai-book-qr" src="assets/upi-qr.png"
+                 alt="UPI QR code to pay ₹199 for Smart Brain Mission AI book">
+            <div class="qr-caption">Scan to Pay ₹199</div>
+          </div>
 
-        <a class="ai-book-wa"
-           href="https://wa.me/916006485629?text=Hello%20Smart%20Brain%20Mission!%20I%20have%20paid%20%E2%82%B9199%20for%20the%20AI%20book%20%22AI%3A%20Kal%20Se%20Aaj%20Tak%E2%80%A6%20Aur%20Aane%20Wala%20Kal%22.%20Please%20send%20me%20the%20complete%20book.%20My%20payment%20screenshot%20is%20attached."
-           target="_blank" rel="noopener">
-          💬 Send Payment on WhatsApp
-        </a>
+          <div class="payment-details">
+            <div class="ai-book-upi">UPI ID: sirohi1919941@ybl</div>
+            <a class="ai-book-pay"
+               href="upi://pay?pa=sirohi1919941@ybl&amp;pn=Smart%20Brain%20Mission&amp;am=199&amp;cu=INR">
+              Pay ₹199 by UPI
+            </a>
+            <a class="ai-book-wa"
+               href="https://wa.me/916006485629?text=Hello%20Smart%20Brain%20Mission!%20I%20have%20paid%20%E2%82%B9199%20for%20the%20AI%20book%20%22AI%3A%20Kal%20Se%20Aaj%20Tak%E2%80%A6%20Aur%20Aane%20Wala%20Kal%22.%20Please%20send%20me%20the%20complete%20book.%20My%20payment%20screenshot%20is%20attached."
+               target="_blank" rel="noopener">
+              💬 Send Payment on WhatsApp
+            </a>
+          </div>
+        </div>
 
         <div class="ai-book-note">
           After payment, send your payment screenshot on WhatsApp to receive the complete book.

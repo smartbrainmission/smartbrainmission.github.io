@@ -283,6 +283,8 @@ footer{background:#1c0b35;color:#eee;padding:24px;text-align:center;font-size:12
 
 <style id="sbm-razorpay-verify-test-css">
 .sbm-razorpay-test-btn:disabled{opacity:.9;cursor:wait}
+.sbm-download-btn{display:inline-flex;align-items:center;justify-content:center;width:100%;margin-top:10px;padding:13px 16px;border-radius:12px;background:linear-gradient(135deg,#20a36a,#159b65);color:#fff!important;font-weight:900;font-size:14px;text-decoration:none;box-shadow:0 9px 20px rgba(32,163,106,.20)}
+.sbm-download-note{font-size:10.5px;line-height:1.45;color:#6d7480;text-align:center;margin-top:8px}
 </style>
 
 <style id="sbm-premium-redesign">
@@ -1766,6 +1768,7 @@ section#trust.trust-section{padding:58px 0 54px!important;background:linear-grad
             <div class="ai-book-upi">UPI ID: sirohi1919941@ybl</div>
             <button class="ai-book-pay sbm-razorpay-test-btn" type="button"
                     data-sbm-product="AI: Kal Se Aaj Tak… Aur Aane Wala Kal"
+                    data-sbm-product-id="test_book"
                     data-sbm-price="199">
               🧪 Test Razorpay Payment ₹10
             </button>
@@ -1807,6 +1810,7 @@ section#trust.trust-section{padding:58px 0 54px!important;background:linear-grad
         <div class="payment-copy">Offer Price: <span class="sbm-original-price">₹119</span> <b>₹59</b> for the complete pack.</div><div class="upi">UPI ID: sirohi1919941@ybl</div>
         <button class="paybtn sbm-razorpay-test-btn" type="button"
                 data-sbm-product="My First AI Activity Pack"
+                data-sbm-product-id="test_activity"
                 data-sbm-price="59">🧪 Test Razorpay Payment ₹10</button><div class="payment-note">Test Mode: ₹10 checkout is active now. Automatic PDF delivery will be enabled after final verification.</div>
         <a class="whatsapp" href="https://wa.me/916006485629?text=Hello%20Smart%20Brain%20Mission%2C%20I%20have%20paid%20%E2%82%B959%20for%20the%20My%20First%20AI%20Activity%20Pack.%20Please%20send%20me%20the%20pack.">💬 Send Payment on WhatsApp</a>
       </div>
@@ -1818,6 +1822,7 @@ section#trust.trust-section{padding:58px 0 54px!important;background:linear-grad
         <div class="payment-copy">Offer Price: <span class="sbm-original-price">₹119</span> <b>₹59</b> for the complete pack.</div><div class="upi">UPI ID: sirohi1919941@ybl</div>
         <button class="paybtn detective-pay sbm-razorpay-test-btn" type="button"
                 data-sbm-product="AI Detective Pack"
+                data-sbm-product-id="test_detective"
                 data-sbm-price="59">🧪 Test Razorpay Payment ₹10</button><div class="payment-note">Test Mode: ₹10 checkout is active now. Automatic PDF delivery will be enabled after final verification.</div>
         <a class="whatsapp" href="https://wa.me/916006485629?text=Hello%20Smart%20Brain%20Mission%2C%20I%20have%20paid%20%E2%82%B959%20for%20the%20AI%20Detective%20Pack.%20Please%20send%20me%20the%20pack.">💬 Send Payment on WhatsApp</a>
       </div>
@@ -1829,6 +1834,7 @@ section#trust.trust-section{padding:58px 0 54px!important;background:linear-grad
         <div class="payment-copy">Offer Price: <span class="sbm-original-price">₹119</span> <b>₹59</b> for the complete pack.</div><div class="upi">UPI ID: sirohi1919941@ybl</div>
         <button class="paybtn sbm-razorpay-test-btn" type="button"
                 data-sbm-product="AI &amp; Coding Logic Pack"
+                data-sbm-product-id="test_coding"
                 data-sbm-price="59">🧪 Test Razorpay Payment ₹10</button><div class="payment-note">Test Mode: ₹10 checkout is active now. Automatic PDF delivery will be enabled after final verification.</div>
         <a class="whatsapp" href="https://wa.me/916006485629?text=Hello%20Smart%20Brain%20Mission%2C%20I%20have%20paid%20%E2%82%B959%20for%20the%20AI%20%26%20Coding%20Logic%20Pack.%20Please%20send%20me%20the%20pack.">💬 Send Payment on WhatsApp</a>
       </div>
@@ -2947,6 +2953,30 @@ const SBM_REVIEWS_ENDPOINT = "https://script.google.com/macros/s/AKfycbzXUzbKCDD
 (function(){
   const WORKER_URL = "https://smartbrain-payment.smartbrainmission.workers.dev";
 
+  function addDownloadButton(button, verification){
+    const parent = button.parentElement;
+    if(!parent || !verification.download_url) return;
+
+    const old = parent.querySelector('.sbm-download-btn');
+    if(old) old.remove();
+    const oldNote = parent.querySelector('.sbm-download-note');
+    if(oldNote) oldNote.remove();
+
+    const a = document.createElement('a');
+    a.className = 'sbm-download-btn';
+    a.href = verification.download_url;
+    a.target = '_blank';
+    a.rel = 'noopener noreferrer';
+    a.textContent = '⬇️ Download ' + (verification.product_name || 'PDF');
+
+    const note = document.createElement('div');
+    note.className = 'sbm-download-note';
+    note.textContent = '🔐 Secure download link valid for 15 minutes.';
+
+    parent.appendChild(a);
+    parent.appendChild(note);
+  }
+
   function openTestCheckout(button){
     if(typeof Razorpay === "undefined"){
       alert("Razorpay Checkout load nahi hua. Please refresh the page and try again.");
@@ -2954,34 +2984,35 @@ const SBM_REVIEWS_ENDPOINT = "https://script.google.com/macros/s/AKfycbzXUzbKCDD
     }
 
     const originalText = button.innerHTML;
+    const productId = button.dataset.sbmProductId || "test_book";
+    const product = button.dataset.sbmProduct || "Smart Brain Mission";
+    const displayPrice = button.dataset.sbmPrice || "";
+
     button.disabled = true;
-    button.innerHTML = "⏳ Opening Razorpay…";
+    button.innerHTML = "⏳ Creating secure order…";
 
     fetch(WORKER_URL + "/api/create-order", {
       method: "POST",
       headers: {"Content-Type":"application/json"},
-      body: JSON.stringify({})
+      body: JSON.stringify({ product_id: productId })
     })
     .then(async function(response){
       const data = await response.json().catch(function(){ return {}; });
       if(!response.ok || !data.success){
         const message = data && data.error && data.error.error && data.error.error.description
           ? data.error.error.description
-          : "Unable to create Razorpay order.";
+          : (data.error || "Unable to create Razorpay order.");
         throw new Error(message);
       }
       return data;
     })
     .then(function(order){
-      const product = button.dataset.sbmProduct || "Smart Brain Mission";
-      const displayPrice = button.dataset.sbmPrice || "";
-
       const options = {
         key: order.key_id,
         amount: order.amount,
         currency: order.currency,
         name: "Smart Brain Mission",
-        description: product + (displayPrice ? " — ₹" + displayPrice : ""),
+        description: product + (displayPrice ? " — Offer ₹" + displayPrice : ""),
         order_id: order.order_id,
         handler: async function(response){
           try {
@@ -3011,14 +3042,16 @@ const SBM_REVIEWS_ENDPOINT = "https://script.google.com/macros/s/AKfycbzXUzbKCDD
             }
 
             button.innerHTML = "✅ Payment Verified";
+            addDownloadButton(button, verification);
 
             alert(
               "✅ Test payment VERIFIED successfully!\n\n" +
-              "Payment ID: " + verification.payment_id +
+              "Product: " + (verification.product_name || product) +
+              "\nPayment ID: " + verification.payment_id +
               "\nOrder ID: " + verification.order_id +
               "\nAmount: ₹" + (verification.amount / 100) +
               "\nStatus: " + verification.status +
-              "\n\nServer-side verification passed.\nPDF delivery will be added next."
+              "\n\n🔐 Secure PDF download is now available below the payment button."
             );
 
           } catch (error) {

@@ -281,6 +281,10 @@ footer{background:#1c0b35;color:#eee;padding:24px;text-align:center;font-size:12
 }
 </style>
 
+<style id="sbm-razorpay-verify-test-css">
+.sbm-razorpay-test-btn:disabled{opacity:.9;cursor:wait}
+</style>
+
 <style id="sbm-premium-redesign">
 :root{--sbm-purple:#32145f;--sbm-deep:#21113f;--sbm-pink:#e83e9f;--sbm-blue:#2d63e8;--sbm-green:#20a36a;--sbm-yellow:#f4ad22;--sbm-soft:#f8f4ff}
 .premium-section{position:relative;padding:72px 16px;overflow:hidden}
@@ -2947,12 +2951,53 @@ const SBM_REVIEWS_ENDPOINT = "https://script.google.com/macros/s/AKfycbzXUzbKCDD
         name: "Smart Brain Mission",
         description: product + (displayPrice ? " — ₹" + displayPrice : ""),
         order_id: order.order_id,
-        handler: function(response){
-          alert(
-            "✅ Test payment completed!\n\n" +
-            "Payment ID: " + response.razorpay_payment_id +
-            "\n\nNext step: server-side payment verification + automatic PDF delivery."
-          );
+        handler: async function(response){
+          try {
+            button.innerHTML = "⏳ Verifying payment…";
+
+            const verifyResponse = await fetch(
+              WORKER_URL + "/api/verify-payment",
+              {
+                method: "POST",
+                headers: {"Content-Type":"application/json"},
+                body: JSON.stringify({
+                  razorpay_payment_id: response.razorpay_payment_id,
+                  razorpay_order_id: response.razorpay_order_id,
+                  razorpay_signature: response.razorpay_signature
+                })
+              }
+            );
+
+            const verification = await verifyResponse.json().catch(function(){
+              return {};
+            });
+
+            if (!verifyResponse.ok || !verification.success || !verification.verified) {
+              throw new Error(
+                verification.error || "Payment verification failed."
+              );
+            }
+
+            button.innerHTML = "✅ Payment Verified";
+
+            alert(
+              "✅ Test payment VERIFIED successfully!\n\n" +
+              "Payment ID: " + verification.payment_id +
+              "\nOrder ID: " + verification.order_id +
+              "\nAmount: ₹" + (verification.amount / 100) +
+              "\nStatus: " + verification.status +
+              "\n\nServer-side verification passed.\nPDF delivery will be added next."
+            );
+
+          } catch (error) {
+            alert(
+              "⚠️ Payment completed, but server verification failed.\n\n" +
+              error.message +
+              "\n\nPlease do not make another payment yet."
+            );
+            button.disabled = false;
+            button.innerHTML = originalText;
+          }
         },
         modal: {
           ondismiss: function(){

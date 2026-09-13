@@ -2994,7 +2994,7 @@ const SBM_REVIEWS_ENDPOINT = "https://script.google.com/macros/s/AKfycbzXUzbKCDD
     }
 
     const originalText = button.innerHTML;
-    const productId = button.dataset.sbmProductId || "test_book";
+    const productId = button.dataset.sbmProductId;
     const product = button.dataset.sbmProduct || "Smart Brain Mission";
     const displayPrice = button.dataset.sbmPrice || "";
 

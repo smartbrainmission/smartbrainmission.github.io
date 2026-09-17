@@ -1208,6 +1208,126 @@ section#trust.trust-section{padding:58px 0 54px!important;background:linear-grad
 <style id="sbm-hide-manual-payment">
 .ai-book-upi,.upi,.ai-book-wa,.whatsapp{display:none!important}
 </style>
+
+<style id="sbm-age-groups-final">
+/* AGE-BASED CONTENT PATHS */
+.age-paths-section{
+  background:linear-gradient(135deg,#fff9fc 0%,#f6f2ff 50%,#eefaff 100%);
+}
+.age-path-head{text-align:center}
+.age-path-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:18px;
+  margin-top:30px;
+}
+.age-path{
+  position:relative;
+  border-radius:26px;
+  padding:24px 20px 20px;
+  background:#fff;
+  border:1px solid rgba(70,40,110,.10);
+  box-shadow:0 16px 38px rgba(55,30,95,.10);
+  overflow:hidden;
+}
+.age-path:before{
+  content:"";
+  position:absolute;left:0;right:0;top:0;height:6px;
+}
+.age-5:before{background:#35b987}
+.age-9:before{background:#3d74df}
+.age-13:before{background:#d92b89}
+.age-badge{
+  display:inline-flex;
+  padding:7px 12px;
+  border-radius:999px;
+  color:#fff;
+  font-size:11px;
+  font-weight:950;
+  letter-spacing:.05em;
+}
+.age-5 .age-badge{background:#159b65}
+.age-9 .age-badge{background:#2767db}
+.age-13 .age-badge{background:#d92b89}
+.age-path h3{
+  margin:14px 0 7px;
+  color:#32145f;
+  font-size:23px;
+}
+.age-intro{
+  color:#6b7180;
+  font-size:13px;
+  line-height:1.55;
+  min-height:42px;
+  margin:0 0 15px;
+}
+.age-pack-card{
+  display:flex;
+  align-items:center;
+  gap:11px;
+  padding:12px;
+  margin-top:9px;
+  border-radius:15px;
+  background:linear-gradient(135deg,#fbf8ff,#fff);
+  border:1px solid #e9def4;
+  color:#32145f;
+  transition:.18s;
+}
+.age-pack-card:hover{
+  transform:translateY(-2px);
+  box-shadow:0 8px 20px rgba(55,30,95,.08);
+}
+.age-pack-icon{
+  width:39px;height:39px;flex:0 0 39px;
+  display:grid;place-items:center;
+  border-radius:12px;
+  background:#f3ebff;
+  font-size:21px;
+}
+.age-pack-card b{display:block;font-size:13px;line-height:1.25}
+.age-pack-card small{display:block;color:#747987;font-size:10.5px;line-height:1.35;margin-top:3px}
+.book-age{background:linear-gradient(135deg,#fff5fb,#f7f0ff)}
+.prompt-age{background:linear-gradient(135deg,#fff2fa,#fff8ef)}
+.age-see-all{
+  display:block;
+  margin-top:15px;
+  text-align:center;
+  font-size:11px;
+  font-weight:900;
+  color:#6d28d9;
+}
+.age-see-all:hover{color:#e83e9f}
+
+/* DIRECT RAZORPAY ONLY — no QR/manual payment blocks */
+.product-card .qr,
+.product-card .upi,
+.product-card .whatsapp,
+.ai-book-card .qr-wrap,
+.ai-book-card .ai-book-upi,
+.ai-book-card .ai-book-wa{display:none!important}
+.product-card .product-divider{display:none!important}
+.product-card .paybtn{margin-top:14px!important}
+.payment-row{display:block!important}
+.payment-details{width:100%!important}
+.ai-book-pay{width:100%!important}
+.ai-book-price strong{display:inline-flex;align-items:center;gap:8px}
+.sbm-original-price{text-decoration:line-through;color:#8a8f98}
+.sbm-sale-price{color:#e83e9f}
+
+/* compact book payment area */
+.ai-book-pay-title{margin-top:4px}
+.ai-book-card .sbm-razorpay-test-note{text-align:center}
+
+/* Prompt product */
+.prompt-product-card{
+  border-top:5px solid #d92b89;
+}
+@media(max-width:900px){
+  .age-path-grid{grid-template-columns:1fr}
+  .age-intro{min-height:0}
+}
+</style>
+
 </head>
 <body>
 
@@ -1216,7 +1336,7 @@ section#trust.trust-section{padding:58px 0 54px!important;background:linear-grad
     <a class="brand" href="#top">🧠 SMART <span>BRAIN MISSION</span></a>
     <div class="links">
       <a href="#learning">Start Learning</a>
-      <a href="#explore">Explore</a>
+      <a href="#explore">Age Groups</a>
       <a href="#activities">Activities</a>
       <a href="#youtube">YouTube</a>
       <a href="#parents">Parents</a>
@@ -1257,51 +1377,81 @@ section#trust.trust-section{padding:58px 0 54px!important;background:linear-grad
 
 
 
-<section class="premium-section explore-premium" id="explore">
+<section class="premium-section age-paths-section" id="explore">
   <div class="premium-wrap">
-    <div class="explore-signature-head">
-      <div class="explore-orbit orbit-a"></div>
-      <div class="explore-orbit orbit-b"></div>
-      <div class="explore-kicker"><span>🧠</span> SMART BRAIN MISSION <b>•</b> OUR LEARNING WORLD</div>
-      <div class="explore-title-row">
-        <span class="explore-title-main">What</span>
-        <span class="explore-title-accent">Kids Explore</span>
-      </div>
-      <div class="explore-divider"><i></i><span>CURIOUS • CREATIVE • CONFIDENT</span><i></i></div>
-      <p class="explore-signature-sub">Not just screen use. We turn <strong>technology</strong> into questions, experiments, creativity and real-world thinking.</p>
+    <div class="age-path-head">
+      <div class="section-kicker">🎯 FIND THE RIGHT CONTENT</div>
+      <h2 class="premium-title">Choose by <span>Age Group</span></h2>
+      <p class="premium-sub">Parents can quickly see which Smart Brain Mission content fits their child.</p>
     </div>
 
-    <div class="explore-premium-grid">
-      <article class="explore-tile tile-blue">
-        <div class="tile-top"><span class="number">01</span><div class="tile-art robot-art">🤖</div></div>
-        <h3>AI for Kids</h3>
-        <p>Understand AI through stories, examples &amp; fun activities.</p>
-        <div class="tile-tag">Understand • Explore • Ask</div>
+    <div class="age-path-grid">
+
+      <article class="age-path age-5">
+        <div class="age-badge">5–8 YEARS</div>
+        <h3>Discover &amp; Explore</h3>
+        <p class="age-intro">Fun, simple activities that build curiosity, observation and smart thinking.</p>
+
+        <a class="age-pack-card" href="#pack">
+          <span class="age-pack-icon">📱</span>
+          <span><b>My First AI Activity Pack</b><small>AI through fun activities &amp; puzzles</small></span>
+        </a>
+
+        <a class="age-pack-card" href="#pack">
+          <span class="age-pack-icon">🕵️</span>
+          <span><b>AI Detective Pack</b><small>Clues, mysteries &amp; observation</small></span>
+        </a>
+
+        <a class="age-see-all" href="#pack">See pack details ↓</a>
       </article>
 
-      <article class="explore-tile tile-green">
-        <div class="tile-top"><span class="number">02</span><div class="tile-art">💻</div></div>
-        <h3>Computer Skills</h3>
-        <p>Learn practical computer skills through fun challenges.</p>
-        <div class="tile-tag">Learn • Practice • Build</div>
+      <article class="age-path age-9">
+        <div class="age-badge">9–12 YEARS</div>
+        <h3>Learn &amp; Build</h3>
+        <p class="age-intro">Deeper concepts, logic, activities and real-life AI understanding.</p>
+
+        <a class="age-pack-card" href="#pack">
+          <span class="age-pack-icon">📱</span>
+          <span><b>My First AI Activity Pack</b><small>AI concepts, puzzles &amp; creative challenges</small></span>
+        </a>
+
+        <a class="age-pack-card" href="#pack">
+          <span class="age-pack-icon">🕵️</span>
+          <span><b>AI Detective Pack</b><small>Reasoning, clues &amp; smart problem-solving</small></span>
+        </a>
+
+        <a class="age-pack-card" href="#pack">
+          <span class="age-pack-icon">🤖</span>
+          <span><b>AI &amp; Coding Logic Pack</b><small>Logic, sequences &amp; coding basics</small></span>
+        </a>
+
+        <a class="age-pack-card book-age" href="#ai-book">
+          <span class="age-pack-icon">📘</span>
+          <span><b>AI: Kal Se Aaj Tak…</b><small>AI past, present &amp; future</small></span>
+        </a>
+
+        <a class="age-see-all" href="#pack">See pack details ↓</a>
       </article>
 
-      <article class="explore-tile tile-pink">
-        <div class="tile-top"><span class="number">03</span><div class="tile-art">🧠</div></div>
-        <h3>Critical Thinking</h3>
-        <p>Question, compare, verify and reason.</p>
-        <div class="tile-tag">Question • Verify • Reason</div>
+      <article class="age-path age-13">
+        <div class="age-badge">13–16 YEARS</div>
+        <h3>Advance &amp; Create</h3>
+        <p class="age-intro">Future-focused AI learning, prompt skills and deeper understanding.</p>
+
+        <a class="age-pack-card book-age" href="#ai-book">
+          <span class="age-pack-icon">📘</span>
+          <span><b>AI: Kal Se Aaj Tak…</b><small>AI evolution, today's AI &amp; the future</small></span>
+        </a>
+
+        <a class="age-pack-card prompt-age" href="#pack">
+          <span class="age-pack-icon">🧠</span>
+          <span><b>Prompt Engineer Pack</b><small>Learn to write powerful AI prompts</small></span>
+        </a>
+
+        <a class="age-see-all" href="#pack">See pack details ↓</a>
       </article>
 
-      <article class="explore-tile tile-yellow">
-        <div class="tile-top"><span class="number">04</span><div class="tile-art">🛡️</div></div>
-        <h3>Smart &amp; Safe</h3>
-        <p>Use technology safely, responsibly and creatively.</p>
-        <div class="tile-tag">Safe • Responsible • Smart</div>
-      </article>
     </div>
-
-    <div class="micro-promise"><b>UNDERSTAND</b><i>→</i><b>EXPLORE</b><i>→</i><b>CREATE</b></div>
   </div>
 </section>
 
@@ -1740,7 +1890,7 @@ section#trust.trust-section{padding:58px 0 54px!important;background:linear-grad
 
         <div class="ai-book-price">
           <span>Complete Book</span>
-          <strong class="sbm-offer-price"><span class="sbm-original-price">₹499</span><span class="sbm-sale-price">₹199</span><span class="sbm-price-save">OFFER</span></strong>
+          <strong class="sbm-offer-price"><span class="sbm-original-price">₹299</span><span class="sbm-sale-price">₹149</span><span class="sbm-price-save">OFFER</span></strong>
         </div>
       </div>
 
@@ -1765,29 +1915,15 @@ section#trust.trust-section{padding:58px 0 54px!important;background:linear-grad
         </div>
 
         <div class="ai-book-divider"></div>
-        <div class="ai-book-pay-title">💳 Get the Complete Book — <span class="sbm-original-price">₹499</span> <b>₹199</b> <span class="sbm-price-save">OFFER</span></div>
-
-        <div class="payment-row">
-          <div class="qr-wrap">
-            <img class="ai-book-qr" src="assets/upi-qr.png"
-                 alt="UPI QR code to pay ₹199 for Smart Brain Mission AI book">
-            <div class="qr-caption">Offer Price: <span class="sbm-original-price">₹499</span> <b>₹199</b></div>
-          </div>
-
-          <div class="payment-details">
-            <div class="ai-book-upi">UPI ID: sirohi1919941@ybl</div>
+        <div class="ai-book-pay-title">💳 Get the Complete Book — <span class="sbm-original-price">₹299</span> <b>₹149</b> <span class="sbm-price-save">OFFER</span></div>
+        <div class="payment-row"><div class="payment-details">
             <button class="ai-book-pay sbm-razorpay-test-btn" type="button"
                     data-sbm-product="AI: Kal Se Aaj Tak… Aur Aane Wala Kal"
                     data-sbm-product-id="book"
-                    data-sbm-price="199">
+                    data-sbm-price="149">
               💳 Buy Securely with Razorpay
             </button>
             <div class="sbm-razorpay-test-note">Secure payment • Instant PDF download after successful payment.</div>
-            <a class="ai-book-wa"
-               href="https://wa.me/916006485629?text=Hello%20Smart%20Brain%20Mission!%20I%20have%20paid%20%E2%82%B9199%20for%20the%20AI%20book%20%22AI%3A%20Kal%20Se%20Aaj%20Tak%E2%80%A6%20Aur%20Aane%20Wala%20Kal%22.%20Please%20send%20me%20the%20complete%20book.%20My%20payment%20screenshot%20is%20attached."
-               target="_blank" rel="noopener">
-              💬 Send Payment on WhatsApp
-            </a>
           </div>
         </div>
 
@@ -1816,37 +1952,39 @@ section#trust.trust-section{padding:58px 0 54px!important;background:linear-grad
         <img class="pack-cover" src="assets/my-first-ai-cover.png" alt="My First AI Activity Pack cover"><div class="product-icon">📱</div><h3>My First AI Activity Pack <span class="product-price">— <span class="sbm-original-price">₹119</span> <b>₹59</b></span></h3>
         <p class="sample-copy">Preview the sample before you buy the complete pack.</p>
         <a class="sample-btn" href="assets/AI%20ACTIVITY%20SAMPLE%20PACK.pdf" target="_blank">🎁 View Sample <small>(Free Preview)</small></a>
-        <div class="product-divider"></div><img class="qr" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAWgAAAFoAQAAAABSnlx4AAACd0lEQVR4nO2ay24rMQxDyYv8/y+zC0qy53YVwJPaGaVAHp2zEASBpiVReOP17x246aabbrrpG+kXANDfRYgCKIpQPFA+vTmSZ9AvAM4lmB+AAIFy+se/N4r7VNr5BjOrrmZCIAjp8nSjuE+lX/MPInQEISqV6A9E8kS60i2AiFL/k0i+lY76ripWSEqel+L8dJ+4T6Wd76mIqfgLm3J5uk/cp9LU9YdPSoGAKPwn4PvEfTRtASGBdCRQKolIku0Hl9IWD0XmJZAKSwhJ9uMfieTbaY7LDKzXQtwxB6SUnX3iPpWm4OSW7a7jMa/3ky3fJ+5T6VHfUd11YEauq9y7f7KCDqGoCo9apn14nJmR7Z3iPpXO+zyrS8K47KRRIfu+s44OgUYWc34J652qgu7HLqQFQTaE/iVwqu/Rttos7gPpUd/DoISI012raKm0P1lHq4Y5aQZtC33hnNR8s7hPpQkPc1zMrmX5bq/f9J2RfD09zRtSP67ygpKYmyN5Ei0KPi5ldXH7hKUo3T9ZSQsiRZD41YMVgLIum8V9IJ3zBk0tWOYShICQFrb/XkgTImNgybr4aEx31P5kKW399rJJdqwYIg7ROvORSB5BC6LEFBTWLQhxgKL1exE95pejUVILbExn0v2TVfTUrwIitxouZWwWdr6X0Nf5PFDDs2gTVhOl5w1L6Mt+bL4xDUnsofS8eDEtST4Vs+/tdc003iQ/FMlDaCfUGjLqOfpXzKvQfnGfTSuu7swpmj25qnu1adzn0vQSMiYp6X2IG2jVHhuldCaxGVGNwg3jPo6+7MdyvM9r34qBxE5xn0pf/PefRtJ000033fQ7rx8n8zTNYAD7SgAAAABJRU5ErkJggg==" alt="UPI payment QR code for My First AI Activity Pack">
-        <div class="payment-copy">Offer Price: <span class="sbm-original-price">₹119</span> <b>₹59</b> for the complete pack.</div><div class="upi">UPI ID: sirohi1919941@ybl</div>
         <button class="paybtn sbm-razorpay-test-btn" type="button"
                 data-sbm-product="My First AI Activity Pack"
                 data-sbm-product-id="activity"
                 data-sbm-price="59">💳 Buy Securely with Razorpay</button><div class="payment-note">Secure payment • Instant PDF download after successful payment.</div>
-        <a class="whatsapp" href="https://wa.me/916006485629?text=Hello%20Smart%20Brain%20Mission%2C%20I%20have%20paid%20%E2%82%B959%20for%20the%20My%20First%20AI%20Activity%20Pack.%20Please%20send%20me%20the%20pack.">💬 Send Payment on WhatsApp</a>
       </div>
       <div class="pay-card product-card">
         <img class="pack-cover" src="assets/ai-detective-cover.png" alt="AI Detective Pack cover"><div class="product-icon">🕵️</div><h3>AI Detective Pack <span class="product-price">— <span class="sbm-original-price">₹119</span> <b>₹59</b></span></h3>
         <p class="sample-copy">Preview the sample before you buy the complete pack.</p>
         <a class="sample-btn detective-btn" href="assets/AI%20DETECTIVE%20SAMPLE%20PACK.pdf" target="_blank">🎁 View Sample <small>(Free Preview)</small></a>
-        <div class="product-divider"></div><img class="qr" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAWgAAAFoAQAAAABSnlx4AAACd0lEQVR4nO2ay24rMQxDyYv8/y+zC0qy53YVwJPaGaVAHp2zEASBpiVReOP17x246aabbrrpG+kXANDfRYgCKIpQPFA+vTmSZ9AvAM4lmB+AAIFy+se/N4r7VNr5BjOrrmZCIAjp8nSjuE+lX/MPInQEISqV6A9E8kS60i2AiFL/k0i+lY76ripWSEqel+L8dJ+4T6Wd76mIqfgLm3J5uk/cp9LU9YdPSoGAKPwn4PvEfTRtASGBdCRQKolIku0Hl9IWD0XmJZAKSwhJ9uMfieTbaY7LDKzXQtwxB6SUnX3iPpWm4OSW7a7jMa/3ky3fJ+5T6VHfUd11YEauq9y7f7KCDqGoCo9apn14nJmR7Z3iPpXO+zyrS8K47KRRIfu+s44OgUYWc34J652qgu7HLqQFQTaE/iVwqu/Rttos7gPpUd/DoISI012raKm0P1lHq4Y5aQZtC33hnNR8s7hPpQkPc1zMrmX5bq/f9J2RfD09zRtSP67ygpKYmyN5Ei0KPi5ldXH7hKUo3T9ZSQsiRZD41YMVgLIum8V9IJ3zBk0tWOYShICQFrb/XkgTImNgybr4aEx31P5kKW399rJJdqwYIg7ROvORSB5BC6LEFBTWLQhxgKL1exE95pejUVILbExn0v2TVfTUrwIitxouZWwWdr6X0Nf5PFDDs2gTVhOl5w1L6Mt+bL4xDUnsofS8eDEtST4Vs+/tdc003iQ/FMlDaCfUGjLqOfpXzKvQfnGfTSuu7swpmj25qnu1adzn0vQSMiYp6X2IG2jVHhuldCaxGVGNwg3jPo6+7MdyvM9r34qBxE5xn0pf/PefRtJ000033fQ7rx8n8zTNYAD7SgAAAABJRU5ErkJggg==" alt="UPI payment QR code for AI Detective Pack">
-        <div class="payment-copy">Offer Price: <span class="sbm-original-price">₹119</span> <b>₹59</b> for the complete pack.</div><div class="upi">UPI ID: sirohi1919941@ybl</div>
         <button class="paybtn detective-pay sbm-razorpay-test-btn" type="button"
                 data-sbm-product="AI Detective Pack"
                 data-sbm-product-id="detective"
                 data-sbm-price="59">💳 Buy Securely with Razorpay</button><div class="payment-note">Secure payment • Instant PDF download after successful payment.</div>
-        <a class="whatsapp" href="https://wa.me/916006485629?text=Hello%20Smart%20Brain%20Mission%2C%20I%20have%20paid%20%E2%82%B959%20for%20the%20AI%20Detective%20Pack.%20Please%20send%20me%20the%20pack.">💬 Send Payment on WhatsApp</a>
       </div>
       <div class="pay-card product-card">
         <img class="pack-cover" src="assets/ai-coding-cover.png" alt="AI &amp; Coding Logic Pack cover"><div class="product-icon">🤖</div><h3>AI &amp; Coding Logic Pack <span class="product-price">— <span class="sbm-original-price">₹119</span> <b>₹59</b></span></h3>
         <p class="sample-copy">Preview the sample before you buy the complete pack.</p>
         <a class="sample-btn" href="/assets/AI%20CODING%20SAMPLE%20PACK.pdf" target="_blank">🎁 View Sample <small>(Free Preview)</small></a>
-        <div class="product-divider"></div><img class="qr" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAWgAAAFoAQAAAABSnlx4AAACd0lEQVR4nO2ay24rMQxDyYv8/y+zC0qy53YVwJPaGaVAHp2zEASBpiVReOP17x246aabbrrpG+kXANDfRYgCKIpQPFA+vTmSZ9AvAM4lmB+AAIFy+se/N4r7VNr5BjOrrmZCIAjp8nSjuE+lX/MPInQEISqV6A9E8kS60i2AiFL/k0i+lY76ripWSEqel+L8dJ+4T6Wd76mIqfgLm3J5uk/cp9LU9YdPSoGAKPwn4PvEfTRtASGBdCRQKolIku0Hl9IWD0XmJZAKSwhJ9uMfieTbaY7LDKzXQtwxB6SUnX3iPpWm4OSW7a7jMa/3ky3fJ+5T6VHfUd11YEauq9y7f7KCDqGoCo9apn14nJmR7Z3iPpXO+zyrS8K47KRRIfu+s44OgUYWc34J652qgu7HLqQFQTaE/iVwqu/Rttos7gPpUd/DoISI012raKm0P1lHq4Y5aQZtC33hnNR8s7hPpQkPc1zMrmX5bq/f9J2RfD09zRtSP67ygpKYmyN5Ei0KPi5ldXH7hKUo3T9ZSQsiRZD41YMVgLIum8V9IJ3zBk0tWOYShICQFrb/XkgTImNgybr4aEx31P5kKW399rJJdqwYIg7ROvORSB5BC6LEFBTWLQhxgKL1exE95pejUVILbExn0v2TVfTUrwIitxouZWwWdr6X0Nf5PFDDs2gTVhOl5w1L6Mt+bL4xDUnsofS8eDEtST4Vs+/tdc003iQ/FMlDaCfUGjLqOfpXzKvQfnGfTSuu7swpmj25qnu1adzn0vQSMiYp6X2IG2jVHhuldCaxGVGNwg3jPo6+7MdyvM9r34qBxE5xn0pf/PefRtJ000033fQ7rx8n8zTNYAD7SgAAAABJRU5ErkJggg==" alt="UPI payment QR code for AI &amp; Coding Logic Pack">
-        <div class="payment-copy">Offer Price: <span class="sbm-original-price">₹119</span> <b>₹59</b> for the complete pack.</div><div class="upi">UPI ID: sirohi1919941@ybl</div>
         <button class="paybtn sbm-razorpay-test-btn" type="button"
                 data-sbm-product="AI &amp; Coding Logic Pack"
                 data-sbm-product-id="coding"
                 data-sbm-price="59">💳 Buy Securely with Razorpay</button><div class="payment-note">Secure payment • Instant PDF download after successful payment.</div>
-        <a class="whatsapp" href="https://wa.me/916006485629?text=Hello%20Smart%20Brain%20Mission%2C%20I%20have%20paid%20%E2%82%B959%20for%20the%20AI%20%26%20Coding%20Logic%20Pack.%20Please%20send%20me%20the%20pack.">💬 Send Payment on WhatsApp</a>
+      </div>
+      <div class="pay-card product-card prompt-product-card">
+        <div class="product-icon">🧠</div>
+        <h3>Prompt Engineer Pack <span class="product-price">— <span class="sbm-original-price">₹299</span> <b>₹149</b></span></h3>
+        <p class="sample-copy">Learn prompt engineering and use AI more effectively.</p>
+        <a class="sample-btn" href="assets/AI%20PROMPT%20ENGINEERING%20SAMPLE%20BOOK.pdf" target="_blank" rel="noopener">🎁 View Sample <small>(Free Preview)</small></a>
+        <button class="paybtn sbm-razorpay-test-btn" type="button"
+                data-sbm-product="Prompt Engineer Pack"
+                data-sbm-product-id="prompt"
+                data-sbm-price="149">💳 Buy Securely with Razorpay</button>
+        <div class="payment-note">Secure payment • Instant PDF download after successful payment.</div>
       </div>
     </div>
   </div>

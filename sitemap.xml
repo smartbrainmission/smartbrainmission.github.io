@@ -1,6 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
   <url>
     <loc>https://smartbrainmission.com/</loc>
   </url>
+
+  <url>
+    <loc>https://smartbrainmission.com/blog/blog-index.html</loc>
+  </url>
+
+  <url>
+    <loc>https://smartbrainmission.com/blog/bachon-ko-ai-kaise-sikhayein.html</loc>
+  </url>
+
+  <url>
+    <loc>https://smartbrainmission.com/blog/blog-critical-thinking-kaise-sikhayein.html</loc>
+  </url>
+
+  <url>
+    <loc>https://smartbrainmission.com/blog/blog-chatgpt-safe-for-kids.html</loc>
+  </url>
+
+  <url>
+    <loc>https://smartbrainmission.com/blog/blog-ai-bachche-lazy-honge.html</loc>
+  </url>
+
+  <url>
+    <loc>https://smartbrainmission.com/blog/blog-5-signs-kid-ready-learn-ai.html</loc>
+  </url>
+
 </urlset>

@@ -3224,6 +3224,49 @@ const SBM_REVIEWS_ENDPOINT = "https://script.google.com/macros/s/AKfycbzXUzbKCDD
     parent.appendChild(note);
   }
 
+  function trackMetaEvent(eventName, params){
+    try {
+      if (typeof fbq === "function") {
+        fbq("track", eventName, params || {});
+      }
+    } catch (e) {
+      console.warn("Meta Pixel event failed:", eventName, e);
+    }
+  }
+
+  function productParams(button){
+    const productId = button && button.dataset ? button.dataset.sbmProductId : "";
+    const product = button && button.dataset ? (button.dataset.sbmProduct || "Smart Brain Mission") : "Smart Brain Mission";
+    const price = button && button.dataset ? Number(button.dataset.sbmPrice || 0) : 0;
+    return {
+      content_name: product,
+      content_ids: productId ? [productId] : [],
+      content_type: "product",
+      value: price,
+      currency: "INR"
+    };
+  }
+
+  // Meta: ViewContent when a product card becomes visible on screen.
+  function setupMetaViewContent(){
+    if (typeof IntersectionObserver === "undefined") return;
+    const cards = document.querySelectorAll(".product-card, .ai-book-card");
+    const seen = new WeakSet();
+    const observer = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (!entry.isIntersecting || seen.has(entry.target)) return;
+        const button = entry.target.querySelector(".sbm-razorpay-test-btn");
+        if (!button) return;
+        seen.add(entry.target);
+        trackMetaEvent("ViewContent", productParams(button));
+        observer.unobserve(entry.target);
+      });
+    }, {threshold: 0.35});
+    cards.forEach(function(card){ observer.observe(card); });
+  }
+
+  setupMetaViewContent();
+
   function openProductionCheckout(button){
     if(typeof Razorpay === "undefined"){
       alert("Razorpay Checkout load nahi hua. Please refresh the page and try again.");
@@ -3234,6 +3277,9 @@ const SBM_REVIEWS_ENDPOINT = "https://script.google.com/macros/s/AKfycbzXUzbKCDD
     const productId = button.dataset.sbmProductId;
     const product = button.dataset.sbmProduct || "Smart Brain Mission";
     const displayPrice = button.dataset.sbmPrice || "";
+
+    // Meta: customer started the Razorpay checkout flow.
+    trackMetaEvent("InitiateCheckout", productParams(button));
 
     button.disabled = true;
     button.innerHTML = "⏳ Creating secure order…";
@@ -3287,6 +3333,16 @@ const SBM_REVIEWS_ENDPOINT = "https://script.google.com/macros/s/AKfycbzXUzbKCDD
                 verification.error || "Payment verification failed."
               );
             }
+
+            // Meta: count Purchase only after server-side payment verification succeeds.
+            trackMetaEvent("Purchase", {
+              content_name: verification.product_name || product,
+              content_ids: productId ? [productId] : [],
+              content_type: "product",
+              value: Number(verification.amount || 0) / 100,
+              currency: "INR",
+              transaction_id: verification.payment_id || ""
+            });
 
             button.innerHTML = "✅ Payment Verified";
             addDownloadButton(button, verification);

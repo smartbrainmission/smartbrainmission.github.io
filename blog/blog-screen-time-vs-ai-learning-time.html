@@ -1,157 +1,147 @@
 <!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Screen Time vs AI Learning Time: Balance Kaise Banayein? | Smart Brain Mission</title>
-<meta name="description" content="Screen time ko purposeful AI learning time mein balance karna.">
+<meta name="description" content="Screen Time vs AI Learning Time: Balance Kaise Banayein? — Practical daily-routine guide for parents">
 <link rel="canonical" href="https://smartbrainmission.com/blog/blog-screen-time-vs-ai-learning-time.html">
-<meta property="og:title" content="Screen Time vs AI Learning Time: Balance Kaise Banayein? | Smart Brain Mission">
-<meta property="og:description" content="Screen time ko purposeful AI learning time mein balance karna.">
-<meta property="og:url" content="https://smartbrainmission.com/blog/blog-screen-time-vs-ai-learning-time.html">
 <style>
 :root{
- --a:#16a34a; --b:#2563eb; --deep:#2b1450; --ink:#2f2940; --muted:#697083;
- --paper:#fff; --line:#e9dff2; --soft:#f8f4ff; --yellow:#ffe16a;
+ --a:#16A34A;--b:#2563EB;--ink:#272334;--deep:#32134f;--muted:#707080;--paper:#fffdf9;
+ --line:#eadfe9;--soft:#f7f1fb;--gold:#ffd95a;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{
- margin:0;color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
- line-height:1.78;background:
- radial-gradient(circle at 4% 4%,color-mix(in srgb,var(--a) 13%,transparent),transparent 23rem),
- radial-gradient(circle at 96% 7%,color-mix(in srgb,var(--b) 12%,transparent),transparent 25rem),
- linear-gradient(135deg,#fff 0%,#faf8ff 48%,#f3fbff 100%);
+ margin:0;color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",#16A34Arial,sans-serif;
+ background:#f7f5f8;
 }
-.progress{position:fixed;z-index:100;left:0;top:0;height:4px;width:0;background:linear-gradient(90deg,var(--a),var(--b),#ffd84d)}
-.page{max-width:1180px;margin:auto;padding:10px 20px 65px}
-.nav{height:66px;display:flex;align-items:center;justify-content:space-between;gap:14px}
-.logo{color:var(--deep);text-decoration:none;font-weight:950;letter-spacing:-.4px;font-size:15px}
-.logo b{color:var(--b)}
-.back{
- color:var(--deep);background:#ffffffea;border:1px solid var(--line);text-decoration:none;
- font-size:12px;font-weight:900;padding:10px 15px;border-radius:999px;
- box-shadow:0 8px 24px rgba(53,16,95,.08);transition:.2s
-}
-.back:hover{transform:translateY(-2px)}
+::selection{background:color-mix(in srgb,var(--a) 22%,#fff);color:var(--deep)}
+.readbar{position:fixed;z-index:999;left:0;top:0;height:4px;width:0;background:linear-gradient(90deg,var(--a),var(--b),#f6b800)}
+.site{max-width:1240px;margin:auto;padding:0 22px}
+.nav{height:72px;display:flex;align-items:center;justify-content:space-between;gap:15px}
+.brand{text-decoration:none;color:var(--deep);font-size:14px;font-weight:950;letter-spacing:.02em}
+.brand span{color:var(--b)}
+.back{text-decoration:none;color:var(--deep);font-size:12px;font-weight:900;background:#fff;border:1px solid var(--line);padding:10px 15px;border-radius:999px;box-shadow:0 6px 20px #32134f0c}
 .hero{
- position:relative;overflow:hidden;margin-top:10px;border-radius:34px;padding:55px 60px 50px;color:#fff;
- background:linear-gradient(120deg,var(--a),color-mix(in srgb,var(--a) 62%,var(--b)) 48%,var(--b));
- box-shadow:0 28px 70px rgba(53,16,95,.16);
+ position:relative;overflow:hidden;border-radius:38px;min-height:460px;
+ background:linear-gradient(135deg,var(--deep) 0%,color-mix(in srgb,var(--deep) 78%,var(--a)) 42%,var(--a) 100%);
+ color:#fff;padding:58px 7% 56px;display:flex;align-items:center;
+ box-shadow:0 30px 75px #32134f24;
 }
-.hero:before{content:"";position:absolute;width:430px;height:430px;right:-170px;top:-270px;border-radius:50%;border:1px solid #ffffff45;box-shadow:0 0 0 55px #ffffff09,0 0 0 110px #ffffff06}
-.hero:after{content:"";position:absolute;width:250px;height:250px;left:-145px;bottom:-175px;border-radius:50%;background:#ffffff0a}
-.hero .spark{position:absolute;right:34px;bottom:22px;font-size:72px;opacity:.20}
-.eyebrow{
- display:inline-flex;align-items:center;gap:7px;padding:8px 13px;border-radius:999px;
- background:#ffffff1d;border:1px solid #ffffff42;color:#fff;font-size:10px;
- letter-spacing:.13em;font-weight:950;position:relative
-}
-.hero h1{
- max-width:930px;font-size:clamp(42px,6vw,74px);line-height:1.01;letter-spacing:-3.2px;
- margin:20px 0 17px;position:relative
-}
-.hero h1 span{color:var(--yellow)}
-.deck{max-width:790px;color:#fff;font-size:18px;line-height:1.62;margin:0 0 23px;position:relative}
-.meta{display:flex;gap:9px;flex-wrap:wrap;position:relative}
-.meta span{background:#fff;color:var(--deep);padding:7px 11px;border-radius:999px;font-size:10px;font-weight:950;box-shadow:0 6px 15px rgba(40,15,70,.16)}
-.article{max-width:900px;margin:0 auto}
+.hero:before{content:"";position:absolute;width:520px;height:520px;border-radius:50%;right:-210px;top:-280px;border:1px solid #ffffff33;box-shadow:0 0 0 55px #ffffff08,0 0 0 115px #ffffff05}
+.hero:after{content:"";position:absolute;width:280px;height:280px;border-radius:50%;left:-170px;bottom:-200px;background:#ffffff09}
+.hero-grid{position:relative;z-index:2;width:100%;display:grid;grid-template-columns:1fr 280px;gap:45px;align-items:center}
+.eyebrow{display:inline-flex;gap:8px;align-items:center;border:1px solid #ffffff3d;background:#ffffff18;padding:8px 13px;border-radius:999px;font-size:9px;letter-spacing:.14em;font-weight:950}
+.hero h1{font-size:clamp(43px,6vw,78px);line-height:.98;letter-spacing:-3.8px;margin:22px 0 18px;max-width:900px}
+.hero h1 em{font-style:normal;color:var(--gold)}
+.deck{font-size:18px;line-height:1.6;max-width:780px;color:#f8efff;margin:0 0 23px}
+.meta{display:flex;flex-wrap:wrap;gap:8px}.meta span{background:#fff;color:var(--deep);padding:7px 11px;border-radius:999px;font-size:9px;font-weight:950}
+.hero-art{height:270px;border-radius:36px;background:#ffffff10;border:1px solid #ffffff30;display:grid;place-items:center;position:relative;backdrop-filter:blur(4px)}
+.hero-art .big{font-size:105px;filter:drop-shadow(0 18px 20px #0003)}
+.hero-art .mini{position:absolute;background:#fff;color:var(--deep);padding:9px 12px;border-radius:999px;font-size:10px;font-weight:950;box-shadow:0 10px 24px #0002}
+.hero-art .m1{top:20px;right:-12px}.hero-art .m2{bottom:25px;left:-15px}
+.layout{display:grid;grid-template-columns:210px minmax(0,820px);gap:42px;justify-content:center;align-items:start;padding:52px 0 70px}
+.toc{position:sticky;top:22px;background:#fff;border:1px solid var(--line);border-radius:22px;padding:18px;box-shadow:0 15px 35px #32134f0b}
+.toc-label{font-size:9px;letter-spacing:.14em;font-weight:950;color:var(--a);margin-bottom:11px}
+.toc a{display:block;text-decoration:none;color:#686575;font-size:11px;line-height:1.35;padding:8px 9px;border-radius:10px;margin:2px 0}
+.toc a:hover{background:var(--soft);color:var(--deep)}
+.article{min-width:0}
 .intro{
- margin:38px 0 0;padding:30px 32px;background:rgba(255,255,255,.88);border:1px solid var(--line);
- border-radius:25px;font-size:19px;line-height:1.8;color:#50596b;box-shadow:0 16px 42px rgba(53,16,95,.07);
- position:relative
+ position:relative;background:#fff;border:1px solid var(--line);border-radius:28px;padding:31px 34px 30px;
+ font-size:19px;line-height:1.82;color:#555766;box-shadow:0 17px 42px #32134f0a;margin-bottom:30px
 }
-.intro:before{content:"QUICK TAKE";position:absolute;left:25px;top:-11px;background:linear-gradient(90deg,var(--a),var(--b));color:#fff;padding:5px 10px;border-radius:999px;font-size:8px;font-weight:950;letter-spacing:.13em}
-.intro:first-letter{font-size:3em;float:left;line-height:.82;padding:.05em .09em 0 0;color:var(--b);font-weight:950}
+.intro:before{content:"THE QUICK T#16A34AKE";position:absolute;top:-10px;left:25px;background:var(--a);color:#fff;border-radius:999px;padding:5px 10px;font-size:8px;font-weight:950;letter-spacing:.13em}
+.intro:first-letter{font-size:3.1em;line-height:.8;float:left;padding:.06em .10em 0 0;color:var(--b);font-weight:950}
 .section{
- margin-top:42px;padding:32px 34px 29px;background:rgba(255,255,255,.91);
- border:1px solid var(--line);border-radius:27px;box-shadow:0 15px 38px rgba(53,16,95,.065);
- position:relative;overflow:hidden
+ background:#fff;border:1px solid var(--line);border-radius:28px;padding:31px 34px;margin:25px 0;
+ box-shadow:0 15px 38px #32134f08;position:relative;overflow:hidden
 }
+.section:nth-of-type(even){background:linear-gradient(135deg,#fff,#fcf7ff)}
 .section:before{content:"";position:absolute;left:0;top:0;bottom:0;width:5px;background:linear-gradient(180deg,var(--a),var(--b))}
-.section:after{content:"";position:absolute;width:120px;height:120px;border-radius:50%;right:-58px;top:-58px;background:linear-gradient(135deg,var(--b),transparent);opacity:.12}
-.section-top{display:flex;align-items:flex-start;gap:14px;margin-bottom:18px;position:relative;z-index:1}
-.num{min-width:40px;height:40px;display:grid;place-items:center;border-radius:13px;background:linear-gradient(135deg,var(--a),var(--b));color:#fff;font-size:11px;font-weight:950;box-shadow:0 8px 18px rgba(53,16,95,.16)}
-h2{font-size:30px;line-height:1.18;letter-spacing:-1px;color:var(--deep);margin:0}
-h3{color:var(--deep);margin-top:24px}
-p{margin:0 0 17px}
-strong{color:#4d2770}
-ul,ol{padding-left:25px;color:#596071}
-li{margin:9px 0;padding-left:3px}
-li::marker{color:var(--b);font-weight:900}
+.section:after{content:"";position:absolute;width:130px;height:130px;border-radius:50%;right:-65px;top:-65px;background:color-mix(in srgb,var(--b) 12%,transparent)}
+.section-head{display:flex;align-items:flex-start;gap:14px;margin-bottom:18px;position:relative;z-index:2}
+.num{width:42px;height:42px;min-width:42px;display:grid;place-items:center;border-radius:14px;background:linear-gradient(135deg,var(--a),var(--b));color:#fff;font-size:11px;font-weight:950;box-shadow:0 9px 20px #32134f1c}
+.section h2{margin:3px 0 0;color:var(--deep);font-size:29px;line-height:1.18;letter-spacing:-.9px}
+.section h3{color:var(--deep);font-size:19px}
+.section p,.section li{font-size:15px;line-height:1.82}
+.section p{margin:0 0 16px}.section ul,.section ol{padding-left:24px;color:#5e6070}
+.section li{margin:8px 0}
+.section li::marker{color:var(--b);font-weight:900}
 blockquote{
- margin:27px 0;padding:23px 25px;border-radius:19px;border:1px solid var(--line);
- border-left:5px solid var(--b);background:linear-gradient(105deg,#fff,color-mix(in srgb,var(--b) 7%,#fff));
- color:var(--deep);font-weight:750;box-shadow:0 9px 22px rgba(53,16,95,.045)
+ margin:24px 0;padding:22px 24px;border-radius:20px;border:1px solid var(--line);
+ border-left:5px solid var(--b);background:linear-gradient(110deg,#fff9fd,#f6f2ff);
+ color:var(--deep);font-weight:800;line-height:1.7;box-shadow:0 9px 22px #32134f08
 }
-table{width:100%;border-collapse:separate;border-spacing:0;margin:24px 0;background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden}
-th,td{padding:13px 15px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top;font-size:14px}
+table{width:100%;border-collapse:separate;border-spacing:0;margin:23px 0;background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden}
+th,td{padding:13px 15px;border-bottom:1px solid var(--line);font-size:13px;line-height:1.5;text-align:left;vertical-align:top}
 th{background:linear-gradient(90deg,color-mix(in srgb,var(--a) 9%,#fff),color-mix(in srgb,var(--b) 8%,#fff));color:var(--deep);font-weight:900}
 tr:last-child td{border-bottom:0}
+.callout,.tip,.note,.highlight{
+ padding:20px 22px;border-radius:19px;background:linear-gradient(105deg,#fff7d7,#fff1f7);border:1px solid #f1dfbd;margin:22px 0
+}
 .cta{
- margin-top:42px;border-radius:29px;padding:35px 35px;
- background:linear-gradient(120deg,var(--a),color-mix(in srgb,var(--a) 60%,var(--b)) 50%,var(--b));
- color:#fff;box-shadow:0 22px 55px rgba(53,16,95,.15);position:relative;overflow:hidden
+ margin-top:32px;padding:38px 35px;border-radius:30px;color:#fff;
+ background:linear-gradient(125deg,var(--deep),var(--a) 52%,var(--b));box-shadow:0 25px 55px #32134f24;position:relative;overflow:hidden
 }
-.cta:after{content:"✦";position:absolute;right:24px;top:7px;font-size:115px;color:#fff;opacity:.08}
-.cta h3{font-size:24px;line-height:1.25;margin:0 0 9px;color:#fff;position:relative;z-index:1}
-.cta p{color:#f8efff;font-size:14px;position:relative;z-index:1;max-width:700px}
-.cta a{display:inline-block;position:relative;z-index:1;background:var(--yellow);color:#30165a;text-decoration:none;font-size:13px;font-weight:950;padding:12px 18px;border-radius:12px;box-shadow:0 8px 18px rgba(0,0,0,.10)}
-.footer{text-align:center;color:#888293;font-size:11px;margin-top:27px}
-@media(max-width:700px){
- .page{padding:8px 13px 50px}.nav{height:58px}.back{padding:8px 11px}
- .hero{padding:38px 24px;border-radius:27px}.hero h1{font-size:45px;letter-spacing:-2.2px}.deck{font-size:15px}
- .intro{font-size:17px;margin-top:29px;padding:25px 22px}.section{margin-top:31px;padding:25px 21px;border-radius:23px}h2{font-size:25px}
- .meta{gap:7px}.meta span{font-size:9px}.article{padding:0 1px}
- table{display:block;overflow-x:auto}
-}
+.cta:before{content:"";position:absolute;width:240px;height:240px;border-radius:50%;right:-90px;top:-120px;border:1px solid #fff3}
+.cta h3{color:#fff;font-size:25px;margin:0 0 8px}.cta p{color:#f8efff;font-size:14px;max-width:700px}
+.cta a{display:inline-block;background:var(--gold);color:#32134f;text-decoration:none;padding:12px 18px;border-radius:12px;font-size:12px;font-weight:950}
+.footer{text-align:center;color:#888392;font-size:11px;padding:0 0 35px}
+@media(max-width:900px){.hero-grid{grid-template-columns:1fr}.hero-art{display:none}.layout{grid-template-columns:1fr;padding-top:34px}.toc{position:relative;top:auto;display:flex;gap:6px;overflow:auto;white-space:nowrap}.toc-label{display:none}.toc a{display:inline-block}.article{width:100%}}
+@media(max-width:620px){.site{padding:0 12px}.nav{height:58px}.hero{border-radius:27px;padding:38px 23px;min-height:0}.hero h1{font-size:45px;letter-spacing:-2.4px}.deck{font-size:15px}.layout{padding:28px 0 52px}.intro{padding:25px 21px;font-size:17px}.section{padding:24px 20px;border-radius:23px}.section h2{font-size:25px}.section p,.section li{font-size:14px}.cta{padding:30px 23px}}
 </style>
 </head>
 <body>
-<div class="progress" id="progress"></div>
-<div class="page">
+<div class="readbar" id="readbar"></div>
+<div class="site">
 <header class="nav">
-<a class="logo" href="https://smartbrainmission.com/">🧠 SMART <b>BRAIN MISSION</b></a>
-<a class="back" href="blog-index.html">← Back to Blog</a>
+<a class="brand" href="https://smartbrainmission.com/">🧠 SMART <span>BRAIN MISSION</span></a>
+<a class="back" href="blog-index.html">← All Parent Guides</a>
 </header>
 <section class="hero">
-<div class="spark">⏱️</div>
+<div class="hero-grid">
+<div>
 <div class="eyebrow">⏱️ SMART SCREEN HABITS · SMART BRAIN MISSION</div>
-<h1>Screen Time vs AI Learning Time: Balance Kaise Banayein?</h1>
-<p class="deck">Practical daily-routine guide for parents</p>
-<div class="meta"><span>FOR CURIOUS MINDS 5+</span><span>PARENT GUIDE</span><span>AI LEARNING</span></div>
+<h1>Screen Time vs AI Learning Time: <em>Balance Kaise Banayein?</em></h1>
+<p class="deck">Screen Time vs AI Learning Time: Balance Kaise Banayein? — Practical daily-routine guide for parents</p>
+<div class="meta"><span>📖 PARENT GUIDE</span><span>🧠 AI LEARNING</span><span>5+ CURIOUS MINDS</span></div>
+</div>
+<div class="hero-art"><div class="big">⏱️</div><div class="mini m1">THINK • QUESTION • CREATE</div><div class="mini m2">Smart Brain Mission</div></div>
+</div>
 </section>
-<main class="article">
-<p class="intro">Aaj ke parents ke liye sabse bada confusion yahi hai — "Kya AI learning bhi ek aur screen time hai, ya ye kuch alag hai?" Ye guide aapko dono ke beech ka farak samjhayega aur ek simple, practical routine dega jisse aapka bachcha AI seekhe bhi aur screen se overload bhi na ho.</p>
-<section class="section"><div class="section-top"><span class="num">01</span><h2>Screen Time Aur AI Learning Time Mein Farak Kya Hai?</h2></div>
+<div class="layout">
+<aside class="toc"><div class="toc-label">IN THIS GUIDE</div><a href="#section-1">01 · Screen Time Aur AI Learning Time Mein Farak Kya Hai?</a><a href="#section-2">02 · Parents Ke Liye Practical Daily Routine</a><a href="#section-3">03 · 5 Practical Tips Balance Banane Ke Liye</a><a href="#section-4">04 · Warning Signs — Jab Balance Bigad Raha Ho</a><a href="#section-5">05 · Conclusion</a></aside>
+<main class="article"><p class="intro">Aaj ke parents ke liye sabse bada confusion yahi hai — "Kya AI learning bhi ek aur screen time hai, ya ye kuch alag hai?" Ye guide aapko dono ke beech ka farak samjhayega aur ek simple, practical routine dega jisse aapka bachcha AI seekhe bhi aur screen se overload bhi na ho.</p>
+<section class="section" id="section-1"><div class="section-head"><span class="num">01</span><h2>Screen Time Aur AI Learning Time Mein Farak Kya Hai?</h2></div>
 <p>Har screen time same nahi hota.</p>
 <ul><li><strong>Passive screen time</strong> — cartoons dekhna, reels scroll karna, random games khelna. Bachcha sirf consume kar raha hai, kuch bana ya soch nahi raha.</li><li><strong>Active AI learning time</strong> — AI ke saath activity karna, puzzle solve karna, question poochna, kuch create karna. Yahan bachcha <strong>think</strong> kar raha hai, sirf watch nahi.</li></ul>
 <p>Smart Brain Mission ka approach yahi hai — <strong>Watch → Think → Try → Create</strong>. Isliye AI learning ko "screen time" ki category me daalna galat hai, jab tak wo activity-based ho.</p>
 </section>
-<section class="section"><div class="section-top"><span class="num">02</span><h2>Parents Ke Liye Practical Daily Routine</h2></div>
+<section class="section" id="section-2"><div class="section-head"><span class="num">02</span><h2>Parents Ke Liye Practical Daily Routine</h2></div>
 <p>Ek simple framework follow karein — <strong>20-20-20 Rule</strong>:</p>
 <ol><li><strong>20 minutes Watch &amp; Learn</strong> — ek short AI/tech video dekhna (jaise Smart Brain Mission ke videos)</li><li><strong>20 minutes Hands-On Activity</strong> — activity pack ya printable worksheet, screen ke bina</li><li><strong>20 minutes Free Play/Outdoor</strong> — completely unrelated, bachcha khud choose kare</li></ol>
 <p>Is tarah total AI-related time 40 minutes se zyada nahi hota, aur usme se half time screen ke bina hota hai.</p>
 </section>
-<section class="section"><div class="section-top"><span class="num">03</span><h2>5 Practical Tips Balance Banane Ke Liye</h2></div>
+<section class="section" id="section-3"><div class="section-head"><span class="num">03</span><h2>5 Practical Tips Balance Banane Ke Liye</h2></div>
 <ol><li><strong>Fixed time slot rakhein</strong> — random poore din phone pe AI dekhne se better hai ek fixed 20-30 min slot, jaise evening 6-6:30.</li><li><strong>Screen-free activities prioritize karein</strong> — activity packs, printables, aur offline puzzles AI concepts sikhate hain bina extra screen ke.</li><li><strong>"Create" ko priority dein</strong> — passive watching se zyada, kuch banane wali activity (story, drawing, project) dein.</li><li><strong>Weekend ek "No Screen AI Day" rakhein</strong> — sirf books, activity packs aur conversations se AI discuss karein.</li><li><strong>Together time banayein</strong> — parents bhi 10 minutes involve ho, taaki ye sirf "device time" na lage, balki family learning time lage.</li></ol>
 </section>
-<section class="section"><div class="section-top"><span class="num">04</span><h2>Warning Signs — Jab Balance Bigad Raha Ho</h2></div>
+<section class="section" id="section-4"><div class="section-head"><span class="num">04</span><h2>Warning Signs — Jab Balance Bigad Raha Ho</h2></div>
 <ul><li>Bachcha AI video ke baad turant kuch aur screen maangta hai</li><li>Activity ke baad koi conversation ya sawaal nahi karta, bas "next" maangta hai</li><li>Non-screen activities (books, outdoor) me interest kam ho raha hai</li></ul>
 <p>Agar ye signs dikhein, to screen-based AI content kam karke activity packs aur offline learning zyada badhayein.</p>
 </section>
-<section class="section"><div class="section-top"><span class="num">05</span><h2>Conclusion</h2></div>
+<section class="section" id="section-5"><div class="section-head"><span class="num">05</span><h2>Conclusion</h2></div>
 <p>AI learning aur screen time ek jaisi cheez nahi hain — lekin balance bina soche-samjhe nahi aata. Ek simple routine, thoda screen-free hands-on kaam, aur family involvement — yahi asli tarika hai jisse bachcha AI seekhe bhi aur healthy habits bhi banaye rakhe.</p>
 <p><em>Smart Brain Mission • Learn AI. Think Smart. Create More.</em></p>
-</section><div class="cta"><h3>Smart Brain Mission ke saath AI learning journey continue karein.</h3><p>AI ko sirf use nahi — samajhna, question karna, verify karna aur create karna seekhein.</p><a href="https://smartbrainmission.com/#explore">Explore Smart Brain Mission →</a></div>
-</main>
+</section><div class="cta"><h3>Smart Brain Mission ke saath AI learning journey continue karein.</h3><p>AI ko sirf use nahi — samajhna, question karna, verify karna aur create karna seekhein.</p><a href="https://smartbrainmission.com/#explore">Explore Smart Brain Mission →</a></div></main>
+</div>
 <div class="footer">Smart Brain Mission · Learn AI. Think Smart. Create More. · For Curious Minds 5+</div>
 </div>
 <script>
+const bar=document.getElementById("readbar");
 addEventListener("scroll",()=>{
- const h=document.documentElement.scrollHeight-innerHeight;
- document.getElementById("progress").style.width=(h?scrollY/h*100:0)+"%";
+ const d=document.documentElement;
+ const max=d.scrollHeight-d.clientHeight;
+ bar.style.width=(max>0?(scrollY/max)*100:0)+"%";
 });
 </script>
-</body>
-</html>
+</body></html>

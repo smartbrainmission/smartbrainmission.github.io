@@ -1,148 +1,542 @@
-<!doctype html>
-<html lang="en"><head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>AI Bias Kya Hai? Bachchon Ko Fair Thinking Kaise Sikhayein | Smart Brain Mission</title>
-<meta name="description" content="AI Bias Kya Hai? Bachchon Ko Fair Thinking Kaise Sikhayein — Deeper ethics angle — AI ki limitations samajhna">
-<link rel="canonical" href="https://smartbrainmission.com/blog/blog-ai-bias-fair-thinking.html">
-<style>
-:root{
- --a:#2563E#7C3AED;--b:#7C3AED;--ink:#272334;--deep:#32134f;--muted:#707080;--paper:#fffdf9;
- --line:#eadfe9;--soft:#f7f1fb;--gold:#ffd95a;
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{
- margin:0;color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",#2563E#7C3AEDrial,sans-serif;
- background:#f7f5f8;
-}
-::selection{background:color-mix(in srgb,var(--a) 22%,#fff);color:var(--deep)}
-.readbar{position:fixed;z-index:999;left:0;top:0;height:4px;width:0;background:linear-gradient(90deg,var(--a),var(--b),#f6b800)}
-.site{max-width:1240px;margin:auto;padding:0 22px}
-.nav{height:72px;display:flex;align-items:center;justify-content:space-between;gap:15px}
-.brand{text-decoration:none;color:var(--deep);font-size:14px;font-weight:950;letter-spacing:.02em}
-.brand span{color:var(--b)}
-.back{text-decoration:none;color:var(--deep);font-size:12px;font-weight:900;background:#fff;border:1px solid var(--line);padding:10px 15px;border-radius:999px;box-shadow:0 6px 20px #32134f0c}
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>AI Bias Kya Hai? Bachchon Ko Fair Thinking Kaise Sikhayein | Smart Brain Mission</title><meta name="description" content="AI Bias Kya Hai? Bachchon Ko Fair Thinking Kaise Sikhayein — Deeper ethics angle — AI ki limitations samajhna"><link rel="canonical" href="https://smartbrainmission.com/assets/blog-ai-bias-fair-thinking.html"><style>
+:root{--ink:#241338;--deep:#32145d;--violet:#6426c7;--pink:#df3799;--muted:#707486;--cream:#fcfaf7;--line:#e9e3ed;--lav:#f4effb;--yellow:#f5cc4b}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#f7f5f8;color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Arial,sans-serif;line-height:1.75}.progress{position:fixed;z-index:100;left:0;top:0;height:3px;width:0;background:linear-gradient(90deg,var(--violet),var(--pink))}.page{max-width:1080px;margin:auto;padding:18px 24px 70px}.nav{height:58px;display:flex;align-items:center;justify-content:space-between}.logo{color:var(--deep);text-decoration:none;font-weight:950}.logo b{color:var(--pink)}.back{color:var(--deep);background:#fff;border:1px solid var(--line);text-decoration:none;font-size:12px;font-weight:850;padding:9px 14px;border-radius:11px}.hero{margin-top:15px;background:var(--cream);border:1px solid #eee8ee;border-radius:30px;padding:58px 65px 54px;position:relative;overflow:hidden;box-shadow:0 22px 55px #24133812}.hero:before{content:"";position:absolute;width:310px;height:310px;border-radius:50%;right:-115px;top:-150px;background:radial-gradient(circle,#eadcff 0,#eadcff55 48%,transparent 69%)}.hero:after{content:"";position:absolute;width:180px;height:180px;border-radius:50%;left:-100px;bottom:-100px;background:radial-gradient(circle,#ffd9ed 0,#ffd9ed55 45%,transparent 70%)}.eyebrow{font-size:10px;letter-spacing:.16em;font-weight:950;color:#8c62a8}.hero h1{max-width:790px;font-size:clamp(44px,6.2vw,76px);line-height:.99;letter-spacing:-3.4px;margin:17px 0 21px;color:var(--deep);position:relative}.hero h1 span{color:var(--pink)}.deck{max-width:760px;color:#646a79;font-size:18px;line-height:1.65;margin:0 0 24px}.meta{display:flex;gap:18px;flex-wrap:wrap;color:#777080;font-size:11px;font-weight:800}.meta span:not(:first-child){border-left:1px solid #d9d1dc;padding-left:18px}.article{max-width:820px;margin:0 auto}.intro{max-width:820px;margin:42px auto 0;font-size:20px;line-height:1.75;color:#4f5666}.intro:first-letter{font-size:3.2em;float:left;line-height:.82;padding:.05em .09em 0 0;color:var(--pink);font-weight:900}.section{margin-top:58px}.section-top{display:flex;align-items:baseline;gap:14px;border-bottom:1px solid var(--line);padding-bottom:12px;margin-bottom:23px}.num{font-size:11px;font-weight:950;color:var(--pink);letter-spacing:.08em}h2{font-size:32px;line-height:1.15;letter-spacing:-1px;color:var(--deep);margin:0}h3{color:var(--deep)}p{margin:0 0 17px}ul,ol{padding-left:25px;color:#596071}li{margin:7px 0}blockquote{margin:28px 0;padding:22px 25px;border-left:5px solid var(--pink);background:#fff;border-top:1px solid var(--line);border-right:1px solid var(--line);border-bottom:1px solid var(--line);color:var(--deep);font-weight:750}table{width:100%;border-collapse:collapse;margin:24px 0;background:#fff;border:1px solid var(--line)}th,td{padding:13px 15px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top;font-size:14px}th{background:var(--lav);color:var(--deep);font-weight:900}.cta{margin-top:42px;border-radius:22px;padding:30px 32px;background:linear-gradient(115deg,#32145d,#6224bd);color:#fff}.cta h3{font-size:23px;line-height:1.2;margin:0 0 7px;color:#fff}.cta p{color:#eee7f8;font-size:14px}.cta a{display:inline-block;background:var(--yellow);color:#30165a;text-decoration:none;font-size:13px;font-weight:950;padding:11px 16px;border-radius:10px}.footer{text-align:center;color:#8b8891;font-size:11px;margin-top:25px}@media(max-width:700px){.page{padding:10px 14px 50px}.hero{padding:38px 24px;border-radius:23px}.hero h1{font-size:47px;letter-spacing:-2px}.deck{font-size:15px}.intro{font-size:17px;margin-top:30px}.section{margin-top:48px}h2{font-size:26px}.article{padding:0 4px}.meta{gap:10px}.meta span:not(:first-child){padding-left:10px}table{display:block;overflow-x:auto}}
+
+/* ===== SBM BLOG HERO READABILITY FIX ===== */
 .hero{
- position:relative;overflow:hidden;border-radius:38px;min-height:460px;
- background:linear-gradient(135deg,var(--deep) 0%,color-mix(in srgb,var(--deep) 78%,var(--a)) 42%,var(--a) 100%);
- color:#fff;padding:58px 7% 56px;display:flex;align-items:center;
- box-shadow:0 30px 75px #32134f24;
+  background:linear-gradient(135deg,#35145d 0%,#68164f 48%,#df202d 100%) !important;
+  border:0 !important;
+  box-shadow:0 22px 55px rgba(36,19,56,.18) !important;
 }
-.hero:before{content:"";position:absolute;width:520px;height:520px;border-radius:50%;right:-210px;top:-280px;border:1px solid #ffffff33;box-shadow:0 0 0 55px #ffffff08,0 0 0 115px #ffffff05}
-.hero:after{content:"";position:absolute;width:280px;height:280px;border-radius:50%;left:-170px;bottom:-200px;background:#ffffff09}
-.hero-grid{position:relative;z-index:2;width:100%;display:grid;grid-template-columns:1fr 280px;gap:45px;align-items:center}
-.eyebrow{display:inline-flex;gap:8px;align-items:center;border:1px solid #ffffff3d;background:#ffffff18;padding:8px 13px;border-radius:999px;font-size:9px;letter-spacing:.14em;font-weight:950}
-.hero h1{font-size:clamp(43px,6vw,78px);line-height:.98;letter-spacing:-3.8px;margin:22px 0 18px;max-width:900px}
-.hero h1 em{font-style:normal;color:var(--gold)}
-.deck{font-size:18px;line-height:1.6;max-width:780px;color:#f8efff;margin:0 0 23px}
-.meta{display:flex;flex-wrap:wrap;gap:8px}.meta span{background:#fff;color:var(--deep);padding:7px 11px;border-radius:999px;font-size:9px;font-weight:950}
-.hero-art{height:270px;border-radius:36px;background:#ffffff10;border:1px solid #ffffff30;display:grid;place-items:center;position:relative;backdrop-filter:blur(4px)}
-.hero-art .big{font-size:105px;filter:drop-shadow(0 18px 20px #0003)}
-.hero-art .mini{position:absolute;background:#fff;color:var(--deep);padding:9px 12px;border-radius:999px;font-size:10px;font-weight:950;box-shadow:0 10px 24px #0002}
-.hero-art .m1{top:20px;right:-12px}.hero-art .m2{bottom:25px;left:-15px}
-.layout{display:grid;grid-template-columns:210px minmax(0,820px);gap:42px;justify-content:center;align-items:start;padding:52px 0 70px}
-.toc{position:sticky;top:22px;background:#fff;border:1px solid var(--line);border-radius:22px;padding:18px;box-shadow:0 15px 35px #32134f0b}
-.toc-label{font-size:9px;letter-spacing:.14em;font-weight:950;color:var(--a);margin-bottom:11px}
-.toc a{display:block;text-decoration:none;color:#686575;font-size:11px;line-height:1.35;padding:8px 9px;border-radius:10px;margin:2px 0}
-.toc a:hover{background:var(--soft);color:var(--deep)}
-.article{min-width:0}
+.hero:before{
+  background:radial-gradient(circle,rgba(255,255,255,.12) 0,rgba(255,255,255,.04) 48%,transparent 70%) !important;
+}
+.hero:after{
+  background:radial-gradient(circle,rgba(255,216,77,.12) 0,rgba(255,216,77,.03) 45%,transparent 70%) !important;
+}
+.hero h1{
+  color:#fff !important;
+  text-shadow:0 2px 12px rgba(0,0,0,.08);
+}
+.hero h1 span{
+  color:#ffd84d !important;
+}
+.hero .eyebrow{
+  color:#fff !important;
+  background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.25);
+  padding:6px 10px;
+  border-radius:999px;
+  display:inline-block;
+}
+.hero .deck{
+  color:rgba(255,255,255,.94) !important;
+}
+.hero .meta{
+  color:#fff !important;
+}
+.hero .meta span:not(:first-child){
+  border-left-color:rgba(255,255,255,.38) !important;
+}
+@media(max-width:700px){
+  .hero h1{color:#fff !important}
+}
+
+
+/* ===== SBM PREMIUM ARTICLE BODY STYLE ===== */
+body{
+  background:
+    radial-gradient(circle at 8% 18%,rgba(223,55,153,.08),transparent 24%),
+    radial-gradient(circle at 92% 42%,rgba(100,38,199,.08),transparent 25%),
+    linear-gradient(180deg,#f7f3fb 0%,#fff9f5 48%,#f5f2fb 100%) !important;
+}
+.article{
+  max-width:820px;
+}
 .intro{
- position:relative;background:#fff;border:1px solid var(--line);border-radius:28px;padding:31px 34px 30px;
- font-size:19px;line-height:1.82;color:#555766;box-shadow:0 17px 42px #32134f0a;margin-bottom:30px
+  margin-top:42px !important;
+  padding:30px 34px !important;
+  border-radius:24px !important;
+  background:linear-gradient(135deg,#fff7df 0%,#fff 52%,#f5efff 100%) !important;
+  border:1px solid #eadff0 !important;
+  box-shadow:0 14px 35px rgba(50,20,93,.08) !important;
+  position:relative;
 }
-.intro:before{content:"THE QUICK T#2563E#7C3AEDKE";position:absolute;top:-10px;left:25px;background:var(--a);color:#fff;border-radius:999px;padding:5px 10px;font-size:8px;font-weight:950;letter-spacing:.13em}
-.intro:first-letter{font-size:3.1em;line-height:.8;float:left;padding:.06em .10em 0 0;color:var(--b);font-weight:950}
+.intro:after{
+  content:"";
+  position:absolute;
+  width:90px;height:90px;
+  right:-20px;top:-20px;
+  border-radius:50%;
+  background:rgba(255,216,77,.16);
+  pointer-events:none;
+}
 .section{
- background:#fff;border:1px solid var(--line);border-radius:28px;padding:31px 34px;margin:25px 0;
- box-shadow:0 15px 38px #32134f08;position:relative;overflow:hidden
+  margin-top:32px !important;
+  padding:30px 30px 28px !important;
+  border-radius:24px !important;
+  border:1px solid #e8dfeb !important;
+  background:linear-gradient(145deg,#fff 0%,#fcf8ff 100%) !important;
+  box-shadow:0 12px 30px rgba(50,20,93,.06) !important;
+  position:relative;
+  overflow:hidden;
 }
-.section:nth-of-type(even){background:linear-gradient(135deg,#fff,#fcf7ff)}
-.section:before{content:"";position:absolute;left:0;top:0;bottom:0;width:5px;background:linear-gradient(180deg,var(--a),var(--b))}
-.section:after{content:"";position:absolute;width:130px;height:130px;border-radius:50%;right:-65px;top:-65px;background:color-mix(in srgb,var(--b) 12%,transparent)}
-.section-head{display:flex;align-items:flex-start;gap:14px;margin-bottom:18px;position:relative;z-index:2}
-.num{width:42px;height:42px;min-width:42px;display:grid;place-items:center;border-radius:14px;background:linear-gradient(135deg,var(--a),var(--b));color:#fff;font-size:11px;font-weight:950;box-shadow:0 9px 20px #32134f1c}
-.section h2{margin:3px 0 0;color:var(--deep);font-size:29px;line-height:1.18;letter-spacing:-.9px}
-.section h3{color:var(--deep);font-size:19px}
-.section p,.section li{font-size:15px;line-height:1.82}
-.section p{margin:0 0 16px}.section ul,.section ol{padding-left:24px;color:#5e6070}
-.section li{margin:8px 0}
-.section li::marker{color:var(--b);font-weight:900}
+.section:nth-of-type(2n){
+  background:linear-gradient(145deg,#fff9e9 0%,#fff 58%,#fff2f8 100%) !important;
+}
+.section:nth-of-type(3n){
+  background:linear-gradient(145deg,#f2f8ff 0%,#fff 58%,#f6f0ff 100%) !important;
+}
+.section:before{
+  content:"";
+  position:absolute;
+  width:120px;height:120px;
+  right:-55px;top:-55px;
+  border-radius:50%;
+  background:rgba(100,38,199,.07);
+}
+.section-top{
+  border-bottom:0 !important;
+  padding:0 0 15px !important;
+  margin-bottom:20px !important;
+  position:relative;
+}
+.section-top h2{
+  color:#32145d !important;
+}
+.num{
+  display:inline-flex !important;
+  align-items:center;
+  justify-content:center;
+  min-width:38px;
+  height:28px;
+  padding:0 9px;
+  border-radius:999px;
+  background:linear-gradient(135deg,#6426c7,#df3799) !important;
+  color:#fff !important;
+  box-shadow:0 5px 14px rgba(100,38,199,.22);
+}
+h3{
+  display:inline-block;
+  margin:18px 0 10px !important;
+  padding:7px 12px;
+  border-radius:10px;
+  background:#eee6ff;
+  color:#4b2380 !important;
+}
+ul,ol{
+  background:rgba(255,255,255,.68);
+  border-radius:16px;
+  padding:15px 22px 15px 40px !important;
+  border:1px solid rgba(232,223,235,.8);
+}
+li{
+  margin:9px 0 !important;
+}
 blockquote{
- margin:24px 0;padding:22px 24px;border-radius:20px;border:1px solid var(--line);
- border-left:5px solid var(--b);background:linear-gradient(110deg,#fff9fd,#f6f2ff);
- color:var(--deep);font-weight:800;line-height:1.7;box-shadow:0 9px 22px #32134f08
+  background:linear-gradient(135deg,#fff4d5,#fff0f8 55%,#f1eaff) !important;
+  border:1px solid #eadcf0 !important;
+  border-left:5px solid #df3799 !important;
+  border-radius:16px !important;
+  box-shadow:0 8px 20px rgba(50,20,93,.06);
 }
-table{width:100%;border-collapse:separate;border-spacing:0;margin:23px 0;background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden}
-th,td{padding:13px 15px;border-bottom:1px solid var(--line);font-size:13px;line-height:1.5;text-align:left;vertical-align:top}
-th{background:linear-gradient(90deg,color-mix(in srgb,var(--a) 9%,#fff),color-mix(in srgb,var(--b) 8%,#fff));color:var(--deep);font-weight:900}
-tr:last-child td{border-bottom:0}
-.callout,.tip,.note,.highlight{
- padding:20px 22px;border-radius:19px;background:linear-gradient(105deg,#fff7d7,#fff1f7);border:1px solid #f1dfbd;margin:22px 0
+table{
+  border-radius:16px;
+  overflow:hidden;
+  box-shadow:0 10px 25px rgba(50,20,93,.06);
+}
+th{
+  background:linear-gradient(135deg,#32145d,#6426c7) !important;
+  color:#fff !important;
 }
 .cta{
- margin-top:32px;padding:38px 35px;border-radius:30px;color:#fff;
- background:linear-gradient(125deg,var(--deep),var(--a) 52%,var(--b));box-shadow:0 25px 55px #32134f24;position:relative;overflow:hidden
+  background:linear-gradient(135deg,#32145d,#6426c7 55%,#df3799) !important;
+  box-shadow:0 16px 35px rgba(50,20,93,.16);
 }
-.cta:before{content:"";position:absolute;width:240px;height:240px;border-radius:50%;right:-90px;top:-120px;border:1px solid #fff3}
-.cta h3{color:#fff;font-size:25px;margin:0 0 8px}.cta p{color:#f8efff;font-size:14px;max-width:700px}
-.cta a{display:inline-block;background:var(--gold);color:#32134f;text-decoration:none;padding:12px 18px;border-radius:12px;font-size:12px;font-weight:950}
-.footer{text-align:center;color:#888392;font-size:11px;padding:0 0 35px}
-@media(max-width:900px){.hero-grid{grid-template-columns:1fr}.hero-art{display:none}.layout{grid-template-columns:1fr;padding-top:34px}.toc{position:relative;top:auto;display:flex;gap:6px;overflow:auto;white-space:nowrap}.toc-label{display:none}.toc a{display:inline-block}.article{width:100%}}
-@media(max-width:620px){.site{padding:0 12px}.nav{height:58px}.hero{border-radius:27px;padding:38px 23px;min-height:0}.hero h1{font-size:45px;letter-spacing:-2.4px}.deck{font-size:15px}.layout{padding:28px 0 52px}.intro{padding:25px 21px;font-size:17px}.section{padding:24px 20px;border-radius:23px}.section h2{font-size:25px}.section p,.section li{font-size:14px}.cta{padding:30px 23px}}
-</style>
-</head>
-<body>
-<div class="readbar" id="readbar"></div>
-<div class="site">
-<header class="nav">
-<a class="brand" href="https://smartbrainmission.com/">🧠 SMART <span>BRAIN MISSION</span></a>
-<a class="back" href="blog-index.html">← All Parent Guides</a>
-</header>
-<section class="hero">
-<div class="hero-grid">
-<div>
-<div class="eyebrow">⚖️ AI BIAS & FAIR THINKING · SMART BRAIN MISSION</div>
-<h1>AI Bias Kya Hai? Bachchon Ko Fair <em>Thinking Kaise Sikhayein</em></h1>
-<p class="deck">AI Bias Kya Hai? Bachchon Ko Fair Thinking Kaise Sikhayein — Deeper ethics angle — AI ki limitations samajhna</p>
-<div class="meta"><span>📖 PARENT GUIDE</span><span>🧠 AI LEARNING</span><span>5+ CURIOUS MINDS</span></div>
-</div>
-<div class="hero-art"><div class="big">⚖️</div><div class="mini m1">THINK • QUESTION • CREATE</div><div class="mini m2">Smart Brain Mission</div></div>
-</div>
-</section>
-<div class="layout">
-<aside class="toc"><div class="toc-label">IN THIS GUIDE</div><a href="#section-1">01 · AI Bias Kya Hota Hai? (Simple Explanation)</a><a href="#section-2">02 · Real-Life Examples Jo Bachchon Ko Samjhayein (Age-Appropriate)</a><a href="#section-3">03 · Bachchon Ko Fair Thinking Sikhane Ke 4 Tareeke</a><a href="#section-4">04 · Activity Idea — "Spot the One-Sided Answer"</a><a href="#section-5">05 · Parents Ke Liye Conversation Starters</a><a href="#section-6">06 · Conclusion</a></aside>
-<main class="article"><p class="intro">AI bahut smart lagta hai, lekin ek important sach hai — <strong>AI hamesha fair nahi hota.</strong> Is guide me hum simple tareeke se samjhayenge ki AI bias kya hota hai, aur bachchon ko fair, balanced thinking kaise sikhayein.</p>
-<section class="section" id="section-1"><div class="section-head"><span class="num">01</span><h2>AI Bias Kya Hota Hai? (Simple Explanation)</h2></div>
+@media(max-width:700px){
+  .intro{padding:23px 20px !important}
+  .section{padding:23px 20px !important;border-radius:20px !important}
+  .section-top{gap:10px !important}
+  .section-top h2{font-size:25px !important}
+  ul,ol{padding-left:32px !important}
+}
+
+
+/* ===== SBM TEXT CONTRAST + CONTENT CARD FIX ===== */
+.article p,
+.article li,
+.article ol,
+.article ul{
+  color:#303447 !important;
+  opacity:1 !important;
+}
+.article p strong,
+.article li strong,
+.article h3{
+  color:#32145d !important;
+}
+.article .intro{
+  color:#303447 !important;
+}
+.article .section{
+  color:#303447 !important;
+}
+.article .section p{
+  color:#303447 !important;
+}
+.article ul,
+.article ol{
+  color:#303447 !important;
+  background:linear-gradient(135deg,#fffdf8 0%,#f8f3ff 100%) !important;
+}
+.article li{
+  color:#303447 !important;
+}
+.article blockquote{
+  color:#32145d !important;
+}
+.article blockquote strong{
+  color:#32145d !important;
+}
+/* Prevent any inherited light text from making normal reading content disappear */
+.article > *:not(.section):not(.intro),
+.article .section *:not(.num){
+  text-shadow:none;
+}
+@media(max-width:700px){
+  .article p,
+  .article li{
+    color:#303447 !important;
+    font-size:16px;
+    line-height:1.75;
+  }
+}
+
+
+/* ===== SBM CTA TEXT CONTRAST FIX ===== */
+.cta h3{
+  color:#fff !important;
+  background:transparent !important;
+  padding:0 !important;
+  margin:0 0 8px !important;
+}
+.cta p{
+  color:rgba(255,255,255,.96) !important;
+  opacity:1 !important;
+}
+.cta a{
+  color:#32145d !important;
+}
+
+
+/* ===== SBM COLORFUL ACTIVITY-STYLE BLOG SYSTEM ===== */
+body{
+  background:
+    radial-gradient(circle at 5% 8%,rgba(255,216,77,.18),transparent 20%),
+    radial-gradient(circle at 96% 15%,rgba(223,55,153,.13),transparent 22%),
+    radial-gradient(circle at 8% 88%,rgba(76,203,160,.12),transparent 20%),
+    linear-gradient(135deg,#fff9fc 0%,#f4efff 48%,#eef9ff 100%) !important;
+}
+.hero{
+  background:linear-gradient(120deg,#35145d 0%,#6426c7 48%,#df3799 100%) !important;
+  border:0 !important;
+  color:#fff !important;
+  box-shadow:0 25px 60px rgba(50,20,93,.18) !important;
+}
+.hero h1{color:#fff !important}
+.hero h1 span{color:#ffd84d !important}
+.hero .deck{color:rgba(255,255,255,.95) !important}
+.hero .meta{color:#fff !important}
+.hero .meta span:not(:first-child){border-left-color:rgba(255,255,255,.38) !important}
+.hero .eyebrow{
+  color:#fff !important;
+  background:rgba(255,255,255,.10);
+  border:1px solid rgba(255,255,255,.28);
+  border-radius:999px;
+  padding:6px 10px;
+}
+.article{max-width:820px}
+.intro{
+  background:linear-gradient(135deg,#fff4d7 0%,#fff 48%,#f3eaff 100%) !important;
+  border:1px solid #eadff0 !important;
+  border-radius:24px !important;
+  padding:28px 30px !important;
+  box-shadow:0 12px 30px rgba(50,20,93,.07) !important;
+  color:#303447 !important;
+}
+.section{
+  margin-top:32px !important;
+  padding:28px 28px 30px !important;
+  border-radius:25px !important;
+  border:1px solid #e7deeb !important;
+  background:#fff !important;
+  box-shadow:0 12px 28px rgba(50,20,93,.055) !important;
+  overflow:hidden;
+  position:relative;
+}
+.section:nth-of-type(2n){
+  background:linear-gradient(145deg,#fffdf3,#fff7fb) !important;
+}
+.section:nth-of-type(3n){
+  background:linear-gradient(145deg,#f3faff,#fff,#f7f0ff) !important;
+}
+.section:after{
+  content:"";
+  position:absolute;
+  width:105px;height:105px;
+  right:-42px;top:-42px;
+  border-radius:50%;
+  background:rgba(100,38,199,.07);
+  pointer-events:none;
+}
+.section-top{
+  border:0 !important;
+  padding:0 0 15px !important;
+  margin-bottom:18px !important;
+}
+.section-top h2{
+  color:#32145d !important;
+  font-weight:950;
+}
+.num{
+  display:inline-flex !important;
+  align-items:center;
+  justify-content:center;
+  min-width:40px;height:30px;
+  border-radius:999px;
+  background:linear-gradient(135deg,#6426c7,#df3799) !important;
+  color:#fff !important;
+  box-shadow:0 5px 14px rgba(100,38,199,.22);
+}
+/* Turn ordinary numbered lists into playful activity rows */
+.section ol{
+  list-style:none !important;
+  counter-reset:sbm-item;
+  padding:0 !important;
+  margin:18px 0 !important;
+}
+.section ol li{
+  counter-increment:sbm-item;
+  position:relative;
+  margin:10px 0 !important;
+  padding:14px 16px 14px 58px !important;
+  border-radius:16px;
+  background:linear-gradient(90deg,#fff8df,#fff) !important;
+  border:1px solid #f0e2c9;
+  color:#303447 !important;
+  box-shadow:0 5px 14px rgba(50,20,93,.04);
+}
+.section ol li:nth-child(2n){
+  background:linear-gradient(90deg,#eaf7ff,#fff) !important;
+  border-color:#d9eaf4;
+}
+.section ol li:nth-child(3n){
+  background:linear-gradient(90deg,#f9eaff,#fff) !important;
+  border-color:#eadcf2;
+}
+.section ol li:before{
+  content:counter(sbm-item);
+  position:absolute;
+  left:13px;top:50%;
+  transform:translateY(-50%);
+  width:32px;height:32px;
+  display:flex;align-items:center;justify-content:center;
+  border-radius:50%;
+  background:linear-gradient(135deg,#df3799,#6426c7);
+  color:#fff;
+  font-weight:950;
+}
+/* Turn bullet lists into colorful clue cards */
+.section ul{
+  list-style:none !important;
+  padding:0 !important;
+  margin:18px 0 !important;
+}
+.section ul li{
+  position:relative;
+  margin:10px 0 !important;
+  padding:13px 16px 13px 43px !important;
+  border-radius:15px;
+  background:#fbf8ff !important;
+  border:1px solid #e9def1;
+  color:#303447 !important;
+}
+.section ul li:nth-child(2n){
+  background:#f1fbff !important;
+  border-color:#dceef3;
+}
+.section ul li:before{
+  content:"✦";
+  position:absolute;
+  left:15px;top:12px;
+  color:#df3799;
+  font-size:18px;
+  font-weight:950;
+}
+.article p,.article li{
+  color:#303447 !important;
+  opacity:1 !important;
+}
+.article strong{color:#32145d !important}
+blockquote{
+  background:linear-gradient(135deg,#fff2cf,#ffeef7 55%,#f0e8ff) !important;
+  border:1px solid #eadced !important;
+  border-left:6px solid #df3799 !important;
+  border-radius:17px !important;
+  color:#32145d !important;
+  box-shadow:0 8px 20px rgba(50,20,93,.06);
+}
+.section h3{
+  display:inline-block;
+  padding:7px 12px;
+  border-radius:10px;
+  background:#eee5ff;
+  color:#4b2380 !important;
+}
+table{
+  border-radius:17px !important;
+  overflow:hidden;
+  box-shadow:0 10px 25px rgba(50,20,93,.06);
+}
+th{
+  background:linear-gradient(135deg,#32145d,#6426c7) !important;
+  color:#fff !important;
+}
+.cta,.cta-box{
+  background:linear-gradient(120deg,#32145d,#6426c7 52%,#df3799) !important;
+  border-radius:24px !important;
+  box-shadow:0 18px 38px rgba(50,20,93,.16) !important;
+}
+.cta h3,.cta-box h3{color:#fff !important;background:transparent !important}
+.cta p,.cta-box p{color:rgba(255,255,255,.96) !important}
+.cta a,.cta-btn{background:#ffd84d !important;color:#32145d !important}
+@media(max-width:700px){
+  .hero{padding:38px 24px !important;border-radius:24px !important}
+  .section{padding:22px 19px 24px !important;border-radius:20px !important}
+  .intro{padding:22px 19px !important}
+  .section-top h2{font-size:25px !important}
+  .section ol li{padding-left:54px !important}
+}
+
+
+/* ===== SBM COLORFUL ACTIVITY STYLE ===== */
+body{
+ background:
+ radial-gradient(circle at 5% 8%,rgba(255,216,77,.18),transparent 20%),
+ radial-gradient(circle at 96% 15%,rgba(223,55,153,.13),transparent 22%),
+ radial-gradient(circle at 8% 88%,rgba(76,203,160,.12),transparent 20%),
+ linear-gradient(135deg,#fff9fc 0%,#f4efff 48%,#eef9ff 100%) !important;
+}
+.hero{
+ background:linear-gradient(120deg,#35145d 0%,#6426c7 48%,#df3799 100%) !important;
+ color:#fff !important;border:0 !important;
+ box-shadow:0 25px 60px rgba(50,20,93,.18) !important;
+}
+.hero h1,.hero h1 span{color:#fff !important}
+.hero h1 span{color:#ffd84d !important}
+.deck{color:rgba(255,255,255,.95) !important}
+.eyebrow{color:#fff !important}
+.meta{color:#fff !important}
+.meta span{border-color:rgba(255,255,255,.3) !important}
+.article{max-width:820px}
+.intro,.intro-lead{
+ background:linear-gradient(135deg,#fff4d7 0%,#fff 48%,#f3eaff 100%) !important;
+ border:1px solid #eadff0 !important;border-radius:24px !important;
+ padding:28px 30px !important;color:#303447 !important;
+ box-shadow:0 12px 30px rgba(50,20,93,.07) !important;
+ opacity:1 !important;
+}
+.section{
+ margin-top:32px !important;padding:28px !important;border-radius:25px !important;
+ border:1px solid #e7deeb !important;background:#fff !important;
+ box-shadow:0 12px 28px rgba(50,20,93,.055) !important;overflow:hidden;
+}
+.section:nth-of-type(2n){background:linear-gradient(145deg,#fffdf3,#fff7fb) !important}
+.section:nth-of-type(3n){background:linear-gradient(145deg,#f3faff,#fff,#f7f0ff) !important}
+.section-top{border:0 !important}
+.section-top h2,h2{color:#32145d !important}
+.num{
+ display:inline-flex !important;align-items:center;justify-content:center;
+ min-width:40px;height:32px;border-radius:999px;
+ background:linear-gradient(135deg,#6426c7,#df3799) !important;color:#fff !important;
+ box-shadow:0 5px 14px rgba(100,38,199,.22);
+}
+.section ol{list-style:none !important;counter-reset:sbm-item;padding:0 !important}
+.section ol li{
+ counter-increment:sbm-item;position:relative;padding:14px 16px 14px 58px !important;
+ border-radius:16px;background:linear-gradient(90deg,#fff8df,#fff) !important;
+ border:1px solid #f0e2c9 !important;color:#303447 !important;
+}
+.section ol li:nth-child(2n){background:linear-gradient(90deg,#eaf7ff,#fff) !important}
+.section ol li:before{
+ content:counter(sbm-item);position:absolute;left:13px;top:50%;
+ transform:translateY(-50%);width:32px;height:32px;display:flex;
+ align-items:center;justify-content:center;border-radius:50%;
+ background:linear-gradient(135deg,#df3799,#6426c7);color:#fff;font-weight:950;
+}
+.section ul{list-style:none !important;padding:0 !important}
+.section ul li{
+ position:relative;padding:13px 16px 13px 43px !important;border-radius:15px;
+ background:#fbf8ff !important;border:1px solid #e9def1 !important;color:#303447 !important;
+}
+.section ul li:before{content:"✦";position:absolute;left:15px;top:12px;color:#df3799;font-size:18px;font-weight:950}
+.article p,.article li{color:#303447 !important;opacity:1 !important}
+.article strong{color:#32145d !important}
+blockquote{
+ background:linear-gradient(135deg,#fff2cf,#ffeef7 55%,#f0e8ff) !important;
+ border:1px solid #eadced !important;border-left:6px solid #df3799 !important;
+ border-radius:17px !important;color:#32145d !important;
+ box-shadow:0 8px 20px rgba(50,20,93,.06);
+}
+.callout{
+ background:linear-gradient(135deg,#eaf7ff,#f7efff) !important;
+ color:#32145d !important;border:1px solid #ded2ec !important;border-radius:18px !important;
+ padding:20px !important;
+}
+.sign-list{list-style:none !important;padding:0 !important}
+.sign-list li{
+ background:#fff !important;border:1px solid #e7deeb !important;border-radius:20px !important;
+ padding:20px !important;margin:14px 0 !important;box-shadow:0 8px 20px rgba(50,20,93,.05) !important;
+}
+.sign-list .num{
+ margin-right:12px;
+}
+.cta-box,.cta{
+ background:linear-gradient(120deg,#32145d,#6426c7 52%,#df3799) !important;
+ border-radius:24px !important;color:#fff !important;
+ box-shadow:0 18px 38px rgba(50,20,93,.16) !important;
+}
+.cta-box h3,.cta h3{color:#fff !important}
+.cta-box p,.cta p{color:rgba(255,255,255,.96) !important}
+.cta-btn,.cta a{background:#ffd84d !important;color:#32145d !important}
+@media(max-width:700px){
+ .hero{padding:38px 24px !important;border-radius:24px !important}
+ .section{padding:22px 19px !important;border-radius:20px !important}
+ .intro,.intro-lead{padding:22px 19px !important}
+ .section-top h2{font-size:25px !important}
+ .article p,.article li{font-size:16px !important;line-height:1.75 !important}
+}
+
+</style></head><body><div class="progress" id="progress"></div><div class="page"><header class="nav"><a class="logo" href="https://smartbrainmission.com/">🧠 SMART <b>BRAIN MISSION</b></a><a class="back" href="../blog/blog-index.html">← Back to Blog</a></header><section class="hero"><div class="eyebrow">PARENT GUIDE · SMART BRAIN MISSION</div><h1><span>AI</span> Bias Kya Hai? Bachchon Ko Fair Thinking Kaise Sikhayein</h1><p class="deck">Deeper ethics angle — AI ki limitations samajhna</p><div class="meta"><span>SMART BRAIN MISSION</span><span>FOR PARENTS</span><span>AI LEARNING</span></div></section><main class="article"><p class="intro">AI bahut smart lagta hai, lekin ek important sach hai — <strong>AI hamesha fair nahi hota.</strong> Is guide me hum simple tareeke se samjhayenge ki AI bias kya hota hai, aur bachchon ko fair, balanced thinking kaise sikhayein.</p>
+<section class="section"><div class="section-top"><span class="num">01</span><h2>AI Bias Kya Hota Hai? (Simple Explanation)</h2></div>
 <p>AI insaano ke banaye hue data se seekhta hai. Agar wo data ek-tarfa ya incomplete ho, to AI ke answers bhi ek-tarfa ho sakte hain.</p>
 <p>Bachchon ko example se samjhayein:</p>
 <blockquote>"Agar tumhe sirf ek tarah ke fruits dikhaye jayein aur poocha jaye 'fruit kaisa hota hai?', to tumhara jawab sirf usi fruit jaisa hoga — baaki fruits ke baare me tumhe pata hi nahi chalega. AI ke saath bhi aisa ho sakta hai."</blockquote>
 </section>
-<section class="section" id="section-2"><div class="section-head"><span class="num">02</span><h2>Real-Life Examples Jo Bachchon Ko Samjhayein (Age-Appropriate)</h2></div>
+<section class="section"><div class="section-top"><span class="num">02</span><h2>Real-Life Examples Jo Bachchon Ko Samjhayein (Age-Appropriate)</h2></div>
 <ul><li>Agar AI se "ek doctor draw karo" bola jaye, aur wo hamesha ek hi type ka image de — ye dikhata hai ki AI ka "training data" limited ya one-sided tha</li><li>Agar AI kisi language ya region ke examples zyada deta hai aur doosre kam — ye bhi ek tarah ka bias hai</li><li>AI recommendations (jaise "next video dekho") hamesha wahi dikhate hain jo pehle dekha ho — jisse naye/different ideas kam dikhte hain</li></ul>
 </section>
-<section class="section" id="section-3"><div class="section-head"><span class="num">03</span><h2>Bachchon Ko Fair Thinking Sikhane Ke 4 Tareeke</h2></div>
+<section class="section"><div class="section-top"><span class="num">03</span><h2>Bachchon Ko Fair Thinking Sikhane Ke 4 Tareeke</h2></div>
 <ol><li><strong>"Sirf ek jawab kaafi nahi"</strong> — hamesha poocho "kya iske alawa aur possibilities bhi ho sakti hain?"</li><li><strong>Different sources compare karo</strong> — ek hi sawaal ko alag-alag jagah check karna sikhao</li><li><strong>"Kisne banaya, kaise banaya?"</strong> — bachchon ko curious banao ki AI ka answer kahan se aaya</li><li><strong>Apni khud ki opinion banana sikhao</strong> — AI ka answer starting point hai, final truth nahi</li></ol>
 </section>
-<section class="section" id="section-4"><div class="section-head"><span class="num">04</span><h2>Activity Idea — "Spot the One-Sided Answer"</h2></div>
+<section class="section"><div class="section-top"><span class="num">04</span><h2>Activity Idea — "Spot the One-Sided Answer"</h2></div>
 <ol><li>AI se ek simple question poocho (jaise "ek achha hobby batao")</li><li>Discuss karo — "Kya sirf yahi ek hobby achhi hai? Aur kaunsi ho sakti hain?"</li><li>Bachche se poocho apna khud ka answer add karne ko</li></ol>
 <p>Ye activity bachchon ko sikhati hai ki AI ka ek answer poori picture nahi hota.</p>
 </section>
-<section class="section" id="section-5"><div class="section-head"><span class="num">05</span><h2>Parents Ke Liye Conversation Starters</h2></div>
+<section class="section"><div class="section-top"><span class="num">05</span><h2>Parents Ke Liye Conversation Starters</h2></div>
 <ul><li>"Kya tumhe lagta hai AI ka jawab hamesha complete hota hai?"</li><li>"Agar AI ek hi type ka answer baar-baar de, to kya ye fair hai?"</li><li>"Tum kaise pata karoge ki koi aur angle bhi ho sakta hai?"</li></ul>
 </section>
-<section class="section" id="section-6"><div class="section-head"><span class="num">06</span><h2>Conclusion</h2></div>
+<section class="section"><div class="section-top"><span class="num">06</span><h2>Conclusion</h2></div>
 <p>AI bias ek complex topic lag sakta hai, lekin bachchon ke liye ek simple lesson kaafi hai: <strong>AI ka answer ek perspective hai, poora sach nahi.</strong> Jab bachche ye samajh jaate hain, wo naturally zyada balanced aur fair thinkers ban jaate hain.</p>
 <p><em>Smart Brain Mission • Learn AI. Think Smart. Create More.</em></p>
-</section><div class="cta"><h3>Smart Brain Mission ke saath AI learning journey continue karein.</h3><p>AI ko sirf use nahi — samajhna, question karna, verify karna aur create karna seekhein.</p><a href="https://smartbrainmission.com/#explore">Explore Smart Brain Mission →</a></div></main>
-</div>
-<div class="footer">Smart Brain Mission · Learn AI. Think Smart. Create More. · For Curious Minds 5+</div>
-</div>
-<script>
-const bar=document.getElementById("readbar");
-addEventListener("scroll",()=>{
- const d=document.documentElement;
- const max=d.scrollHeight-d.clientHeight;
- bar.style.width=(max>0?(scrollY/max)*100:0)+"%";
-});
-</script>
-</body></html>
+</section><div class="cta"><h3>Smart Brain Mission ke saath AI learning journey continue karein.</h3><p>AI ko sirf use nahi — samajhna, question karna, verify karna aur create karna seekhein.</p><a href="https://smartbrainmission.com/#explore">Explore Smart Brain Mission →</a></div></main><div class="footer">Smart Brain Mission · For Curious Minds 5+</div></div><script>addEventListener("scroll",()=>{const h=document.documentElement.scrollHeight-innerHeight;document.getElementById("progress").style.width=(h?scrollY/h*100:0)+"%"})</script></body></html>

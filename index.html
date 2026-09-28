@@ -3176,6 +3176,51 @@ document.addEventListener('click',function(e){
   show(0);restart();
 })();
 </script>
+<script id="sbm-navigation-fix">
+(function(){
+  function goToTarget(hash){
+    if(!hash || hash==='#') return false;
+    var id=decodeURIComponent(hash.slice(1));
+    var target=document.getElementById(id);
+    if(!target) return false;
+    var nav=document.querySelector('.sbm-store-nav');
+    var offset=(nav ? nav.offsetHeight : 0)+14;
+    var y=target.getBoundingClientRect().top + window.pageYOffset - offset;
+    window.scrollTo({top:Math.max(0,y),behavior:'smooth'});
+    history.replaceState(null,'',hash);
+    return true;
+  }
+
+  document.addEventListener('click',function(e){
+    var a=e.target.closest('a[href^="#"]');
+    if(!a) return;
+    var href=a.getAttribute('href');
+    if(!href || href==='#') return;
+    if(goToTarget(href)){
+      e.preventDefault();
+      e.stopPropagation();
+    }
+  },true);
+
+  // Make the four category cards and their View Products buttons reliable.
+  document.querySelectorAll('.sbm-category-card[href]').forEach(function(card){
+    card.addEventListener('click',function(e){
+      var href=card.getAttribute('href');
+      if(goToTarget(href)){
+        e.preventDefault();
+      }
+    },true);
+  });
+
+  // If the page opens with a section hash, scroll to it after layout is ready.
+  window.addEventListener('load',function(){
+    if(location.hash && document.getElementById(location.hash.slice(1))){
+      setTimeout(function(){goToTarget(location.hash);},80);
+    }
+  });
+})();
+</script>
+
 </body>
 </html>
 

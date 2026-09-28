@@ -1511,6 +1511,70 @@ section#trust.trust-section{padding:58px 0 54px!important;background:linear-grad
 }
 </style>
 
+
+<style id="sbm-lifetime-bundle-css">
+/* ===== SMART BRAIN MISSION — LIFETIME BUNDLE ===== */
+.sbm-lifetime-section{
+  padding:72px 20px 78px;
+  background:linear-gradient(135deg,#24104f 0%,#4f1f8d 48%,#7c2bbd 100%);
+  position:relative;
+  overflow:hidden;
+}
+.sbm-lifetime-section::before,
+.sbm-lifetime-section::after{
+  content:"";
+  position:absolute;
+  border-radius:50%;
+  pointer-events:none;
+  border:1px solid rgba(255,255,255,.16);
+}
+.sbm-lifetime-section::before{width:430px;height:430px;left:-240px;top:-220px}
+.sbm-lifetime-section::after{width:520px;height:520px;right:-300px;bottom:-310px}
+.sbm-lifetime-wrap{max-width:1120px;margin:0 auto;position:relative;z-index:1}
+.sbm-lifetime-badge{
+  width:max-content;max-width:100%;margin:0 auto 14px;padding:8px 15px;border-radius:999px;
+  background:#ffe36a;color:#35135f;font-size:12px;font-weight:950;letter-spacing:.7px;
+  box-shadow:0 8px 22px rgba(0,0,0,.16)
+}
+.sbm-lifetime-title{text-align:center;color:#fff;font-size:clamp(30px,4vw,50px);line-height:1.05;margin:0 0 12px;font-weight:950}
+.sbm-lifetime-title span{color:#ffe36a}
+.sbm-lifetime-sub{text-align:center;color:rgba(255,255,255,.88);font-size:17px;max-width:760px;margin:0 auto 30px;line-height:1.6}
+.sbm-lifetime-card{
+  max-width:1000px;margin:0 auto;background:rgba(255,255,255,.98);border-radius:30px;padding:30px;
+  box-shadow:0 24px 70px rgba(0,0,0,.24);border:2px solid rgba(255,227,106,.75);position:relative;
+}
+.sbm-lifetime-save{
+  position:absolute;right:22px;top:22px;background:#e73398;color:#fff;border-radius:999px;
+  padding:8px 13px;font-size:11px;font-weight:950;letter-spacing:.4px
+}
+.sbm-lifetime-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:30px;align-items:center}
+.sbm-lifetime-kicker{color:#6d28d9;font-size:12px;font-weight:950;letter-spacing:.8px;margin-bottom:8px}
+.sbm-lifetime-card h3{font-size:30px;color:#28124f;margin:0 0 8px;line-height:1.12}
+.sbm-lifetime-card .bundle-copy{color:#5d5370;line-height:1.55;margin:0 0 18px}
+.sbm-bundle-list{display:grid;grid-template-columns:1fr 1fr;gap:9px 14px;margin:0;padding:0;list-style:none}
+.sbm-bundle-list li{font-size:14px;font-weight:800;color:#35254d;display:flex;gap:8px;align-items:flex-start}
+.sbm-bundle-list li::before{content:"✓";color:#7c2bbd;font-weight:950}
+.sbm-price-box{background:linear-gradient(145deg,#fff7cf,#fff);border:1px solid #f1df77;border-radius:24px;padding:24px;text-align:center}
+.sbm-price-label{font-size:12px;font-weight:900;color:#7a6b30;letter-spacing:.7px}
+.sbm-bundle-price{margin:4px 0 2px;font-size:44px;line-height:1;font-weight:1000;color:#4f1f8d}
+.sbm-bundle-price .old{font-size:18px;color:#8c8397;text-decoration:line-through;font-weight:800;margin-right:7px;vertical-align:middle}
+.sbm-bundle-saving{font-size:12px;font-weight:900;color:#e73398;margin:7px 0 15px}
+.sbm-bundle-pay{width:100%;border:0;border-radius:15px;padding:15px 16px;background:linear-gradient(135deg,#6d28d9,#a42de0);color:#fff;font-weight:950;font-size:15px;cursor:pointer;box-shadow:0 12px 26px rgba(109,40,217,.24)}
+.sbm-bundle-pay:hover{transform:translateY(-1px)}
+.sbm-bundle-note{font-size:11px;color:#756c80;margin-top:10px;line-height:1.45}
+.sbm-lifetime-bottom{text-align:center;color:rgba(255,255,255,.82);font-size:12px;margin-top:17px}
+.sbm-lifetime-bottom b{color:#ffe36a}
+@media(max-width:780px){
+  .sbm-lifetime-section{padding:52px 15px 58px}
+  .sbm-lifetime-card{padding:22px 18px}
+  .sbm-lifetime-save{position:static;width:max-content;margin:0 0 14px}
+  .sbm-lifetime-grid{grid-template-columns:1fr;gap:20px}
+  .sbm-bundle-list{grid-template-columns:1fr}
+  .sbm-lifetime-card h3{font-size:25px}
+  .sbm-bundle-price{font-size:39px}
+}
+</style>
+
 </head>
 <body>
 
@@ -1660,6 +1724,48 @@ section#trust.trust-section{padding:58px 0 54px!important;background:linear-grad
       </article>
 
     </div>
+  </div>
+</section>
+
+
+<!-- ===== SMART BRAIN MISSION — LIFETIME BUNDLE ===== -->
+<section class="sbm-lifetime-section" id="lifetime-bundle">
+  <div class="sbm-lifetime-wrap">
+    <div class="sbm-lifetime-badge">🔥 SPECIAL LIFETIME OFFER</div>
+    <h2 class="sbm-lifetime-title">One Payment. <span>Lifetime Learning.</span></h2>
+    <p class="sbm-lifetime-sub">Get the complete Smart Brain Mission digital learning library — current books plus new digital books added to the bundle in the future.</p>
+
+    <div class="sbm-lifetime-card">
+      <div class="sbm-lifetime-save">SAVE ₹2,000</div>
+      <div class="sbm-lifetime-grid">
+        <div>
+          <div class="sbm-lifetime-kicker">SMART BRAIN MISSION • LIFETIME BUNDLE</div>
+          <h3>Build Your Child's AI Learning Library — Once &amp; Keep Learning</h3>
+          <p class="bundle-copy">Pay once and get lifetime access to the Smart Brain Mission digital library. No monthly subscription and no renewal charges.</p>
+          <ul class="sbm-bundle-list">
+            <li>AI: Kal Se Aaj Tak… Aur Aane Wala Kal</li>
+            <li>AI Parenting Guide</li>
+            <li>Think Like AI Pack</li>
+            <li>Prompt Engineer Pack</li>
+            <li>AI Detective Pack</li>
+            <li>AI &amp; Coding Logic Pack</li>
+            <li>My First AI Activity Pack</li>
+            <li>New eligible digital books added later</li>
+          </ul>
+        </div>
+        <div class="sbm-price-box">
+          <div class="sbm-price-label">ACTUAL VALUE</div>
+          <div class="sbm-bundle-price"><span class="old">₹2,999</span>₹999</div>
+          <div class="sbm-bundle-saving">SPECIAL OFFER • ONE-TIME PAYMENT</div>
+          <button class="sbm-bundle-pay sbm-razorpay-test-btn" type="button"
+                  data-sbm-product="Smart Brain Mission Lifetime Bundle"
+                  data-sbm-product-id="lifetime-bundle"
+                  data-sbm-price="999">🚀 GET LIFETIME ACCESS — ₹999</button>
+          <div class="sbm-bundle-note">Secure Razorpay payment • After payment, your Lifetime Library access link will appear automatically.</div>
+        </div>
+      </div>
+    </div>
+    <div class="sbm-lifetime-bottom">🔐 <b>One-time payment</b> • No subscription • No renewal charges • Current + eligible upcoming digital books</div>
   </div>
 </section>
 
@@ -3348,23 +3454,30 @@ const SBM_REVIEWS_ENDPOINT = "https://script.google.com/macros/s/AKfycbzXUzbKCDD
 
   function addDownloadButton(button, verification){
     const parent = button.parentElement;
-    if(!parent || !verification.download_url) return;
+    if(!parent) return;
 
     const old = parent.querySelector('.sbm-download-btn');
     if(old) old.remove();
     const oldNote = parent.querySelector('.sbm-download-note');
     if(oldNote) oldNote.remove();
 
+    const targetUrl = verification.library_url || verification.download_url;
+    if(!targetUrl) return;
+
     const a = document.createElement('a');
     a.className = 'sbm-download-btn';
-    a.href = verification.download_url;
+    a.href = targetUrl;
     a.target = '_blank';
     a.rel = 'noopener noreferrer';
-    a.textContent = '⬇️ Download ' + (verification.product_name || 'PDF');
+    a.textContent = verification.library_url
+      ? '📚 Open My Lifetime Library'
+      : '⬇️ Download ' + (verification.product_name || 'PDF');
 
     const note = document.createElement('div');
     note.className = 'sbm-download-note';
-    note.textContent = '🔐 Secure download link valid for 15 minutes.';
+    note.textContent = verification.library_url
+      ? '🔐 Your Lifetime Library access link is ready. Save it for future access.'
+      : '🔐 Secure download link valid for 15 minutes.';
 
     parent.appendChild(a);
     parent.appendChild(note);

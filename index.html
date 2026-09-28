@@ -2021,7 +2021,7 @@ body{background:#fff;color:var(--sbm-ink)}
 <a href="#about">About</a>
 <a href="#reviews">Reviews</a>
 <a href="#contact">Contact</a>
-<a href="/blog-index.html" aria-label="Open Smart Brain Mission Blog">Blog</a></div>
+<a href="#blog" aria-label="Open Smart Brain Mission Blog">Blog</a></div>
     <div class="sbm-nav-tools">
       <button class="sbm-search-mini" type="button" onclick="document.getElementById('shop')?.scrollIntoView({behavior:'smooth'})" aria-label="Search products">⌕</button>
       <div class="sbm-social-mini sbm-brand-socials" aria-label="Social links">
@@ -2139,7 +2139,7 @@ body{background:#fff;color:var(--sbm-ink)}
       <details><summary>Read article →</summary><p>Ek simple challenge dein: “Ek problem choose karo, teen possible ideas banao, phir AI se ideas improve karwao.” Bachcha final answer copy karne ke bajay options compare kare, changes suggest kare aur apna solution banaye. Isi process mein creativity, communication aur problem-solving practice hoti hai.</p></details>
     </article>
   </div>
-  <div class="sbm-blog-all-link"><a href="/blog-index.html">📚 Explore All 13 Articles →</a></div>
+  <div class="sbm-blog-all-link"><a href="#blog">📚 Read Our AI Articles →</a></div>
 </section><section class="sbm-about-final" id="about">
   <div class="sbm-about-wrap">
     <div class="sbm-about-head">
@@ -3252,134 +3252,113 @@ document.addEventListener('click',function(e){
 
 \n\n\n\n\n
 
-<style id="sbm-clean-age-filter-css">
-  .sbm-clean-age-filter{
-    display:flex!important;
-    justify-content:center!important;
-    align-items:center!important;
-    gap:10px!important;
-    flex-wrap:wrap!important;
-    margin:0 auto 28px!important;
-    padding:0 10px!important;
-    position:relative!important;
-    z-index:99999!important;
-  }
-  .sbm-clean-age-filter button{
-    appearance:none!important;
-    -webkit-appearance:none!important;
-    border:1px solid #dfd2ed!important;
-    background:#fff!important;
-    color:#5d3b82!important;
-    border-radius:999px!important;
-    padding:11px 19px!important;
-    font:800 12px/1.1 Arial,sans-serif!important;
-    cursor:pointer!important;
-    pointer-events:auto!important;
-    touch-action:manipulation!important;
-    box-shadow:0 5px 14px rgba(60,30,100,.06)!important;
-    transition:transform .18s ease,background .18s ease,color .18s ease,box-shadow .18s ease!important;
-  }
-  .sbm-clean-age-filter button:hover{transform:translateY(-2px)!important;box-shadow:0 9px 20px rgba(60,30,100,.10)!important}
-  .sbm-clean-age-filter button.active{background:linear-gradient(90deg,#6524c7,#e52e96)!important;color:#fff!important;border-color:transparent!important;box-shadow:0 8px 18px rgba(103,35,187,.20)!important}
-  #shop .sbm-category-block.sbm-age-hidden{display:none!important}
-  #shop .sbm-category-block.sbm-age-visible{display:block!important}
-  /* Override the older generic .whatsapp{display:none!important} rule so the Contact WhatsApp card is visible. */
-  #contact .sbm-contact-card.whatsapp{display:block!important;visibility:visible!important;opacity:1!important;}
-  @media(max-width:620px){.sbm-clean-age-filter{gap:7px!important}.sbm-clean-age-filter button{padding:9px 12px!important;font-size:10px!important}}
+<style id="sbm-final-age-filter-v2">
+/* FINAL AGE FILTER — one unified All Products grid, original grids restored for age tabs */
+.sbm-clean-age-filter{
+  display:flex!important;justify-content:center!important;align-items:center!important;
+  gap:10px!important;flex-wrap:wrap!important;margin:0 auto 28px!important;
+  padding:0 10px!important;position:relative!important;z-index:99999!important;
+}
+.sbm-clean-age-filter button{
+  appearance:none!important;-webkit-appearance:none!important;border:1px solid #dfd2ed!important;
+  background:#fff!important;color:#5d3b82!important;border-radius:999px!important;
+  padding:11px 19px!important;font:800 12px/1.1 Arial,sans-serif!important;cursor:pointer!important;
+  pointer-events:auto!important;touch-action:manipulation!important;
+  box-shadow:0 5px 14px rgba(60,30,100,.06)!important;
+}
+.sbm-clean-age-filter button.active{background:linear-gradient(90deg,#6524c7,#e52e96)!important;color:#fff!important;border-color:transparent!important;box-shadow:0 8px 18px rgba(103,35,187,.20)!important}
+/* The old CSS hid category blocks. These final rules intentionally override it. */
+#shop .sbm-category-block.sbm-age-hidden{display:none!important}
+#shop .sbm-category-block.sbm-age-visible{display:block!important}
+#shop .sbm-category-block.sbm-all-hidden{display:none!important}
+.sbm-final-all-products-grid{
+  display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:14px!important;
+  width:100%!important;margin:0 0 28px!important;align-items:stretch!important;
+}
+.sbm-final-all-products-grid .sbm-store-card{display:flex!important;min-width:0!important}
+.sbm-final-all-products-grid .cover-wrap{height:230px!important}
+.sbm-final-all-products-grid .copy{min-height:48px!important}
+.sbm-final-all-products-grid .sbm-card-actions{grid-template-columns:1fr 1fr!important}
+#contact .sbm-contact-card.whatsapp{display:block!important;visibility:visible!important;opacity:1!important}
+@media(max-width:980px){.sbm-final-all-products-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
+@media(max-width:620px){
+  .sbm-clean-age-filter{gap:7px!important}.sbm-clean-age-filter button{padding:9px 12px!important;font-size:10px!important}
+  .sbm-final-all-products-grid{grid-template-columns:1fr!important}
+}
 </style>
-<script id="sbm-clean-age-filter-js">
+<script id="sbm-final-age-filter-v2-js">
 (function(){
   'use strict';
-  var MAP={
-    all:['age-5-8','age-8-12','age-13-16','for-parents'],
-    age5:['age-5-8'],
-    age8:['age-8-12'],
-    age13:['age-13-16'],
-    parents:['for-parents']
-  };
+  var MAP={all:['age-5-8','age-8-12','age-13-16','for-parents'],age5:['age-5-8'],age8:['age-8-12'],age13:['age-13-16'],parents:['for-parents']};
+  var booted=false;
   function boot(){
-    var shop=document.getElementById('shop');
-    if(!shop) return;
-    var head=shop.querySelector('.sbm-section-head');
-    if(!head) return;
-    var blocks={};
-    Object.keys(MAP).forEach(function(k){
-      var ids=MAP[k];
-      if(k!=='all') ids.forEach(function(id){
-        var el=document.getElementById(id);
-        if(el) blocks[id]=el;
-      });
-    });
-    var old=shop.querySelector('.sbm-clean-age-filter');
-    if(old) old.remove();
-    var filter=document.createElement('div');
-    filter.className='sbm-clean-age-filter';
-    filter.setAttribute('role','tablist');
-    var defs=[['all','All Products'],['age5','Ages 5–8'],['age8','Ages 8–12'],['age13','Ages 13–16'],['parents','For Parents']];
-    defs.forEach(function(def){
-      var b=document.createElement('button');
-      b.type='button';
-      b.textContent=def[1];
-      b.dataset.filter=def[0];
-      b.setAttribute('role','tab');
-      b.setAttribute('aria-selected',def[0]==='all'?'true':'false');
-      filter.appendChild(b);
+    if(booted) return; booted=true;
+    var shop=document.getElementById('shop'); if(!shop) return;
+    var head=shop.querySelector('.sbm-section-head'); if(!head) return;
+    var ids=['age-5-8','age-8-12','age-13-16','for-parents'];
+    var blocks={}; ids.forEach(function(id){var el=document.getElementById(id);if(el) blocks[id]=el;});
+    var activity=document.getElementById('free-sample');
+    var old=shop.querySelector('.sbm-clean-age-filter'); if(old) old.remove();
+    var filter=document.createElement('div'); filter.className='sbm-clean-age-filter'; filter.setAttribute('role','tablist');
+    [['all','All Products'],['age5','Ages 5–8'],['age8','Ages 8–12'],['age13','Ages 13–16'],['parents','For Parents']].forEach(function(d){
+      var b=document.createElement('button'); b.type='button'; b.textContent=d[1]; b.dataset.filter=d[0]; b.setAttribute('role','tab'); filter.appendChild(b);
     });
     head.insertAdjacentElement('afterend',filter);
 
-    var activity=document.getElementById('free-sample');
+    /* Capture original product-card parents once. Moving the real cards preserves all existing cart/buy listeners. */
+    var cards=[];
+    ids.forEach(function(id){
+      var grid=blocks[id] && blocks[id].querySelector('.sbm-category-products');
+      if(!grid) return;
+      Array.prototype.forEach.call(grid.querySelectorAll('.product-card'),function(card){cards.push({card:card,parent:grid});});
+    });
+    var allGrid=document.createElement('div'); allGrid.className='sbm-final-all-products-grid'; allGrid.setAttribute('aria-label','All Smart Brain Mission products');
+    filter.insertAdjacentElement('afterend',allGrid);
+
+    function restoreCards(){cards.forEach(function(x){if(x.parent && x.card.parentNode!==x.parent)x.parent.appendChild(x.card);});}
+    function moveAllCards(){cards.forEach(function(x){allGrid.appendChild(x.card);});}
     function apply(key,scroll){
-      var visible=MAP[key]||MAP.all;
-      Object.keys(blocks).forEach(function(id){
-        var el=blocks[id];
-        var show=visible.indexOf(id)!==-1;
+      var isAll=key==='all';
+      if(isAll){
+        restoreCards();
+        /* restore first, then move into the one shared grid */
+        moveAllCards();
+        allGrid.style.display='grid';
+      } else {
+        allGrid.style.display='none';
+        restoreCards();
+      }
+      ids.forEach(function(id){
+        var el=blocks[id]; if(!el) return;
+        var show=!isAll && MAP[key].indexOf(id)!==-1;
         el.classList.toggle('sbm-age-hidden',!show);
         el.classList.toggle('sbm-age-visible',show);
-        el.setAttribute('aria-hidden',show?'false':'true');
+        el.classList.toggle('sbm-all-hidden',isAll);
+        el.setAttribute('aria-hidden',show?'false':(isAll?'true':'true'));
       });
-      if(activity){
-        var showActivity=(key==='all'||key==='age5');
-        activity.style.display=showActivity?'flex':'none';
-      }
-      filter.querySelectorAll('button').forEach(function(btn){
-        var active=btn.dataset.filter===key;
-        btn.classList.toggle('active',active);
-        btn.setAttribute('aria-selected',active?'true':'false');
-      });
-      if(scroll){
-        var y=shop.getBoundingClientRect().top+window.pageYOffset-82;
-        window.scrollTo({top:Math.max(0,y),behavior:'smooth'});
-      }
+      if(activity) activity.style.display=(key==='all'||key==='age5')?'flex':'none';
+      filter.querySelectorAll('button').forEach(function(btn){var active=btn.dataset.filter===key;btn.classList.toggle('active',active);btn.setAttribute('aria-selected',active?'true':'false');});
+      if(scroll){var y=shop.getBoundingClientRect().top+window.pageYOffset-82;window.scrollTo({top:Math.max(0,y),behavior:'smooth'});}
     }
     filter.addEventListener('click',function(e){
-      var btn=e.target.closest('button[data-filter]');
-      if(!btn) return;
-      e.preventDefault();
-      e.stopImmediatePropagation();
-      apply(btn.dataset.filter,true);
+      var btn=e.target.closest('button[data-filter]'); if(!btn)return;
+      e.preventDefault();e.stopPropagation();e.stopImmediatePropagation();apply(btn.dataset.filter,true);
     });
-
-    // Category cards above the shop should select the same filter.
-    var catMap={'#age-5-8':'age5','#age-8-12':'age8','#age-13-16':'age13','#for-parents':'parents'};
+    /* Make the Activity Packs CTA actually select Ages 5–8 and scroll to the products. */
+    if(activity){var cta=activity.querySelector('a');if(cta){cta.addEventListener('click',function(e){e.preventDefault();e.stopImmediatePropagation();apply('age5',true);});}}
+    /* Top category shortcuts */
     document.querySelectorAll('.sbm-category-card[href]').forEach(function(card){
-      var key=catMap[card.getAttribute('href')];
-      if(!key) return;
-      card.addEventListener('click',function(){apply(key,true);},true);
+      var href=card.getAttribute('href')||''; var key=href.indexOf('age-5-8')>-1?'age5':href.indexOf('age-8-12')>-1?'age8':href.indexOf('age-13-16')>-1?'age13':href.indexOf('for-parents')>-1?'parents':null;
+      if(key) card.addEventListener('click',function(e){e.preventDefault();e.stopImmediatePropagation();apply(key,true);},true);
     });
-
-    // Top nav shortcuts.
     document.querySelectorAll('.sbm-store-links a').forEach(function(a){
       var t=(a.textContent||'').trim().toLowerCase();
-      if(t!=='for parents' && t!=='for kids') return;
-      a.addEventListener('click',function(e){
-        e.preventDefault();
-        e.stopImmediatePropagation();
-        apply(t==='for parents'?'parents':'all',true);
-      },true);
+      if(t==='for parents'){a.addEventListener('click',function(e){e.preventDefault();e.stopImmediatePropagation();apply('parents',true);},true);}
+      if(t==='for kids'){a.addEventListener('click',function(e){e.preventDefault();e.stopImmediatePropagation();apply('all',true);},true);}
     });
     apply('all',false);
   }
-  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',boot); else boot();
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot();
 })();
 </script>
 

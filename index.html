@@ -1798,7 +1798,36 @@ body{background:#fff;color:var(--sbm-ink)}
 .cart-success{background:linear-gradient(135deg,#f3fff8,#f6f0ff);border:1px solid #d9c8ff;color:#33224b;display:flex;flex-direction:column;gap:7px}
 .cart-success strong{font-size:12px;color:#16834a}.cart-success small{color:#766b80}
 .cart-download-link{display:block;background:#fff;border:1px solid #ddd0ef;color:#5b20c8;text-decoration:none;padding:8px 9px;border-radius:9px;font-weight:800}
-</style></head>
+</style><style id="sbm-final-refund-youtube-fix">
+#refund{padding-top:70px!important;padding-bottom:75px!important}
+#refund .sbm-section-head{margin-bottom:28px!important}
+#refund .sbm-section-head .kicker{color:#e83e9f!important;font-weight:950!important}
+#refund .sbm-section-head h2{color:#29164d!important;font-size:clamp(38px,4.5vw,58px)!important;letter-spacing:-2px!important;margin-top:8px!important}
+#refund .sbm-refund{max-width:1180px!important;margin:0 auto!important;padding:38px 42px!important;background:radial-gradient(circle at 0% 0%,rgba(232,62,159,.16),transparent 30%),radial-gradient(circle at 100% 100%,rgba(59,130,246,.15),transparent 32%),linear-gradient(135deg,#fff8fc,#f5efff 52%,#eef8ff)!important;border:2px solid #e5d5f5!important;border-radius:30px!important;box-shadow:0 20px 55px rgba(53,20,95,.12),inset 0 1px 0 rgba(255,255,255,.9)!important;color:#403653!important;font-size:15px!important;line-height:1.8!important}
+#refund .sbm-refund p{color:#514763!important;font-size:15px!important;line-height:1.8!important;margin:0 0 18px!important}
+#refund .sbm-refund p:first-child{font-size:16px!important;color:#342449!important}
+#refund .sbm-refund p:first-child b{color:#6d28d9!important;font-weight:950!important}
+#refund .sbm-refund ul{margin:20px 0 24px!important;padding:20px 25px 20px 42px!important;background:rgba(255,255,255,.72)!important;border:1px solid rgba(109,40,217,.12)!important;border-radius:20px!important;color:#514763!important}
+#refund .sbm-refund li{padding:6px 0!important;font-size:14px!important;line-height:1.6!important}
+#refund .sbm-refund li::marker{color:#e83e9f!important;font-size:16px!important}
+.sbm-youtube-section{padding-top:55px!important;padding-bottom:55px!important;background:radial-gradient(circle at 10% 30%,rgba(232,62,159,.10),transparent 25%),radial-gradient(circle at 90% 70%,rgba(59,130,246,.10),transparent 25%),#faf8ff!important}
+.sbm-youtube-box-v4{max-width:1180px!important;margin:auto!important;display:grid!important;grid-template-columns:1.15fr .85fr!important;gap:35px!important;align-items:center!important;padding:36px!important;background:linear-gradient(135deg,#fff3fa,#f2edff 52%,#eaf8ff)!important;border:2px solid #e4d7f4!important;border-radius:32px!important;box-shadow:0 22px 55px rgba(53,20,95,.11)!important}
+.sbm-youtube-copy{padding:5px 5px 5px 8px!important}
+.sbm-youtube-copy .kicker{color:#d92b8c!important;font-weight:950!important;letter-spacing:.8px!important}
+.sbm-youtube-copy h2{color:#29164d!important;font-size:clamp(30px,3.5vw,46px)!important;line-height:1.12!important;letter-spacing:-1.5px!important;margin:10px 0 14px!important}
+.sbm-youtube-copy p{color:#5d566b!important;font-size:15px!important;line-height:1.7!important;max-width:650px!important}
+.sbm-youtube-copy .sbm-store-btn.primary{display:inline-flex!important;margin-top:10px!important;background:linear-gradient(135deg,#6d28d9,#e83e9f)!important;color:#fff!important;border:0!important;box-shadow:0 12px 25px rgba(109,40,217,.22)!important}
+.sbm-youtube-visual{position:relative!important;min-height:270px!important;border-radius:26px!important;overflow:hidden!important;background:radial-gradient(circle at 75% 20%,rgba(255,202,40,.35),transparent 25%),radial-gradient(circle at 20% 80%,rgba(232,62,159,.35),transparent 30%),linear-gradient(135deg,#32145f,#6d28d9 52%,#e83e9f)!important;border:0!important;box-shadow:0 20px 45px rgba(53,20,95,.22)!important;display:flex!important;align-items:center!important;justify-content:center!important;isolation:isolate}
+.sbm-youtube-visual img{display:none!important}
+.sbm-youtube-visual::before{content:"";position:absolute;width:180px;height:180px;border-radius:50%;background:rgba(255,255,255,.10);top:-70px;right:-40px;z-index:-1}
+.sbm-youtube-visual::after{content:"▶";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:78px;height:78px;border-radius:50%;display:grid;place-items:center;background:#fff;color:#e21f55;font-size:28px;padding-left:4px;box-shadow:0 12px 30px rgba(0,0,0,.22);z-index:2}
+.sbm-youtube-visual > div{position:absolute!important;left:18px!important;bottom:18px!important;background:rgba(255,255,255,.96)!important;color:#6d28d9!important;padding:9px 14px!important;border-radius:999px!important;font-size:10px!important;font-weight:950!important;z-index:4!important}
+.sbm-youtube-visual > div::before{content:"🎬";margin-right:6px}
+.sbm-youtube-visual > div::after{content:" FREE AI LEARNING"}
+@media(max-width:900px){.sbm-youtube-box-v4{grid-template-columns:1fr!important}.sbm-youtube-visual{min-height:240px!important}}
+@media(max-width:620px){#refund .sbm-refund{padding:25px 20px!important;border-radius:22px!important}#refund .sbm-section-head h2{font-size:38px!important}.sbm-youtube-box-v4{padding:22px!important;border-radius:24px!important}.sbm-youtube-copy h2{font-size:29px!important}.sbm-youtube-visual{min-height:210px!important}}
+</style>
+</head>
 <body>
 <div class="sbm-sale-bar">🎁 SMART BRAIN MISSION • AI LEARNING FOR KIDS &amp; PARENTS • DIGITAL PRODUCTS • FREE SAMPLES</div>
 <nav class="sbm-store-nav sbm-lwm-nav">
@@ -1808,13 +1837,13 @@ body{background:#fff;color:var(--sbm-ink)}
     </a>
     <div class="sbm-store-links">
 <a href="#shop">Shop</a>
-<a href="#shop" data-sbm-nav-filter="kids">For Kids</a>
-<a href="#shop" data-sbm-nav-filter="parents">For Parents</a>
+<a href="#kids">For Kids</a>
+<a href="#for-parents">For Parents</a>
 <a href="#lifetime">Bundles</a>
 <a href="#about">About</a>
 <a href="#reviews">Reviews</a>
 <a href="#contact">Contact</a>
-<a href="#blog" data-sbm-blog-link>Blog</a></div>
+<a href="#blog">Blog</a></div>
     <div class="sbm-nav-tools">
       <button class="sbm-search-mini" type="button" onclick="document.getElementById('shop')?.scrollIntoView({behavior:'smooth'})" aria-label="Search products">⌕</button>
       <div class="sbm-social-mini sbm-brand-socials" aria-label="Social links">
@@ -2991,35 +3020,6 @@ document.addEventListener('click',function(e){
   show(0);restart();
 })();
 </script>
-<script id="sbm-final-navigation-fix">
-(function(){
-  function ready(){
-    document.querySelectorAll('[data-sbm-blog-link]').forEach(function(link){
-      link.addEventListener('click',function(e){
-        const blog=document.getElementById('blog');
-        if(!blog) return;
-        e.preventDefault();
-        blog.scrollIntoView({behavior:'smooth',block:'start'});
-      });
-    });
-
-    // Ensure internal links still work even if another visual layer is added later.
-    document.querySelectorAll('a[href^="#"]').forEach(function(link){
-      if(link.hasAttribute('data-sbm-nav-filter') || link.hasAttribute('data-sbm-blog-link')) return;
-      link.addEventListener('click',function(e){
-        const id=link.getAttribute('href');
-        if(!id || id==='#') return;
-        const target=document.querySelector(id);
-        if(!target) return;
-        e.preventDefault();
-        target.scrollIntoView({behavior:'smooth',block:'start'});
-      });
-    });
-  }
-  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',ready);
-  else ready();
-})();
-</script>
 </body>
 </html>
 
@@ -3278,7 +3278,6 @@ body{background:linear-gradient(135deg,#fff9fd 0%,#f7f3ff 38%,#effaff 70%,#fffaf
 .sbm-shop-filter button.active{background:linear-gradient(135deg,#5d22c7,#ed2f91);color:#fff;border-color:transparent}
 .sbm-all-products-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
 .sbm-all-products-grid .sbm-store-card{display:flex!important}
-.sbm-all-products-grid .sbm-store-card[hidden]{display:none!important}
 .sbm-all-products-grid .cover-wrap{height:230px!important}
 .sbm-all-products-grid .copy{min-height:48px!important}
 .sbm-all-products-grid .tag{background:#f6ecff!important;color:#d32a86!important}
@@ -3318,27 +3317,24 @@ body{background:linear-gradient(135deg,#fff9fd 0%,#f7f3ff 38%,#effaff 70%,#fffaf
 <script id="sbm-v10-filter-fix">
 (function(){
   function init(){
-    const shop = document.querySelector('.sbm-products-section');
+    const shop=document.querySelector('.sbm-products-section');
     if(!shop) return;
-
-    const head = shop.querySelector('.sbm-section-head');
-    const blocks = [...shop.querySelectorAll('.sbm-category-block')];
-    const cards = blocks.flatMap(b => [...b.querySelectorAll('.product-card')]);
+    const head=shop.querySelector('.sbm-section-head');
+    const blocks=[...shop.querySelectorAll('.sbm-category-block')];
+    const cards=blocks.flatMap(b=>[...b.querySelectorAll('.product-card')]);
     if(!cards.length) return;
 
-    const old = shop.querySelector('.sbm-shop-showcase');
+    const old=shop.querySelector('.sbm-shop-showcase');
     if(old) old.remove();
 
-    const wrap = document.createElement('div');
-    wrap.className = 'sbm-shop-showcase';
-    wrap.id = 'sbm-shop-showcase';
+    const wrap=document.createElement('div');
+    wrap.className='sbm-shop-showcase';
 
-    const filter = document.createElement('div');
-    filter.className = 'sbm-shop-filter';
+    const filter=document.createElement('div');
+    filter.className='sbm-shop-filter';
     filter.setAttribute('role','tablist');
-    filter.setAttribute('aria-label','Shop by age');
 
-    const filters = [
+    const filters=[
       ['all','All Products'],
       ['age5','Ages 5–8'],
       ['age8','Ages 8–12'],
@@ -3346,21 +3342,20 @@ body{background:linear-gradient(135deg,#fff9fd 0%,#f7f3ff 38%,#effaff 70%,#fffaf
       ['parents','For Parents']
     ];
 
-    filters.forEach(([key,label]) => {
-      const b = document.createElement('button');
-      b.type = 'button';
-      b.className = 'sbm-filter-btn';
-      b.dataset.filter = key;
-      b.textContent = label;
-      b.setAttribute('aria-selected', key === 'all' ? 'true' : 'false');
+    filters.forEach(([key,label])=>{
+      const b=document.createElement('button');
+      b.type='button';
+      b.className='sbm-filter-btn';
+      b.dataset.filter=key;
+      b.textContent=label;
+      b.setAttribute('aria-selected',key==='all'?'true':'false');
       filter.appendChild(b);
     });
 
-    const grid = document.createElement('div');
-    grid.className = 'sbm-all-products-grid';
-    grid.id = 'sbm-products-grid';
+    const grid=document.createElement('div');
+    grid.className='sbm-all-products-grid';
 
-    const map = {
+    const map={
       activity:'age5',
       detective:'age5',
       coding:'age5',
@@ -3370,106 +3365,71 @@ body{background:linear-gradient(135deg,#fff9fd 0%,#f7f3ff 38%,#effaff 70%,#fffaf
       parenting:'parents'
     };
 
-    cards.forEach(card => {
-      card.dataset.category = map[card.dataset.productId] || 'all';
+    cards.forEach(card=>{
+      card.dataset.category=map[card.dataset.productId]||'all';
       grid.appendChild(card);
     });
 
     wrap.appendChild(filter);
     wrap.appendChild(grid);
 
-    if(head) head.insertAdjacentElement('afterend', wrap);
+    const activity=shop.querySelector('#free-sample');
+    if(activity) wrap.appendChild(activity);
+
+    if(head) head.insertAdjacentElement('afterend',wrap);
     else shop.prepend(wrap);
 
-    // Keep the original category sections in the DOM so their IDs remain valid
-    // for navigation. They are already hidden by CSS.
-    blocks.forEach(b => {
-      b.setAttribute('aria-hidden','true');
-    });
+    blocks.forEach(b=>b.remove());
 
-    function applyFilter(key){
-      if(!['all','age5','age8','age13','parents'].includes(key)) key='all';
-
-      grid.querySelectorAll('.product-card').forEach(card => {
-        const show = key === 'all' || card.dataset.category === key;
-        card.hidden = !show;
+    window.sbmFilter=function(key){
+      grid.querySelectorAll('.product-card').forEach(card=>{
+        const show=key==='all'||card.dataset.category===key;
+        card.hidden=!show;
+        card.style.display=show?'flex':'none';
       });
 
-      filter.querySelectorAll('.sbm-filter-btn').forEach(btn => {
-        const active = btn.dataset.filter === key;
-        btn.classList.toggle('active', active);
-        btn.setAttribute('aria-selected', active ? 'true' : 'false');
+      filter.querySelectorAll('.sbm-filter-btn').forEach(btn=>{
+        const active=btn.dataset.filter===key;
+        btn.classList.toggle('active',active);
+        btn.setAttribute('aria-selected',active?'true':'false');
       });
+    };
 
-      window.history.replaceState(null,'','#shop');
-    }
-
-    window.sbmFilter = applyFilter;
-
-    filter.addEventListener('click', function(e){
-      const btn = e.target.closest('.sbm-filter-btn');
+    filter.addEventListener('click',function(e){
+      const btn=e.target.closest('.sbm-filter-btn');
       if(!btn) return;
       e.preventDefault();
       e.stopPropagation();
-      applyFilter(btn.dataset.filter);
+      window.sbmFilter(btn.dataset.filter);
     });
 
-    // Category cards: click -> activate correct filter -> scroll to products.
-    const categoryMap = {
+    const categoryMap={
       'age-5-8':'age5',
       'age-8-12':'age8',
       'age-13-16':'age13',
       'for-parents':'parents'
     };
 
-    document.querySelectorAll('.sbm-category-card').forEach(card => {
-      const href = card.getAttribute('href') || '';
-      let key = 'all';
-
-      Object.keys(categoryMap).forEach(part => {
-        if(href.includes(part)) key = categoryMap[part];
+    document.querySelectorAll('.sbm-category-card').forEach(card=>{
+      let key='all';
+      const href=card.getAttribute('href')||'';
+      Object.keys(categoryMap).forEach(part=>{
+        if(href.includes(part)) key=categoryMap[part];
       });
-
-      card.addEventListener('click', function(e){
+      card.href='#shop';
+      card.addEventListener('click',function(e){
         e.preventDefault();
         e.stopPropagation();
-        applyFilter(key);
-        document.getElementById('shop')?.scrollIntoView({
-          behavior:'smooth',
-          block:'start'
-        });
+        window.sbmFilter(key);
+        shop.scrollIntoView({behavior:'smooth',block:'start'});
       });
     });
 
-    // Top navigation buttons that need filtering.
-    document.querySelectorAll('[data-sbm-nav-filter]').forEach(link => {
-      link.addEventListener('click', function(e){
-        e.preventDefault();
-        const key = link.dataset.sbmNavFilter;
-        applyFilter(key === 'kids' ? 'all' : key);
-        document.getElementById('shop')?.scrollIntoView({
-          behavior:'smooth',
-          block:'start'
-        });
-      });
-    });
-
-    // If someone lands on #for-parents/#age-* directly, activate the right view.
-    const hashMap = {
-      '#for-parents':'parents',
-      '#age-5-8':'age5',
-      '#age-8-12':'age8',
-      '#age-13-16':'age13'
-    };
-    const initialKey = hashMap[window.location.hash] || 'all';
-    applyFilter(initialKey);
-
-    // Expose a small diagnostic flag.
-    window.SBM_FILTERS_READY = true;
+    window.sbmFilter('all');
   }
 
-  if(document.readyState === 'loading'){
-    document.addEventListener('DOMContentLoaded', init);
+  if(document.readyState==='loading'){
+    document.addEventListener('DOMContentLoaded',init);
   }else{
     init();
   }

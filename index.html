@@ -3244,7 +3244,103 @@ document.addEventListener('click',function(e){
 </script>
 
 \n<script id="sbm-final-nav-age-fix-js">\n(function(){\n  function ready(fn){\n    if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',fn);\n    else fn();\n  }\n  ready(function(){\n    function shop(){ return document.querySelector('.sbm-products-section'); }\n    function scrollShop(){ const s=shop(); if(s) s.scrollIntoView({behavior:'smooth',block:'start'}); }\n    function filter(key){\n      if(typeof window.sbmFilter==='function'){\n        window.sbmFilter(key);\n      } else {\n        const buttons=document.querySelectorAll('.sbm-filter-btn');\n        const cards=document.querySelectorAll('.sbm-all-products-grid .product-card');\n        cards.forEach(card=>{\n          const show=key==='all'||card.dataset.category===key;\n          card.hidden=!show; card.style.display=show?'flex':'none';\n        });\n        buttons.forEach(b=>{\n          const active=b.dataset.filter===key;\n          b.classList.toggle('active',active);\n          b.setAttribute('aria-selected',active?'true':'false');\n        });\n      }\n      scrollShop();\n    }\n\n    /* Top navigation: do not depend on removed category-block IDs. */\n    document.querySelectorAll('.sbm-store-links a').forEach(a=>{\n      const text=(a.textContent||'').trim().toLowerCase();\n      if(text==='for parents'){\n        a.addEventListener('click',function(e){ e.preventDefault(); e.stopPropagation(); filter('parents'); },true);\n      }\n      if(text==='for kids'){\n        a.addEventListener('click',function(e){\n          e.preventDefault(); e.stopPropagation();\n          /* Kids = all three child age groups */\n          if(typeof window.sbmFilter==='function'){\n            const grid=document.querySelector('.sbm-all-products-grid');\n            if(grid){\n              grid.querySelectorAll('.product-card').forEach(card=>{\n                const show=['age5','age8','age13'].includes(card.dataset.category);\n                card.hidden=!show; card.style.display=show?'flex':'none';\n              });\n              document.querySelectorAll('.sbm-filter-btn').forEach(b=>{\n                b.classList.toggle('active',b.dataset.filter==='all');\n                b.setAttribute('aria-selected','false');\n              });\n            }\n          }\n          scrollShop();\n        },true);\n      }\n    });\n\n    /* Make the age-filter pills reliable even if another script/style interferes. */\n    document.addEventListener('click',function(e){\n      const btn=e.target.closest && e.target.closest('.sbm-filter-btn');\n      if(!btn) return;\n      e.preventDefault(); e.stopPropagation();\n      const key=btn.dataset.filter;\n      if(key) filter(key);\n    },true);\n  });\n})();\n</script>\n</body>
-</html>
+
+<script id="sbm-hard-final-filter-fix">
+(function(){
+  function install(){
+    const shop=document.querySelector('.sbm-products-section');
+    const grid=document.querySelector('.sbm-all-products-grid');
+    const filterBox=document.querySelector('.sbm-shop-filter');
+    if(!shop || !grid || !filterBox) return false;
+
+    const cards=[...grid.querySelectorAll('.product-card')];
+    if(!cards.length) return false;
+
+    const category={
+      activity:'age5', detective:'age5', coding:'age5',
+      'think-ai':'age8', prompt:'age13',
+      book:'parents', parenting:'parents'
+    };
+    cards.forEach(c=>{
+      const id=c.getAttribute('data-product-id');
+      if(category[id]) c.setAttribute('data-category',category[id]);
+    });
+
+    function apply(key){
+      cards.forEach(card=>{
+        const show = key==='kids'
+          ? ['age5','age8','age13'].includes(card.dataset.category)
+          : key==='all' || card.dataset.category===key;
+        card.hidden=!show;
+        card.style.display=show ? 'flex' : 'none';
+      });
+      filterBox.querySelectorAll('.sbm-filter-btn').forEach(btn=>{
+        const active=btn.dataset.filter===key;
+        btn.classList.toggle('active',active);
+        btn.setAttribute('aria-selected',active?'true':'false');
+      });
+      const y=shop.getBoundingClientRect().top+window.pageYOffset-82;
+      window.scrollTo({top:Math.max(0,y),behavior:'smooth'});
+    }
+
+    window.sbmFilter=apply;
+
+    // Replace filter buttons so old click handlers cannot interfere.
+    filterBox.querySelectorAll('.sbm-filter-btn').forEach(old=>{
+      const btn=old.cloneNode(true);
+      old.replaceWith(btn);
+      btn.addEventListener('click',function(e){
+        e.preventDefault(); e.stopImmediatePropagation();
+        apply(btn.dataset.filter);
+      });
+    });
+
+    // Replace top navigation links so old hash handlers cannot interfere.
+    document.querySelectorAll('.sbm-store-links a').forEach(old=>{
+      const text=(old.textContent||'').trim().toLowerCase();
+      if(!['for parents','for kids'].includes(text)) return;
+      const a=old.cloneNode(true);
+      old.replaceWith(a);
+      a.addEventListener('click',function(e){
+        e.preventDefault(); e.stopImmediatePropagation();
+        if(text==='for parents') apply('parents');
+        else apply('kids');
+      });
+    });
+
+    // Category cards: route to the same filter system.
+    document.querySelectorAll('.sbm-category-card').forEach(old=>{
+      const a=old.cloneNode(true);
+      old.replaceWith(a);
+      const href=(old.getAttribute('href')||'').toLowerCase();
+      let key='all';
+      if(href.includes('age-5-8')) key='age5';
+      else if(href.includes('age-8-12')) key='age8';
+      else if(href.includes('age-13-16')) key='age13';
+      else if(href.includes('for-parents')) key='parents';
+      a.setAttribute('href','#shop');
+      a.addEventListener('click',function(e){
+        e.preventDefault(); e.stopImmediatePropagation(); apply(key);
+      });
+    });
+
+    apply('all');
+    return true;
+  }
+
+  function boot(){
+    if(install()) return;
+    let tries=0;
+    const timer=setInterval(function(){
+      tries++;
+      if(install() || tries>30) clearInterval(timer);
+    },100);
+  }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',boot);
+  else boot();
+})();
+</script>
+</body></html>
 
 <style id="sbm-wow-v3">
 /* =========================================================

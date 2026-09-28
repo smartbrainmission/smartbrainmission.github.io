@@ -3228,41 +3228,133 @@ body{background:linear-gradient(135deg,#fff9fd 0%,#f7f3ff 38%,#effaff 70%,#fffaf
 @media(max-width:980px){.sbm-category-cards{grid-template-columns:1fr 1fr!important}.sbm-all-products-grid{grid-template-columns:repeat(2,1fr)!important}.sbm-store-hero-in{grid-template-columns:1fr!important}.sbm-hero-photo-frame{height:340px!important}}
 @media(max-width:620px){.sbm-category-cards{grid-template-columns:1fr 1fr!important}.sbm-category-card{min-height:250px!important}.sbm-category-card::before{height:95px;flex-basis:95px}.sbm-category-card>div{padding:10px 12px 0}.sbm-category-card h3{font-size:16px!important}.sbm-category-card p{font-size:10px!important}.sbm-category-card>b{margin:7px 12px 12px!important;font-size:9px!important}.sbm-all-products-grid{grid-template-columns:1fr 1fr!important;gap:9px!important}.sbm-all-products-grid .cover-wrap{height:190px!important}.sbm-all-products-grid .sbm-card-actions{grid-template-columns:1fr!important}.sbm-youtube-box-v4{grid-template-columns:1fr!important}.sbm-youtube-visual{height:150px!important}.sbm-youtube-visual img{height:150px!important}.sbm-delivery-grid{grid-template-columns:1fr 1fr!important}.sbm-store-hero h1{font-size:40px!important}}
 </style>
-<script id="sbm-v7-layout-script">
+
+<style id="sbm-v10-filter-css">
+.sbm-shop-showcase{position:relative;z-index:30!important;pointer-events:auto!important}
+.sbm-shop-filter{position:relative;z-index:40!important;pointer-events:auto!important}
+.sbm-filter-btn{position:relative;z-index:41!important;pointer-events:auto!important;cursor:pointer!important;touch-action:manipulation!important}
+.sbm-filter-btn:focus-visible{outline:3px solid #ed2f91;outline-offset:3px}
+.sbm-all-products-grid{position:relative;z-index:1}
+</style>
+<script id="sbm-v10-filter-fix">
 (function(){
-  function ready(){
+  function init(){
     const shop=document.querySelector('.sbm-products-section');
     if(!shop) return;
     const head=shop.querySelector('.sbm-section-head');
     const blocks=[...shop.querySelectorAll('.sbm-category-block')];
     const cards=blocks.flatMap(b=>[...b.querySelectorAll('.product-card')]);
     if(!cards.length) return;
-    const wrap=document.createElement('div'); wrap.className='sbm-shop-showcase';
-    const filter=document.createElement('div'); filter.className='sbm-shop-filter';
-    const filters=[['all','All Products'],['age5','Ages 5–8'],['age8','Ages 8–12'],['age13','Ages 13–16'],['parents','For Parents']];
-    filters.forEach(([key,label])=>{const b=document.createElement('button');b.type='button';b.dataset.filter=key;b.textContent=label;if(key==='all')b.classList.add('active');filter.appendChild(b)});
-    const grid=document.createElement('div');grid.className='sbm-all-products-grid';
-    const map={activity:'age5',detective:'age5',coding:'age5','think-ai':'age8',prompt:'age13',book:'parents',parenting:'parents'};
-    cards.forEach(c=>{c.dataset.category=map[c.dataset.productId]||'all';grid.appendChild(c)});
-    wrap.appendChild(filter);wrap.appendChild(grid);
+
+    const old=shop.querySelector('.sbm-shop-showcase');
+    if(old) old.remove();
+
+    const wrap=document.createElement('div');
+    wrap.className='sbm-shop-showcase';
+
+    const filter=document.createElement('div');
+    filter.className='sbm-shop-filter';
+    filter.setAttribute('role','tablist');
+
+    const filters=[
+      ['all','All Products'],
+      ['age5','Ages 5–8'],
+      ['age8','Ages 8–12'],
+      ['age13','Ages 13–16'],
+      ['parents','For Parents']
+    ];
+
+    filters.forEach(([key,label])=>{
+      const b=document.createElement('button');
+      b.type='button';
+      b.className='sbm-filter-btn';
+      b.dataset.filter=key;
+      b.textContent=label;
+      b.setAttribute('aria-selected',key==='all'?'true':'false');
+      filter.appendChild(b);
+    });
+
+    const grid=document.createElement('div');
+    grid.className='sbm-all-products-grid';
+
+    const map={
+      activity:'age5',
+      detective:'age5',
+      coding:'age5',
+      'think-ai':'age8',
+      prompt:'age13',
+      book:'parents',
+      parenting:'parents'
+    };
+
+    cards.forEach(card=>{
+      card.dataset.category=map[card.dataset.productId]||'all';
+      grid.appendChild(card);
+    });
+
+    wrap.appendChild(filter);
+    wrap.appendChild(grid);
+
     const activity=shop.querySelector('#free-sample');
     if(activity) wrap.appendChild(activity);
-    if(head) head.insertAdjacentElement('afterend',wrap); else shop.prepend(wrap);
+
+    if(head) head.insertAdjacentElement('afterend',wrap);
+    else shop.prepend(wrap);
+
     blocks.forEach(b=>b.remove());
-    function apply(key){
-      grid.querySelectorAll('.product-card').forEach(c=>{c.style.display=(key==='all'||c.dataset.category===key)?'flex':'none'});
-      filter.querySelectorAll('button').forEach(b=>b.classList.toggle('active',b.dataset.filter===key));
-    }
-    filter.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;apply(b.dataset.filter)});
-    document.querySelectorAll('.sbm-category-card').forEach(card=>{
-      const href=card.getAttribute('href')||'';
-      let key='all'; if(href.includes('age-5-8'))key='age5'; else if(href.includes('age-8-12'))key='age8'; else if(href.includes('age-13-16'))key='age13'; else if(href.includes('for-parents'))key='parents';
-      card.setAttribute('href','#shop'); card.dataset.filter=key;
-      card.addEventListener('click',e=>{e.preventDefault();apply(key);shop.scrollIntoView({behavior:'smooth',block:'start'})});
+
+    window.sbmFilter=function(key){
+      grid.querySelectorAll('.product-card').forEach(card=>{
+        const show=key==='all'||card.dataset.category===key;
+        card.hidden=!show;
+        card.style.display=show?'flex':'none';
+      });
+
+      filter.querySelectorAll('.sbm-filter-btn').forEach(btn=>{
+        const active=btn.dataset.filter===key;
+        btn.classList.toggle('active',active);
+        btn.setAttribute('aria-selected',active?'true':'false');
+      });
+    };
+
+    filter.addEventListener('click',function(e){
+      const btn=e.target.closest('.sbm-filter-btn');
+      if(!btn) return;
+      e.preventDefault();
+      e.stopPropagation();
+      window.sbmFilter(btn.dataset.filter);
     });
-    apply('all');
+
+    const categoryMap={
+      'age-5-8':'age5',
+      'age-8-12':'age8',
+      'age-13-16':'age13',
+      'for-parents':'parents'
+    };
+
+    document.querySelectorAll('.sbm-category-card').forEach(card=>{
+      let key='all';
+      const href=card.getAttribute('href')||'';
+      Object.keys(categoryMap).forEach(part=>{
+        if(href.includes(part)) key=categoryMap[part];
+      });
+      card.href='#shop';
+      card.addEventListener('click',function(e){
+        e.preventDefault();
+        e.stopPropagation();
+        window.sbmFilter(key);
+        shop.scrollIntoView({behavior:'smooth',block:'start'});
+      });
+    });
+
+    window.sbmFilter('all');
   }
-  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',ready);else ready();
+
+  if(document.readyState==='loading'){
+    document.addEventListener('DOMContentLoaded',init);
+  }else{
+    init();
+  }
 })();
 </script>
 
@@ -3290,3 +3382,44 @@ body{background:linear-gradient(135deg,#fff9fd 0%,#f7f3ff 38%,#effaff 70%,#fffaf
 @media(max-width:980px){.sbm-book-hero-in{grid-template-columns:1fr!important;min-height:auto!important}.sbm-book-copy{max-width:760px!important}.sbm-book-stage{height:430px}.sbm-book-slide img{height:390px}}
 @media(max-width:620px){.sbm-book-hero-in{padding:34px 15px 38px!important}.sbm-book-copy h1{font-size:40px!important;letter-spacing:-2px!important}.sbm-book-copy p{font-size:15px!important}.sbm-book-stage{height:360px;border-radius:24px}.sbm-book-slide img{height:315px;max-width:78%}.sbm-book-arrow{width:35px;height:35px;font-size:26px}.sbm-book-ribbon{left:12px;top:12px;font-size:8px}.sbm-book-eyebrow{margin-top:16px}}
 </style>
+
+<style id="sbm-v11-hero-readability-click-fix">
+/* V11 — hero CTA reliability + readable trust row */
+.sbm-book-copy{position:relative!important;z-index:20!important}
+.sbm-book-copy .sbm-hero-actions{position:relative!important;z-index:30!important}
+.sbm-book-copy .sbm-hero-actions a{position:relative!important;z-index:31!important;pointer-events:auto!important;cursor:pointer!important}
+.sbm-book-copy .sbm-lwm-mini-trust{
+  color:#4f465c!important;
+  font-weight:900!important;
+  opacity:1!important;
+  text-shadow:none!important;
+  position:relative!important;
+  z-index:20!important;
+}
+.sbm-book-carousel-hero::before{pointer-events:none!important}
+.sbm-book-carousel-hero::after{pointer-events:none!important}
+</style>
+<script id="sbm-v11-hero-cta-fix">
+(function(){
+  function initHeroCtaFix(){
+    const cta=document.getElementById('sbmBookCTA');
+    if(!cta) return;
+    function goToTarget(){
+      const target=cta.getAttribute('href');
+      if(!target || !target.startsWith('#')) return;
+      const el=document.querySelector(target);
+      if(!el) return;
+      el.scrollIntoView({behavior:'smooth',block:'start'});
+    }
+    cta.addEventListener('click',function(e){
+      const target=cta.getAttribute('href');
+      if(target && target.startsWith('#')){
+        e.preventDefault();
+        goToTarget();
+      }
+    },true);
+  }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',initHeroCtaFix);
+  else initHeroCtaFix();
+})();
+</script>

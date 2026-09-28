@@ -191,6 +191,89 @@ footer{background:#1c0b35;color:#eee;padding:24px;text-align:center;font-size:12
 .hero-youtube-mini{display:flex;align-items:center;gap:12px;width:max-content;max-width:100%;margin:12px auto 0;padding:10px 14px;background:#fff;border-radius:14px;box-shadow:0 5px 18px rgba(55,25,100,.12);text-decoration:none;color:#21104d;font-size:12px;line-height:1.35}
 .hero-youtube-mini strong{font-size:12px}.hero-youtube-mini u{color:#21104d}.hero-youtube-icon{display:flex;align-items:center;justify-content:center;width:34px;height:25px;border-radius:7px;background:#ff1717;color:#fff;font-size:15px;font-weight:800;flex:none}
 @media(max-width:600px){.hero-youtube-mini{margin-left:auto;margin-right:auto;width:100%;justify-content:center}}
+
+
+/* ===== PARENTS AGE PATH ===== */
+.age-parents{
+  border-color:rgba(126,58,237,.18);
+}
+.age-parents .age-badge{
+  background:linear-gradient(135deg,#6325c6,#e83e9f);
+  color:#fff;
+}
+.age-parents .age-pack-card{
+  border-color:#eadcf7;
+}
+.age-parents .age-pack-card:hover{
+  border-color:#c9a7ee;
+}
+
+
+
+/* ===== PARENT AGE PATH + PARENTING GUIDE CARD ===== */
+.age-parents{
+  border-color:rgba(126,58,237,.18);
+}
+.age-parents .age-badge{
+  background:linear-gradient(135deg,#6325c6,#e83e9f);
+  color:#fff;
+}
+.age-parents .age-pack-card{
+  border-color:#eadcf7;
+}
+.age-parents .age-pack-card:hover{
+  border-color:#c9a7ee;
+}
+
+.parenting-guide-card{
+  border:2px solid rgba(232,62,159,.22)!important;
+  background:linear-gradient(145deg,#fff7fc 0%,#ffffff 52%,#f5f1ff 100%)!important;
+}
+.parenting-guide-card .parenting-guide-cover{
+  width:100%;
+  display:block;
+  aspect-ratio:3/4;
+  object-fit:cover;
+  border-radius:14px;
+  margin-bottom:10px;
+}
+.parenting-cover-fallback{
+  display:none;
+  aspect-ratio:3/4;
+  width:100%;
+  align-items:center;
+  justify-content:center;
+  border-radius:14px;
+  margin-bottom:10px;
+  background:linear-gradient(145deg,#fff0fa,#eee5ff);
+  font-size:52px;
+}
+.parenting-guide-mini-points{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:6px;
+  margin:13px 0;
+}
+.parenting-guide-mini-points span{
+  background:#fff;
+  border:1px solid #eadcf7;
+  border-radius:9px;
+  padding:7px 8px;
+  font-size:10px;
+  font-weight:750;
+  color:#51445f;
+}
+.parenting-guide-card .parenting-buy-btn{
+  width:100%;
+  margin-top:10px!important;
+  background:linear-gradient(135deg,#6325c6,#e83e9f)!important;
+}
+@media(max-width:520px){
+  .parenting-guide-mini-points{
+    grid-template-columns:1fr;
+  }
+}
+
 </style>
 
 <style>
@@ -1551,6 +1634,31 @@ section#trust.trust-section{padding:58px 0 54px!important;background:linear-grad
         <a class="age-see-all" href="#pack">View pack details ↓</a>
       </article>
 
+      <article class="age-path age-parents">
+        <div class="age-badge">FOR PARENTS</div>
+        <h3>Understand &amp; Guide</h3>
+        <p class="age-intro">Practical resources to help parents understand AI and guide children with confidence.</p>
+
+        <a class="age-pack-card book-age" href="#ai-book">
+          <img class="age-pack-cover" src="assets/ai-book-cover.png" alt="AI: Kal Se Aaj Tak… Aur Aane Wala Kal book cover">
+          <span>
+            <b>AI: Kal Se Aaj Tak… Aur Aane Wala Kal</b>
+            <small>AI past, present &amp; future • Family learning</small>
+          </span>
+        </a>
+
+        <a class="age-pack-card parenting-age" href="#pack">
+          <img class="age-pack-cover" src="assets/ai-parenting-guide-cover.png" alt="AI Parenting Guide cover"
+               onerror="this.style.display='none'; this.nextElementSibling.classList.add('cover-fallback')">
+          <span>
+            <b>AI Parenting Guide</b>
+            <small>AI safety, learning &amp; parent-child guidance</small>
+          </span>
+        </a>
+
+        <a class="age-see-all" href="#pack">View parent resources ↓</a>
+      </article>
+
     </div>
   </div>
 </section>
@@ -1644,6 +1752,42 @@ section#trust.trust-section{padding:58px 0 54px!important;background:linear-grad
       <div class="pack-note">Choose a pack, preview the sample, and continue the learning journey.</div>
     </div>
     <div class="pack-products">
+
+      <!-- ===== AI PARENTING GUIDE ===== -->
+      <div class="pay-card product-card parenting-guide-card">
+        <img class="pack-cover parenting-guide-cover"
+             src="assets/ai-parenting-guide-cover.png"
+             alt="AI Parenting Guide cover"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="parenting-cover-fallback">👨‍👩‍👧</div>
+        <div class="product-icon">👨‍👩‍👧</div>
+        <h3>AI Parenting Guide <span class="product-price">— <span class="sbm-original-price">₹699</span> <b>₹499</b></span></h3>
+        <p class="sample-copy">Apne bachche ko AI ke daur ke liye ready karne ki Practical Guide.</p>
+        <div class="pack-meta">📘 56 Pages &nbsp;•&nbsp; 👨‍👩‍👧 For Parents &nbsp;•&nbsp; 💻 Digital PDF</div>
+
+        <div class="parenting-guide-mini-points">
+          <span>🤖 AI ko samjhein</span>
+          <span>🛡️ AI Safety</span>
+          <span>🧠 Critical Thinking</span>
+          <span>📚 AI aur Padhai</span>
+          <span>🎯 Age-wise Guidance</span>
+          <span>👨‍👩‍👧 Parent–Child AI Rules</span>
+        </div>
+
+        <a class="sample-btn"
+           href="assets/AI%20PARENTING%20GUIDE%20SAMPLE.pdf"
+           target="_blank" rel="noopener">🎁 View Sample <small>(Free Preview)</small></a>
+
+        <button class="paybtn sbm-razorpay-test-btn parenting-buy-btn"
+                type="button"
+                data-sbm-product="AI Parenting Guide"
+                data-sbm-product-id="parenting"
+                data-sbm-price="499">💳 Buy Securely with Razorpay</button>
+
+        <div class="payment-note">Secure payment • Instant PDF download after successful payment.</div>
+      </div>
+      <!-- ===== END AI PARENTING GUIDE ===== -->
+
       <div class="pay-card product-card">
         <img class="pack-cover" src="assets/my-first-ai-cover.png" alt="My First AI Activity Pack cover"><div class="product-icon">📱</div><h3>My First AI Activity Pack <span class="product-price">— <span class="sbm-original-price">₹119</span> <b>₹59</b></span></h3>
         <p class="sample-copy">Fun, screen-free AI activities that build curiosity, observation and smart thinking.</p>

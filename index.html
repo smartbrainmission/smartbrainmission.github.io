@@ -1808,13 +1808,13 @@ body{background:#fff;color:var(--sbm-ink)}
     </a>
     <div class="sbm-store-links">
 <a href="#shop">Shop</a>
-<a href="#kids">For Kids</a>
-<a href="#for-parents">For Parents</a>
+<a href="#shop" data-sbm-nav-filter="kids">For Kids</a>
+<a href="#shop" data-sbm-nav-filter="parents">For Parents</a>
 <a href="#lifetime">Bundles</a>
 <a href="#about">About</a>
 <a href="#reviews">Reviews</a>
 <a href="#contact">Contact</a>
-<a href="#blog">Blog</a></div>
+<a href="#blog" data-sbm-blog-link>Blog</a></div>
     <div class="sbm-nav-tools">
       <button class="sbm-search-mini" type="button" onclick="document.getElementById('shop')?.scrollIntoView({behavior:'smooth'})" aria-label="Search products">⌕</button>
       <div class="sbm-social-mini sbm-brand-socials" aria-label="Social links">
@@ -2991,6 +2991,35 @@ document.addEventListener('click',function(e){
   show(0);restart();
 })();
 </script>
+<script id="sbm-final-navigation-fix">
+(function(){
+  function ready(){
+    document.querySelectorAll('[data-sbm-blog-link]').forEach(function(link){
+      link.addEventListener('click',function(e){
+        const blog=document.getElementById('blog');
+        if(!blog) return;
+        e.preventDefault();
+        blog.scrollIntoView({behavior:'smooth',block:'start'});
+      });
+    });
+
+    // Ensure internal links still work even if another visual layer is added later.
+    document.querySelectorAll('a[href^="#"]').forEach(function(link){
+      if(link.hasAttribute('data-sbm-nav-filter') || link.hasAttribute('data-sbm-blog-link')) return;
+      link.addEventListener('click',function(e){
+        const id=link.getAttribute('href');
+        if(!id || id==='#') return;
+        const target=document.querySelector(id);
+        if(!target) return;
+        e.preventDefault();
+        target.scrollIntoView({behavior:'smooth',block:'start'});
+      });
+    });
+  }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',ready);
+  else ready();
+})();
+</script>
 </body>
 </html>
 
@@ -3249,6 +3278,7 @@ body{background:linear-gradient(135deg,#fff9fd 0%,#f7f3ff 38%,#effaff 70%,#fffaf
 .sbm-shop-filter button.active{background:linear-gradient(135deg,#5d22c7,#ed2f91);color:#fff;border-color:transparent}
 .sbm-all-products-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
 .sbm-all-products-grid .sbm-store-card{display:flex!important}
+.sbm-all-products-grid .sbm-store-card[hidden]{display:none!important}
 .sbm-all-products-grid .cover-wrap{height:230px!important}
 .sbm-all-products-grid .copy{min-height:48px!important}
 .sbm-all-products-grid .tag{background:#f6ecff!important;color:#d32a86!important}
@@ -3288,24 +3318,27 @@ body{background:linear-gradient(135deg,#fff9fd 0%,#f7f3ff 38%,#effaff 70%,#fffaf
 <script id="sbm-v10-filter-fix">
 (function(){
   function init(){
-    const shop=document.querySelector('.sbm-products-section');
+    const shop = document.querySelector('.sbm-products-section');
     if(!shop) return;
-    const head=shop.querySelector('.sbm-section-head');
-    const blocks=[...shop.querySelectorAll('.sbm-category-block')];
-    const cards=blocks.flatMap(b=>[...b.querySelectorAll('.product-card')]);
+
+    const head = shop.querySelector('.sbm-section-head');
+    const blocks = [...shop.querySelectorAll('.sbm-category-block')];
+    const cards = blocks.flatMap(b => [...b.querySelectorAll('.product-card')]);
     if(!cards.length) return;
 
-    const old=shop.querySelector('.sbm-shop-showcase');
+    const old = shop.querySelector('.sbm-shop-showcase');
     if(old) old.remove();
 
-    const wrap=document.createElement('div');
-    wrap.className='sbm-shop-showcase';
+    const wrap = document.createElement('div');
+    wrap.className = 'sbm-shop-showcase';
+    wrap.id = 'sbm-shop-showcase';
 
-    const filter=document.createElement('div');
-    filter.className='sbm-shop-filter';
+    const filter = document.createElement('div');
+    filter.className = 'sbm-shop-filter';
     filter.setAttribute('role','tablist');
+    filter.setAttribute('aria-label','Shop by age');
 
-    const filters=[
+    const filters = [
       ['all','All Products'],
       ['age5','Ages 5–8'],
       ['age8','Ages 8–12'],
@@ -3313,20 +3346,21 @@ body{background:linear-gradient(135deg,#fff9fd 0%,#f7f3ff 38%,#effaff 70%,#fffaf
       ['parents','For Parents']
     ];
 
-    filters.forEach(([key,label])=>{
-      const b=document.createElement('button');
-      b.type='button';
-      b.className='sbm-filter-btn';
-      b.dataset.filter=key;
-      b.textContent=label;
-      b.setAttribute('aria-selected',key==='all'?'true':'false');
+    filters.forEach(([key,label]) => {
+      const b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'sbm-filter-btn';
+      b.dataset.filter = key;
+      b.textContent = label;
+      b.setAttribute('aria-selected', key === 'all' ? 'true' : 'false');
       filter.appendChild(b);
     });
 
-    const grid=document.createElement('div');
-    grid.className='sbm-all-products-grid';
+    const grid = document.createElement('div');
+    grid.className = 'sbm-all-products-grid';
+    grid.id = 'sbm-products-grid';
 
-    const map={
+    const map = {
       activity:'age5',
       detective:'age5',
       coding:'age5',
@@ -3336,71 +3370,106 @@ body{background:linear-gradient(135deg,#fff9fd 0%,#f7f3ff 38%,#effaff 70%,#fffaf
       parenting:'parents'
     };
 
-    cards.forEach(card=>{
-      card.dataset.category=map[card.dataset.productId]||'all';
+    cards.forEach(card => {
+      card.dataset.category = map[card.dataset.productId] || 'all';
       grid.appendChild(card);
     });
 
     wrap.appendChild(filter);
     wrap.appendChild(grid);
 
-    const activity=shop.querySelector('#free-sample');
-    if(activity) wrap.appendChild(activity);
-
-    if(head) head.insertAdjacentElement('afterend',wrap);
+    if(head) head.insertAdjacentElement('afterend', wrap);
     else shop.prepend(wrap);
 
-    blocks.forEach(b=>b.remove());
+    // Keep the original category sections in the DOM so their IDs remain valid
+    // for navigation. They are already hidden by CSS.
+    blocks.forEach(b => {
+      b.setAttribute('aria-hidden','true');
+    });
 
-    window.sbmFilter=function(key){
-      grid.querySelectorAll('.product-card').forEach(card=>{
-        const show=key==='all'||card.dataset.category===key;
-        card.hidden=!show;
-        card.style.display=show?'flex':'none';
+    function applyFilter(key){
+      if(!['all','age5','age8','age13','parents'].includes(key)) key='all';
+
+      grid.querySelectorAll('.product-card').forEach(card => {
+        const show = key === 'all' || card.dataset.category === key;
+        card.hidden = !show;
       });
 
-      filter.querySelectorAll('.sbm-filter-btn').forEach(btn=>{
-        const active=btn.dataset.filter===key;
-        btn.classList.toggle('active',active);
-        btn.setAttribute('aria-selected',active?'true':'false');
+      filter.querySelectorAll('.sbm-filter-btn').forEach(btn => {
+        const active = btn.dataset.filter === key;
+        btn.classList.toggle('active', active);
+        btn.setAttribute('aria-selected', active ? 'true' : 'false');
       });
-    };
 
-    filter.addEventListener('click',function(e){
-      const btn=e.target.closest('.sbm-filter-btn');
+      window.history.replaceState(null,'','#shop');
+    }
+
+    window.sbmFilter = applyFilter;
+
+    filter.addEventListener('click', function(e){
+      const btn = e.target.closest('.sbm-filter-btn');
       if(!btn) return;
       e.preventDefault();
       e.stopPropagation();
-      window.sbmFilter(btn.dataset.filter);
+      applyFilter(btn.dataset.filter);
     });
 
-    const categoryMap={
+    // Category cards: click -> activate correct filter -> scroll to products.
+    const categoryMap = {
       'age-5-8':'age5',
       'age-8-12':'age8',
       'age-13-16':'age13',
       'for-parents':'parents'
     };
 
-    document.querySelectorAll('.sbm-category-card').forEach(card=>{
-      let key='all';
-      const href=card.getAttribute('href')||'';
-      Object.keys(categoryMap).forEach(part=>{
-        if(href.includes(part)) key=categoryMap[part];
+    document.querySelectorAll('.sbm-category-card').forEach(card => {
+      const href = card.getAttribute('href') || '';
+      let key = 'all';
+
+      Object.keys(categoryMap).forEach(part => {
+        if(href.includes(part)) key = categoryMap[part];
       });
-      card.href='#shop';
-      card.addEventListener('click',function(e){
+
+      card.addEventListener('click', function(e){
         e.preventDefault();
         e.stopPropagation();
-        window.sbmFilter(key);
-        shop.scrollIntoView({behavior:'smooth',block:'start'});
+        applyFilter(key);
+        document.getElementById('shop')?.scrollIntoView({
+          behavior:'smooth',
+          block:'start'
+        });
       });
     });
 
-    window.sbmFilter('all');
+    // Top navigation buttons that need filtering.
+    document.querySelectorAll('[data-sbm-nav-filter]').forEach(link => {
+      link.addEventListener('click', function(e){
+        e.preventDefault();
+        const key = link.dataset.sbmNavFilter;
+        applyFilter(key === 'kids' ? 'all' : key);
+        document.getElementById('shop')?.scrollIntoView({
+          behavior:'smooth',
+          block:'start'
+        });
+      });
+    });
+
+    // If someone lands on #for-parents/#age-* directly, activate the right view.
+    const hashMap = {
+      '#for-parents':'parents',
+      '#age-5-8':'age5',
+      '#age-8-12':'age8',
+      '#age-13-16':'age13'
+    };
+    const initialKey = hashMap[window.location.hash] || 'all';
+    applyFilter(initialKey);
+
+    // Expose a small diagnostic flag.
+    window.SBM_FILTERS_READY = true;
   }
 
-  if(document.readyState==='loading'){
-    document.addEventListener('DOMContentLoaded',init);
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', init);
   }else{
     init();
   }

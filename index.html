@@ -1988,6 +1988,17 @@ body{background:#fff;color:var(--sbm-ink)}
 }
 </style>
 
+
+<style id="sbm-carousel-buy-now-fix">
+.sbm-carousel-buy-now{cursor:pointer!important;text-decoration:none!important;}
+</style>
+
+<style id="sbm-final-nav-age-fix">
+/* Final navigation/filter reliability */
+.sbm-store-links a, .sbm-filter-btn, .sbm-category-card{position:relative;z-index:9999!important;pointer-events:auto!important;cursor:pointer!important;}
+.sbm-store-links a{touch-action:manipulation!important;}
+.sbm-filter-btn{user-select:none!important;}
+</style>
 </head>
 <body>
 <div class="sbm-sale-bar">🎁 SMART BRAIN MISSION • AI LEARNING FOR KIDS &amp; PARENTS • DIGITAL PRODUCTS • FREE SAMPLES</div>
@@ -2031,7 +2042,7 @@ body{background:#fff;color:var(--sbm-ink)}
       <div class="sbm-book-meta" id="sbmBookMeta">Ages 8–16 &nbsp; • &nbsp; Digital PDF &nbsp; • &nbsp; Family Learning</div>
       <div class="sbm-book-price-row"><span class="sbm-book-old" id="sbmBookOld">₹499</span><strong id="sbmBookPrice">₹299</strong><span class="sbm-book-offer">DIGITAL PDF</span></div>
       <div class="sbm-hero-actions">
-        <a class="sbm-store-btn primary" id="sbmBookCTA" href="#shop">📚 View Book &amp; Buy →</a>
+        <a class="sbm-store-btn primary sbm-carousel-buy-now" id="sbmBookCTA" href="#" role="button">🛒 Buy Now →</a>
         <a class="sbm-store-btn yellow" href="assets/AI%20ACTIVITY%20SAMPLE%20PACK.pdf" target="_blank" rel="noopener">🎁 Get Free Sample</a>
       </div>
       <div class="sbm-lwm-mini-trust">✓ Digital PDFs &nbsp; • &nbsp; ✓ Free Samples &nbsp; • &nbsp; ✓ Age-wise Learning &nbsp; • &nbsp; ✓ Parent Friendly</div>
@@ -2040,13 +2051,13 @@ body{background:#fff;color:var(--sbm-ink)}
       <div class="sbm-book-stage">
         <div class="sbm-book-glow"></div>
         <div class="sbm-book-slides" id="sbmBookSlides">
-          <div class="sbm-book-slide active" data-eyebrow="FEATURED AI BOOK" data-title="AI: Kal Se Aaj Tak… Aur Aane Wala Kal" data-desc="A simple AI journey for curious minds and families — from the world before AI to how AI is changing our lives and shaping tomorrow." data-meta="Ages 8–16 • Digital PDF • Family Learning" data-old="₹499" data-price="₹299" data-cta="View Book & Buy →" data-target="#ai-book"><img src="assets/ai-book-cover.png" alt="AI: Kal Se Aaj Tak book cover"></div>
-          <div class="sbm-book-slide" data-eyebrow="FOR PARENTS" data-title="AI Parenting Guide" data-desc="A practical guide to help parents understand AI, support their child and build safe, smart AI habits at home." data-meta="For Parents • 56 Pages • Digital PDF" data-old="₹699" data-price="₹499" data-cta="View Parenting Guide →" data-target="#for-parents"><img src="assets/ai-parenting-guide-cover.png" alt="AI Parenting Guide cover"></div>
-          <div class="sbm-book-slide" data-eyebrow="AGES 5–8 • SCREEN-FREE" data-title="My First AI Activity Pack" data-desc="Fun printable activities that build curiosity, observation, patterns and smart thinking without screen time." data-meta="Ages 5–8 • 30 Pages • Printable PDF" data-old="₹119" data-price="₹59" data-cta="Explore Activity Pack →" data-target="#age-5-8"><img src="assets/my-first-ai-cover.png" alt="My First AI Activity Pack cover"></div>
-          <div class="sbm-book-slide" data-eyebrow="AGES 5–8 • DISCOVER" data-title="AI Detective Pack" data-desc="Clues, mysteries and observation challenges that help kids explore AI in everyday life." data-meta="Ages 5–8 • 30 Pages • Printable PDF" data-old="₹119" data-price="₹59" data-cta="Explore AI Detective →" data-target="#age-5-8"><img src="assets/ai-detective-cover.png" alt="AI Detective Pack cover"></div>
-          <div class="sbm-book-slide" data-eyebrow="AGES 5–8 • LOGIC" data-title="AI & Coding Logic Pack" data-desc="Build sequences, algorithms and step-by-step problem-solving skills through fun coding activities." data-meta="Ages 5–8 • 30 Pages • Printable PDF" data-old="₹119" data-price="₹59" data-cta="Explore Coding Logic →" data-target="#age-5-8"><img src="assets/ai-coding-cover.png" alt="AI & Coding Logic Pack cover"></div>
-          <div class="sbm-book-slide" data-eyebrow="AGES 8–12 • HANDS-ON AI" data-title="Think Like AI Pack" data-desc="Explore patterns, algorithms, prompts, AI safety and creative projects through hands-on activities." data-meta="Ages 8–12 • 36 Pages • Printable PDF" data-old="₹199" data-price="₹149" data-cta="Explore Think Like AI →" data-target="#age-8-12"><img src="assets/think-like-ai-cover.png" alt="Think Like AI Pack cover"></div>
-          <div class="sbm-book-slide" data-eyebrow="AGES 13–16 • CREATE" data-title="Prompt Engineer Pack" data-desc="Learn prompt engineering and turn clear ideas into better AI instructions and results." data-meta="Ages 13–16 • Digital PDF • Prompt Engineering" data-old="₹299" data-price="₹149" data-cta="Explore Prompt Engineer →" data-target="#age-13-16"><img src="assets/prompt-engineer-cover.png" alt="Prompt Engineer Pack cover"></div>
+          <div class="sbm-book-slide active" data-eyebrow="FEATURED AI BOOK" data-product-id="book" data-title="AI: Kal Se Aaj Tak… Aur Aane Wala Kal" data-desc="A simple AI journey for curious minds and families — from the world before AI to how AI is changing our lives and shaping tomorrow." data-meta="Ages 8–16 • Digital PDF • Family Learning" data-old="₹499" data-price="₹299" data-cta="View Book & Buy →" data-target="#ai-book"><img src="assets/ai-book-cover.png" alt="AI: Kal Se Aaj Tak book cover"></div>
+          <div class="sbm-book-slide" data-eyebrow="FOR PARENTS" data-product-id="parenting" data-title="AI Parenting Guide" data-desc="A practical guide to help parents understand AI, support their child and build safe, smart AI habits at home." data-meta="For Parents • 56 Pages • Digital PDF" data-old="₹699" data-price="₹499" data-cta="View Parenting Guide →" data-target="#for-parents"><img src="assets/ai-parenting-guide-cover.png" alt="AI Parenting Guide cover"></div>
+          <div class="sbm-book-slide" data-eyebrow="AGES 5–8 • SCREEN-FREE" data-product-id="activity" data-title="My First AI Activity Pack" data-desc="Fun printable activities that build curiosity, observation, patterns and smart thinking without screen time." data-meta="Ages 5–8 • 30 Pages • Printable PDF" data-old="₹119" data-price="₹59" data-cta="Explore Activity Pack →" data-target="#age-5-8"><img src="assets/my-first-ai-cover.png" alt="My First AI Activity Pack cover"></div>
+          <div class="sbm-book-slide" data-eyebrow="AGES 5–8 • DISCOVER" data-product-id="detective" data-title="AI Detective Pack" data-desc="Clues, mysteries and observation challenges that help kids explore AI in everyday life." data-meta="Ages 5–8 • 30 Pages • Printable PDF" data-old="₹119" data-price="₹59" data-cta="Explore AI Detective →" data-target="#age-5-8"><img src="assets/ai-detective-cover.png" alt="AI Detective Pack cover"></div>
+          <div class="sbm-book-slide" data-eyebrow="AGES 5–8 • LOGIC" data-product-id="coding" data-title="AI & Coding Logic Pack" data-desc="Build sequences, algorithms and step-by-step problem-solving skills through fun coding activities." data-meta="Ages 5–8 • 30 Pages • Printable PDF" data-old="₹119" data-price="₹59" data-cta="Explore Coding Logic →" data-target="#age-5-8"><img src="assets/ai-coding-cover.png" alt="AI & Coding Logic Pack cover"></div>
+          <div class="sbm-book-slide" data-eyebrow="AGES 8–12 • HANDS-ON AI" data-product-id="think-ai" data-title="Think Like AI Pack" data-desc="Explore patterns, algorithms, prompts, AI safety and creative projects through hands-on activities." data-meta="Ages 8–12 • 36 Pages • Printable PDF" data-old="₹199" data-price="₹149" data-cta="Explore Think Like AI →" data-target="#age-8-12"><img src="assets/think-like-ai-cover.png" alt="Think Like AI Pack cover"></div>
+          <div class="sbm-book-slide" data-eyebrow="AGES 13–16 • CREATE" data-product-id="prompt" data-title="Prompt Engineer Pack" data-desc="Learn prompt engineering and turn clear ideas into better AI instructions and results." data-meta="Ages 13–16 • Digital PDF • Prompt Engineering" data-old="₹299" data-price="₹149" data-cta="Explore Prompt Engineer →" data-target="#age-13-16"><img src="assets/prompt-engineer-cover.png" alt="Prompt Engineer Pack cover"></div>
         </div>
         <button class="sbm-book-arrow sbm-book-prev" type="button" aria-label="Previous book">‹</button>
         <button class="sbm-book-arrow sbm-book-next" type="button" aria-label="Next book">›</button>
@@ -3168,11 +3179,22 @@ document.addEventListener('click',function(e){
     slides.forEach((s,i)=>s.classList.toggle('active',i===index));
     dots.forEach((d,i)=>d.classList.toggle('active',i===index));
     const s=slides[index].dataset;
-    eyebrow.textContent=s.eyebrow; title.textContent=s.title; desc.textContent=s.desc; meta.textContent=s.meta; oldPrice.textContent=s.old; price.textContent=s.price; cta.textContent='📚 '+s.cta; cta.href=s.target; counter.textContent=String(index+1);
+    eyebrow.textContent=s.eyebrow; title.textContent=s.title; desc.textContent=s.desc; meta.textContent=s.meta; oldPrice.textContent=s.old; price.textContent=s.price; cta.textContent='🛒 Buy Now →'; cta.href='#'; cta.dataset.productId=s.productId||''; counter.textContent=String(index+1);
   }
   function restart(){clearInterval(timer);timer=setInterval(()=>show(index+1),4500)}
   document.querySelector('.sbm-book-next')?.addEventListener('click',()=>{show(index+1);restart()});
   document.querySelector('.sbm-book-prev')?.addEventListener('click',()=>{show(index-1);restart()});
+  cta?.addEventListener('click',function(e){
+    e.preventDefault();
+    const pid=this.dataset.productId;
+    if(!pid) return;
+    const buy=document.querySelector('.sbm-razorpay-test-btn[data-sbm-product-id="'+pid+'"]');
+    if(buy){ buy.click(); }
+    else {
+      const card=document.querySelector('[data-product-id="'+pid+'"]');
+      if(card) card.scrollIntoView({behavior:'smooth',block:'center'});
+    }
+  });
   show(0);restart();
 })();
 </script>
@@ -3221,7 +3243,7 @@ document.addEventListener('click',function(e){
 })();
 </script>
 
-</body>
+\n<script id="sbm-final-nav-age-fix-js">\n(function(){\n  function ready(fn){\n    if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',fn);\n    else fn();\n  }\n  ready(function(){\n    function shop(){ return document.querySelector('.sbm-products-section'); }\n    function scrollShop(){ const s=shop(); if(s) s.scrollIntoView({behavior:'smooth',block:'start'}); }\n    function filter(key){\n      if(typeof window.sbmFilter==='function'){\n        window.sbmFilter(key);\n      } else {\n        const buttons=document.querySelectorAll('.sbm-filter-btn');\n        const cards=document.querySelectorAll('.sbm-all-products-grid .product-card');\n        cards.forEach(card=>{\n          const show=key==='all'||card.dataset.category===key;\n          card.hidden=!show; card.style.display=show?'flex':'none';\n        });\n        buttons.forEach(b=>{\n          const active=b.dataset.filter===key;\n          b.classList.toggle('active',active);\n          b.setAttribute('aria-selected',active?'true':'false');\n        });\n      }\n      scrollShop();\n    }\n\n    /* Top navigation: do not depend on removed category-block IDs. */\n    document.querySelectorAll('.sbm-store-links a').forEach(a=>{\n      const text=(a.textContent||'').trim().toLowerCase();\n      if(text==='for parents'){\n        a.addEventListener('click',function(e){ e.preventDefault(); e.stopPropagation(); filter('parents'); },true);\n      }\n      if(text==='for kids'){\n        a.addEventListener('click',function(e){\n          e.preventDefault(); e.stopPropagation();\n          /* Kids = all three child age groups */\n          if(typeof window.sbmFilter==='function'){\n            const grid=document.querySelector('.sbm-all-products-grid');\n            if(grid){\n              grid.querySelectorAll('.product-card').forEach(card=>{\n                const show=['age5','age8','age13'].includes(card.dataset.category);\n                card.hidden=!show; card.style.display=show?'flex':'none';\n              });\n              document.querySelectorAll('.sbm-filter-btn').forEach(b=>{\n                b.classList.toggle('active',b.dataset.filter==='all');\n                b.setAttribute('aria-selected','false');\n              });\n            }\n          }\n          scrollShop();\n        },true);\n      }\n    });\n\n    /* Make the age-filter pills reliable even if another script/style interferes. */\n    document.addEventListener('click',function(e){\n      const btn=e.target.closest && e.target.closest('.sbm-filter-btn');\n      if(!btn) return;\n      e.preventDefault(); e.stopPropagation();\n      const key=btn.dataset.filter;\n      if(key) filter(key);\n    },true);\n  });\n})();\n</script>\n</body>
 </html>
 
 <style id="sbm-wow-v3">

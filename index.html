@@ -1502,6 +1502,90 @@ section#trust.trust-section{padding:58px 0 54px!important;background:linear-grad
 }
 </style>
 
+<style id="sbm-unified-product-card-style">
+/* ===== UNIFIED PRODUCT CARD STYLE ===== */
+.pack-products{align-items:stretch!important}
+.pack-products .product-card{
+  display:flex!important;
+  flex-direction:column!important;
+  height:100%!important;
+  padding:22px!important;
+}
+.pack-products .product-card .pack-cover{
+  width:100%!important;
+  height:245px!important;
+  object-fit:cover!important;
+  object-position:center top!important;
+  border-radius:18px!important;
+  margin:0 0 14px!important;
+  background:#fff!important;
+  box-shadow:0 12px 28px rgba(38,16,79,.13)!important;
+}
+.pack-products .product-card .product-icon{
+  height:34px!important;
+  font-size:30px!important;
+  line-height:34px!important;
+  margin:0 0 5px!important;
+}
+.pack-products .product-card h3{
+  min-height:58px!important;
+  display:flex!important;
+  flex-wrap:wrap!important;
+  align-items:flex-start!important;
+  align-content:flex-start!important;
+  font-size:22px!important;
+  line-height:1.18!important;
+  margin:0 0 8px!important;
+}
+.pack-products .product-card .product-price{margin-left:4px!important}
+.pack-products .product-card .sample-copy{
+  min-height:60px!important;
+  margin:0 0 10px!important;
+  font-size:13px!important;
+  line-height:1.5!important;
+}
+.pack-products .product-card .pack-meta{
+  min-height:24px!important;
+  margin:0 0 12px!important;
+  line-height:1.45!important;
+}
+.pack-products .product-card .sample-btn{
+  align-self:center!important;
+  min-height:58px!important;
+  min-width:190px!important;
+  margin:0 auto 10px!important;
+}
+.pack-products .product-card .paybtn{
+  width:100%!important;
+  min-height:46px!important;
+  margin:0!important;
+}
+.pack-products .product-card .payment-note{
+  min-height:30px!important;
+  margin:8px 0 0!important;
+}
+/* Remove special card treatments that made some products look different */
+.pack-products .parenting-guide-card,
+.pack-products .think-like-ai-product-card,
+.pack-products .prompt-product-card,
+.pack-products .ai-book-product-card{
+  border-top:5px solid transparent!important;
+}
+.pack-products .parenting-guide-card{border-top-color:#e83e9f!important}
+.pack-products .ai-book-product-card{border-top-color:#6d28d9!important}
+.pack-products .think-like-ai-product-card{border-top-color:#f4ad22!important}
+.pack-products .prompt-product-card{border-top-color:#d92b89!important}
+.pack-products .parenting-guide-card .parenting-guide-cover{height:245px!important;object-fit:cover!important}
+@media(max-width:900px){
+  .pack-products .product-card .pack-cover,
+  .pack-products .parenting-guide-card .parenting-guide-cover{height:220px!important}
+}
+@media(max-width:560px){
+  .pack-products .product-card .pack-cover,
+  .pack-products .parenting-guide-card .parenting-guide-cover{height:300px!important;object-fit:contain!important}
+  .pack-products .product-card h3{font-size:19px!important;min-height:52px!important}
+}
+</style>
 </head>
 <body>
 
@@ -1586,7 +1670,7 @@ section#trust.trust-section{padding:58px 0 54px!important;background:linear-grad
           <span><b>AI &amp; Coding Logic Pack</b><small>Logic, sequences &amp; coding basics</small></span>
         </a>
 
-        <a class="age-see-all" href="#pack">See pack details ↓</a>
+        <a class="age-see-all" href="#pack">View pack details ↓</a>
       </article>
 
       <article class="age-path age-9">
@@ -1739,15 +1823,6 @@ section#trust.trust-section{padding:58px 0 54px!important;background:linear-grad
         <h3>AI Parenting Guide <span class="product-price">— <span class="sbm-original-price">₹699</span> <b>₹499</b></span></h3>
         <p class="sample-copy">A practical guide that helps parents understand AI, support their child and build safe, smart AI habits.</p>
         <div class="pack-meta">📘 56 Pages &nbsp;•&nbsp; 👨‍👩‍👧 For Parents &nbsp;•&nbsp; 💻 Digital PDF</div>
-
-        <div class="parenting-guide-mini-points">
-          <span>🤖 AI ko samjhein</span>
-          <span>🛡️ AI Safety</span>
-          <span>🧠 Critical Thinking</span>
-          <span>📚 AI aur Padhai</span>
-          <span>🎯 Age-wise Guidance</span>
-          <span>👨‍👩‍👧 Parent–Child AI Rules</span>
-        </div>
 
         <a class="sample-btn"
            href="assets/AI%20PARENTING%20GUIDE%20SAMPLE.pdf"

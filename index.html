@@ -1827,6 +1827,167 @@ body{background:#fff;color:var(--sbm-ink)}
 @media(max-width:900px){.sbm-youtube-box-v4{grid-template-columns:1fr!important}.sbm-youtube-visual{min-height:240px!important}}
 @media(max-width:620px){#refund .sbm-refund{padding:25px 20px!important;border-radius:22px!important}#refund .sbm-section-head h2{font-size:38px!important}.sbm-youtube-box-v4{padding:22px!important;border-radius:24px!important}.sbm-youtube-copy h2{font-size:29px!important}.sbm-youtube-visual{min-height:210px!important}}
 </style>
+
+<style id="sbm-category-wow-fix">
+/* ===== FOUR LEARNING PATHS — COLORFUL, NOT BLANK ===== */
+.sbm-category-cards{
+  display:grid!important;
+  grid-template-columns:repeat(4,1fr)!important;
+  gap:18px!important;
+  margin-top:30px!important;
+}
+
+.sbm-category-card{
+  min-height:320px!important;
+  padding:0!important;
+  border:1px solid rgba(80,40,130,.12)!important;
+  border-radius:28px!important;
+  overflow:hidden!important;
+  position:relative!important;
+  background:#fff!important;
+  box-shadow:0 18px 45px rgba(50,25,90,.10)!important;
+  transition:transform .22s ease,box-shadow .22s ease!important;
+}
+
+.sbm-category-card:hover{
+  transform:translateY(-7px)!important;
+  box-shadow:0 28px 60px rgba(50,25,90,.16)!important;
+}
+
+/* Colorful visual header — no external image required */
+.sbm-category-card::before{
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  height:142px!important;
+  flex:0 0 142px!important;
+  background-image:none!important;
+  position:relative!important;
+  font-size:56px!important;
+  content:"🧩"!important;
+}
+
+.sbm-category-card::after{
+  content:""!important;
+  position:absolute!important;
+  width:125px!important;
+  height:125px!important;
+  border-radius:50%!important;
+  top:-48px!important;
+  right:-38px!important;
+  background:rgba(255,255,255,.20)!important;
+  pointer-events:none!important;
+}
+
+.sbm-category-card.cat-5::before{
+  content:"🌱  🤖"!important;
+  background:
+    radial-gradient(circle at 22% 28%,rgba(255,255,255,.42),transparent 22%),
+    linear-gradient(135deg,#c8f7df,#72d8ff 52%,#8d5cf6)!important;
+}
+
+.sbm-category-card.cat-8::before{
+  content:"🧠  ⚙️"!important;
+  background:
+    radial-gradient(circle at 78% 22%,rgba(255,255,255,.45),transparent 23%),
+    linear-gradient(135deg,#ffd6ed,#b9c8ff 52%,#d34fbd)!important;
+}
+
+.sbm-category-card.cat-13::before{
+  content:"🚀  💡"!important;
+  background:
+    radial-gradient(circle at 25% 30%,rgba(255,255,255,.42),transparent 23%),
+    linear-gradient(135deg,#d9ccff,#8f8bff 50%,#ff79ae)!important;
+}
+
+.sbm-category-card.cat-parent::before{
+  content:"👨‍👩‍👧  🛡️"!important;
+  background:
+    radial-gradient(circle at 72% 25%,rgba(255,255,255,.46),transparent 23%),
+    linear-gradient(135deg,#fff0bf,#ffd1df 50%,#a8d8ff)!important;
+}
+
+.sbm-category-card>div{
+  padding:22px 22px 0!important;
+  position:relative!important;
+  z-index:2!important;
+}
+
+.sbm-category-card small{
+  display:inline-block!important;
+  font-size:11px!important;
+  font-weight:950!important;
+  letter-spacing:1px!important;
+  color:#7027d8!important;
+  margin-bottom:4px!important;
+}
+
+.sbm-category-card h3{
+  font-size:23px!important;
+  line-height:1.15!important;
+  color:#24163f!important;
+  margin:6px 0 9px!important;
+  letter-spacing:-.3px!important;
+}
+
+.sbm-category-card p{
+  font-size:13px!important;
+  line-height:1.55!important;
+  color:#625b70!important;
+  margin:0!important;
+}
+
+.sbm-category-card>b{
+  display:inline-flex!important;
+  align-items:center!important;
+  gap:5px!important;
+  margin:18px 22px 22px!important;
+  padding:10px 15px!important;
+  border-radius:999px!important;
+  background:linear-gradient(135deg,#6123c8,#ed2f91)!important;
+  color:#fff!important;
+  font-size:12px!important;
+  font-weight:950!important;
+  box-shadow:0 8px 18px rgba(109,40,217,.20)!important;
+  position:relative!important;
+  z-index:3!important;
+}
+
+/* Small color strip makes the four cards feel like a real learning system */
+.sbm-category-card.cat-5{border-top:5px solid #45c98a!important}
+.sbm-category-card.cat-8{border-top:5px solid #d34fbd!important}
+.sbm-category-card.cat-13{border-top:5px solid #7654df!important}
+.sbm-category-card.cat-parent{border-top:5px solid #f1b84b!important}
+
+/* Keep the heading area clean and premium */
+.sbm-category-section{
+  padding-top:65px!important;
+  padding-bottom:65px!important;
+}
+
+/* Responsive */
+@media(max-width:1050px){
+  .sbm-category-cards{grid-template-columns:1fr 1fr!important}
+}
+
+@media(max-width:620px){
+  .sbm-category-cards{
+    grid-template-columns:1fr!important;
+    gap:14px!important;
+  }
+  .sbm-category-card{min-height:290px!important}
+  .sbm-category-card::before{
+    height:115px!important;
+    flex-basis:115px!important;
+    font-size:44px!important;
+  }
+  .sbm-category-card>div{padding:18px 18px 0!important}
+  .sbm-category-card h3{font-size:21px!important}
+  .sbm-category-card p{font-size:12px!important}
+  .sbm-category-card>b{margin:15px 18px 18px!important}
+}
+</style>
+
 </head>
 <body>
 <div class="sbm-sale-bar">🎁 SMART BRAIN MISSION • AI LEARNING FOR KIDS &amp; PARENTS • DIGITAL PRODUCTS • FREE SAMPLES</div>

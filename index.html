@@ -1245,6 +1245,13 @@ section#trust.trust-section{padding:58px 0 54px!important;background:linear-grad
   gap:18px;
   margin-top:30px;
 }
+/* Keep the 4th (Parents) card centered when it wraps to the second row */
+.age-path-grid .age-parents{
+  grid-column:2;
+}
+@media(max-width:850px){
+  .age-path-grid .age-parents{grid-column:auto;}
+}
 .age-path{
   position:relative;
   border-radius:26px;
@@ -1710,7 +1717,7 @@ section#trust.trust-section{padding:58px 0 54px!important;background:linear-grad
         <img class="pack-cover" src="assets/ai-book-cover.png" alt="AI: Kal Se Aaj Tak… Aur Aane Wala Kal book cover">
         <div class="product-icon">📘</div>
         <h3>AI: Kal Se Aaj Tak… Aur Aane Wala Kal <span class="product-price">— <span class="sbm-original-price">₹499</span> <b>₹299</b></span></h3>
-        <p class="sample-copy">The story of Artificial Intelligence — from the world before AI to today's AI and the future.</p>
+        <p class="sample-copy">A simple, engaging AI learning book that helps curious minds understand AI, its journey and the future.</p>
         <div class="pack-meta">📘 Family Learning &nbsp;•&nbsp; 🎯 Ages 8–16 Years</div>
         <a class="sample-btn" href="assets/AI%20SAMPLE%20BOOK.pdf" target="_blank" rel="noopener">🎁 View Sample <small>(Free Preview)</small></a>
         <button class="paybtn sbm-razorpay-test-btn" type="button"
@@ -1730,7 +1737,7 @@ section#trust.trust-section{padding:58px 0 54px!important;background:linear-grad
         <div class="parenting-cover-fallback">👨‍👩‍👧</div>
         <div class="product-icon">👨‍👩‍👧</div>
         <h3>AI Parenting Guide <span class="product-price">— <span class="sbm-original-price">₹699</span> <b>₹499</b></span></h3>
-        <p class="sample-copy">Apne bachche ko AI ke daur ke liye ready karne ki Practical Guide.</p>
+        <p class="sample-copy">A practical guide that helps parents understand AI, support their child and build safe, smart AI habits.</p>
         <div class="pack-meta">📘 56 Pages &nbsp;•&nbsp; 👨‍👩‍👧 For Parents &nbsp;•&nbsp; 💻 Digital PDF</div>
 
         <div class="parenting-guide-mini-points">
@@ -1758,7 +1765,7 @@ section#trust.trust-section{padding:58px 0 54px!important;background:linear-grad
 
       <div class="pay-card product-card">
         <img class="pack-cover" src="assets/my-first-ai-cover.png" alt="My First AI Activity Pack cover"><div class="product-icon">📱</div><h3>My First AI Activity Pack <span class="product-price">— <span class="sbm-original-price">₹119</span> <b>₹59</b></span></h3>
-        <p class="sample-copy">Fun, screen-free AI activities that build curiosity, observation and smart thinking.</p>
+        <p class="sample-copy">A fun, screen-free activity pack designed to build curiosity, observation and smart thinking.</p>
         <div class="pack-meta">📘 30 Pages &nbsp;•&nbsp; 🎯 Ages 5–8 Years</div>
         <a class="sample-btn" href="assets/AI%20ACTIVITY%20SAMPLE%20PACK.pdf" target="_blank">🎁 View Sample <small>(Free Preview)</small></a>
         <button class="paybtn sbm-razorpay-test-btn" type="button"
@@ -1768,7 +1775,7 @@ section#trust.trust-section{padding:58px 0 54px!important;background:linear-grad
       </div>
       <div class="pay-card product-card">
         <img class="pack-cover" src="assets/ai-detective-cover.png" alt="AI Detective Pack cover"><div class="product-icon">🕵️</div><h3>AI Detective Pack <span class="product-price">— <span class="sbm-original-price">₹119</span> <b>₹59</b></span></h3>
-        <p class="sample-copy">Clues, mysteries and observation challenges that help kids explore AI in everyday life.</p>
+        <p class="sample-copy">A fun activity pack designed to build observation, problem-solving and AI thinking through everyday challenges.</p>
         <div class="pack-meta">📘 30 Pages &nbsp;•&nbsp; 🎯 Ages 5–8 Years</div>
         <a class="sample-btn detective-btn" href="assets/AI%20DETECTIVE%20SAMPLE%20PACK.pdf" target="_blank">🎁 View Sample <small>(Free Preview)</small></a>
         <button class="paybtn detective-pay sbm-razorpay-test-btn" type="button"
@@ -1778,7 +1785,7 @@ section#trust.trust-section{padding:58px 0 54px!important;background:linear-grad
       </div>
       <div class="pay-card product-card">
         <img class="pack-cover" src="assets/ai-coding-cover.png" alt="AI &amp; Coding Logic Pack cover"><div class="product-icon">🤖</div><h3>AI &amp; Coding Logic Pack <span class="product-price">— <span class="sbm-original-price">₹119</span> <b>₹59</b></span></h3>
-        <p class="sample-copy">Build logic, sequences and step-by-step thinking through fun, screen-free coding activities.</p>
+        <p class="sample-copy">A fun, screen-free activity pack designed to build logic, patterns and step-by-step problem-solving skills.</p>
         <div class="pack-meta">📘 30 Pages &nbsp;•&nbsp; 🎯 Ages 5–8 Years</div>
         <a class="sample-btn" href="/assets/AI%20CODING%20SAMPLE%20PACK.pdf" target="_blank">🎁 View Sample <small>(Free Preview)</small></a>
         <button class="paybtn sbm-razorpay-test-btn" type="button"
@@ -1791,7 +1798,7 @@ section#trust.trust-section{padding:58px 0 54px!important;background:linear-grad
         <img class="pack-cover think-like-ai-cover" src="assets/think-like-ai-cover.png" alt="Think Like AI Pack cover">
         <div class="product-icon">💡</div>
         <h3>Think Like AI Pack <span class="product-price">— <span class="sbm-original-price">₹199</span> <b>₹149</b></span></h3>
-        <p class="sample-copy">A hands-on activity pack for curious minds — explore AI, patterns, algorithms, prompts, safety and creative AI projects.</p>
+        <p class="sample-copy">A hands-on activity pack designed to build AI thinking through patterns, algorithms, prompts, safety and creative projects.</p>
         <div class="pack-meta">📘 36 Pages &nbsp;•&nbsp; 🎯 Ages 8–12 Years</div>
         <a class="sample-btn" href="assets/THINK%20LIKE%20AI%20SAMPLE%20PACK.pdf" target="_blank" rel="noopener">🎁 View Sample <small>(Free Preview)</small></a>
         <button class="paybtn sbm-razorpay-test-btn think-pay-btn" type="button"
@@ -1804,7 +1811,7 @@ section#trust.trust-section{padding:58px 0 54px!important;background:linear-grad
         <img class="pack-cover" src="assets/prompt-engineer-cover.png" alt="Prompt Engineer Pack cover">
         <div class="product-icon">🧠</div>
         <h3>Prompt Engineer Pack <span class="product-price">— <span class="sbm-original-price">₹299</span> <b>₹149</b></span></h3><div style="font-size:12px;font-weight:700;color:#d62987;margin:4px 0 8px">Offer valid up to 30 Sep 2026</div>
-        <p class="sample-copy">Learn prompt engineering and turn clear ideas into better AI instructions and results.</p>
+        <p class="sample-copy">A practical learning pack designed to build prompt skills and turn clear ideas into better AI instructions and results.</p>
         <div class="pack-meta">📘 38 Pages &nbsp;•&nbsp; 🎯 Ages 13–16 Years</div>
         <a class="sample-btn" href="assets/AI%20PROMPT%20ENGINEERING%20SAMPLE%20BOOK.pdf" target="_blank" rel="noopener">🎁 View Sample <small>(Free Preview)</small></a>
         <button class="paybtn sbm-razorpay-test-btn" type="button"

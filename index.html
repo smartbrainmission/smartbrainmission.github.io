@@ -1372,13 +1372,26 @@ section#trust.trust-section{padding:58px 0 54px!important;background:linear-grad
 </style>
 <style id="sbm-blog-style">
 .sbm-blog-section{background:linear-gradient(135deg,#fffaff 0%,#f7f2ff 52%,#eefaff 100%)}
-.sbm-blog-card{max-width:900px;margin:28px auto 0;display:flex;align-items:center;gap:24px;background:rgba(255,255,255,.96);border:1px solid #e6d9f2;border-radius:26px;padding:24px;box-shadow:0 16px 38px rgba(55,30,95,.10)}
-.sbm-blog-icon{width:82px;height:82px;flex:0 0 82px;border-radius:22px;display:grid;place-items:center;background:linear-gradient(135deg,#eee1ff,#ffe4f3);font-size:38px}
-.sbm-blog-label{font-size:10px;font-weight:900;letter-spacing:.08em;color:#9a5a9f}
-.sbm-blog-copy h3{font-size:25px;line-height:1.2;color:#32145f;margin:6px 0 8px}
-.sbm-blog-copy p{font-size:14px;line-height:1.55;color:#697080;margin:0 0 15px}
-.sbm-blog-btn{display:inline-flex;align-items:center;justify-content:center;padding:11px 16px;border-radius:11px;background:linear-gradient(135deg,#5620bd,#e13b9d);color:#fff!important;font-size:13px;font-weight:900;box-shadow:0 8px 18px rgba(86,32,189,.18)}
-@media(max-width:600px){.sbm-blog-card{flex-direction:column;text-align:center;padding:20px}.sbm-blog-copy h3{font-size:21px}.sbm-blog-copy p{font-size:13px}}
+.sbm-blog-mini{max-width:1120px!important;margin:38px auto 10px!important;padding:38px 30px!important;border-radius:30px!important;background:linear-gradient(135deg,#fff8fd,#f5efff 52%,#eefaff)!important;border:1px solid #e4d8f1!important;display:block!important;box-shadow:0 18px 45px rgba(55,30,95,.08)}
+.sbm-blog-head{text-align:center;margin-bottom:26px}
+.sbm-blog-head .sbm-blog-label{font-size:11px;font-weight:950;letter-spacing:1px;color:#e83e9f}
+.sbm-blog-head h2{font-size:42px;line-height:1.08;color:#281644;margin:8px 0}
+.sbm-blog-head p{max-width:720px;margin:0 auto;color:#6b6573;font-size:15px;line-height:1.6}
+.sbm-blog-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.sbm-article{background:#fff;border:1px solid #eadff3;border-radius:20px;padding:20px;box-shadow:0 10px 28px rgba(55,30,95,.08);transition:.2s}
+.sbm-article:hover{transform:translateY(-3px);box-shadow:0 16px 34px rgba(55,30,95,.12)}
+.sbm-article .icon{width:48px;height:48px;border-radius:15px;display:grid;place-items:center;font-size:25px;background:linear-gradient(135deg,#eee1ff,#ffe4f3);margin-bottom:14px}
+.sbm-article:nth-child(2) .icon{background:linear-gradient(135deg,#e4f4ff,#e8e0ff)}
+.sbm-article:nth-child(3) .icon{background:linear-gradient(135deg,#fff0cf,#ffe3ef)}
+.sbm-article:nth-child(4) .icon{background:linear-gradient(135deg,#e2fff0,#e6f1ff)}
+.sbm-article .tag{font-size:10px;font-weight:900;letter-spacing:.7px;color:#e83e9f}
+.sbm-article h3{font-size:19px;line-height:1.25;color:#281644;margin:7px 0 8px}
+.sbm-article>p{font-size:13px;line-height:1.55;color:#697080;margin:0 0 13px}
+.sbm-article details{border-top:1px solid #eee5f5;padding-top:11px}
+.sbm-article summary{cursor:pointer;color:#5b21b6;font-size:12px;font-weight:900}
+.sbm-article details p{font-size:12px;line-height:1.65;color:#55505d;margin:10px 0 0}
+@media(max-width:900px){.sbm-blog-grid{grid-template-columns:repeat(2,1fr)}.sbm-blog-head h2{font-size:34px}}
+@media(max-width:600px){.sbm-blog-mini{padding:28px 18px!important}.sbm-blog-grid{grid-template-columns:1fr}.sbm-blog-head h2{font-size:28px}}
 </style>
 <style id="sbm-whatsapp-lead-capture">
 .sbm-wa-float{position:fixed;right:18px;bottom:18px;z-index:9999;display:flex;align-items:center;gap:9px;padding:12px 16px;border-radius:999px;background:linear-gradient(135deg,#18b95f,#25d366);color:#fff!important;font-size:13px;font-weight:900;box-shadow:0 12px 28px rgba(20,140,75,.28);text-decoration:none!important;transition:transform .2s,box-shadow .2s}
@@ -1888,7 +1901,43 @@ body{background:#fff;color:var(--sbm-ink)}
     <div class="sbm-youtube-visual"><img src="assets/sbm-hero-2.png" alt="Smart Brain Mission free AI learning video preview"><div>🎬 FREE AI LEARNING</div></div>
   </div>
 </section><section class="sbm-store-section" id="refund"><div class="sbm-section-head"><div class="kicker">📄 REFUND POLICY</div><h2>Our Refund Policy</h2></div><div class="sbm-refund"><p><b>Refund window: 7 days.</b> Digital products download hone ke baad return nahi kiye ja sakte, isliye purchase se pehle free sample zaroor dekhein.</p><ul><li>Technical issue: file download/open nahi ho rahi ho.</li><li>Duplicate payment: same product ke liye accidental duplicate payment.</li><li>Product description mismatch: delivered product materially described product se match na kare.</li><li>Wrong age-group purchase: exchange option pehle provide kiya jayega where applicable.</li><li>Change of mind ya child ko product pasand na aane par refund applicable nahi hai.</li></ul><p>Refund request ke liye 7 din ke andar WhatsApp/email par order ID ya payment ID bhejein. Verification ke baad approved refund 5–7 working days mein original payment method par process kiya jayega.</p></div></section>
-<section class="sbm-blog-mini" id="blog"><div><span>📝 SMART BRAIN MISSION BLOG</span><h2>AI learning ideas for kids &amp; parents</h2><p>Short, practical articles about AI, digital safety, creativity and future skills.</p></div><a class="sbm-store-btn light" href="#contact">Blog updates coming soon →</a></section><section class="sbm-about-final" id="about">
+<section class="sbm-blog-mini" id="blog">
+  <div class="sbm-blog-head">
+    <div class="sbm-blog-label">📝 SMART BRAIN MISSION BLOG</div>
+    <h2>AI learning ideas for kids &amp; parents</h2>
+    <p>Short, practical reads to help families understand AI, use technology thoughtfully and build future-ready skills together.</p>
+  </div>
+  <div class="sbm-blog-grid">
+    <article class="sbm-article">
+      <div class="icon">🤖</div>
+      <div class="tag">AI BASICS • KIDS</div>
+      <h3>AI kya hai? Bachchon ko simple way mein kaise samjhayein</h3>
+      <p>AI ko difficult technical words ke bina everyday examples se explain karne ka simple approach.</p>
+      <details><summary>Read article →</summary><p>AI ko ek aisi technology ke roop mein samjha sakte hain jo examples aur data se patterns seekhkar kuch tasks mein useful output deti hai. Bachche pehle observe karein, phir poochein ki machine ne kaise decide kiya. Is tarah AI ek “magic” nahi, balki samajhne layak technology ban jata hai.</p></details>
+    </article>
+    <article class="sbm-article">
+      <div class="icon">🧠</div>
+      <div class="tag">THINKING SKILLS</div>
+      <h3>AI use karte waqt kids ko kaunse questions poochne chahiye?</h3>
+      <p>Sirf answer lene ke bajay better questions, verification aur reasoning ki habit kaise banayein.</p>
+      <details><summary>Read article →</summary><p>Bachchon ko teen simple habits sikha sakte hain: “AI ne ye answer kyun diya?”, “Kya iski information verify karni chahiye?” aur “Kya main is idea ko aur better bana sakta hoon?” Ye habits AI ko shortcut ke bajay thinking tool banane mein help karti hain.</p></details>
+    </article>
+    <article class="sbm-article">
+      <div class="icon">🛡️</div>
+      <div class="tag">AI SAFETY • PARENTS</div>
+      <h3>Kids aur AI: privacy aur safe use ke basic rules</h3>
+      <p>Personal information, unknown links aur AI-generated answers ke saath simple safety habits.</p>
+      <details><summary>Read article →</summary><p>Children ko naam, address, phone number, passwords ya private family information AI tools mein share na karne ki habit sikhayein. Unknown links aur files ko blindly open na karein, aur important information ko trusted sources se verify karein. Parent guidance age ke hisaab se adjust honi chahiye.</p></details>
+    </article>
+    <article class="sbm-article">
+      <div class="icon">🚀</div>
+      <div class="tag">FUTURE SKILLS</div>
+      <h3>AI se bachchon mein creativity aur problem-solving kaise build karein</h3>
+      <p>AI ko answer machine ke bajay ideas, experiments aur small projects ke partner ki tarah use karna.</p>
+      <details><summary>Read article →</summary><p>Ek simple challenge dein: “Ek problem choose karo, teen possible ideas banao, phir AI se ideas improve karwao.” Bachcha final answer copy karne ke bajay options compare kare, changes suggest kare aur apna solution banaye. Isi process mein creativity, communication aur problem-solving practice hoti hai.</p></details>
+    </article>
+  </div>
+</section><section class="sbm-about-final" id="about">
   <div class="sbm-about-wrap">
     <div class="sbm-about-head">
       <div class="sbm-about-kicker">💗 ABOUT SMART BRAIN MISSION</div>

@@ -3281,8 +3281,10 @@ document.addEventListener('click',function(e){
   }
   .sbm-clean-age-filter button:hover{transform:translateY(-2px)!important;box-shadow:0 9px 20px rgba(60,30,100,.10)!important}
   .sbm-clean-age-filter button.active{background:linear-gradient(90deg,#6524c7,#e52e96)!important;color:#fff!important;border-color:transparent!important;box-shadow:0 8px 18px rgba(103,35,187,.20)!important}
-  .sbm-products-section .sbm-category-block.sbm-age-hidden{display:none!important}
-  .sbm-products-section .sbm-category-block.sbm-age-visible{display:block!important}
+  #shop .sbm-category-block.sbm-age-hidden{display:none!important}
+  #shop .sbm-category-block.sbm-age-visible{display:block!important}
+  /* Override the older generic .whatsapp{display:none!important} rule so the Contact WhatsApp card is visible. */
+  #contact .sbm-contact-card.whatsapp{display:block!important;visibility:visible!important;opacity:1!important;}
   @media(max-width:620px){.sbm-clean-age-filter{gap:7px!important}.sbm-clean-age-filter button{padding:9px 12px!important;font-size:10px!important}}
 </style>
 <script id="sbm-clean-age-filter-js">
@@ -3296,7 +3298,7 @@ document.addEventListener('click',function(e){
     parents:['for-parents']
   };
   function boot(){
-    var shop=document.querySelector('.sbm-products-section');
+    var shop=document.getElementById('shop');
     if(!shop) return;
     var head=shop.querySelector('.sbm-section-head');
     if(!head) return;

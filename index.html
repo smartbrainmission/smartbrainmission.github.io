@@ -2021,7 +2021,7 @@ body{background:#fff;color:var(--sbm-ink)}
 <a href="#about">About</a>
 <a href="#reviews">Reviews</a>
 <a href="#contact">Contact</a>
-<a href="blog-index.html" aria-label="Open Smart Brain Mission Blog">Blog</a></div>
+<a href="/blog-index.html" aria-label="Open Smart Brain Mission Blog">Blog</a></div>
     <div class="sbm-nav-tools">
       <button class="sbm-search-mini" type="button" onclick="document.getElementById('shop')?.scrollIntoView({behavior:'smooth'})" aria-label="Search products">⌕</button>
       <div class="sbm-social-mini sbm-brand-socials" aria-label="Social links">
@@ -2139,7 +2139,7 @@ body{background:#fff;color:var(--sbm-ink)}
       <details><summary>Read article →</summary><p>Ek simple challenge dein: “Ek problem choose karo, teen possible ideas banao, phir AI se ideas improve karwao.” Bachcha final answer copy karne ke bajay options compare kare, changes suggest kare aur apna solution banaye. Isi process mein creativity, communication aur problem-solving practice hoti hai.</p></details>
     </article>
   </div>
-  <div class="sbm-blog-all-link"><a href="blog-index.html">📚 Explore All 13 Articles →</a></div>
+  <div class="sbm-blog-all-link"><a href="/blog-index.html">📚 Explore All 13 Articles →</a></div>
 </section><section class="sbm-about-final" id="about">
   <div class="sbm-about-wrap">
     <div class="sbm-about-head">
@@ -3250,105 +3250,140 @@ document.addEventListener('click',function(e){
 })();
 </script>
 
-\n<script id="sbm-final-nav-age-fix-js">\n(function(){\n  function ready(fn){\n    if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',fn);\n    else fn();\n  }\n  ready(function(){\n    function shop(){ return document.querySelector('.sbm-products-section'); }\n    function scrollShop(){ const s=shop(); if(s) s.scrollIntoView({behavior:'smooth',block:'start'}); }\n    function filter(key){\n      if(typeof window.sbmFilter==='function'){\n        window.sbmFilter(key);\n      } else {\n        const buttons=document.querySelectorAll('.sbm-filter-btn');\n        const cards=document.querySelectorAll('.sbm-all-products-grid .product-card');\n        cards.forEach(card=>{\n          const show=key==='all'||card.dataset.category===key;\n          card.hidden=!show; card.style.display=show?'flex':'none';\n        });\n        buttons.forEach(b=>{\n          const active=b.dataset.filter===key;\n          b.classList.toggle('active',active);\n          b.setAttribute('aria-selected',active?'true':'false');\n        });\n      }\n      scrollShop();\n    }\n\n    /* Top navigation: do not depend on removed category-block IDs. */\n    document.querySelectorAll('.sbm-store-links a').forEach(a=>{\n      const text=(a.textContent||'').trim().toLowerCase();\n      if(text==='for parents'){\n        a.addEventListener('click',function(e){ e.preventDefault(); e.stopPropagation(); filter('parents'); },true);\n      }\n      if(text==='for kids'){\n        a.addEventListener('click',function(e){\n          e.preventDefault(); e.stopPropagation();\n          /* Kids = all three child age groups */\n          if(typeof window.sbmFilter==='function'){\n            const grid=document.querySelector('.sbm-all-products-grid');\n            if(grid){\n              grid.querySelectorAll('.product-card').forEach(card=>{\n                const show=['age5','age8','age13'].includes(card.dataset.category);\n                card.hidden=!show; card.style.display=show?'flex':'none';\n              });\n              document.querySelectorAll('.sbm-filter-btn').forEach(b=>{\n                b.classList.toggle('active',b.dataset.filter==='all');\n                b.setAttribute('aria-selected','false');\n              });\n            }\n          }\n          scrollShop();\n        },true);\n      }\n    });\n\n    /* Make the age-filter pills reliable even if another script/style interferes. */\n    document.addEventListener('click',function(e){\n      const btn=e.target.closest && e.target.closest('.sbm-filter-btn');\n      if(!btn) return;\n      e.preventDefault(); e.stopPropagation();\n      const key=btn.dataset.filter;\n      if(key) filter(key);\n    },true);\n  });\n})();\n</script>\n\n<style id="sbm-final-click-repair">\n.sbm-filter-btn,.sbm-category-card,.sbm-store-links a{pointer-events:auto!important;cursor:pointer!important;position:relative!important;z-index:100000!important}\n.sbm-filter-btn.active{background:linear-gradient(90deg,#6524c7,#e52e96)!important;color:#fff!important;border-color:transparent!important}\n.sbm-all-products-grid .product-card[hidden]{display:none!important}\n</style>\n<script id="sbm-final-click-repair-script">\n(function(){\n  const productMap={activity:'age5',detective:'age5',coding:'age5','think-ai':'age8',prompt:'age13',book:'parents',parenting:'parents'};\n  const catMap={'age-5-8':'age5','age-8-12':'age8','age-13-16':'age13','for-parents':'parents'};\n  function keyFromCard(card){\n    if(card.dataset.filter) return card.dataset.filter;\n    const href=(card.getAttribute('href')||'').toLowerCase();\n    for(const k in catMap) if(href.includes(k)) return catMap[k];\n    const t=(card.textContent||'').toLowerCase();\n    if(t.includes('5–8')||t.includes('5-8')||t.includes('5 to 8')) return 'age5';\n    if(t.includes('8–12')||t.includes('8-12')||t.includes('8 to 12')) return 'age8';\n    if(t.includes('13–16')||t.includes('13-16')||t.includes('13 to 16')) return 'age13';\n    if(t.includes('parents')) return 'parents';\n    return 'all';\n  }\n  function ensureCategories(){\n    document.querySelectorAll('.product-card').forEach(c=>{\n      if(!c.dataset.category){\n        const id=(c.dataset.productId||'').toLowerCase();\n        c.dataset.category=productMap[id]||'all';\n      }\n    });\n  }\n  function apply(key){\n    ensureCategories();\n    const cards=document.querySelectorAll('.sbm-all-products-grid .product-card, .sbm-shop-showcase .product-card');\n    cards.forEach(c=>{\n      const show=key==='all'||c.dataset.category===key;\n      c.hidden=!show;\n      c.style.display=show?'':'none';\n    });\n    document.querySelectorAll('.sbm-filter-btn').forEach(b=>{\n      const active=b.dataset.filter===key;\n      b.classList.toggle('active',active);\n      b.setAttribute('aria-selected',active?'true':'false');\n    });\n    const shop=document.querySelector('#shop');\n    if(shop && location.hash==='#shop-filter') shop.scrollIntoView({behavior:'smooth',block:'start'});\n  }\n  window.sbmFilter=apply;\n  document.addEventListener('click',function(e){\n    const filter=e.target.closest('.sbm-filter-btn');\n    if(filter){e.preventDefault();e.stopPropagation();apply(filter.dataset.filter||'all');return;}\n    const cat=e.target.closest('.sbm-category-card');\n    if(cat){e.preventDefault();e.stopPropagation();const key=keyFromCard(cat);apply(key);document.querySelector('#shop')?.scrollIntoView({behavior:'smooth',block:'start'});return;}\n    const nav=e.target.closest('.sbm-store-links a');\n    if(nav){\n      const label=(nav.textContent||'').trim().toLowerCase();\n      if(label==='for kids'||label==='for parents'){\n        e.preventDefault();e.stopPropagation();\n        const target=label==='for kids'?'#kids':'#for-parents';\n        const el=document.querySelector(target);\n        if(el){el.scrollIntoView({behavior:'smooth',block:'start'});}\n        else {const key=label==='for kids'?'age8':'parents';apply(key);document.querySelector('#shop')?.scrollIntoView({behavior:'smooth',block:'start'});}\n      }\n    }\n  },true);\n  function boot(){ensureCategories();}\n  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',boot); else boot();\n  setTimeout(boot,300); setTimeout(boot,1000);\n})();\n</script>\n
-</body>
+\n\n\n\n\n
 
-<script id="sbm-hard-final-filter-fix">
+<style id="sbm-clean-age-filter-css">
+  .sbm-clean-age-filter{
+    display:flex!important;
+    justify-content:center!important;
+    align-items:center!important;
+    gap:10px!important;
+    flex-wrap:wrap!important;
+    margin:0 auto 28px!important;
+    padding:0 10px!important;
+    position:relative!important;
+    z-index:99999!important;
+  }
+  .sbm-clean-age-filter button{
+    appearance:none!important;
+    -webkit-appearance:none!important;
+    border:1px solid #dfd2ed!important;
+    background:#fff!important;
+    color:#5d3b82!important;
+    border-radius:999px!important;
+    padding:11px 19px!important;
+    font:800 12px/1.1 Arial,sans-serif!important;
+    cursor:pointer!important;
+    pointer-events:auto!important;
+    touch-action:manipulation!important;
+    box-shadow:0 5px 14px rgba(60,30,100,.06)!important;
+    transition:transform .18s ease,background .18s ease,color .18s ease,box-shadow .18s ease!important;
+  }
+  .sbm-clean-age-filter button:hover{transform:translateY(-2px)!important;box-shadow:0 9px 20px rgba(60,30,100,.10)!important}
+  .sbm-clean-age-filter button.active{background:linear-gradient(90deg,#6524c7,#e52e96)!important;color:#fff!important;border-color:transparent!important;box-shadow:0 8px 18px rgba(103,35,187,.20)!important}
+  .sbm-products-section .sbm-category-block.sbm-age-hidden{display:none!important}
+  .sbm-products-section .sbm-category-block.sbm-age-visible{display:block!important}
+  @media(max-width:620px){.sbm-clean-age-filter{gap:7px!important}.sbm-clean-age-filter button{padding:9px 12px!important;font-size:10px!important}}
+</style>
+<script id="sbm-clean-age-filter-js">
 (function(){
-  function install(){
-    const shop=document.querySelector('.sbm-products-section');
-    const grid=document.querySelector('.sbm-all-products-grid');
-    const filterBox=document.querySelector('.sbm-shop-filter');
-    if(!shop || !grid || !filterBox) return false;
-
-    const cards=[...grid.querySelectorAll('.product-card')];
-    if(!cards.length) return false;
-
-    const category={
-      activity:'age5', detective:'age5', coding:'age5',
-      'think-ai':'age8', prompt:'age13',
-      book:'parents', parenting:'parents'
-    };
-    cards.forEach(c=>{
-      const id=c.getAttribute('data-product-id');
-      if(category[id]) c.setAttribute('data-category',category[id]);
-    });
-
-    function apply(key){
-      cards.forEach(card=>{
-        const show = key==='kids'
-          ? ['age5','age8','age13'].includes(card.dataset.category)
-          : key==='all' || card.dataset.category===key;
-        card.hidden=!show;
-        card.style.display=show ? 'flex' : 'none';
+  'use strict';
+  var MAP={
+    all:['age-5-8','age-8-12','age-13-16','for-parents'],
+    age5:['age-5-8'],
+    age8:['age-8-12'],
+    age13:['age-13-16'],
+    parents:['for-parents']
+  };
+  function boot(){
+    var shop=document.querySelector('.sbm-products-section');
+    if(!shop) return;
+    var head=shop.querySelector('.sbm-section-head');
+    if(!head) return;
+    var blocks={};
+    Object.keys(MAP).forEach(function(k){
+      var ids=MAP[k];
+      if(k!=='all') ids.forEach(function(id){
+        var el=document.getElementById(id);
+        if(el) blocks[id]=el;
       });
-      filterBox.querySelectorAll('.sbm-filter-btn').forEach(btn=>{
-        const active=btn.dataset.filter===key;
+    });
+    var old=shop.querySelector('.sbm-clean-age-filter');
+    if(old) old.remove();
+    var filter=document.createElement('div');
+    filter.className='sbm-clean-age-filter';
+    filter.setAttribute('role','tablist');
+    var defs=[['all','All Products'],['age5','Ages 5–8'],['age8','Ages 8–12'],['age13','Ages 13–16'],['parents','For Parents']];
+    defs.forEach(function(def){
+      var b=document.createElement('button');
+      b.type='button';
+      b.textContent=def[1];
+      b.dataset.filter=def[0];
+      b.setAttribute('role','tab');
+      b.setAttribute('aria-selected',def[0]==='all'?'true':'false');
+      filter.appendChild(b);
+    });
+    head.insertAdjacentElement('afterend',filter);
+
+    var activity=document.getElementById('free-sample');
+    function apply(key,scroll){
+      var visible=MAP[key]||MAP.all;
+      Object.keys(blocks).forEach(function(id){
+        var el=blocks[id];
+        var show=visible.indexOf(id)!==-1;
+        el.classList.toggle('sbm-age-hidden',!show);
+        el.classList.toggle('sbm-age-visible',show);
+        el.setAttribute('aria-hidden',show?'false':'true');
+      });
+      if(activity){
+        var showActivity=(key==='all'||key==='age5');
+        activity.style.display=showActivity?'flex':'none';
+      }
+      filter.querySelectorAll('button').forEach(function(btn){
+        var active=btn.dataset.filter===key;
         btn.classList.toggle('active',active);
         btn.setAttribute('aria-selected',active?'true':'false');
       });
-      const y=shop.getBoundingClientRect().top+window.pageYOffset-82;
-      window.scrollTo({top:Math.max(0,y),behavior:'smooth'});
+      if(scroll){
+        var y=shop.getBoundingClientRect().top+window.pageYOffset-82;
+        window.scrollTo({top:Math.max(0,y),behavior:'smooth'});
+      }
     }
-
-    window.sbmFilter=apply;
-
-    // Replace filter buttons so old click handlers cannot interfere.
-    filterBox.querySelectorAll('.sbm-filter-btn').forEach(old=>{
-      const btn=old.cloneNode(true);
-      old.replaceWith(btn);
-      btn.addEventListener('click',function(e){
-        e.preventDefault(); e.stopImmediatePropagation();
-        apply(btn.dataset.filter);
-      });
+    filter.addEventListener('click',function(e){
+      var btn=e.target.closest('button[data-filter]');
+      if(!btn) return;
+      e.preventDefault();
+      e.stopImmediatePropagation();
+      apply(btn.dataset.filter,true);
     });
 
-    // Replace top navigation links so old hash handlers cannot interfere.
-    document.querySelectorAll('.sbm-store-links a').forEach(old=>{
-      const text=(old.textContent||'').trim().toLowerCase();
-      if(!['for parents','for kids'].includes(text)) return;
-      const a=old.cloneNode(true);
-      old.replaceWith(a);
+    // Category cards above the shop should select the same filter.
+    var catMap={'#age-5-8':'age5','#age-8-12':'age8','#age-13-16':'age13','#for-parents':'parents'};
+    document.querySelectorAll('.sbm-category-card[href]').forEach(function(card){
+      var key=catMap[card.getAttribute('href')];
+      if(!key) return;
+      card.addEventListener('click',function(){apply(key,true);},true);
+    });
+
+    // Top nav shortcuts.
+    document.querySelectorAll('.sbm-store-links a').forEach(function(a){
+      var t=(a.textContent||'').trim().toLowerCase();
+      if(t!=='for parents' && t!=='for kids') return;
       a.addEventListener('click',function(e){
-        e.preventDefault(); e.stopImmediatePropagation();
-        if(text==='for parents') apply('parents');
-        else apply('kids');
-      });
+        e.preventDefault();
+        e.stopImmediatePropagation();
+        apply(t==='for parents'?'parents':'all',true);
+      },true);
     });
-
-    // Category cards: route to the same filter system.
-    document.querySelectorAll('.sbm-category-card').forEach(old=>{
-      const a=old.cloneNode(true);
-      old.replaceWith(a);
-      const href=(old.getAttribute('href')||'').toLowerCase();
-      let key='all';
-      if(href.includes('age-5-8')) key='age5';
-      else if(href.includes('age-8-12')) key='age8';
-      else if(href.includes('age-13-16')) key='age13';
-      else if(href.includes('for-parents')) key='parents';
-      a.setAttribute('href','#shop');
-      a.addEventListener('click',function(e){
-        e.preventDefault(); e.stopImmediatePropagation(); apply(key);
-      });
-    });
-
-    apply('all');
-    return true;
+    apply('all',false);
   }
-
-  function boot(){
-    if(install()) return;
-    let tries=0;
-    const timer=setInterval(function(){
-      tries++;
-      if(install() || tries>30) clearInterval(timer);
-    },100);
-  }
-  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',boot);
-  else boot();
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',boot); else boot();
 })();
 </script>
-\n<style id="sbm-final-click-repair">\n.sbm-filter-btn,.sbm-category-card,.sbm-store-links a{pointer-events:auto!important;cursor:pointer!important;position:relative!important;z-index:100000!important}\n.sbm-filter-btn.active{background:linear-gradient(90deg,#6524c7,#e52e96)!important;color:#fff!important;border-color:transparent!important}\n.sbm-all-products-grid .product-card[hidden]{display:none!important}\n</style>\n<script id="sbm-final-click-repair-script">\n(function(){\n  const productMap={activity:'age5',detective:'age5',coding:'age5','think-ai':'age8',prompt:'age13',book:'parents',parenting:'parents'};\n  const catMap={'age-5-8':'age5','age-8-12':'age8','age-13-16':'age13','for-parents':'parents'};\n  function keyFromCard(card){\n    if(card.dataset.filter) return card.dataset.filter;\n    const href=(card.getAttribute('href')||'').toLowerCase();\n    for(const k in catMap) if(href.includes(k)) return catMap[k];\n    const t=(card.textContent||'').toLowerCase();\n    if(t.includes('5–8')||t.includes('5-8')||t.includes('5 to 8')) return 'age5';\n    if(t.includes('8–12')||t.includes('8-12')||t.includes('8 to 12')) return 'age8';\n    if(t.includes('13–16')||t.includes('13-16')||t.includes('13 to 16')) return 'age13';\n    if(t.includes('parents')) return 'parents';\n    return 'all';\n  }\n  function ensureCategories(){\n    document.querySelectorAll('.product-card').forEach(c=>{\n      if(!c.dataset.category){\n        const id=(c.dataset.productId||'').toLowerCase();\n        c.dataset.category=productMap[id]||'all';\n      }\n    });\n  }\n  function apply(key){\n    ensureCategories();\n    const cards=document.querySelectorAll('.sbm-all-products-grid .product-card, .sbm-shop-showcase .product-card');\n    cards.forEach(c=>{\n      const show=key==='all'||c.dataset.category===key;\n      c.hidden=!show;\n      c.style.display=show?'':'none';\n    });\n    document.querySelectorAll('.sbm-filter-btn').forEach(b=>{\n      const active=b.dataset.filter===key;\n      b.classList.toggle('active',active);\n      b.setAttribute('aria-selected',active?'true':'false');\n    });\n    const shop=document.querySelector('#shop');\n    if(shop && location.hash==='#shop-filter') shop.scrollIntoView({behavior:'smooth',block:'start'});\n  }\n  window.sbmFilter=apply;\n  document.addEventListener('click',function(e){\n    const filter=e.target.closest('.sbm-filter-btn');\n    if(filter){e.preventDefault();e.stopPropagation();apply(filter.dataset.filter||'all');return;}\n    const cat=e.target.closest('.sbm-category-card');\n    if(cat){e.preventDefault();e.stopPropagation();const key=keyFromCard(cat);apply(key);document.querySelector('#shop')?.scrollIntoView({behavior:'smooth',block:'start'});return;}\n    const nav=e.target.closest('.sbm-store-links a');\n    if(nav){\n      const label=(nav.textContent||'').trim().toLowerCase();\n      if(label==='for kids'||label==='for parents'){\n        e.preventDefault();e.stopPropagation();\n        const target=label==='for kids'?'#kids':'#for-parents';\n        const el=document.querySelector(target);\n        if(el){el.scrollIntoView({behavior:'smooth',block:'start'});}\n        else {const key=label==='for kids'?'age8':'parents';apply(key);document.querySelector('#shop')?.scrollIntoView({behavior:'smooth',block:'start'});}\n      }\n    }\n  },true);\n  function boot(){ensureCategories();}\n  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',boot); else boot();\n  setTimeout(boot,300); setTimeout(boot,1000);\n})();\n</script>\n
+
+</body>
+
+\n\n\n
 </body></html>
 
 <style id="sbm-wow-v3">
@@ -3634,135 +3669,6 @@ body{background:linear-gradient(135deg,#fff9fd 0%,#f7f3ff 38%,#effaff 70%,#fffaf
 @media(max-width:980px){.sbm-category-cards{grid-template-columns:1fr 1fr!important}.sbm-all-products-grid{grid-template-columns:repeat(2,1fr)!important}.sbm-store-hero-in{grid-template-columns:1fr!important}.sbm-hero-photo-frame{height:340px!important}}
 @media(max-width:620px){.sbm-category-cards{grid-template-columns:1fr 1fr!important}.sbm-category-card{min-height:250px!important}.sbm-category-card::before{height:95px;flex-basis:95px}.sbm-category-card>div{padding:10px 12px 0}.sbm-category-card h3{font-size:16px!important}.sbm-category-card p{font-size:10px!important}.sbm-category-card>b{margin:7px 12px 12px!important;font-size:9px!important}.sbm-all-products-grid{grid-template-columns:1fr 1fr!important;gap:9px!important}.sbm-all-products-grid .cover-wrap{height:190px!important}.sbm-all-products-grid .sbm-card-actions{grid-template-columns:1fr!important}.sbm-youtube-box-v4{grid-template-columns:1fr!important}.sbm-youtube-visual{height:150px!important}.sbm-youtube-visual img{height:150px!important}.sbm-delivery-grid{grid-template-columns:1fr 1fr!important}.sbm-store-hero h1{font-size:40px!important}}
 </style>
-
-<style id="sbm-v10-filter-css">
-.sbm-shop-showcase{position:relative;z-index:30!important;pointer-events:auto!important}
-.sbm-shop-filter{position:relative;z-index:40!important;pointer-events:auto!important}
-.sbm-filter-btn{position:relative;z-index:41!important;pointer-events:auto!important;cursor:pointer!important;touch-action:manipulation!important}
-.sbm-filter-btn:focus-visible{outline:3px solid #ed2f91;outline-offset:3px}
-.sbm-all-products-grid{position:relative;z-index:1}
-</style>
-<script id="sbm-v10-filter-fix">
-(function(){
-  function init(){
-    const shop=document.querySelector('.sbm-products-section');
-    if(!shop) return;
-    const head=shop.querySelector('.sbm-section-head');
-    const blocks=[...shop.querySelectorAll('.sbm-category-block')];
-    const cards=blocks.flatMap(b=>[...b.querySelectorAll('.product-card')]);
-    if(!cards.length) return;
-
-    const old=shop.querySelector('.sbm-shop-showcase');
-    if(old) old.remove();
-
-    const wrap=document.createElement('div');
-    wrap.className='sbm-shop-showcase';
-
-    const filter=document.createElement('div');
-    filter.className='sbm-shop-filter';
-    filter.setAttribute('role','tablist');
-
-    const filters=[
-      ['all','All Products'],
-      ['age5','Ages 5–8'],
-      ['age8','Ages 8–12'],
-      ['age13','Ages 13–16'],
-      ['parents','For Parents']
-    ];
-
-    filters.forEach(([key,label])=>{
-      const b=document.createElement('button');
-      b.type='button';
-      b.className='sbm-filter-btn';
-      b.dataset.filter=key;
-      b.textContent=label;
-      b.setAttribute('aria-selected',key==='all'?'true':'false');
-      filter.appendChild(b);
-    });
-
-    const grid=document.createElement('div');
-    grid.className='sbm-all-products-grid';
-
-    const map={
-      activity:'age5',
-      detective:'age5',
-      coding:'age5',
-      'think-ai':'age8',
-      prompt:'age13',
-      book:'parents',
-      parenting:'parents'
-    };
-
-    cards.forEach(card=>{
-      card.dataset.category=map[card.dataset.productId]||'all';
-      grid.appendChild(card);
-    });
-
-    wrap.appendChild(filter);
-    wrap.appendChild(grid);
-
-    const activity=shop.querySelector('#free-sample');
-    if(activity) wrap.appendChild(activity);
-
-    if(head) head.insertAdjacentElement('afterend',wrap);
-    else shop.prepend(wrap);
-
-    blocks.forEach(b=>b.remove());
-
-    window.sbmFilter=function(key){
-      grid.querySelectorAll('.product-card').forEach(card=>{
-        const show=key==='all'||card.dataset.category===key;
-        card.hidden=!show;
-        card.style.display=show?'flex':'none';
-      });
-
-      filter.querySelectorAll('.sbm-filter-btn').forEach(btn=>{
-        const active=btn.dataset.filter===key;
-        btn.classList.toggle('active',active);
-        btn.setAttribute('aria-selected',active?'true':'false');
-      });
-    };
-
-    filter.addEventListener('click',function(e){
-      const btn=e.target.closest('.sbm-filter-btn');
-      if(!btn) return;
-      e.preventDefault();
-      e.stopPropagation();
-      window.sbmFilter(btn.dataset.filter);
-    });
-
-    const categoryMap={
-      'age-5-8':'age5',
-      'age-8-12':'age8',
-      'age-13-16':'age13',
-      'for-parents':'parents'
-    };
-
-    document.querySelectorAll('.sbm-category-card').forEach(card=>{
-      let key='all';
-      const href=card.getAttribute('href')||'';
-      Object.keys(categoryMap).forEach(part=>{
-        if(href.includes(part)) key=categoryMap[part];
-      });
-      card.href='#shop';
-      card.addEventListener('click',function(e){
-        e.preventDefault();
-        e.stopPropagation();
-        window.sbmFilter(key);
-        shop.scrollIntoView({behavior:'smooth',block:'start'});
-      });
-    });
-
-    window.sbmFilter('all');
-  }
-
-  if(document.readyState==='loading'){
-    document.addEventListener('DOMContentLoaded',init);
-  }else{
-    init();
-  }
-})();
-</script>
 
 <style id="sbm-book-carousel-final">
 /* Final hero: LearnWhatMatters-inspired book rotation, clean readable contrast */

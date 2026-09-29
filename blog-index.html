@@ -15,67 +15,111 @@
 .card{position:relative;overflow:hidden;display:block;text-decoration:none;color:inherit;background:#fff;border:1px solid #e5d9ef;border-radius:25px;padding:25px;min-height:270px;box-shadow:0 15px 32px #4a177d12;transition:.2s}.card:hover{transform:translateY(-5px);box-shadow:0 21px 42px #4a177d1d}.card:before{content:"";position:absolute;left:0;right:0;top:0;height:7px}.pink:before{background:linear-gradient(90deg,#e93299,#ff76bc)}.blue:before{background:linear-gradient(90deg,#367be4,#7db0ff)}.yellow:before{background:linear-gradient(90deg,#efba24,#ffe46c)}.mint:before{background:linear-gradient(90deg,#23b78a,#75e0bd)}.purple:before{background:linear-gradient(90deg,#7024c7,#a56ee6)}
 .topline{display:flex;justify-content:space-between;align-items:center}.icon{width:58px;height:58px;display:grid;place-items:center;border-radius:18px;background:#f2e8ff;font-size:30px}.tag{font-size:9px;font-weight:900;letter-spacing:.1em;color:var(--p);background:#f3eaff;padding:8px 10px;border-radius:999px}.card h2{font-family:"Baloo 2",sans-serif;color:var(--p);font-size:26px;line-height:1.1;margin:20px 0 3px}.sub{color:var(--pink);font-size:12px;font-weight:900;margin-bottom:9px}.card p{color:var(--muted);font-size:14px;line-height:1.65;margin:0}.read{display:inline-block;margin-top:19px;background:linear-gradient(90deg,#6723bb,#d92c96);color:#fff;padding:9px 15px;border-radius:999px;font-size:11px;font-weight:900;box-shadow:0 7px 17px #6723bb25}.read b{color:var(--yellow);font-size:16px}.note{margin:0 0 35px;padding:22px 25px;border-radius:24px;background:linear-gradient(110deg,#fff1a8,#ffe6ef 55%,#e7f7ff);border:1px solid #edd6df;text-align:center}.note strong{color:var(--p)}.note p{margin:4px 0;color:#635b72;font-size:13px}footer{padding:20px 0 45px;text-align:center;color:#7b7487;font-size:11px}
 @media(max-width:720px){.wrap{width:min(100% - 24px,560px)}.hero{padding:38px 24px;border-radius:26px}.grid{grid-template-columns:1fr}h1{font-size:48px}.hero:before,.hero:after{display:none}}
+
+.article-reader{display:none;margin:0 0 45px;background:#fff;border:1px solid #e5d9ef;border-radius:28px;padding:34px;box-shadow:0 18px 42px #4a177d16}
+.article-reader.show{display:block}.article-reader .reader-top{display:flex;gap:12px;align-items:center;justify-content:space-between;flex-wrap:wrap}.article-reader .reader-back{border:0;cursor:pointer;background:linear-gradient(90deg,#6723bb,#d92c96);color:#fff;padding:10px 16px;border-radius:999px;font-weight:900}.article-reader h2{font-family:"Baloo 2",sans-serif;color:var(--p);font-size:38px;line-height:1.05;margin:18px 0 5px}.article-reader .reader-sub{color:var(--pink);font-weight:900}.article-reader .reader-copy{color:var(--muted);font-size:16px;line-height:1.8;max-width:850px}.article-reader .reader-box{margin-top:22px;padding:20px;border-radius:20px;background:linear-gradient(110deg,#fff1a8,#ffe6ef 55%,#e7f7ff);border:1px solid #edd6df}.article-reader .reader-box strong{color:var(--p)}
 </style></head>
 <body><div class="wrap">
 <header class="top"><a class="logo" href="https://smartbrainmission.com/">🧠 SMART <span>BRAIN MISSION</span></a><a class="back" href="https://smartbrainmission.com/">← Back to Website</a></header>
 <section class="hero"><span class="eyebrow">📚 SMART BRAIN MISSION · PARENT GUIDES</span><h1>Learn AI <span>Together.</span></h1><p>Practical, colorful guides for parents — AI ko samjhein, smart habits build karein aur bachchon ke saath learning ko fun banayein.</p></section>
-<section class="heading"><h2>🌈 Explore Our Articles</h2><p>Choose a topic and open the complete guide.</p></section>
-<main class="grid"><a class="card pink" href="bachon-ko-ai-kaise-sikhayein.html">
+<section class="heading" id="articles"><h2>🌈 Explore Our Articles</h2><p>Choose a topic and open the complete guide.</p></section>
+<section id="article-reader" class="article-reader" aria-live="polite"></section>
+<main class="grid"><a class="card pink" href="?article=bachon-ko-ai-kaise-sikhayein">
 <div class="topline"><div class="icon">🤖</div><span class="tag">PARENT GUIDE</span></div>
 <h2>Bachon Ko AI Kaise Sikhayein?</h2><div class="sub">Complete Parent's Guide</div><p>Age-wise AI learning, smart habits, verification aur practical home activities.</p>
-<div class="read">Read Article <b>→</b></div></a><a class="card blue" href="blog-critical-thinking-kaise-sikhayein.html">
+<div class="read">Read Article <b>→</b></div></a><a class="card blue" href="?article=critical-thinking-kaise-sikhayein">
 <div class="topline"><div class="icon">🧠</div><span class="tag">SMART SKILLS</span></div>
 <h2>Critical Thinking Kaise Sikhayein?</h2><div class="sub">AI Ke Zamane Ki Essential Skill</div><p>Question karna, sochna aur information ko verify karna sikhane ke practical ideas.</p>
-<div class="read">Read Article <b>→</b></div></a><a class="card yellow" href="blog-chatgpt-safe-for-kids.html">
+<div class="read">Read Article <b>→</b></div></a><a class="card yellow" href="?article=chatgpt-safe-for-kids">
 <div class="topline"><div class="icon">🛡️</div><span class="tag">AI SAFETY</span></div>
 <h2>ChatGPT Bachon Ke Liye Safe Hai Kya?</h2><div class="sub">Parents Ka Practical Safety Guide</div><p>AI use ke important safety points, risks aur guided learning habits.</p>
-<div class="read">Read Article <b>→</b></div></a><a class="card mint" href="blog-ai-bachche-lazy-honge.html">
+<div class="read">Read Article <b>→</b></div></a><a class="card mint" href="?article=ai-bachche-lazy-honge">
 <div class="topline"><div class="icon">⚡</div><span class="tag">MYTH VS FACT</span></div>
 <h2>Kya AI Se Bachche Lazy Ho Jayenge?</h2><div class="sub">Smart Use vs Shortcut</div><p>Samjhein ki AI learning ko support kab karta hai aur shortcut kab ban sakta hai.</p>
-<div class="read">Read Article <b>→</b></div></a><a class="card purple" href="blog-5-signs-kid-ready-learn-ai.html">
+<div class="read">Read Article <b>→</b></div></a><a class="card purple" href="?article=5-signs-kid-ready-learn-ai">
 <div class="topline"><div class="icon">🚀</div><span class="tag">GETTING STARTED</span></div>
 <h2>5 Signs Your Kid Is Ready to Learn AI</h2><div class="sub">Know When to Start</div><p>Curiosity aur everyday behaviour ke 5 practical signs jo AI learning start karne mein help karein.</p>
 <div class="read">Read Article <b>→</b></div></a>
-<a class="card purple" href="blog-prompt-engineering-simple-guide.html">
+<a class="card purple" href="?article=prompt-engineering-simple-guide">
 <div class="topline"><div class="icon">✨</div><span class="tag">AI SKILLS</span></div>
 <h2>Prompt Engineering Simple Guide</h2><div class="sub">AI Se Smartly Baat Kaise Karein?</div><p>Parents aur kids ke liye simple prompting ideas — better questions, clearer instructions aur smarter AI use.</p>
 <div class="read">Read Article <b>→</b></div></a>
 
-<a class="card blue" href="blog-ai-bias-fair-thinking.html">
+<a class="card blue" href="?article=ai-bias-fair-thinking">
 <div class="topline"><div class="icon">⚖️</div><span class="tag">FAIR THINKING</span></div>
 <h2>AI Bias &amp; Fair Thinking</h2><div class="sub">AI Ka Answer Hamesha Neutral Hota Hai?</div><p>Bachchon ko AI ke answers ke different perspectives, bias aur balanced thinking samajhne ke practical ways.</p>
 <div class="read">Read Article <b>→</b></div></a>
 
-<a class="card mint" href="blog-future-jobs-ai-role.html">
+<a class="card mint" href="?article=future-jobs-ai-role">
 <div class="topline"><div class="icon">🚀</div><span class="tag">FUTURE SKILLS</span></div>
 <h2>Future Jobs &amp; AI Ka Role</h2><div class="sub">Bachchon Ko Aaj Se Kya Sikhayein?</div><p>Future careers mein AI aur human skills ka role aur age-wise preparation ke practical ideas.</p>
 <div class="read">Read Article <b>→</b></div></a>
 
-<a class="card yellow" href="blog-school-projects-ai-sahi-use.html">
+<a class="card yellow" href="?article=school-projects-ai-sahi-use">
 <div class="topline"><div class="icon">🎒</div><span class="tag">SCHOOL &amp; AI</span></div>
 <h2>School Projects Mein AI Ka Sahi Use</h2><div class="sub">Help Lo, Homework AI Se Mat Karwao</div><p>AI ko learning partner ki tarah use karke research, ideas aur projects mein genuine learning kaise maintain karein.</p>
 <div class="read">Read Article <b>→</b></div></a>
 
-<a class="card pink" href="blog-ai-se-creativity-kaise-badhayein.html">
+<a class="card pink" href="?article=ai-se-creativity-kaise-badhayein">
 <div class="topline"><div class="icon">🎨</div><span class="tag">CREATIVITY</span></div>
 <h2>AI Se Creativity Kaise Badhayein?</h2><div class="sub">Create More, Copy Less</div><p>AI ko ideas generate karne aur imagination explore karne ke tool ki tarah use karne ke creative activities.</p>
 <div class="read">Read Article <b>→</b></div></a>
 
-<a class="card purple" href="blog-deepfakes-aur-fake-info.html">
+<a class="card purple" href="?article=deepfakes-aur-fake-info">
 <div class="topline"><div class="icon">🛡️</div><span class="tag">DIGITAL SAFETY</span></div>
 <h2>Deepfakes Aur Fake Information</h2><div class="sub">Jo Dikhe, Kya Woh Sach Hai?</div><p>Bachchon ko AI-generated images, videos aur misleading information ko question aur verify karna sikhayein.</p>
 <div class="read">Read Article <b>→</b></div></a>
 
-<a class="card blue" href="blog-2026-safe-ai-tools-for-kids.html">
+<a class="card blue" href="?article=2026-safe-ai-tools-for-kids">
 <div class="topline"><div class="icon">🤖</div><span class="tag">AI SAFETY</span></div>
 <h2>2026 Safe AI Tools for Kids</h2><div class="sub">Parents Ke Liye Practical Guide</div><p>Kids ke AI learning tools choose karte waqt age, supervision, privacy aur responsible-use factors ko samjhein.</p>
 <div class="read">Read Article <b>→</b></div></a>
 
-<a class="card mint" href="blog-screen-time-vs-ai-learning-time.html">
+<a class="card mint" href="?article=screen-time-vs-ai-learning-time">
 <div class="topline"><div class="icon">⏱️</div><span class="tag">SMART HABITS</span></div>
 <h2>Screen Time vs AI Learning Time</h2><div class="sub">Screen Ko Learning Mein Kaise Badlein?</div><p>Entertainment screen time aur purposeful AI learning ke beech healthy balance banane ke practical ideas.</p>
 <div class="read">Read Article <b>→</b></div></a>
 </main>
 <section class="note"><strong>💡 Smart Brain Mission</strong><p>Learn AI • Think Smart • Create More — curiosity se responsible AI learning tak.</p></section>
 <footer>Smart Brain Mission • AI, Computer Skills & Critical Thinking for Curious Minds 5+</footer>
-</div></body></html>
+</div>
+<script>
+(function(){
+  const reader=document.getElementById('article-reader');
+  const grid=document.querySelector('.grid');
+  if(!reader||!grid) return;
+  const cards=[...grid.querySelectorAll('.card')];
+  const map={
+    'ai-basics':{extra:'AI ko simple banane ka goal hai: difficult technical words ki jagah everyday examples, questions aur small activities se concept samjhana.'},
+    'critical-thinking':{extra:'AI se answer milna aur sahi answer samajhna alag cheezein hain. Bachchon ko question, compare, verify aur explain karne ki habit develop karni chahiye.'},
+    'ai-safety':{extra:'AI use mein privacy, unknown links, personal information aur generated answers ko blindly trust na karna basic safety habits hain.'},
+    'ai-lazy':{extra:'AI shortcut bhi ban sakta hai aur learning partner bhi. Difference is baat se aata hai ki child AI se answer copy karta hai ya answer ko samajhne aur improve karne ke liye use karta hai.'},
+    'ready-to-learn-ai':{extra:'Curiosity, questions poochna, patterns notice karna, experiments karna aur technology ke saath explore karna AI learning ke useful starting signals hain.'},
+    'prompt-engineering':{extra:'Better AI output ke liye clear goal, useful context, constraints aur desired format batana helpful hota hai.'},
+    'ai-bias':{extra:'AI ka answer automatically neutral ya perfect nahi maana jaana chahiye. Different viewpoints compare karna aur evidence check karna balanced thinking build karta hai.'},
+    'future-jobs':{extra:'Future-ready learning mein AI ke saath communication, creativity, problem-solving, judgment aur responsible decision-making jaise human skills bhi important hain.'},
+    'school-projects':{extra:'AI ko research questions, brainstorming aur feedback ke liye learning partner ki tarah use kiya ja sakta hai, lekin final understanding aur work child ka hona chahiye.'},
+    'creativity':{extra:'AI se ideas explore karke child apni imagination ko expand kar sakta hai. Goal copy karna nahi, create more and explain choices hai.'},
+    'deepfakes':{extra:'AI-generated images aur videos ko dekhkar turant believe karne ke bajay source, context aur multiple reliable signals verify karna useful habit hai.'},
+    'safe-ai-tools':{extra:'AI learning tool choose karte waqt age suitability, parental supervision, privacy, data handling aur responsible-use features dekhna chahiye.'},
+    'screen-time':{extra:'Purposeful AI learning ko entertainment screen time se alag rakhein: short goal-based sessions, offline activities aur family discussion ka balance useful hai.'}
+  };
+  const slugFromHref=a=>new URL(a.getAttribute('href'),location.href).searchParams.get('article');
+  function openArticle(slug, updateUrl=true){
+    const card=cards.find(c=>slugFromHref(c)===slug);
+    if(!card) return;
+    const title=card.querySelector('h2')?.textContent.trim()||'Smart Brain Mission Article';
+    const sub=card.querySelector('.sub')?.textContent.trim()||'';
+    const desc=card.querySelector('p')?.textContent.trim()||'';
+    const extra=map[slug]?.extra||desc;
+    reader.innerHTML=`<div class="reader-top"><span class="tag">SMART BRAIN MISSION • ARTICLE</span><button class="reader-back" type="button" id="reader-back">← All Articles</button></div><h2>${title}</h2><div class="reader-sub">${sub}</div><p class="reader-copy">${desc}</p><div class="reader-box"><strong>💡 Smart Brain Mission Guide</strong><p class="reader-copy">${extra}</p><p class="reader-copy"><strong>Try this with your child:</strong> Is topic par ek simple question poochiye, child se apni reasoning explain karne ko kahiye, aur important information ko verify karne ki habit practice karaiye.</p></div>`;
+    reader.classList.add('show'); grid.style.display='none'; reader.scrollIntoView({behavior:'smooth',block:'start'});
+    document.getElementById('reader-back').onclick=()=>{location.href=location.pathname+'#articles';};
+    if(updateUrl) history.replaceState(null,'',location.pathname+'?article='+encodeURIComponent(slug));
+  }
+  cards.forEach(c=>c.addEventListener('click',e=>{e.preventDefault();openArticle(slugFromHref(c));}));
+  const slug=new URLSearchParams(location.search).get('article');
+  if(slug) openArticle(slug,false);
+})();
+</script>
+</body></html>

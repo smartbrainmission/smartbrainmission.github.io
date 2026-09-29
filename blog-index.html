@@ -198,5 +198,25 @@ window.addEventListener('popstate',()=>{
   }else closeArticle();
 });
 </script>
+
+<script id="sbm-home-article-query-fix">
+(function(){
+  function openRequestedArticle(){
+    var p=new URLSearchParams(window.location.search);
+    var n=p.get('article');
+    if(n===null) return;
+    var i=parseInt(n,10);
+    if(!Number.isNaN(i) && i>=0 && i<ARTICLES.length){
+      setTimeout(function(){ openArticle(i); }, 80);
+    }
+  }
+  if(document.readyState==='loading'){
+    document.addEventListener('DOMContentLoaded',openRequestedArticle);
+  }else{
+    openRequestedArticle();
+  }
+})();
+</script>
+
 </body>
 </html>

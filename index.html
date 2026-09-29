@@ -3520,7 +3520,6 @@ document.addEventListener('click',function(e){
     });
     document.querySelectorAll('.sbm-store-links a').forEach(function(a){
       var t=(a.textContent||'').trim().toLowerCase();
-      if(t==='for parents'){a.addEventListener('click',function(e){e.preventDefault();e.stopImmediatePropagation();apply('parents',true);},true);}
       if(t==='for kids'){a.addEventListener('click',function(e){e.preventDefault();e.stopImmediatePropagation();apply('all',true);},true);}
     });
     apply('all',false);
@@ -3530,29 +3529,37 @@ document.addEventListener('click',function(e){
 </script>
 
 
-<script id="sbm-for-parents-final-fix">
+
+
+
+<script id="sbm-for-parents-direct-final">
 (function(){
-  function parentTarget(){
-    return document.getElementById('for-parents') ||
-           document.querySelector('[id*="parents" i]');
-  }
-  document.addEventListener('click', function(e){
-    var a=e.target.closest && e.target.closest('a');
-    if(!a) return;
-    var href=(a.getAttribute('href')||'').trim();
-    var txt=(a.textContent||'').trim().toLowerCase();
-    if(href==='#for-parents' || txt==='for parents'){
-      var el=parentTarget();
-      if(el){
+  function install(){
+    document.querySelectorAll('.sbm-store-links a').forEach(function(a){
+      if((a.textContent||'').trim().toLowerCase() !== 'for parents') return;
+      a.addEventListener('click',function(e){
+        var target=document.getElementById('for-parents');
+        if(!target) return;
         e.preventDefault();
         e.stopPropagation();
         e.stopImmediatePropagation();
-        var top=el.getBoundingClientRect().top + window.pageYOffset - 88;
-        window.scrollTo({top:Math.max(0,top),behavior:'smooth'});
-        history.replaceState(null,'','#for-parents');
-      }
-    }
-  }, true);
+
+        // Temporarily disable smooth scrolling so the browser moves once,
+        // directly to the parent section instead of being animated/intercepted
+        // by the product age-filter scripts.
+        var y=target.getBoundingClientRect().top + window.pageYOffset - 92;
+        var root=document.documentElement;
+        var oldBehavior=root.style.scrollBehavior;
+        root.style.scrollBehavior='auto';
+        window.scrollTo(0, Math.max(0,y));
+        root.style.scrollBehavior=oldBehavior;
+
+        try{history.replaceState(null,'','#for-parents');}catch(_){}
+      }, true);
+    });
+  }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',install);
+  else install();
 })();
 </script>
 

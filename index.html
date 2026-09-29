@@ -2116,6 +2116,33 @@ body{background:#fff;color:var(--sbm-ink)}
 }
 </style>
 
+
+<style id="sbm-parent-nav-fix">
+.sbm-store-links a[href="#for-parents"]{
+  position:relative!important;
+  z-index:10000!important;
+  pointer-events:auto!important;
+  cursor:pointer!important;
+}
+</style>
+<script id="sbm-parent-nav-fix-script">
+(function(){
+  function goParents(e){
+    e.preventDefault();
+    e.stopPropagation();
+    var el = document.getElementById("for-parents");
+    if(el){
+      el.scrollIntoView({behavior:"smooth", block:"start"});
+      try{ history.replaceState(null,"","#for-parents"); }catch(_){}
+    }
+  }
+  document.addEventListener("click", function(e){
+    var a = e.target && e.target.closest ? e.target.closest('a[href="#for-parents"]') : null;
+    if(a) goParents(e);
+  }, true);
+})();
+</script>
+
 </head>
 <body>
 <div class="sbm-sale-bar">🎁 SMART BRAIN MISSION • AI LEARNING FOR KIDS &amp; PARENTS • DIGITAL PRODUCTS • FREE SAMPLES</div>

@@ -2005,7 +2005,13 @@ body{background:#fff;color:var(--sbm-ink)}
 .sbm-blog-all-link a{display:inline-flex;align-items:center;gap:8px;padding:13px 21px;border-radius:999px;text-decoration:none;color:#fff;font-weight:900;font-size:13px;background:linear-gradient(90deg,#6524c7,#e52e96);box-shadow:0 10px 24px rgba(101,36,199,.18);transition:transform .2s ease,box-shadow .2s ease}
 .sbm-blog-all-link a:hover{transform:translateY(-2px);box-shadow:0 14px 30px rgba(101,36,199,.24)}
 </style>
-</head>
+<style id="sbm-blog-direct-link-fix">
+.sbm-blog-direct-cards .sbm-direct-card{min-height:150px!important;padding:14px!important;justify-content:flex-start!important;gap:5px!important}
+.sbm-blog-direct-cards .sbm-direct-card span{font-size:20px!important}
+.sbm-blog-direct-cards .sbm-direct-card b{font-size:12px!important}
+.sbm-blog-direct-cards .sbm-direct-card small{font-size:9.5px!important;line-height:1.4!important;margin-bottom:8px}
+.sbm-blog-direct-cards .sbm-direct-card a{margin-top:auto;display:inline-block;width:max-content;padding:7px 10px;border-radius:999px;background:linear-gradient(90deg,#6723bb,#df3799);color:#fff!important;text-decoration:none!important;font-size:10px!important;font-weight:950!important}
+</style></head>
 <body>
 <div class="sbm-sale-bar">🎁 SMART BRAIN MISSION • AI LEARNING FOR KIDS &amp; PARENTS • DIGITAL PRODUCTS • FREE SAMPLES</div>
 <nav class="sbm-store-nav sbm-lwm-nav">
@@ -2103,43 +2109,19 @@ body{background:#fff;color:var(--sbm-ink)}
   </div>
 </section>
 <section class="sbm-store-section" id="refund"><div class="sbm-section-head"><div class="kicker">📄 REFUND POLICY</div><h2>Our Refund Policy</h2></div><div class="sbm-refund"><p><b>Refund window: 7 days.</b> Digital products download hone ke baad return nahi kiye ja sakte, isliye purchase se pehle free sample zaroor dekhein.</p><ul><li>Technical issue: file download/open nahi ho rahi ho.</li><li>Duplicate payment: same product ke liye accidental duplicate payment.</li><li>Product description mismatch: delivered product materially described product se match na kare.</li><li>Wrong age-group purchase: exchange option pehle provide kiya jayega where applicable.</li><li>Change of mind ya child ko product pasand na aane par refund applicable nahi hai.</li></ul><p>Refund request ke liye 7 din ke andar WhatsApp/email par order ID ya payment ID bhejein. Verification ke baad approved refund 5–7 working days mein original payment method par process kiya jayega.</p></div></section>
-<section class="sbm-blog-mini" id="blog">
-  <div class="sbm-blog-head">
-    <div class="sbm-blog-label">📝 SMART BRAIN MISSION BLOG</div>
-    <h2>AI learning ideas for kids &amp; parents</h2>
-    <p>Short, practical reads to help families understand AI, use technology thoughtfully and build future-ready skills together.</p>
-  </div>
-  <div class="sbm-blog-grid">
-    <article class="sbm-article">
-      <div class="icon">🤖</div>
-      <div class="tag">AI BASICS • KIDS</div>
-      <h3>AI kya hai? Bachchon ko simple way mein kaise samjhayein</h3>
-      <p>AI ko difficult technical words ke bina everyday examples se explain karne ka simple approach.</p>
-      <details><summary>Read article →</summary><p>AI ko ek aisi technology ke roop mein samjha sakte hain jo examples aur data se patterns seekhkar kuch tasks mein useful output deti hai. Bachche pehle observe karein, phir poochein ki machine ne kaise decide kiya. Is tarah AI ek “magic” nahi, balki samajhne layak technology ban jata hai.</p></details>
-    </article>
-    <article class="sbm-article">
-      <div class="icon">🧠</div>
-      <div class="tag">THINKING SKILLS</div>
-      <h3>AI use karte waqt kids ko kaunse questions poochne chahiye?</h3>
-      <p>Sirf answer lene ke bajay better questions, verification aur reasoning ki habit kaise banayein.</p>
-      <details><summary>Read article →</summary><p>Bachchon ko teen simple habits sikha sakte hain: “AI ne ye answer kyun diya?”, “Kya iski information verify karni chahiye?” aur “Kya main is idea ko aur better bana sakta hoon?” Ye habits AI ko shortcut ke bajay thinking tool banane mein help karti hain.</p></details>
-    </article>
-    <article class="sbm-article">
-      <div class="icon">🛡️</div>
-      <div class="tag">AI SAFETY • PARENTS</div>
-      <h3>Kids aur AI: privacy aur safe use ke basic rules</h3>
-      <p>Personal information, unknown links aur AI-generated answers ke saath simple safety habits.</p>
-      <details><summary>Read article →</summary><p>Children ko naam, address, phone number, passwords ya private family information AI tools mein share na karne ki habit sikhayein. Unknown links aur files ko blindly open na karein, aur important information ko trusted sources se verify karein. Parent guidance age ke hisaab se adjust honi chahiye.</p></details>
-    </article>
-    <article class="sbm-article">
-      <div class="icon">🚀</div>
-      <div class="tag">FUTURE SKILLS</div>
-      <h3>AI se bachchon mein creativity aur problem-solving kaise build karein</h3>
-      <p>AI ko answer machine ke bajay ideas, experiments aur small projects ke partner ki tarah use karna.</p>
-      <details><summary>Read article →</summary><p>Ek simple challenge dein: “Ek problem choose karo, teen possible ideas banao, phir AI se ideas improve karwao.” Bachcha final answer copy karne ke bajay options compare kare, changes suggest kare aur apna solution banaye. Isi process mein creativity, communication aur problem-solving practice hoti hai.</p></details>
-    </article>
-  </div>
-  <div class="sbm-blog-all-link"><a href="./blog-index.html" aria-label="Open all Smart Brain Mission articles">📚 Read Our AI Articles →</a></div>
+<section class="sbm-blog-mini sbm-blog-compact" id="blog">
+<div class="sbm-blog-head">
+<div class="sbm-blog-label">📝 SMART BRAIN MISSION BLOG</div>
+<h2>AI learning ideas for kids &amp; parents</h2>
+<p>Simple, practical reads on AI, safety, critical thinking and future-ready skills.</p>
+</div>
+<div class="sbm-blog-compact-cards sbm-blog-direct-cards">
+<article class="sbm-mini-card sbm-direct-card"><span>🤖</span><b>AI Basics</b><small>AI ko simple way mein samjhein</small><a href="./blog-index.html?article=0" target="_blank" rel="noopener">Read Full Article →</a></article>
+<article class="sbm-mini-card sbm-direct-card"><span>🧠</span><b>Smart Thinking</b><small>Questions aur verification seekhein</small><a href="./blog-index.html?article=7" target="_blank" rel="noopener">Read Full Article →</a></article>
+<article class="sbm-mini-card sbm-direct-card"><span>🛡️</span><b>AI Safety</b><small>Privacy aur safe AI habits</small><a href="./blog-index.html?article=6" target="_blank" rel="noopener">Read Full Article →</a></article>
+<article class="sbm-mini-card sbm-direct-card"><span>🚀</span><b>Future Skills</b><small>AI aur future skills ko samjhein</small><a href="./blog-index.html?article=9" target="_blank" rel="noopener">Read Full Article →</a></article>
+</div>
+<div class="sbm-blog-all-link"><a href="./blog-index.html" target="_blank" rel="noopener">📚 View All AI Articles →</a></div>
 </section><section class="sbm-about-final" id="about">
   <div class="sbm-about-wrap">
     <div class="sbm-about-head">

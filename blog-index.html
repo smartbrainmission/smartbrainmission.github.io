@@ -163,5 +163,13 @@ function closeArticle(){
 }
 window.addEventListener('keydown',e=>{if(e.key==='Escape')closeArticle()});
 </script>
-</body>
+<script id="sbm-direct-article-open">
+(function(){
+function openFromQuery(){
+try{var p=new URLSearchParams(window.location.search),n=p.get("article");
+if(n!==null&&typeof window.openArticle==="function"){var idx=parseInt(n,10);if(!isNaN(idx))setTimeout(function(){window.openArticle(idx)},100)}}catch(e){}
+}
+if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",openFromQuery);else openFromQuery();
+})();
+</script></body>
 </html>

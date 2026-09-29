@@ -2163,6 +2163,25 @@ body{background:#fff;color:var(--sbm-ink)}
 @media(max-width:560px){.sbm-blog-compact-cards{grid-template-columns:1fr!important}}
 </style>
 
+
+<style id="sbm-parent-nav-button-final">
+.sbm-store-links .sbm-parent-nav-button{
+  appearance:none!important;
+  -webkit-appearance:none!important;
+  border:0!important;
+  background:transparent!important;
+  padding:0!important;
+  margin:0!important;
+  color:inherit!important;
+  font:inherit!important;
+  font-weight:inherit!important;
+  cursor:pointer!important;
+  line-height:1!important;
+  text-decoration:none!important;
+}
+.sbm-store-links .sbm-parent-nav-button:hover{color:#6426c7!important}
+</style>
+
 </head>
 <body>
 <div class="sbm-sale-bar">🎁 SMART BRAIN MISSION • AI LEARNING FOR KIDS &amp; PARENTS • DIGITAL PRODUCTS • FREE SAMPLES</div>
@@ -2174,7 +2193,7 @@ body{background:#fff;color:var(--sbm-ink)}
     <div class="sbm-store-links">
 <a href="#shop">Shop</a>
 <a href="#kids">For Kids</a>
-<a href="#for-parents">For Parents</a>
+<button type="button" class="sbm-parent-nav-button" data-parent-nav="true">For Parents</button>
 <a href="#lifetime">Bundles</a>
 <a href="#about">About</a>
 <a href="#reviews">Reviews</a>
@@ -3560,6 +3579,42 @@ document.addEventListener('click',function(e){
   }
   if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',install);
   else install();
+})();
+</script>
+
+
+<script id="sbm-parent-nav-button-handler">
+(function(){
+  function init(){
+    var btn=document.querySelector('.sbm-parent-nav-button[data-parent-nav="true"]');
+    if(!btn) return;
+    btn.addEventListener('click',function(e){
+      e.preventDefault();
+      e.stopPropagation();
+      e.stopImmediatePropagation();
+
+      var target=document.getElementById('for-parents');
+      if(!target) return;
+
+      // Disable CSS smooth scrolling for this one jump.
+      var root=document.documentElement;
+      var body=document.body;
+      var oldRoot=root.style.scrollBehavior;
+      var oldBody=body.style.scrollBehavior;
+      root.style.scrollBehavior='auto';
+      body.style.scrollBehavior='auto';
+
+      var y=target.getBoundingClientRect().top + window.pageYOffset - 92;
+      window.scrollTo(0, Math.max(0,y));
+
+      root.style.scrollBehavior=oldRoot;
+      body.style.scrollBehavior=oldBody;
+
+      try{history.replaceState(null,'','#for-parents');}catch(_){}
+    }, false);
+  }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',init);
+  else init();
 })();
 </script>
 

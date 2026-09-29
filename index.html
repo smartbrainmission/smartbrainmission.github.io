@@ -2182,6 +2182,30 @@ body{background:#fff;color:var(--sbm-ink)}
 .sbm-store-links .sbm-parent-nav-button:hover{color:#6426c7!important}
 </style>
 
+
+<style id="sbm-parent-nav-final-visual">
+.sbm-store-links .sbm-parent-nav-button{
+  display:inline-flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  appearance:none!important;
+  -webkit-appearance:none!important;
+  border:0!important;
+  outline:0!important;
+  background:transparent!important;
+  padding:0!important;
+  margin:0!important;
+  color:inherit!important;
+  font-family:inherit!important;
+  font-size:inherit!important;
+  font-weight:900!important;
+  line-height:1!important;
+  letter-spacing:inherit!important;
+  cursor:pointer!important;
+  text-decoration:none!important;
+}
+</style>
+
 </head>
 <body>
 <div class="sbm-sale-bar">🎁 SMART BRAIN MISSION • AI LEARNING FOR KIDS &amp; PARENTS • DIGITAL PRODUCTS • FREE SAMPLES</div>
@@ -2193,7 +2217,7 @@ body{background:#fff;color:var(--sbm-ink)}
     <div class="sbm-store-links">
 <a href="#shop">Shop</a>
 <a href="#kids">For Kids</a>
-<button type="button" class="sbm-parent-nav-button" data-parent-nav="true">For Parents</button>
+<button type="button" class="sbm-parent-nav-button" data-parent-nav="true" aria-label="Go to For Parents section">For Parents</button>
 <a href="#lifetime">Bundles</a>
 <a href="#about">About</a>
 <a href="#reviews">Reviews</a>
@@ -3583,38 +3607,35 @@ document.addEventListener('click',function(e){
 </script>
 
 
-<script id="sbm-parent-nav-button-handler">
+
+
+
+<script id="sbm-parent-nav-button-handler-final">
 (function(){
-  function init(){
-    var btn=document.querySelector('.sbm-parent-nav-button[data-parent-nav="true"]');
-    if(!btn) return;
-    btn.addEventListener('click',function(e){
-      e.preventDefault();
-      e.stopPropagation();
-      e.stopImmediatePropagation();
+  function goToParents(){
+    var target=document.getElementById('for-parents');
+    if(!target) return false;
 
-      var target=document.getElementById('for-parents');
-      if(!target) return;
+    var nav=document.querySelector('.sbm-store-nav');
+    var offset=nav ? nav.getBoundingClientRect().height + 12 : 92;
+    var y=target.getBoundingClientRect().top + window.pageYOffset - offset;
 
-      // Disable CSS smooth scrolling for this one jump.
-      var root=document.documentElement;
-      var body=document.body;
-      var oldRoot=root.style.scrollBehavior;
-      var oldBody=body.style.scrollBehavior;
-      root.style.scrollBehavior='auto';
-      body.style.scrollBehavior='auto';
-
-      var y=target.getBoundingClientRect().top + window.pageYOffset - 92;
-      window.scrollTo(0, Math.max(0,y));
-
-      root.style.scrollBehavior=oldRoot;
-      body.style.scrollBehavior=oldBody;
-
-      try{history.replaceState(null,'','#for-parents');}catch(_){}
-    }, false);
+    // One direct movement only. No smooth animation and no age-filter call.
+    window.scrollTo(0, Math.max(0,y));
+    try{ history.replaceState(null,'','#for-parents'); }catch(_){}
+    return true;
   }
-  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',init);
-  else init();
+
+  document.addEventListener('click',function(e){
+    var el=e.target;
+    var btn=el && el.closest ? el.closest('.sbm-parent-nav-button[data-parent-nav="true"]') : null;
+    if(!btn) return;
+
+    e.preventDefault();
+    e.stopPropagation();
+    e.stopImmediatePropagation();
+    goToParents();
+  }, true);
 })();
 </script>
 

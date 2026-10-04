@@ -2206,6 +2206,95 @@ body{background:#fff;color:var(--sbm-ink)}
 }
 </style>
 
+
+
+<style id="sbm-top-youtube-subscribe-link">
+.sbm-social-mini .sbm-top-youtube-link{
+  display:flex!important;
+  align-items:center!important;
+  gap:9px!important;
+  width:268px!important;
+  min-height:48px!important;
+  padding:7px 12px!important;
+  border-radius:15px!important;
+  background:#fff!important;
+  color:#24134a!important;
+  box-shadow:0 7px 20px rgba(55,25,100,.12)!important;
+  text-decoration:none!important;
+}
+.sbm-top-youtube-icon{
+  width:34px!important;
+  height:25px!important;
+  flex:0 0 34px!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  border-radius:7px!important;
+  background:#ff1717!important;
+  color:#fff!important;
+}
+.sbm-top-youtube-icon svg{
+  width:21px!important;
+  height:21px!important;
+  display:block!important;
+}
+.sbm-top-youtube-copy{
+  display:flex!important;
+  flex-direction:column!important;
+  min-width:0!important;
+  line-height:1.15!important;
+  text-align:left!important;
+}
+.sbm-top-youtube-copy strong{
+  display:block!important;
+  font-size:11px!important;
+  font-weight:900!important;
+  white-space:nowrap!important;
+}
+.sbm-top-youtube-copy span{
+  display:block!important;
+  margin-top:3px!important;
+  font-size:10px!important;
+  color:#563b7d!important;
+  text-decoration:underline!important;
+  text-underline-offset:2px!important;
+  white-space:nowrap!important;
+}
+@media(max-width:1050px){
+  .sbm-social-mini .sbm-top-youtube-link{
+    width:235px!important;
+  }
+  .sbm-top-youtube-copy strong{font-size:10px!important}
+  .sbm-top-youtube-copy span{font-size:9px!important}
+}
+@media(max-width:850px){
+  .sbm-social-mini .sbm-top-youtube-link{
+    width:205px!important;
+    min-height:44px!important;
+    padding:6px 9px!important;
+  }
+  .sbm-top-youtube-icon{
+    width:30px!important;
+    flex-basis:30px!important;
+  }
+  .sbm-top-youtube-copy strong{font-size:9px!important}
+  .sbm-top-youtube-copy span{font-size:8px!important}
+}
+@media(max-width:650px){
+  .sbm-social-mini .sbm-top-youtube-link{
+    width:46px!important;
+    min-height:40px!important;
+    padding:7px!important;
+    justify-content:center!important;
+  }
+  .sbm-top-youtube-copy{display:none!important}
+  .sbm-top-youtube-icon{
+    width:32px!important;
+    height:25px!important;
+    flex-basis:32px!important;
+  }
+}
+</style>
 </head>
 <body>
 <div class="sbm-sale-bar">🎁 SMART BRAIN MISSION • AI LEARNING FOR KIDS &amp; PARENTS • DIGITAL PRODUCTS • FREE SAMPLES</div>
@@ -2224,8 +2313,14 @@ body{background:#fff;color:var(--sbm-ink)}
     <div class="sbm-nav-tools">
       <button class="sbm-search-mini" type="button" onclick="document.getElementById('shop')?.scrollIntoView({behavior:'smooth'})" aria-label="Search products">⌕</button>
       <div class="sbm-social-mini sbm-brand-socials" aria-label="Social links">
-        <a class="yt" href="https://youtube.com/@smartbrainmission" rel="noopener" target="_blank" aria-label="YouTube">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="4" fill="currentColor"/><path d="M10 9l6 3-6 3V9z" fill="#fff"/></svg>
+        <a class="yt sbm-top-youtube-link" href="https://youtube.com/@smartbrainmission" rel="noopener" target="_blank" aria-label="Subscribe to Smart Brain Mission YouTube Channel">
+          <span class="sbm-top-youtube-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="4" fill="currentColor"/><path d="M10 9l6 3-6 3V9z" fill="#fff"/></svg>
+          </span>
+          <span class="sbm-top-youtube-copy">
+            <strong>Subscribe to Our YouTube Channel</strong>
+            <span>youtube.com/@smartbrainmission ↗</span>
+          </span>
         </a>
         <a class="ig" href="https://www.instagram.com/" rel="noopener" target="_blank" aria-label="Instagram">
           <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2.2"/><circle cx="12" cy="12" r="4.1" fill="none" stroke="currentColor" stroke-width="2.2"/><circle cx="17.4" cy="6.7" r="1.2" fill="currentColor"/></svg>
